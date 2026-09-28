@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Avi | Computer Engineering</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            padding: 20px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: white;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-size: 35px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+
+            position: relative;
+
+            transition: color 0.3s ease;
+        }
+
+        /* Animated underline */
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 0;
+            bottom: -5px;
+
+            background: #222;
+
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #777;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* NAV BUTTON */
+
+        .nav-button {
+            text-decoration: none;
+
+            color: white;
+            background: #222;
+
+            padding: 10px 20px;
+
+            border-radius: 25px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: #555;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+
+            padding: 80px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+
+            animation: slideUp 1s ease;
+        }
+
+        .small-title {
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #777;
+        }
+
+        .hero h2 {
+            margin-top: 20px;
+            font-size: 25px;
+        }
+
+        .hero-text > p {
+            margin-top: 20px;
+            color: #666;
+            max-width: 550px;
+        }
+
+
+        /* BUTTONS */
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            background: #222;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            background: #555;
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: #222;
+            border: 1px solid #222;
+        }
+
+        .button.secondary:hover {
+            background: #222;
+            color: white;
+        }
+
+
+        /* HERO CARD */
+
+        .hero-card {
+            width: 300px;
+            height: 350px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.1);
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* CIRCLE */
+
+        .circle {
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: #222;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 50px;
+            font-weight: bold;
+
+            margin-bottom: 25px;
+
+            animation:
+                floating 3s ease-in-out infinite;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title p {
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: #777;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            display: flex;
+
+            gap: 60px;
+
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .text-link {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            color: #222;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            transition: transform 0.3s ease;
+        }
+
+        .text-link:hover {
+            transform: translateX(8px);
+        }
+
+
+        /* INFO BOX - GRID */
+
+        .info-box {
+            flex: 1;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .info-box div {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .info-box div:hover {
+            transform: translateY(-5px);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-section {
+            background: #222;
+            color: white;
+        }
+
+        .skills-section .section-title p {
+            color: #aaa;
+        }
+
+
+        /* GRID */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* SKILL CARD */
+
+        .skill-card {
+            background: #2d2d2d;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: #333;
+        }
+
+        .skill-number {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .skill-card h3 {
+            margin: 20px 0 10px;
+            font-size: 25px;
+        }
+
+        .skill-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+
+        /* PROGRESS BAR */
+
+        .progress {
+            width: 100%;
+            height: 5px;
+
+            background: #555;
+
+            margin-top: 25px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+
+            background: white;
+
+            transform-origin: left;
+
+            animation:
+                progressAnimation 2s ease;
+        }
+
+        .html-bar {
+            width: 80%;
+        }
+
+        .css-bar {
+            width: 65%;
+        }
+
+        .python-bar {
+            width: 50%;
+        }
+
+        .database-bar {
+            width: 40%;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border: 1px solid #eee;
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* FEATURED */
+
+        .project-card.featured {
+            background: #222;
+            color: white;
+        }
+
+
+        /* NEW BADGE */
+
+        .new-badge {
+            display: inline-block;
+
+            background: #eee;
+            color: #222;
+
+            font-size: 11px;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* PROJECT ICON */
+
+        .project-icon {
+            display: inline-block;
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .project-card:hover .project-icon {
+            transform:
+                rotate(10deg) scale(1.2);
+        }
+
+        .project-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .project-card.featured p {
+            color: #aaa;
+        }
+
+        .project-card a {
+            color: inherit;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            text-align: center;
+
+            padding: 120px 8%;
+
+            background: #eee;
+        }
+
+        .contact-section p {
+            letter-spacing: 3px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+        .contact-section h2 {
+            font-size: clamp(35px, 5vw, 60px);
+
+            max-width: 700px;
+
+            margin: 15px auto 30px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 8%;
+
+            text-align: center;
+
+            background: #222;
+
+            color: #aaa;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes floating {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes slideUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes progressAnimation {
+
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .hero-card {
+                width: 100%;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>A</span>VI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+        </div>
+
+        <a href="#contact" class="nav-button">
+            Contact
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                Abinash
+                <span>Lamichhane</span>
+            </h1>
+
+            <h2>
+                Computer Engineering Student
+            </h2>
+
+            <p>
+                I'm learning HTML, CSS and programming
+                while working toward becoming a software engineer.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="button">
+                    My Projects
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="circle">
+                A
+            </div>
+
+            <h3>
+                Learning Mode
+            </h3>
+
+            <p>
+                HTML • CSS • Programming
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about" class="section">
+
+        <div class="section-title">
+
+            <p>
+                GET TO KNOW ME
+            </p>
+
+            <h2>
+                About Me
+            </h2>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <h3>
+                    Who am I?
+                </h3>
+
+                <p>
+                    I'm a Computer Engineering student
+                    at Gachon University.
+                </p>
+
+                <p>
+                    I'm currently learning web development
+                    and programming.
+                </p>
+
+                <p>
+                    My goal is to become a software engineer
+                    and build useful applications.
+                </p>
+
+                <a href="#contact" class="text-link">
+                    Let's talk →
+                </a>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div>
+
+                    <strong>
+                        Major
+                    </strong>
+
+                    <p>
+                        Computer Engineering
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Focus
+                    </strong>
+
+                    <p>
+                        Web Development
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Learning
+                    </strong>
+
+                    <p>
+                        HTML / CSS
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Goal
+                    </strong>
+
+                    <p>
+                        Software Engineer
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills" class="section skills-section">
+
+        <div class="section-title">
+
+            <p>
+                WHAT I'M LEARNING
+            </p>
+
+            <h2>
+                My Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    01
+                </span>
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    Learning how to structure websites
+                    using HTML elements.
+                </p>
+
+                <div class="progress">
+
+                    <div class="progress-bar html-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    02
+                </span>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Learning layouts, Flexbox, Grid,
+                    animations and responsive design.
+                </p>
+
+                <div class="progress">
+
+                    <div class="progress-bar css-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    03
+                </span>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Learning programming fundamentals
+                    and problem solving.
+                </p>
+
+                <div class="progress">
+
+                    <div class="progress-bar python-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">
+                    04
+                </span>
+
+                <h3>
+                    Database
+                </h3>
+
+                <p>
+                    Learning DBMS, SQL, tables,
+                    keys and relationships.
+                </p>
+
+                <div class="progress">
+
+                    <div class="progress-bar database-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects" class="section">
+
+        <div class="section-title">
+
+            <p>
+                MY WORK
+            </p>
+
+            <h2>
+                Projects
+            </h2>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card featured">
+
+                <span class="new-badge">
+                    NEW
+                </span>
+
+                <h3>
+                    Avi's Portfolio
+                </h3>
+
+                <p>
+                    A personal portfolio website
+                    created using HTML and CSS.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <span class="project-icon">
+                    &lt;/&gt;
+                </span>
+
+                <h3>
+                    HTML Practice
+                </h3>
+
+                <p>
+                    Practicing forms, tables,
+                    buttons, links and elements.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <span class="project-icon">
+                    { }
+                </span>
+
+                <h3>
+                    Python Practice
+                </h3>
+
+                <p>
+                    Small programming exercises
+                    to improve problem solving.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="contact-section">
+
+        <p>
+            HAVE A PROJECT?
+        </p>
+
+        <h2>
+            Let's build something together.
+        </h2>
+
+        <a href="mailto:example@email.com" class="button">
+            Contact Me
+        </a>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Avi. Built with HTML & CSS.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
