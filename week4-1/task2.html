@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Theme Switcher</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #f2f4f8;
+            transition: 0.3s;
+        }
+
+        /* Dark mode */
+        body.dark {
+            background: #111827;
+        }
+
+        .profile-card {
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+
+            background: white;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+            transition: 0.3s;
+        }
+
+        body.dark .profile-card {
+            background: #1f2937;
+            color: white;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+        }
+
+        .major {
+            color: #6366f1;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        body.dark .description {
+            color: #d1d5db;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-bottom: 25px;
+        }
+
+        .skill {
+            padding: 7px 12px;
+
+            background: #eef2ff;
+            color: #4f46e5;
+
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        body.dark .skill {
+            background: #374151;
+            color: #c7d2fe;
+        }
+
+        #themeButton {
+            padding: 12px 20px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: #6366f1;
+            color: white;
+
+            font-size: 15px;
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        #themeButton:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+
+        <div class="avatar">
+            AL
+        </div>
+
+        <h1>Abinash Lamichhane</h1>
+
+        <p class="major">
+            Computer Engineering Student
+        </p>
+
+        <p class="description">
+            Learning JavaScript, web development, and
+            building my programming skills 🚀
+        </p>
+
+        <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Computer Engineering</span>
+        </div>
+
+        <button id="themeButton">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+
+    <script>
+
+        const themeButton = document.getElementById("themeButton");
+
+        themeButton.addEventListener("click", function() {
+
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+
+                themeButton.textContent = "☀️ Light Mode";
+
+            } else {
+
+                themeButton.textContent = "🌙 Dark Mode";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Shopping List</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #f2f4f8;
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+
+            background: white;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        #itemInput {
+            flex: 1;
+            padding: 12px;
+
+            border: 1px solid #ccc;
+            border-radius: 8px;
+
+            font-size: 15px;
+        }
+
+        #addButton {
+            padding: 12px 18px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #6366f1;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        #addButton:hover {
+            background: #4f46e5;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 12px;
+            margin-bottom: 10px;
+
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+
+        .deleteButton {
+            padding: 6px 10px;
+
+            border: none;
+            border-radius: 6px;
+
+            background: #ef4444;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .deleteButton:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🛒 Shopping List</h1>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="itemInput"
+                placeholder="Enter an item"
+            >
+
+            <button id="addButton">
+                Add Item
+            </button>
+
+        </div>
+
+        <ul id="shoppingList"></ul>
+
+    </div>
+
+
+    <script>
+
+        const itemInput = document.getElementById("itemInput");
+
+        const addButton = document.getElementById("addButton");
+
+        const shoppingList = document.getElementById("shoppingList");
+
+
+        addButton.addEventListener("click", function() {
+
+            const itemText = itemInput.value.trim();
+
+            if (itemText === "") {
+                return;
+            }
+
+
+            const listItem = document.createElement("li");
+
+            listItem.textContent = itemText;
+
+
+            const deleteButton = document.createElement("button");
+
+            deleteButton.textContent = "Delete";
+
+            deleteButton.classList.add("deleteButton");
+
+
+            deleteButton.addEventListener("click", function() {
+
+                listItem.remove();
+
+            });
+
+
+            listItem.appendChild(deleteButton);
+
+            shoppingList.appendChild(listItem);
+
+
+            itemInput.value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Counter with Color Change</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #2563eb;
+            font-size: 16px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        #counter {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 25px;
+        }
+
+        #message {
+            font-size: 20px;
+            min-height: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 5px;
+            font-size: 17px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #clickButton {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        #clickButton:hover {
+            background-color: #1d4ed8;
+        }
+
+        #resetButton {
+            background-color: #555;
+            color: white;
+        }
+
+        #resetButton:hover {
+            background-color: #333;
+        }
+
+        .normal {
+            color: #2563eb;
+        }
+
+        .warning {
+            color: orange;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .danger {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href=" https://github.com/abinaah2004-maker/WebClass/tree/main/week4-1" class="back-link">← Back to Week 4</a>
+
+    <div class="container">
+
+        <h1>Click Counter with Color Change</h1>
+
+        <button id="clickButton">Click me!</button>
+
+        <button id="resetButton">Reset</button>
+
+        <div id="counter" class="normal">0</div>
+
+        <p id="message">Start clicking!</p>
+
+    </div>
+
+
+    <script>
+
+        let count = 0;
+
+        const clickButton = document.getElementById("clickButton");
+        const resetButton = document.getElementById("resetButton");
+        const counter = document.getElementById("counter");
+        const message = document.getElementById("message");
+
+
+        clickButton.addEventListener("click", function() {
+
+            count++;
+
+            counter.textContent = count;
+
+
+            if (count < 5) {
+
+                counter.classList.remove(
+                    "normal", "warning", "success", "danger"
+                );
+
+                counter.classList.add("warning");
+
+                message.textContent = "Keep going!";
+
+            }
+
+            else if (count === 5) {
+
+                counter.classList.remove(
+                    "normal", "warning", "success", "danger"
+                );
+
+                counter.classList.add("success");
+
+                message.textContent =
+                    "Congratulations! You hit 5 clicks!";
+
+            }
+
+            else if (count >= 10) {
+
+                counter.classList.remove(
+                    "normal", "warning", "success", "danger"
+                );
+
+                counter.classList.add("danger");
+
+                message.textContent =
+                    "Wow! You reached 10 clicks!";
+
+            }
+
+            else {
+
+                counter.classList.remove(
+                    "normal", "warning", "success", "danger"
+                );
+
+                counter.classList.add("success");
+
+                message.textContent =
+                    "Amazing! Keep going!";
+
+            }
+
+        });
+
+
+        resetButton.addEventListener("click", function() {
+
+            count = 0;
+
+            counter.textContent = count;
+
+            counter.classList.remove(
+                "warning", "success", "danger"
+            );
+
+            counter.classList.add("normal");
+
+            message.textContent = "Start clicking!";
+
+        });
+
+    </script>
+
+</body>
+</html>
