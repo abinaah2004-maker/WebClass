@@ -1,5 +1,4 @@
-/* Modern Reset & Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -8,9 +7,9 @@
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    background: #0f172a; /* Dark background to make vibrant colors pop */
+    color: #ffffff;
     min-height: 100vh;
     padding: 50px 20px;
     display: flex;
@@ -22,111 +21,78 @@ body {
     max-width: 900px;
 }
 
-/* Header Section */
-.header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.badge {
-    display: inline-block;
-    padding: 6px 14px;
-    background: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    border-radius: 20px;
-    margin-bottom: 12px;
-}
-
+/* Header Styling */
 h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 1.05rem;
-    margin-top: 8px;
+    margin-bottom: 30px;
 }
 
-/* Glassmorphism Week Cards */
-.week-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
+/* Cards for Week Sections */
+.week-card, section {
+    background: #1e293b;
+    border-radius: 20px;
     padding: 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 6px solid #38bdf8;
 }
 
-.week-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
-}
-
-.week-card h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1e293b;
+h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #38bdf8;
     margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #f1f5f9;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.week-card h2::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 18px;
-    background: #2563eb;
-    border-radius: 4px;
+/* Force <ul> and <li> to convert into a Grid */
+ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)) !important;
+    gap: 12px !important;
 }
 
-/* Responsive Grid Layout */
-.task-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-    gap: 14px;
+li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style-type: none !important;
 }
 
-/* Sleek Task Buttons */
-.task-btn {
-    display: flex;
+/* Transform plain <a> links into vibrant buttons */
+ul li a, .task-btn {
+    display: flex !important;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 14px 16px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    color: #334155;
+    padding: 12px 14px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 12px;
+    color: #38bdf8 !important;
     font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
 }
 
-.task-btn:hover {
-    background: #2563eb;
-    color: #ffffff;
-    border-color: #2563eb;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.35);
-}
-
-.task-btn:active {
-    transform: translateY(-1px);
+ul li a:hover, .task-btn:hover {
+    background: #38bdf8 !important;
+    color: #0f172a !important;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+    transform: translateY(-3px) scale(1.03);
 }
