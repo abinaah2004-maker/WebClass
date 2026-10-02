@@ -1,74 +1,132 @@
-/* General Page Styling */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333333;
+/* Modern Reset & Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .container {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 20px;
+    margin-bottom: 12px;
 }
 
 h1 {
-    font-size: 2.2rem;
-    color: #1a252f;
-    margin-bottom: 5px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #666666;
-    margin-bottom: 30px;
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-top: 8px;
 }
 
-/* Section Cards */
+/* Glassmorphism Week Cards */
 .week-card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 20px 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #3498db;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h2 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-top: 0;
-    margin-bottom: 15px;
+.week-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
-/* Lists and Links */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
+.week-card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f1f5f9;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
 }
 
-li {
-    margin: 0;
-}
-
-a {
+.week-card h2::before {
+    content: '';
     display: inline-block;
-    padding: 8px 14px;
-    background-color: #f0f4f8;
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 5px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    width: 8px;
+    height: 18px;
+    background: #2563eb;
+    border-radius: 4px;
 }
 
-a:hover {
-    background-color: #3498db;
+/* Responsive Grid Layout */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 14px;
+}
+
+/* Sleek Task Buttons */
+.task-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.task-btn:hover {
+    background: #2563eb;
     color: #ffffff;
+    border-color: #2563eb;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.35);
+}
+
+.task-btn:active {
+    transform: translateY(-1px);
 }
