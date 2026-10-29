@@ -14,12 +14,11 @@ My Web Programming coursework repository for practising HTML, CSS, JavaScript, D
 - [Week 6 Fetch and APIs](week6-1/index.html)
 - [Week 7 Open Library book search](week7-1/index.html)
 - [Week 8 forms and validation](week8-1/index.html)
-- [Week 9.1 accessibility audit checklist](week9_1/index.html)
 - [Team project](teamproject/index.html)
 
 ## Recent additions
 
-This repository now includes additional HTML fundamentals tasks, advanced CSS practice, ten DOM lessons, Week 5 conditional/loop exercises, Week 6 API examples, a BookFinder project, form-validation exercises, and an accessibility audit worksheet.
+This repository now includes additional HTML fundamentals tasks, advanced CSS practice, ten DOM lessons, Week 5 conditional/loop exercises, Week 6 API examples, a BookFinder project, form-validation exercises.
 
 ## Notes
 
