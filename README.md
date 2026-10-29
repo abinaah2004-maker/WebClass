@@ -7,6 +7,7 @@ My Web Programming coursework repository for practising HTML, CSS, JavaScript, D
 - [Week 2 HTML practice](Week2_1/Task1.html)
 - [Week 2 semantic HTML and portfolio practice](Week2_2/task1.html)
 - [Week 3 CSS exercises](Week3_2/exer1.html)
+- [Week 3 CSS fundamentals lessons](Week3_1/lessons/index.html)
 - [Week 3 advanced CSS assignments](Week3_Assignment/index.html)
 - [Week 4 DOM lessons](week4-1/index.html)
 - [Week 5 conditions and loops](week5-1/index.html)
