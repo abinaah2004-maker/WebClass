@@ -20,6 +20,12 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
+        .skip-link {
+            position: absolute; top: 0; left: -9999px; z-index: 9999;
+            padding: .6rem 1rem; border-radius: 0 0 8px 0;
+            background: #162744; color: #fff; font-weight: 700;
+        }
+        .skip-link:focus { left: 0; top: 0; outline: 3px solid #67d5ff; outline-offset: 2px; }
         body {
             min-height: 100vh;
             padding: 42px 18px 56px;
@@ -88,7 +94,8 @@
     </style>
 </head>
 <body>
-    <main class="container">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <main class="container" id="main-content" tabindex="-1">
         <header class="hero">
             <span class="eyebrow">Computer Engineering · Gachon University</span>
             <h1>Abinash Lamichhane</h1>
