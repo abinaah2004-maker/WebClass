@@ -38,10 +38,10 @@ Compare the reference course map with my repository, preserve existing work, and
 
 Added during this update:
 - Week 2: additional form, semantic HTML, dialog, text-semantics, favourites, profile, and recipe practice pages.
-- Week 3: seven advanced CSS assignment pages plus an index.
+- Week 3: seven advanced CSS assignment pages plus an index, and a CSS fundamentals lesson collection with 24 topic lessons and a selector challenge.
 - Week 4: a lesson index and ten DOM concept lessons.
 - Week 5: grade checker and loop practice.
-- Week 6: async/await stepper, HTTP/network error lesson, quiz, request journey, Seoul weather, Pokémon, random-user, and country API examples.
+- Week 6: async/await stepper, HTTP/network error lesson, quiz, request journey, Seoul weather, Pokémon, random-user, country explorer, and Joke Lab with saved favourites.
 - Week 7: Open Library explorer, six step pages, and a complete BookFinder app with a locally saved reading list.
 - Week 8: sign-in, validation attributes/styles, contact, and student registration forms.
 - Week 9.1: accessibility checklist and audit-report worksheet.
