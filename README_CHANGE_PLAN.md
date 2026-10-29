@@ -16,16 +16,14 @@ Compare the reference course map with my repository, preserve existing work, and
 - **Week 6 Fetch/APIs:** Blog-post and promise practice exist. Missing coverage includes async/await stepper, HTTP vs network errors, quiz, request journey, weather, Pokémon, random user, and a complete country explorer.
 - **Week 7 Book search:** Missing; add Open Library search, step-by-step exercises, and a completed book finder.
 - **Week 8 Forms:** Missing; add sign-in, native validation examples, contact form, and student registration form.
-- **Week 9.1 Accessibility audit:** Missing; add an accessibility checklist/report page with practical checks.
 
 ## Files planned
 1. Add a Week 2/3/4 navigation index where useful and add missing Week 4 DOM lessons.
 2. Complete missing Week 6 API lessons and demos.
 3. Add Week 7 Open Library book search tasks.
 4. Add Week 8 HTML form and validation tasks.
-5. Add a Week 9.1 accessibility audit page.
-6. Update the homepage with clear links to the completed week folders.
-7. Verify repository paths and internal links after changes.
+5. Update the homepage with clear links to the completed week folders.
+6. Verify repository paths and internal links after changes.
 
 ## Safety and scope
 - Keep all existing assignments; do not delete or overwrite them without a specific reason.
@@ -44,9 +42,8 @@ Added during this update:
 - Week 6: async/await stepper, HTTP/network error lesson, quiz, request journey, Seoul weather, Pokémon, random-user, country explorer, and Joke Lab with saved favourites.
 - Week 7: Open Library explorer, six step pages, and a complete BookFinder app with a locally saved reading list.
 - Week 8: sign-in, validation attributes/styles, contact, and student registration forms.
-- Week 9.1: accessibility checklist and audit-report worksheet.
-- Homepage: links to the new course sections and extra HTML practice.
+- Homepage: links to the new course sections and extra HTML practice, excluding Week 9.
 
 ## Verification status
 
-Repository paths were checked after adding files. The API demonstrations require an internet connection and use third-party APIs. The pages have not been tested in a real browser in this workflow; please open them in your browser before submitting them for coursework. The accessibility report is a worksheet and does not claim that a formal audit has been completed.
+Repository paths were checked after adding files. The API demonstrations require an internet connection and use third-party APIs. The pages have not been tested in a real browser in this workflow; please open them in your browser before submitting them for coursework. 
