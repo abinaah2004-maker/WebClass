@@ -160,6 +160,59 @@
         .task-btn:hover {
             transform: translateY(-3px) scale(1.03);
         }
+
+        .task-btn:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 28px 14px;
+            }
+
+            h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+                overflow-wrap: anywhere;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .week-card {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+
+            .task-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .task-btn {
+                min-height: 46px;
+                padding: 11px 8px;
+                font-size: 0.85rem;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+
+            .task-btn:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -204,7 +257,7 @@
                 <a href="Week2_2/task2-blog.html" class="task-btn">Task 2 (Blog)</a>
                 <a href="Week2_2/task3-%20figure_time.html" class="task-btn">Task 3 (Figure)</a>
                 <a href="Week2_2/Task4_FAQ.html" class="task-btn">Task 4 (FAQ)</a>
-                <a href="Week2_2/task5_Portfolio.html" class="task-btn">Task 5 (Portfolio)</a>
+                <a href="Week2_2/task5_%20Portfolio.html" class="task-btn">Task 5 (Portfolio)</a>
                 <a href="Week2_2/task6_fixerror.html" class="task-btn">Task 6 (Fix Error)</a>
                 <a href="Week2_2/Task7_Article.html" class="task-btn">Task 7 (Article)</a>
                 <a href="Week2_2/Task8_Quotional.html" class="task-btn">Task 8 (Quotional)</a>
