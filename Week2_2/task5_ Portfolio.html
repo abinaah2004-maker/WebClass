@@ -1,128 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Abinash Lamichhane - Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abinash Lamichhane | Student Portfolio</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#64748b; --accent:#2563eb; --paper:#f5f7fb; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+    header { padding:4rem 1.25rem 3.25rem; background:linear-gradient(135deg,#172554,#2563eb); color:white; }
+    .wrap { width:min(960px,100%); margin:auto; }
+    nav { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2.5rem; }
+    nav a { color:white; text-decoration:none; font-weight:650; }
+    nav a:hover, nav a:focus-visible { text-decoration:underline; text-underline-offset:4px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; font-weight:750; opacity:.8; }
+    h1 { font-size:clamp(2.4rem,7vw,4.5rem); line-height:1.05; margin:.6rem 0 1rem; }
+    .intro { max-width:650px; font-size:1.12rem; color:#e0eaff; }
+    main { padding:2rem 1.25rem 4rem; }
+    section { background:white; border:1px solid #e2e8f0; border-radius:18px; padding:1.5rem; margin:1.25rem 0; box-shadow:0 8px 24px #0f172a0b; }
+    h2 { margin-top:0; font-size:1.35rem; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1rem; }
+    .card { padding:1rem; border-radius:12px; background:#eff6ff; border:1px solid #dbeafe; }
+    .card h3 { margin:.2rem 0 .4rem; }
+    .muted { color:var(--muted); }
+    .tag { display:inline-block; background:#dbeafe; color:#1e40af; padding:.35rem .65rem; margin:.25rem .25rem .25rem 0; border-radius:999px; font-size:.9rem; font-weight:650; }
+    footer { text-align:center; color:var(--muted); padding:1.5rem; }
+    @media (max-width:560px) { header { padding-top:2rem; } section { padding:1.1rem; } }
+  </style>
 </head>
-
 <body>
-
-<header>
-
-    <h1>Abinash Lamichhane</h1>
-
-    <p>
-        Computer Engineering Student | Gachon University
-    </p>
-
-</header>
-
-<nav>
-    <a href="#about">About</a> |
-    <a href="#education">Education</a> |
-    <a href="#skills">Skills</a> |
-    <a href="#hobbies">Hobbies</a> |
-    <a href="#contact">Contact</a>
-</nav>
-
-<main>
-
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a><a href="#learning">Learning</a><a href="#interests">Interests</a><a href="#goals">Goals</a>
+      </nav>
+      <p class="eyebrow">Computer Engineering Student</p>
+      <h1>Hi, I'm Abinash<br>Lamichhane.</h1>
+      <p class="intro">I'm building my skills in web development and computer engineering, one project at a time. My goal is to grow into a software engineer who can turn ideas into useful digital experiences.</p>
+    </div>
+  </header>
+  <main class="wrap">
     <section id="about">
-
-        <h2>About Me</h2>
-
-        <p>
-            Hello! My name is Abinash Lamichhane.
-            I am a Computer Engineering student at
-            Gachon University.
-        </p>
-
-        <p>
-            I am interested in programming, technology,
-            web development and artificial intelligence.
-        </p>
-
+      <h2>About me</h2>
+      <p>I'm a computer engineering student at Gachon University. I enjoy learning by making things, testing what I build, and improving my work step by step.</p>
     </section>
-
-    <section id="education">
-
-        <h2>Education</h2>
-
-        <article>
-
-            <h3>Gachon University</h3>
-
-            <p>
-                Major: Computer Engineering
-            </p>
-
-            <p>
-                Location: South Korea
-            </p>
-
-        </article>
-
+    <section id="learning">
+      <h2>What I'm learning</h2>
+      <div class="cards">
+        <article class="card"><h3>HTML</h3><p>Creating clear page structure, links, forms, and accessible content.</p></article>
+        <article class="card"><h3>CSS</h3><p>Practising layout, responsive design, colors, spacing, and reusable styles.</p></article>
+        <article class="card"><h3>JavaScript</h3><p>Learning how events and DOM updates make pages interactive.</p></article>
+      </div>
     </section>
-
-    <section id="skills">
-
-        <h2>My Skills</h2>
-
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Sarcasm Connoissieur</li>
-            <li>Programming</li>
-            <li>Problem Solving</li>
-            <li>Video Editing</li>
-        </ul>
-
+    <section id="interests">
+      <h2>Interests</h2>
+      <span class="tag">Football</span><span class="tag">Gym & fitness</span><span class="tag">Technology</span><span class="tag">Learning new things</span>
     </section>
-
-    <section id="hobbies">
-
-        <h2>My Hobbies</h2>
-
-        <article>
-            <h3>travelling</h3>
-            <p>
-                I enjoy exploring the nature and playing outdoor sports.
-            </p>
-        </article>
-
-        <article>
-            <h3>Learning</h3>
-            <p>
-                I enjoy learning new technology and
-                improving my programming skills.
-            </p>
-        </article>
-
+    <section id="goals">
+      <h2>My next steps</h2>
+      <p>My current focus is strengthening the fundamentals: writing semantic HTML, understanding CSS instead of memorising it, and practising JavaScript through small projects.</p>
+      <p class="muted">This portfolio is a learning project and will grow as I complete more coursework.</p>
     </section>
-
-    <aside>
-
-        <h2>My Goal</h2>
-
-        <p>
-            My goal is to become a
-            <mark>successful computer engineer</mark>.
-        </p>
-
-    </aside>
-
-</main>
-
-<footer id="contact">
-
-    <address>
-        Abinash Lamichhane<br>
-        Gachon University<br>
-        South Korea
-    </address>
-
-    <p>© 2026 Abinash</p>
-
-</footer>
-
+  </main>
+  <footer>© <span id="year"></span> Abinash Lamichhane · Student portfolio</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
