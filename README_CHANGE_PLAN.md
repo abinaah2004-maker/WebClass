@@ -42,7 +42,7 @@ Added during this update:
 - Week 6: async/await stepper, HTTP/network error lesson, quiz, request journey, Seoul weather, Pokémon, random-user, country explorer, and Joke Lab with saved favourites.
 - Week 7: Open Library explorer, six step pages, and a complete BookFinder app with a locally saved reading list.
 - Week 8: sign-in, validation attributes/styles, contact, and student registration forms.
-- Homepage: links to the new course sections and extra HTML practice, excluding Week 9.
+- Homepage: links to the new course sections and extra HTML practice.
 
 ## Verification status
 
