@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS Practice Lab | Abinash Lamichhane</title>
+<style>
+  :root { font-family:system-ui,-apple-system,Segoe UI,sans-serif; color:#172033; background:#f1f5f9; }
+  * { box-sizing:border-box; }
+  body { margin:0; line-height:1.6; }
+  header { padding:2.5rem 1.2rem; color:white; background:#172554; }
+  .wrap { width:min(1000px,100% - 2rem); margin:auto; }
+  h1 { font-size:clamp(2rem,5vw,3.2rem); line-height:1.1; margin:.4rem 0; }
+  header p { color:#dbeafe; max-width:650px; }
+  main { padding:1rem 0 3rem; }
+  section { background:white; margin:1rem 0; padding:1.25rem; border-radius:16px; border:1px solid #dbe3ef; }
+  h2 { margin-top:0; }
+  .demo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1rem; }
+  .demo { border:1px solid #dbeafe; background:#eff6ff; padding:1rem; border-radius:12px; }
+  .swatches { display:flex; flex-wrap:wrap; gap:.5rem; }
+  .swatch { width:90px; height:70px; border-radius:8px; display:grid; place-items:center; color:white; font-size:.8rem; font-weight:700; }
+  .box-demo { background:#bfdbfe; border:4px solid #2563eb; padding:1rem 1.5rem; margin:1rem 0; width:min(100%,380px); }
+  .flex-demo { display:flex; flex-wrap:wrap; gap:.5rem; padding:.75rem; background:#e2e8f0; border-radius:8px; }
+  .flex-demo span { padding:.6rem .8rem; background:#1d4ed8; color:white; border-radius:6px; }
+  .hover-card { transition:transform .2s ease,box-shadow .2s ease; }
+  .hover-card:hover { transform:translateY(-4px); box-shadow:0 12px 24px #17255420; }
+  .hover-card:focus-within { outline:3px solid #2563eb; outline-offset:3px; }
+  code { background:#e2e8f0; padding:.1rem .35rem; border-radius:4px; }
+  a { color:#1d4ed8; }
+  a:focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
+  footer { text-align:center; padding:1rem; color:#64748b; }
+  @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none !important; scroll-behavior:auto !important; } }
+</style>
+</head>
+<body>
+<header><div class="wrap"><p>WEB DEVELOPMENT · PRACTICE</p><h1>CSS Practice Lab</h1><p>Small, original examples for exploring selectors, color, spacing, layout, and responsive design.</p><p>Created by Abinash Lamichhane · Computer Engineering</p></div></header>
+<main class="wrap">
+<section><h2>1. CSS selectors</h2><div class="demo-grid"><article class="demo"><h3>Element selector</h3><p>All paragraphs inherit the page's line height and text color.</p></article><article class="demo"><h3>Class selector</h3><p>The <code>.demo</code> class gives these cards their background, border, and spacing.</p></article><article class="demo"><h3>Responsive sizing</h3><p>The page uses <code>min()</code> and <code>clamp()</code> to fit different screens.</p></article></div></section>
+<section><h2>2. Color values</h2><p>CSS supports named colors, hexadecimal values, and RGB/RGBA values.</p><div class="swatches"><div class="swatch" style="background:#2563eb">#2563eb</div><div class="swatch" style="background:rgb(22,163,74)">RGB</div><div class="swatch" style="background:rebeccapurple">Named</div><div class="swatch" style="background:rgba(234,88,12,.9)">RGBA</div></div></section>
+<section><h2>3. The box model</h2><p>The blue area below includes padding inside its border. Margin creates space outside the element.</p><div class="box-demo">Content area + padding + border</div><p>Try changing <code>padding</code>, <code>border</code>, and <code>margin</code> in the stylesheet.</p></section>
+<section><h2>4. Flexbox layout</h2><p>Flexbox places items in a row and wraps them when there isn't enough room.</p><div class="flex-demo"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Practice</span></div></section>
+<section><h2>5. Hover and keyboard focus</h2><p>Move your pointer over the card, or use Tab to reach the link, to see the interaction states.</p><article class="demo hover-card"><h3>Interactive study card</h3><p>Transitions should feel subtle and remain usable without a mouse.</p><a href="../Week2_2/task5_%20Portfolio.html">Open my portfolio</a></article></section>
+<section><h2>6. Responsive design checklist</h2><ul><li>Use a viewport meta tag.</li><li>Use flexible widths instead of fixed page widths.</li><li>Use grid or flexbox for layouts that can wrap.</li><li>Test narrow screens and keyboard navigation.</li><li>Respect reduced-motion preferences.</li></ul></section>
+</main><footer>CSS Practice Lab · Abinash Lamichhane</footer>
+</body></html>
