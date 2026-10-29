@@ -32,3 +32,21 @@ Compare the reference course map with my repository, preserve existing work, and
 - Keep implementations original and aligned to the reference topics rather than copying the reference source.
 - External API examples require an internet connection and may be affected by third-party service availability.
 - Mark work as complete only after checking that files exist and links point to valid paths.
+
+
+## Implementation progress
+
+Added during this update:
+- Week 2: additional form, semantic HTML, dialog, text-semantics, favourites, profile, and recipe practice pages.
+- Week 3: seven advanced CSS assignment pages plus an index.
+- Week 4: a lesson index and ten DOM concept lessons.
+- Week 5: grade checker and loop practice.
+- Week 6: async/await stepper, HTTP/network error lesson, quiz, request journey, Seoul weather, Pokémon, random-user, and country API examples.
+- Week 7: Open Library explorer, six step pages, and a complete BookFinder app with a locally saved reading list.
+- Week 8: sign-in, validation attributes/styles, contact, and student registration forms.
+- Week 9.1: accessibility checklist and audit-report worksheet.
+- Homepage: links to the new course sections and extra HTML practice.
+
+## Verification status
+
+Repository paths were checked after adding files. The API demonstrations require an internet connection and use third-party APIs. The pages have not been tested in a real browser in this workflow; please open them in your browser before submitting them for coursework. The accessibility report is a worksheet and does not claim that a formal audit has been completed.
