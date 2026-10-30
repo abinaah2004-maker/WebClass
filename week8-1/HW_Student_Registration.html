@@ -2,42 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Student registration form demonstrating semantic fieldsets, HTML5 validation, and accessible controls.">
-<title>Your Next Chapter · Student Registration | Week 8</title>
+<meta name="description" content="Student registration form demonstrating semantic fieldsets, native HTML validation, and accessible controls.">
+<title>Student Registration — Week 8</title>
 <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
 </head>
-<body>
+<body class="registration-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<main id="main-content">
-<nav class="top-links"><a href="index.html">← Week 8 exercises</a><a href="../index.html">Coursework home</a></nav>
-<header><p class="eyebrow">HOMEWORK 02 / STUDENT REGISTRATION</p><h1>Your next chapter.</h1><p>Create a sample student profile using semantic fieldsets and native HTML validation. Fields marked * are required.</p></header>
+<main id="main-content" class="site-shell">
+<nav class="top-links" aria-label="Breadcrumb"><a href="index.html">← Web Studio / Forms lab</a><span aria-hidden="true">/</span><span>Homework / Student registration</span></nav>
+<header class="hero">
+<div class="hero-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> HOMEWORK / STUDENT REGISTRATION</p><h1>Your next<br><span>chapter.</span></h1><p class="hero-description">Create your student profile. A few details today, a new chapter tomorrow.</p><div class="hero-meta"><span class="meta-mark">✳</span><span>Week 8 · HTML forms &amp; validation</span></div></div>
+<div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-card art-card-back"></div><div class="art-card art-card-front"><span class="art-spark">✳</span><span class="art-card-label">YOUR FUTURE<br>STARTS HERE</span><span class="art-card-number">08 <small>/ 26</small></span></div><span class="art-floating floating-one">learn</span><span class="art-floating floating-two">grow ↗</span></div>
+</header>
 <div class="layout">
-<section class="panel" aria-label="Student registration demonstration">
-<form id="registration-form" data-demo-form data-success="Registration form validated successfully! This is a demo, so no information was sent or saved.">
-<fieldset><legend>Personal information</legend>
-<label for="full-name">Full name *</label><input id="full-name" name="full_name" type="text" class="validate" placeholder="Enter your full name" autocomplete="name" minlength="2" maxlength="80" required>
-<label for="student-id">Student ID *</label><input id="student-id" name="student_id" type="text" class="validate" placeholder="202637724" inputmode="numeric" pattern="[0-9]{9}" title="Enter exactly 9 digits" aria-describedby="student-id-help" required><small id="student-id-help">Enter exactly nine digits. Use a sample ID for this practice form.</small>
-<label for="birth-date">Date of birth</label><input id="birth-date" name="birth_date" type="date" autocomplete="bday">
-<label for="major">Major</label><select id="major" name="major"><option value="">Choose your major</option><option value="computer-engineering">Computer Engineering</option><option value="artificial-intelligence">Artificial Intelligence</option><option value="business">Business Administration</option><option value="electrical-engineering">Electrical Engineering</option><option value="other">Other</option></select>
-</fieldset>
-<fieldset><legend>Account information</legend>
-<label for="email">Email address *</label><input id="email" name="email" type="email" class="validate" placeholder="student@example.com" autocomplete="email" required>
-<label for="password">Password *</label><input id="password" name="password" type="password" class="validate" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" aria-describedby="password-help" required><small id="password-help">For the exercise, use a made-up password of at least eight characters.</small>
-<label for="phone">Phone number (optional)</label><input id="phone" name="phone" type="tel" class="validate" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" title="Use a format such as 010-1234-5678" autocomplete="tel" aria-describedby="phone-help"><small id="phone-help">Optional. Format: 010-1234-5678.</small>
-</fieldset>
-<div class="range-group"><label for="experience">Years of coding experience</label><input id="experience" name="experience" type="range" min="0" max="10" step="1" value="0"><p><output for="experience" id="experience-value">0</output> years</p></div>
-<label class="check-row" for="terms"><input id="terms" name="terms" type="checkbox" required><span>I confirm that I am using practice data and agree to continue. *</span></label>
-<div class="form-actions"><button type="submit">Validate registration</button><button type="reset" style="background:#fff;color:var(--ink);border:1px solid var(--line)">Reset form</button></div><p class="status" data-status aria-live="polite"></p>
-</form>
-</section>
-<aside class="note"><h2>What to learn</h2><p>This form uses two <code>fieldset</code> groups with <code>legend</code> headings to keep related information together.</p><p><strong>Validation rules</strong></p><ul><li>Student ID: exactly nine digits.</li><li>Email: valid email format.</li><li>Password: at least eight characters.</li><li>Phone: optional, formatted with hyphens if entered.</li><li>Consent: required checkbox.</li></ul><p><strong>Bonus:</strong> move the coding experience slider to update its value instantly.</p><p><strong>Practice safely:</strong> this page does not create an account or send/save information. Use sample data only.</p></aside>
+<section class="panel registration-panel" aria-labelledby="form-heading">
+<div class="panel-heading"><div><p class="section-kicker">LET'S GET STARTED</p><h2 id="form-heading">Create your profile</h2></div><span class="required-note"><span>*</span> Required fields</span></div>
+<form id="registration-form" data-demo-form data-success="Looks good! Your sample registration passed validation. No information was sent or saved.">
+<fieldset><legend><span class="legend-number">01</span> Personal info</legend><div class="form-grid">
+<div class="field field-full"><label for="full-name">Full name <span>*</span></label><input id="full-name" name="full_name" type="text" placeholder="Enter your full name" autocomplete="name" minlength="2" maxlength="80" required></div>
+<div class="field"><label for="student-id">Student ID <span>*</span></label><input id="student-id" name="student_id" type="text" placeholder="202637724" inputmode="numeric" pattern="[0-9]{9}" title="Enter exactly 9 digits" aria-describedby="student-id-help" required><small id="student-id-help">Exactly nine digits.</small></div>
+<div class="field"><label for="birth-date">Date of birth</label><input id="birth-date" name="birth_date" type="date" autocomplete="bday"></div>
+<div class="field field-full"><label for="major">Major</label><select id="major" name="major"><option value="">Choose your major</option><option value="computer-engineering">Computer Engineering</option><option value="artificial-intelligence">Artificial Intelligence</option><option value="business">Business Administration</option><option value="electrical-engineering">Electrical Engineering</option><option value="other">Other</option></select></div>
+</div></fieldset>
+<fieldset><legend><span class="legend-number">02</span> Account info</legend><div class="form-grid">
+<div class="field field-full"><label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required></div>
+<div class="field field-full"><label for="password">Password <span>*</span></label><input id="password" name="password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" aria-describedby="password-help" required><small id="password-help">Use at least eight characters.</small></div>
+<div class="field field-full"><label for="phone">Phone <span class="optional-label">OPTIONAL</span></label><input id="phone" name="phone" type="tel" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" title="Use a format such as 010-1234-5678" autocomplete="tel" aria-describedby="phone-help"><small id="phone-help">Format: 010-1234-5678.</small></div>
+</div></fieldset>
+<div class="experience-box"><div class="experience-heading"><label for="experience">Years of coding experience</label><span class="experience-badge"><output for="experience" id="experience-value">0</output> <span id="year-label">years</span></span></div><input id="experience" name="experience" type="range" min="0" max="10" step="1" value="0"><div class="range-scale"><span>Just starting</span><span>10+ years</span></div></div>
+<label class="check-row" for="terms"><input id="terms" name="terms" type="checkbox" required><span>I agree to the terms and confirm my information is for practice only. <b>*</b></span></label>
+<div class="form-actions"><button type="submit">Register <span aria-hidden="true">↗</span></button><button class="secondary-button" type="reset">Clear form</button></div><p class="status" data-status aria-live="polite"></p>
+</form></section>
+<aside class="side-column"><section class="note"><p class="section-kicker">THE FIELD GUIDE</p><h2>What to learn</h2><p>Good forms make it easy for people to enter the right information.</p><ul class="learning-list"><li><span class="list-icon">01</span><span><strong>Semantic groups</strong><small>Two fieldsets with clear legends.</small></span></li><li><span class="list-icon">02</span><span><strong>Native validation</strong><small>Required fields, patterns and length rules.</small></span></li><li><span class="list-icon">03</span><span><strong>Live interaction</strong><small>The range slider updates as you move it.</small></span></li></ul></section>
+<section class="privacy-note"><span class="privacy-icon" aria-hidden="true">✓</span><div><strong>Practice mode</strong><p>Use sample data. This page checks inputs but does not create accounts or send messages.</p></div></section></aside>
 </div>
-<footer class="footer-note">Abinash Lamichhane · Computer Engineering · Week 8</footer>
+<footer class="footer-note"><span>SAH SUDIP · K0126002 · Gachon University</span><span>WEEK 08 / MONDAY</span></footer>
 </main>
 <script>
 const experienceSlider = document.querySelector("#experience");
 const experienceValue = document.querySelector("#experience-value");
-experienceSlider.addEventListener("input", () => { experienceValue.value = experienceSlider.value; });
+const yearLabel = document.querySelector("#year-label");
+experienceSlider.addEventListener("input", () => {
+ experienceValue.value = experienceSlider.value;
+ yearLabel.textContent = Number(experienceSlider.value) === 1 ? "year" : "years";
+});
 </script>
-</body>
-</html>
+</body></html>
