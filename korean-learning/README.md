@@ -21,6 +21,7 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 - **TOPIK II intermediate chapter track:** eight deeper chapters covering reasons/results, comparisons, opinions, indirect speech, formal Korean, conditions, reading comprehension and structured writing.
 - **Chapter review centre:** chapter checkpoints, reading passages, vocabulary, grammar examples, review scheduling (1/3/7 days) and browser-saved progress.
 - **TOPIK II Level 4 practical training:** a separate intermediate module with 12 grammar patterns, four 20-line conversations (80 dialogue lines total) covering work scheduling, university administration, housing repairs and clinic visits.
+- **TOPIK II Level 4 skills lab:** three intermediate reading passages with comprehension questions, three listening simulations with Korean browser text-to-speech, three extended writing prompts and three unscripted roleplay challenges with rule-based feedback.
 - **Active output practice:** English reveal controls, speaking challenges, a reading-comprehension check, weekly writing task and browser-saved learner responses.
 - **Progress tracking:** completed lessons, saved vocabulary, points and study minutes are stored in the browser using localStorage.
 - **Responsive layout:** works on desktop, tablet and mobile screens.
@@ -36,6 +37,7 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 | `practice-react.js` | React scene library, roleplay characters and practice feedback |
 | `chapters.html` | Intermediate TOPIK II chapter lessons, reading, quizzes and spaced review centre |
 | `level4-practical.html` | Level 4 grammar toolkit, four 20-line real-life dialogues and writing/speaking practice |
+| `level4-skills-lab.html` | Level 4 reading, listening, extended writing and spontaneous speaking practice |
 
 ## Run locally
 
