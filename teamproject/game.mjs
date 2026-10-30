@@ -55,7 +55,7 @@ function start(){
   button.addEventListener('click',()=>choose(i));return button;
  }));
  $('start').textContent='Restart round ↻';last=performance.now();
- clock=setInterval(()=>{advance();render();},100);render();
+ clock=setInterval(()=>{advance();render();},250);render();
 }
 $('start').addEventListener('click',start);$('again').addEventListener('click',start);
 $('hint').addEventListener('click',()=>{
