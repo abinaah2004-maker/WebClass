@@ -20,6 +20,8 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 - **React roleplay room:** choose a shopkeeper, teacher, Korean friend or restaurant coworker; send your own messages, receive character replies and get feedback on selected common Korean mistakes.
 - **TOPIK II intermediate chapter track:** eight deeper chapters covering reasons/results, comparisons, opinions, indirect speech, formal Korean, conditions, reading comprehension and structured writing.
 - **Chapter review centre:** chapter checkpoints, reading passages, vocabulary, grammar examples, review scheduling (1/3/7 days) and browser-saved progress.
+- **TOPIK II Level 4 practical training:** a separate intermediate module with 12 grammar patterns, four 20-line conversations (80 dialogue lines total) covering work scheduling, university administration, housing repairs and clinic visits.
+- **Active output practice:** English reveal controls, speaking challenges, a reading-comprehension check, weekly writing task and browser-saved learner responses.
 - **Progress tracking:** completed lessons, saved vocabulary, points and study minutes are stored in the browser using localStorage.
 - **Responsive layout:** works on desktop, tablet and mobile screens.
 - **Accessibility basics:** semantic page structure, keyboard-friendly buttons, visible focus, skip link, and reduced-motion support.
@@ -33,6 +35,7 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 | `app.js` | Lesson data, vocabulary, grammar, quizzes, dialogues and progress logic |
 | `practice-react.js` | React scene library, roleplay characters and practice feedback |
 | `chapters.html` | Intermediate TOPIK II chapter lessons, reading, quizzes and spaced review centre |
+| `level4-practical.html` | Level 4 grammar toolkit, four 20-line real-life dialogues and writing/speaking practice |
 
 ## Run locally
 
@@ -53,7 +56,7 @@ The app saves lesson completions, saved words, points and study minutes in the c
 
 ## Current scope and next improvements
 
-The main course is supported by a separate intermediate TOPIK II chapter track. The chapter track is designed for skills associated with TOPIK II level 4, but it is not an official TOPIK syllabus or score guarantee. The roleplay room is a rule-based prototype, not a live AI chatbot. It recognises selected common phrases and learner errors; unrecognised replies receive a general prompt. It does not yet include user accounts, cloud sync, generative-AI conversation, recorded speech assessment or audio files. These can be added in later phases. Romanization is provided as a learning aid; listening to native-speaker audio is recommended for accurate pronunciation.
+The main course is supported by a separate intermediate TOPIK II chapter track. The chapter track and practical module are designed to practise skills associated with TOPIK II level 4, but they are not an official TOPIK syllabus or score guarantee. The roleplay room is a rule-based prototype, not a live AI chatbot. It recognises selected common phrases and learner errors; unrecognised replies receive a general prompt. It does not yet include user accounts, cloud sync, generative-AI conversation, recorded speech assessment or audio files. These can be added in later phases. Romanization is provided as a learning aid; listening to native-speaker audio is recommended for accurate pronunciation.
 
 ## Technology
 
