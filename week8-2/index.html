@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Abinash Lamichhane's Week 8 JavaScript form validation lab.">
+<title>Week 8 · Form Validation | Abinash Lamichhane</title>
+<link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><a class="brand" href="../index.html"><b>AL</b><span><strong>Abinash Lamichhane</strong><small>WEB PROGRAMMING / WEEK 08</small></span></a><nav><a href="#exercises">Exercises</a><a href="#homework">Homework</a></nav></header>
+<main id="main">
+<section class="hero"><div><p class="eyebrow">JAVASCRIPT · FRIDAY LAB</p><h1>Forms that feel<br><em>clear and simple.</em></h1><p class="intro">Practice client-side validation with useful feedback, real-time checks, and accessible form patterns. Complete the three exercises, then take on the registration challenge.</p><a class="primary" href="#exercises">Explore the exercises ↓</a><div class="stats"><span>03 exercises</span><span>01 homework</span><span>HTML · CSS · JS</span></div></div><div class="visual" aria-hidden="true"><div class="code"><div class="dots">● ● ● <span>validation.js</span></div><pre><i>function</i> validateForm() {
+  <b>const</b> email = getEmail();
+
+  <i>if</i> (emailIsValid(email)) {
+    showSuccess();
+  } <i>else</i> {
+    showHelpfulError();
+  }
+}</pre><div class="codefoot">✓ &nbsp;Helpful feedback matters</div></div><div class="float">✓ &nbsp; Input validated</div></div></section>
+<section class="section" id="exercises"><div class="heading"><div><p class="eyebrow">LEARNING PATH</p><h2>Three practical exercises</h2></div><p>Test each form with both incorrect and correct values to understand how validation works.</p></div>
+<div class="cards">
+<article class="card"><div class="top"><b>01</b><span>SUBMIT EVENT</span></div><h3>Username check</h3><p>Require a username with at least three characters. Prevent invalid submission and show a clear message.</p><form id="userForm" novalidate><label for="username">Username</label><input id="username" placeholder="e.g. avi_dev" aria-describedby="userError"><small id="userError" class="error" aria-live="polite"></small><button>Check username →</button></form><p id="userResult" class="result" role="status"></p></article>
+<article class="card"><div class="top"><b>02</b><span>INPUT EVENT</span></div><h3>Live email check</h3><p>Validate an email address as you type, so users can fix mistakes before submitting.</p><form id="emailForm" novalidate><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" aria-describedby="emailFeedback"><small id="emailFeedback" class="feedback" aria-live="polite">Start typing to validate.</small><button>Validate email →</button></form><p id="emailResult" class="result" role="status"></p></article>
+<article class="card"><div class="top"><b>03</b><span>COMPARE VALUES</span></div><h3>Password confirmation</h3><p>Check password length and compare both fields to ensure the values match.</p><form id="passForm" novalidate><label for="pass">Password</label><input id="pass" type="password" placeholder="At least 8 characters"><label for="confirm">Confirm password</label><input id="confirm" type="password" placeholder="Enter it again"><small id="passError" class="error" aria-live="polite"></small><button>Compare passwords →</button></form><p id="passResult" class="result" role="status"></p></article>
+</div></section>
+<section class="homework" id="homework"><div class="homeintro"><p class="eyebrow">HOMEWORK / FINAL CHALLENGE</p><h2>Student<br><em>registration.</em></h2><p>Combine the validation patterns in one complete form. Every required field must pass before the success message appears.</p><ul><li>✓ Field-specific error messages</li><li>✓ Email and password checks</li><li>✓ Accessible status feedback</li><li>✓ Responsive form layout</li></ul><p class="note">DEMO ONLY — information stays in this page and is not sent to a server.</p></div>
+<div class="formcard"><p class="eyebrow">CREATE YOUR PROFILE</p><h3>Registration form</h3><form id="register" novalidate><div class="fields">
+<div><label for="name">Full name *</label><input id="name" autocomplete="name" placeholder="Your full name"><small class="error" id="nameErr"></small></div>
+<div><label for="sid">Student ID *</label><input id="sid" placeholder="Your student ID"><small class="error" id="sidErr"></small></div>
+<div class="wide"><label for="regEmail">Email address *</label><input id="regEmail" type="email" autocomplete="email" placeholder="name@example.com"><small class="error" id="regEmailErr"></small></div>
+<div><label for="regPass">Password *</label><input id="regPass" type="password" placeholder="At least 8 characters"><small class="error" id="regPassErr"></small></div>
+<div><label for="regConfirm">Confirm password *</label><input id="regConfirm" type="password" placeholder="Repeat password"><small class="error" id="regConfirmErr"></small></div>
+<div class="wide"><label for="program">Program *</label><select id="program"><option value="">Choose your program</option><option>Computer Engineering</option><option>Software</option><option>Information Technology</option><option>Other</option></select><small class="error" id="programErr"></small></div>
+<div class="wide check"><input id="terms" type="checkbox"><label for="terms">I confirm that the information above is correct. *</label><small class="error" id="termsErr"></small></div></div><button class="submit">Validate registration ↗</button><small class="hint">* Required fields</small></form><div id="success" class="success" role="status" tabindex="-1" hidden><b>✓</b><h3>Validation successful!</h3><p id="successText"></p><button id="again" type="button">Try again</button></div></div></section>
+<footer><b>Abinash Lamichhane</b><span>Web Programming · Week 08</span><a href="../index.html">Course homepage ↑</a></footer>
+</main></body></html>
