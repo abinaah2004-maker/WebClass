@@ -64,3 +64,12 @@ Open these pages through GitHub Pages for the rendered version. The presentation
 Speaking assignments are suggestions, not verified implementation contributions. Confirm the agreed contribution plan against actual evidence before submitting.
 
 Validation on 26 October 2026: all six existing engine tests passed with Node's test runner (zero failures). Browser and manual checks are separate from these engine tests.
+
+
+## Lighthouse and security notes
+
+The homepage now uses system fonts instead of downloading Google Fonts, and the 60 MB group presentation is requested only after the visitor chooses to load it. The page also includes a restrictive meta Content Security Policy and a Referrer Policy.
+
+The `_headers` file contains response-header rules for static hosts that support this format (including Netlify and Cloudflare Pages): HSTS, CSP with `frame-ancestors`, X-Frame-Options, COOP, nosniff, Referrer-Policy and Permissions-Policy. **GitHub Pages ignores `_headers`**, so these response headers will not be sent by the current `github.io` deployment. A meta tag cannot replace HSTS, COOP or X-Frame-Options. To receive those headers, deploy the same folder on a host that supports `_headers` or put a correctly configured reverse proxy/CDN in front of it.
+
+After deployment, run Lighthouse again in a clean Chrome Incognito window with extensions disabled. Third-party cookie warnings can also originate from browser extensions or the testing environment, so compare the Issues panel before and after the change.
