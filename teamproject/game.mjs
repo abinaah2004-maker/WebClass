@@ -66,3 +66,17 @@ $('hint').addEventListener('click',()=>{
 document.addEventListener('visibilitychange',()=>{if(game){advance();render();}});
 // A static deck gives the opening screen a clear visual target without starting the timer.
 for(let i=0;i<16;i++){const card=document.createElement('div');card.className='card';card.setAttribute('aria-hidden','true');card.innerHTML='<span class="card-inner"><span class="back">✳</span></span>';$('board').append(card);}
+
+
+// Load the large remote presentation only after an explicit user action.
+$('load-presentation')?.addEventListener('click',()=>{
+ const video=$('presentation-video');
+ const source=video?.querySelector('source[data-src]');
+ if(!video||!source)return;
+ source.src=source.dataset.src;
+ source.removeAttribute('data-src');
+ video.hidden=false;
+ video.load();
+ $('load-presentation').hidden=true;
+ video.focus?.();
+});
