@@ -1,1 +1,43 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Student Registration | Abinash</title><style>body{margin:0;background:#f1f5f9;color:#172033;font:16px/1.6 system-ui,sans-serif}main{max-width:820px;margin:2rem auto;padding:1.5rem;background:white;border:1px solid #dbe3ef;border-radius:16px}button,input,select,textarea{font:inherit;padding:.6rem;border:1px solid #94a3b8;border-radius:8px;max-width:100%}button{background:#1d4ed8;color:white;border:0;cursor:pointer}a{color:#1d4ed8}.card{padding:1rem;margin:.75rem 0;background:#eff6ff;border-radius:10px}label{display:block;margin:.6rem 0 .2rem;font-weight:650}input:focus-visible,button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}</style></head><body><main><p><a href="index.html">← Back to this week</a> · <a href="../index.html">Coursework home</a></p><h1>Task 5: Student registration</h1><p>Practice required fields, date, email, radio buttons, and a consent checkbox. Do not enter real sensitive information into this practice form.</p><form id="form"><label for="name">Full name</label><input id="name" required><label for="email">University email</label><input id="email" type="email" required><label for="dob">Date of birth</label><input id="dob" type="date" required><p>Study level</p><label><input type="radio" name="level" value="undergraduate" required> Undergraduate</label><label><input type="radio" name="level" value="graduate"> Graduate</label><label><input type="checkbox" id="consent" required> I confirm this is practice data.</label><button>Validate registration</button></form><p id="status" role="status"></p></main><script>document.querySelector("#form").onsubmit=e=>{e.preventDefault();document.querySelector("#status").textContent="All required fields are valid. No information was sent or saved.";};</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Student registration form demonstrating semantic fieldsets, HTML5 validation, and accessible controls.">
+<title>Your Next Chapter · Student Registration | Week 8</title>
+<link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+<nav class="top-links"><a href="index.html">← Week 8 exercises</a><a href="../index.html">Coursework home</a></nav>
+<header><p class="eyebrow">HOMEWORK 02 / STUDENT REGISTRATION</p><h1>Your next chapter.</h1><p>Create a sample student profile using semantic fieldsets and native HTML validation. Fields marked * are required.</p></header>
+<div class="layout">
+<section class="panel" aria-label="Student registration demonstration">
+<form id="registration-form" data-demo-form data-success="Registration form validated successfully! This is a demo, so no information was sent or saved.">
+<fieldset><legend>Personal information</legend>
+<label for="full-name">Full name *</label><input id="full-name" name="full_name" type="text" class="validate" placeholder="Enter your full name" autocomplete="name" minlength="2" maxlength="80" required>
+<label for="student-id">Student ID *</label><input id="student-id" name="student_id" type="text" class="validate" placeholder="202637724" inputmode="numeric" pattern="[0-9]{9}" title="Enter exactly 9 digits" aria-describedby="student-id-help" required><small id="student-id-help">Enter exactly nine digits. Use a sample ID for this practice form.</small>
+<label for="birth-date">Date of birth</label><input id="birth-date" name="birth_date" type="date" autocomplete="bday">
+<label for="major">Major</label><select id="major" name="major"><option value="">Choose your major</option><option value="computer-engineering">Computer Engineering</option><option value="artificial-intelligence">Artificial Intelligence</option><option value="business">Business Administration</option><option value="electrical-engineering">Electrical Engineering</option><option value="other">Other</option></select>
+</fieldset>
+<fieldset><legend>Account information</legend>
+<label for="email">Email address *</label><input id="email" name="email" type="email" class="validate" placeholder="student@example.com" autocomplete="email" required>
+<label for="password">Password *</label><input id="password" name="password" type="password" class="validate" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" aria-describedby="password-help" required><small id="password-help">For the exercise, use a made-up password of at least eight characters.</small>
+<label for="phone">Phone number (optional)</label><input id="phone" name="phone" type="tel" class="validate" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" title="Use a format such as 010-1234-5678" autocomplete="tel" aria-describedby="phone-help"><small id="phone-help">Optional. Format: 010-1234-5678.</small>
+</fieldset>
+<div class="range-group"><label for="experience">Years of coding experience</label><input id="experience" name="experience" type="range" min="0" max="10" step="1" value="0"><p><output for="experience" id="experience-value">0</output> years</p></div>
+<label class="check-row" for="terms"><input id="terms" name="terms" type="checkbox" required><span>I confirm that I am using practice data and agree to continue. *</span></label>
+<div class="form-actions"><button type="submit">Validate registration</button><button type="reset" style="background:#fff;color:var(--ink);border:1px solid var(--line)">Reset form</button></div><p class="status" data-status aria-live="polite"></p>
+</form>
+</section>
+<aside class="note"><h2>What to learn</h2><p>This form uses two <code>fieldset</code> groups with <code>legend</code> headings to keep related information together.</p><p><strong>Validation rules</strong></p><ul><li>Student ID: exactly nine digits.</li><li>Email: valid email format.</li><li>Password: at least eight characters.</li><li>Phone: optional, formatted with hyphens if entered.</li><li>Consent: required checkbox.</li></ul><p><strong>Bonus:</strong> move the coding experience slider to update its value instantly.</p><p><strong>Practice safely:</strong> this page does not create an account or send/save information. Use sample data only.</p></aside>
+</div>
+<footer class="footer-note">Abinash Lamichhane · Computer Engineering · Week 8</footer>
+</main>
+<script>
+const experienceSlider = document.querySelector("#experience");
+const experienceValue = document.querySelector("#experience-value");
+experienceSlider.addEventListener("input", () => { experienceValue.value = experienceSlider.value; });
+</script>
+</body>
+</html>
