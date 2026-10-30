@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f6f7f2"><title>Learn Korean With Me</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script><script type="module" src="practice-react.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +20,7 @@
 <button class="nav-link" data-page="grammar"><span>文</span> Grammar</button>
 <button class="nav-link" data-page="practice"><span>✎</span> Practice & quiz</button>
 <button class="nav-link" data-page="situations"><span>◎</span> Real-life Korean</button>
+<button class="nav-link" data-page="roleplay"><span>💬</span> Scenes & roleplay</button>
 </nav>
 <div class="sidebar-bottom"><div class="sidebar-tip"><span>✦</span><b>Small steps every day.</b><p>Build confidence one Korean sentence at a time.</p></div><small>꾸준히 하면 할 수 있어요.</small></div>
 </aside>
@@ -39,6 +40,7 @@
 <section class="page" id="page-grammar"><div class="page-heading"><p class="eyebrow">BUILD NATURAL SENTENCES</p><h1>Grammar studio</h1><p>Understand how Korean sentences work, one pattern at a time.</p></div><div class="grammar-grid" id="grammar-grid"></div></section>
 <section class="page" id="page-practice"><div class="page-heading"><p class="eyebrow">ACTIVE RECALL</p><h1>Practice & quiz</h1><p>Test what you know. Learn from every answer, not just your score.</p></div><div class="practice-grid"><article class="panel quiz"><div class="panel-heading"><div><p class="eyebrow">QUICK KNOWLEDGE CHECK</p><h2>Choose the right meaning</h2></div><span class="tag" id="quiz-count">QUESTION 1 / 5</span></div><div id="quiz-area"></div></article><article class="panel flash"><p class="eyebrow">FLASHCARD PRACTICE</p><h2>Remember the word</h2><p>Recall the meaning before revealing the answer.</p><div class="flashcard"><small>KOREAN WORD</small><strong id="flash-word">안녕하세요</strong><span id="flash-hint">Think of the meaning...</span><div id="flash-answer" hidden><small id="flash-roman"></small><b id="flash-meaning"></b></div></div><button class="btn secondary full" id="reveal">Reveal meaning</button><button class="link-btn full" id="next-flash">Next flashcard →</button></article></div></section>
 <section class="page" id="page-situations"><div class="page-heading"><p class="eyebrow">KOREAN FOR REAL LIFE</p><h1>Everyday situations</h1><p>Useful expressions for places and conversations you meet in Korea.</p></div><div class="situation-tabs" role="group" aria-label="Choose a situation"><button class="active" data-situation="restaurant">🍜 Restaurant</button><button data-situation="work">👨‍🍳 Workplace</button><button data-situation="shopping">🛍️ Shopping</button><button data-situation="university">🎓 University</button><button data-situation="hospital">🏥 Hospital</button><button data-situation="transport">🚌 Transport</button></div><div class="panel situation-panel" id="situation-panel"></div></section>
+<section class="page" id="page-roleplay"><div class="page-heading"><p class="eyebrow">PRACTICAL KOREAN · REAL CONVERSATIONS</p><h1>Scenes & roleplay</h1><p>Read longer conversations from everyday situations, then practise speaking with an interactive character.</p></div><div id="react-practice-root"><p>Loading the React practice room…</p></div></section>
 <section class="page" id="page-lesson"><button class="back-link" data-go="path">← Back to learning path</button><div id="lesson-detail"></div></section>
 </main><footer><b>Learn Korean With Me</b><span>꾸준히 하면 할 수 있어요. · You can do it with consistency.</span></footer>
 </div><div class="toast" id="toast" role="status" aria-live="polite"></div>
