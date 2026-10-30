@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Learn practical Korean step by step with Hangul, vocabulary, grammar, quizzes and real-life conversations.">
+<meta name="theme-color" content="#f6f7f2"><title>Learn Korean With Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<aside class="sidebar">
+<a class="brand" href="#dashboard"><span class="brand-icon">한</span><span><b>Learn Korean</b><small>WITH ME</small></span></a>
+<p class="nav-caption">LEARNING SPACE</p>
+<nav aria-label="Main navigation">
+<button class="nav-link active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+<button class="nav-link" data-page="path"><span>▤</span> Learning path</button>
+<button class="nav-link" data-page="words"><span>Aa</span> Vocabulary</button>
+<button class="nav-link" data-page="grammar"><span>文</span> Grammar</button>
+<button class="nav-link" data-page="practice"><span>✎</span> Practice & quiz</button>
+<button class="nav-link" data-page="situations"><span>◎</span> Real-life Korean</button>
+</nav>
+<div class="sidebar-bottom"><div class="sidebar-tip"><span>✦</span><b>Small steps every day.</b><p>Build confidence one Korean sentence at a time.</p></div><small>꾸준히 하면 할 수 있어요.</small></div>
+</aside>
+<div class="main-shell">
+<header class="topbar"><div class="mobile-brand"><span class="brand-icon">한</span><b>Learn Korean With Me</b></div><span class="crumb" id="crumb">YOUR LEARNING SPACE / DASHBOARD</span><div class="top-actions"><span class="streak">✦ <b id="streak">0</b> day streak</span><button class="avatar" aria-label="Learner profile">L</button></div></header>
+<main id="main" tabindex="-1">
+<section class="page active" id="page-dashboard">
+<div class="hero"><div><p class="eyebrow">YOUR KOREAN JOURNEY STARTS HERE</p><h1>안녕하세요!<br>Let's learn Korean.</h1><p class="intro">A practical path from the basics to confident everyday conversations. Learn a little, practise a lot, and use Korean in real life.</p><button class="btn primary" data-go="path">Explore learning path →</button></div><div class="hero-art" aria-label="Korean learning illustration"><div class="sun"></div><div class="floating-card"><small>오늘의 한국어</small><strong>매일 조금씩</strong><span>A little every day</span></div><i>✳</i></div></div>
+<div class="stats"><article><span class="stat-icon lilac">▤</span><div><b id="lessons-stat">0</b><small>Lessons completed</small></div></article><article><span class="stat-icon peach">Aa</span><div><b id="words-stat">0</b><small>Words learned</small></div></article><article><span class="stat-icon mint">◷</span><div><b id="minutes-stat">0 min</b><small>Learning time</small></div></article><article><span class="stat-icon butter">✦</span><div><b id="points-stat">0</b><small>Learning points</small></div></article></div>
+<div class="two-col"><article class="panel continue"><div class="panel-heading"><div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Continue learning</h2></div><span class="tag">YOUR NEXT STEP</span></div><div class="lesson-preview"><div class="hangul-tile">가</div><div><small class="level">LEVEL 1 · FOUNDATIONS</small><h3>Hangul: your first Korean letters</h3><p>Meet the Korean alphabet and learn how syllable blocks work.</p><button class="btn primary" data-lesson="hangul">Start lesson →</button></div></div></article>
+<article class="panel phrase-panel"><p class="eyebrow">A USEFUL PHRASE</p><h2>Phrase of the day</h2><strong class="korean">천천히 말씀해 주세요.</strong><small class="roman">cheoncheonhi malsseumhae juseyo</small><b>Please speak slowly.</b><button class="link-btn" data-go="situations">Explore useful phrases →</button></article></div>
+<section class="section"><div class="section-head"><div><p class="eyebrow">YOUR ROADMAP</p><h2>Learning path</h2><p>Move through each level at your own pace.</p></div><button class="link-btn" data-go="path">View all levels →</button></div><div class="level-grid" id="home-levels"></div></section>
+<section class="section"><div class="section-head"><div><p class="eyebrow">MAKE IT A HABIT</p><h2>Your daily study plan</h2><p>A balanced two-hour routine you can repeat.</p></div></div><div class="routine-grid"><article><span>30 MIN</span><i>📖</i><b>Read & understand</b><p>Hangul, short passages and sentence patterns.</p></article><article><span>30 MIN</span><i>🧩</i><b>Grammar & words</b><p>Learn useful vocabulary and build clear sentences.</p></article><article><span>30 MIN</span><i>🗣️</i><b>Speak out loud</b><p>Repeat phrases and practise real-life dialogues.</p></article><article><span>30 MIN</span><i>✍️</i><b>Review & test</b><p>Recall, write examples and check your progress.</p></article></div></section>
+</section>
+<section class="page" id="page-path"><div class="page-heading"><p class="eyebrow">A STEP-BY-STEP COURSE</p><h1>Your learning path</h1><p>Seven levels take you from reading Hangul to handling everyday conversations with confidence.</p></div><div class="path-list" id="path-list"></div></section>
+<section class="page" id="page-words"><div class="page-heading"><p class="eyebrow">WORDS YOU CAN USE</p><h1>Vocabulary notebook</h1><p>Practical Korean words with pronunciation, meaning and examples.</p></div><div class="toolbar"><label class="search">⌕ <input id="word-search" type="search" placeholder="Search Korean or English..." aria-label="Search vocabulary"></label><select id="word-filter" aria-label="Filter vocabulary"><option value="all">All categories</option><option>Everyday</option><option>Food</option><option>Work</option><option>University</option></select></div><div class="word-grid" id="word-grid"></div></section>
+<section class="page" id="page-grammar"><div class="page-heading"><p class="eyebrow">BUILD NATURAL SENTENCES</p><h1>Grammar studio</h1><p>Understand how Korean sentences work, one pattern at a time.</p></div><div class="grammar-grid" id="grammar-grid"></div></section>
+<section class="page" id="page-practice"><div class="page-heading"><p class="eyebrow">ACTIVE RECALL</p><h1>Practice & quiz</h1><p>Test what you know. Learn from every answer, not just your score.</p></div><div class="practice-grid"><article class="panel quiz"><div class="panel-heading"><div><p class="eyebrow">QUICK KNOWLEDGE CHECK</p><h2>Choose the right meaning</h2></div><span class="tag" id="quiz-count">QUESTION 1 / 5</span></div><div id="quiz-area"></div></article><article class="panel flash"><p class="eyebrow">FLASHCARD PRACTICE</p><h2>Remember the word</h2><p>Recall the meaning before revealing the answer.</p><div class="flashcard"><small>KOREAN WORD</small><strong id="flash-word">안녕하세요</strong><span id="flash-hint">Think of the meaning...</span><div id="flash-answer" hidden><small id="flash-roman"></small><b id="flash-meaning"></b></div></div><button class="btn secondary full" id="reveal">Reveal meaning</button><button class="link-btn full" id="next-flash">Next flashcard →</button></article></div></section>
+<section class="page" id="page-situations"><div class="page-heading"><p class="eyebrow">KOREAN FOR REAL LIFE</p><h1>Everyday situations</h1><p>Useful expressions for places and conversations you meet in Korea.</p></div><div class="situation-tabs" role="group" aria-label="Choose a situation"><button class="active" data-situation="restaurant">🍜 Restaurant</button><button data-situation="work">👨‍🍳 Workplace</button><button data-situation="shopping">🛍️ Shopping</button><button data-situation="university">🎓 University</button><button data-situation="hospital">🏥 Hospital</button><button data-situation="transport">🚌 Transport</button></div><div class="panel situation-panel" id="situation-panel"></div></section>
+<section class="page" id="page-lesson"><button class="back-link" data-go="path">← Back to learning path</button><div id="lesson-detail"></div></section>
+</main><footer><b>Learn Korean With Me</b><span>꾸준히 하면 할 수 있어요. · You can do it with consistency.</span></footer>
+</div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
