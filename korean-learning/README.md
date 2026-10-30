@@ -18,6 +18,8 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 - **Real-life Korean:** dialogues for restaurants, part-time work, shopping, university, hospitals and public transport.
 - **Expanded scene library:** longer practical conversations for convenience stores, cafés, restaurant shifts, workplace instructions, university, friends, clinics, transport and housing.
 - **React roleplay room:** choose a shopkeeper, teacher, Korean friend or restaurant coworker; send your own messages, receive character replies and get feedback on selected common Korean mistakes.
+- **TOPIK II intermediate chapter track:** eight deeper chapters covering reasons/results, comparisons, opinions, indirect speech, formal Korean, conditions, reading comprehension and structured writing.
+- **Chapter review centre:** chapter checkpoints, reading passages, vocabulary, grammar examples, review scheduling (1/3/7 days) and browser-saved progress.
 - **Progress tracking:** completed lessons, saved vocabulary, points and study minutes are stored in the browser using localStorage.
 - **Responsive layout:** works on desktop, tablet and mobile screens.
 - **Accessibility basics:** semantic page structure, keyboard-friendly buttons, visible focus, skip link, and reduced-motion support.
@@ -30,6 +32,7 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 | `styles.css` | Responsive visual design and layout |
 | `app.js` | Lesson data, vocabulary, grammar, quizzes, dialogues and progress logic |
 | `practice-react.js` | React scene library, roleplay characters and practice feedback |
+| `chapters.html` | Intermediate TOPIK II chapter lessons, reading, quizzes and spaced review centre |
 
 ## Run locally
 
@@ -50,7 +53,7 @@ The app saves lesson completions, saved words, points and study minutes in the c
 
 ## Current scope and next improvements
 
-This is the first complete front-end version. The roleplay room is a rule-based prototype, not a live AI chatbot. It recognises selected common phrases and learner errors; unrecognised replies receive a general prompt. It does not yet include user accounts, cloud sync, generative-AI conversation, recorded speech assessment or audio files. These can be added in later phases. Romanization is provided as a learning aid; listening to native-speaker audio is recommended for accurate pronunciation.
+The main course is supported by a separate intermediate TOPIK II chapter track. The chapter track is designed for skills associated with TOPIK II level 4, but it is not an official TOPIK syllabus or score guarantee. The roleplay room is a rule-based prototype, not a live AI chatbot. It recognises selected common phrases and learner errors; unrecognised replies receive a general prompt. It does not yet include user accounts, cloud sync, generative-AI conversation, recorded speech assessment or audio files. These can be added in later phases. Romanization is provided as a learning aid; listening to native-speaker audio is recommended for accurate pronunciation.
 
 ## Technology
 
