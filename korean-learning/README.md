@@ -1,6 +1,6 @@
 # Learn Korean With Me
 
-A responsive, beginner-friendly Korean learning website built with **HTML, CSS and vanilla JavaScript**. The goal is practical Korean for everyday life: reading Hangul, understanding grammar, learning useful vocabulary, practising with quizzes and using natural expressions in common situations.
+A responsive, beginner-friendly Korean learning website built with **HTML, CSS, vanilla JavaScript and React**. The goal is practical Korean for everyday life: reading Hangul, understanding grammar, learning useful vocabulary, practising with quizzes and using natural expressions in common situations.
 
 ## Live website
 
@@ -16,6 +16,8 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 - **Grammar studio:** practical explanations and example sentences for common Korean particles and verb endings.
 - **Practice and quiz:** multiple-choice knowledge checks with explanations and a vocabulary flashcard deck.
 - **Real-life Korean:** dialogues for restaurants, part-time work, shopping, university, hospitals and public transport.
+- **Expanded scene library:** longer practical conversations for convenience stores, cafés, restaurant shifts, workplace instructions, university, friends, clinics, transport and housing.
+- **React roleplay room:** choose a shopkeeper, teacher, Korean friend or restaurant coworker; send your own messages, receive character replies and get feedback on selected common Korean mistakes.
 - **Progress tracking:** completed lessons, saved vocabulary, points and study minutes are stored in the browser using localStorage.
 - **Responsive layout:** works on desktop, tablet and mobile screens.
 - **Accessibility basics:** semantic page structure, keyboard-friendly buttons, visible focus, skip link, and reduced-motion support.
@@ -27,6 +29,7 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 | `index.html` | Main app structure and navigation |
 | `styles.css` | Responsive visual design and layout |
 | `app.js` | Lesson data, vocabulary, grammar, quizzes, dialogues and progress logic |
+| `practice-react.js` | React scene library, roleplay characters and practice feedback |
 
 ## Run locally
 
@@ -35,7 +38,7 @@ https://abinaah2004-maker.github.io/WebClass/korean-learning/
 3. Open `index.html`.
 4. Right-click the file and choose **Open with Live Server** (if the Live Server extension is installed).
 
-You can also open `index.html` directly in a modern browser; no build step or package installation is required.
+You can also open `index.html` directly in a modern browser; no build step or package installation is required. The React roleplay module loads React 18 from the esm.sh CDN, so an internet connection is needed for that section.
 
 ## Deploy with GitHub Pages
 
@@ -47,7 +50,7 @@ The app saves lesson completions, saved words, points and study minutes in the c
 
 ## Current scope and next improvements
 
-This is the first complete front-end version. It does not yet include user accounts, cloud sync, AI conversation, recorded speech assessment or audio files. These can be added in later phases. Romanization is provided as a learning aid; listening to native-speaker audio is recommended for accurate pronunciation.
+This is the first complete front-end version. The roleplay room is a rule-based prototype, not a live AI chatbot. It recognises selected common phrases and learner errors; unrecognised replies receive a general prompt. It does not yet include user accounts, cloud sync, generative-AI conversation, recorded speech assessment or audio files. These can be added in later phases. Romanization is provided as a learning aid; listening to native-speaker audio is recommended for accurate pronunciation.
 
 ## Technology
 
