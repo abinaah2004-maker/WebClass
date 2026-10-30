@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Intermediate TOPIK II Level 4 Korean lessons and practical 20-line conversations for living in Korea."><title>TOPIK II Level 4 · Korean in Korea</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--ink:#202820;--muted:#68736b;--paper:#f6f7f1;--card:#fff;--line:#e2e7dd;--green:#245b45;--pale:#e8f0e8;--gold:#f0c66e}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans","Noto Sans KR",sans-serif}.wrap{max-width:1120px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}.top a{color:var(--green);font-weight:800;text-decoration:none}.hero{background:#e8efe5;border-radius:26px;padding:32px;display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:center}.eyebrow,.tag{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--green)}h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:12px 0}.hero p{color:#536054;line-height:1.7;max-width:690px}.hero-art{text-align:center;font:800 clamp(38px,7vw,76px) "Noto Sans KR";color:var(--green)}.hero-art small{display:block;font:700 12px "DM Sans";letter-spacing:.12em}.stats,.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:19px}.stat b{display:block;font-size:24px}.stat small,.muted{color:var(--muted)}.section{margin:30px 0}.section h2{margin:0 0 6px}.section>p{color:var(--muted);line-height:1.65}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.tabs button,.btn{border:0;border-radius:11px;padding:11px 15px;background:var(--green);color:#fff;font:700 14px inherit;cursor:pointer}.tabs button{background:#fff;color:var(--green);border:1px solid var(--line)}.tabs button.active{background:var(--green);color:#fff}.dialogue{display:grid;gap:10px}.line{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:13px;border:1px solid var(--line);border-radius:13px;background:#fff}.speaker{font-size:12px;font-weight:800;color:var(--green);padding-top:4px}.ko{font:700 18px/1.7 "Noto Sans KR";color:#245b45}.en{color:var(--muted);font-size:14px;margin-top:4px;line-height:1.5}.line button{margin-top:7px;border:0;background:var(--pale);color:var(--green);padding:6px 9px;border-radius:8px;cursor:pointer;font-size:12px}.hidden{display:none}.grammar{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.grammar article{border:1px solid var(--line);border-radius:14px;padding:15px}.grammar h3{margin:0 0 5px;color:var(--green)}.grammar p{font-size:14px;line-height:1.6;color:#59645b}.example{font:700 16px/1.7 "Noto Sans KR"}.work{background:#f4f7f1;border-radius:14px;padding:17px;margin-top:14px}.work li{margin:8px 0;line-height:1.55}.quiz label{display:block;padding:9px;border:1px solid var(--line);border-radius:9px;margin:7px 0;cursor:pointer}.quiz input{margin-right:8px}textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;font:16px inherit;min-height:100px}.btn{margin-top:10px}.feedback{font-weight:700;margin-top:10px}.note{background:#fff7e5;border-radius:12px;padding:14px;line-height:1.6}.footer{color:var(--muted);text-align:center;padding:30px}@media(max-width:750px){.hero{grid-template-columns:1fr}.hero-art{display:none}.stats{grid-template-columns:1fr}.grammar{grid-template-columns:1fr}.line{grid-template-columns:65px 1fr}.wrap{padding:14px}}
+</style></head><body><div class="wrap"><header class="top"><a href="index.html">← LEARN KOREAN WITH ME</a><a href="chapters.html">TOPIK II chapter review →</a></header><section class="hero"><div><div class="eyebrow">INTERMEDIATE · TOPIK II LEVEL 4 TARGET</div><h1>한국에서 살아남는 한국어.<br>Use Korean to live confidently in Korea.</h1><p>This is not a beginner phrase list. Practise explaining problems, negotiating politely, asking follow-up questions, understanding notices and giving reasons. The dialogues use intermediate grammar and natural polite speech. TOPIK level is a target, not an official certification.</p></div><div class="hero-art">실전<br><small>20 LINES · REAL-LIFE KOREAN</small></div></section><div class="stats"><div class="stat"><b>4 × 20</b><small>Full conversation lines</small></div><div class="stat"><b>12+</b><small>Intermediate grammar patterns</small></div><div class="stat"><b>4 skills</b><small>Read · understand · write · speak</small></div></div>
+<section class="section"><h2>1. Intermediate grammar toolkit</h2><p>Learn these patterns as tools for explaining yourself naturally. Notice the nuance, not only the English translation.</p><div class="grammar" id="grammar"></div></section>
+<section class="section"><h2>2. Real-life conversation training</h2><p>Each scene has 20 spoken lines. Read the Korean first, try to understand it, then reveal the meaning. Read both roles aloud to practise fluency.</p><div class="tabs" id="scene-tabs"></div><div class="panel"><div class="tag" id="scene-tag"></div><h2 id="scene-title"></h2><p class="muted" id="scene-goal"></p><div class="dialogue" id="dialogue"></div><div class="work"><b>Active speaking challenge</b><p id="challenge"></p><textarea id="answer" placeholder="Write your own Korean response here. Try to use two grammar patterns from the lesson."></textarea><button class="btn" id="save-answer">Save my practice in this browser</button><span id="saved" class="muted"></span></div></div></section>
+<section class="section"><h2>3. TOPIK-style understanding check</h2><div class="panel quiz"><p><b>In the restaurant scene, why does the student ask to change the shift?</b></p><label><input type="radio" name="q" value="a"> They want to work fewer days because they dislike the job.</label><label><input type="radio" name="q" value="b"> Their class schedule changed, so the original shift conflicts with class.</label><label><input type="radio" name="q" value="c"> The restaurant is closing permanently.</label><button class="btn" id="check">Check answer</button><p class="feedback" id="quiz-feedback"></p></div></section>
+<section class="section"><h2>4. Your weekly output task</h2><div class="panel"><p>Write a short message (5–7 Korean sentences) to a manager explaining a scheduling problem and suggesting a solution. Include:</p><ul><li>the reason using <b>-기 때문에</b> or <b>-(으)ㄴ/는 바람에</b></li><li>a polite request using <b>-(으)ㄹ 수 있을까요?</b></li><li>an alternative using <b>대신에</b> or <b>는 어떨까요?</b></li><li>a closing sentence showing consideration.</li></ul><textarea id="weekly" placeholder="안녕하세요. 다음 주 근무 일정 때문에 연락드렸습니다..."></textarea><button class="btn" id="save-weekly">Save weekly writing</button><span id="weekly-saved" class="muted"></span></div></section><div class="note"><b>How to study this properly:</b> Day 1 read and shadow the 20 lines. Day 2 cover English and translate aloud. Day 3 role-play both people without reading. Day 4 write your own version using the grammar. Day 5 review mistakes and repeat.</div><footer class="footer">매일 실제로 써 보세요. · Use what you learn every day.</footer></div>
+<script>
+const grammar=[
+["-(으)ㄴ/는 바람에","Because of (an usually unexpected negative cause)","갑자기 수업이 연장되는 바람에 약속 시간에 늦었어요.","I was late because class unexpectedly ran long."],
+["-는 탓에","Due to / because of (blame or negative result)","교통 체증이 심한 탓에 버스를 놓쳤어요.","I missed the bus because of heavy traffic."],
+["-(으)ㄹ 수밖에 없다","Have no choice but to","오늘 안에 제출해야 해서 밤을샐 수밖에 없어요.","I have no choice but to stay up tonight because I must submit it today."],
+["-기는 하지만","It is true that…, but…","일이 힘들기는 하지만 많이 배우고 있어요.","The work is hard, but I am learning a lot."],
+["-(으)ㄴ/는 편이다","Tend to / be relatively","저는 낯을 가리는 편이지만 익숙해지면 말을 많이 해요.","I tend to be shy, but talk a lot once I get comfortable."],
+["-도록 하다","Make sure to / try to","다음부터는 늦지 않도록 하겠습니다.","I will make sure not to be late next time."],
+["-(으)ㄹ 뿐만 아니라","Not only…but also","한국어는 일할 때뿐만 아니라 학교생활에도 중요해요.","Korean is important not only at work but also at university."],
+["-는 데다가","On top of that / moreover","월세가 비싼 데다가 관리비도 따로 내야 해요.","Rent is expensive, and on top of that I have to pay maintenance fees separately."],
+["-(으)ㄴ/는 셈이다","It is equivalent to / practically","하루에 두 시간씩 연습하면 일주일에 열네 시간 연습하는 셈이에요.","Practising two hours daily means fourteen hours a week."],
+["-더라고요","I noticed / found from experience","퇴근 시간에는 지하철이 정말 붐비더라고요.","I found the subway really crowded at rush hour."],
+["-(으)ㄹ까 봐","Because I worry that / for fear that","길을 잘못 찾을까 봐 미리 지도를 확인했어요.","I checked the map in advance in case I got lost."],
+["-(으)ㄴ/는 대신에","Instead of / in exchange for","평일에 일하는 대신에 주말에는 쉬기로 했어요.","I decided to rest on weekends instead of working weekdays."]
+];
+const scenes=[
+{title:"Negotiating a part-time work schedule",goal:"Explain a timetable conflict, make a respectful request and offer an alternative shift.",challenge:"Your manager says the schedule is fixed. Explain your situation politely and suggest a realistic alternative.",lines:[
+["직원","사장님, 잠깐 근무 일정에 관해 말씀드려도 될까요?","Boss, could I briefly talk to you about my work schedule?"],
+["사장","네, 무슨 일인데요? 편하게 말씀하세요.","Sure. What's going on? Feel free to tell me."],
+["직원","다음 주부터 학교 수업 시간이 조금 변경되는 바람에 기존 근무 시간에 맞추기 어려울 것 같습니다.","From next week, my university class times are changing unexpectedly, so I think it will be difficult to keep my current shift."],
+["사장","어느 요일에 시간이 안 되는 건가요?","Which days are you unavailable?"],
+["직원","화요일과 수요일에는 수업이 늦게 끝나는 편이라 오후 여섯 시까지 도착하기가 어렵습니다.","On Tuesdays and Wednesdays, my classes tend to finish late, so it is difficult to arrive by six in the evening."],
+["사장","그럼 그날은 아예 근무할 수 없다는 뜻인가요?","Does that mean you cannot work at all on those days?"],
+["직원","아예 불가능한 것은 아니지만, 최소한 일곱 시 이후에 출근해야 할 것 같습니다.","It is not completely impossible, but I think I would need to start after at least seven."],
+["사장","우리 가게는 저녁 일곱 시부터 손님이 많아져서 바쁜 시간인데요.","Our restaurant gets busy from seven in the evening."],
+["직원","네, 알고 있습니다. 그래서 다른 요일에 근무 시간을 늘리는 방법은 어떨까 해서요.","Yes, I understand. That is why I wondered whether I could work longer hours on other days instead."],
+["사장","예를 들면 언제요?","For example, when?"],
+["직원","목요일은 수업이 일찍 끝나기 때문에 오후 한 시부터 마감까지 근무할 수 있습니다.","Because my class finishes early on Thursday, I can work from one in the afternoon until closing."],
+["사장","목요일은 괜찮을 것 같네요. 주말에도 가능합니까?","Thursday sounds possible. Are you available on weekends too?"],
+["직원","토요일은 가능하지만 일요일에는 개인 일정이 있어서 정기적으로 근무하기는 어렵습니다.","I can work on Saturdays, but I have personal commitments on Sundays, so it would be difficult to work regularly."],
+["사장","근무 시간을 바꾸면 다른 직원들과도 조정해야 합니다.","If we change your hours, I also have to coordinate with the other employees."],
+["직원","물론입니다. 다른 직원들에게 불편을 주지 않는 방향으로 조정하고 싶습니다.","Of course. I would like to arrange it in a way that does not inconvenience the other staff."],
+["사장","이번 주 근무표를 확인한 다음에 다시 이야기합시다.","Let's check this week's roster and talk again."],
+["직원","네, 감사합니다. 혹시 목요일과 토요일을 중심으로 조정할 수 있을까요?","Thank you. Would it be possible to arrange my shifts mainly around Thursday and Saturday?"],
+["사장","일단 가능한지 확인해 보고 내일 알려 드릴게요.","I'll check whether that's possible and let you know tomorrow."],
+["직원","알겠습니다. 일정이 확정되면 수업 시간표도 다시 공유해 드리겠습니다.","Understood. Once the schedule is confirmed, I will share my class timetable again."],
+["사장","좋아요. 미리 말씀해 줘서 고맙습니다.","All right. Thanks for telling me in advance."]
+]},
+{title:"University office: asking about a document problem",goal:"Clarify a requirement, report missing paperwork and confirm the deadline.",challenge:"The office says one document is missing. Ask exactly what is required, where to submit it and whether a late submission is possible.",lines:[
+["학생","안녕하세요. 제출한 서류와 관련해서 확인하고 싶은 점이 있어서 왔습니다.","Hello. I came because I have something I would like to check about the documents I submitted."],
+["직원","네, 어떤 부분이 궁금하신가요?","Certainly. What would you like to know?"],
+["학생","어제 서류를 제출했는데 추가로 보완해야 할 사항이 있는지 알고 싶습니다.","I submitted the documents yesterday, and I would like to know whether anything else needs to be corrected or added."],
+["직원","확인해 보니 재학 증명서가 빠져 있네요.","I checked, and your certificate of enrollment is missing."],
+["학생","그 서류는 온라인으로 발급받을 수 있는 건가요?","Can I obtain that document online?"],
+["직원","네, 학교 포털에서 발급 신청을 하시면 됩니다.","Yes, you can request it through the university portal."],
+["학생","발급하는 데 시간이 얼마나 걸리는지 혹시 아시나요?","Do you happen to know how long it takes to issue?"],
+["직원","보통 바로 발급되지만, 시스템 상황에 따라 시간이 조금 걸릴 수도 있습니다.","It is usually issued immediately, but depending on the system, it may take a little time."],
+["학생","그렇다면 오늘 안에 제출할 수 있을 것 같습니다.","In that case, I think I can submit it today."],
+["직원","제출 마감일은 이번 주 금요일 오후 다섯 시까지입니다.","The submission deadline is this Friday at five in the afternoon."],
+["학생","혹시 이메일로 먼저 보내고 원본은 나중에 제출해도 될까요?","Would it be possible to email it first and submit the original later?"],
+["직원","원칙적으로는 포털에 업로드하셔야 합니다.","In principle, you need to upload it to the portal."],
+["학생","업로드하는 과정에서 오류가 발생하면 어떻게 해야 하나요?","What should I do if an error occurs while uploading it?"],
+["직원","오류 화면을 캡처해서 담당 부서 이메일로 보내 주시면 확인해 드리겠습니다.","If you capture the error screen and email it to the department in charge, we will check it."],
+["학생","파일 형식은 PDF로 제출하는 것이 맞습니까?","Is PDF the correct file format for submission?"],
+["직원","네, 파일이 열리는지 확인한 후에 제출해 주세요.","Yes. Please check that the file opens before submitting it."],
+["학생","알겠습니다. 안내해 주셔서 감사합니다.","Understood. Thank you for explaining."],
+["직원","추가로 궁금한 점이 있으면 언제든지 문의하세요.","If you have any further questions, please contact us anytime."],
+["학생","제출이 완료되면 확인 메일도 받을 수 있을까요?","Will I also receive a confirmation email once the submission is complete?"],
+["직원","네, 정상적으로 접수되면 자동으로 안내 메일이 발송됩니다.","Yes. Once it is successfully received, a notification email will be sent automatically."]
+]},
+{title:"Housing: reporting a repair and discussing the deposit",goal:"Describe a recurring problem, explain its impact and request a repair timeline.",challenge:"Your room has a leak. Describe when it happens, ask when someone can visit and confirm who pays for the repair.",lines:[
+["세입자","안녕하세요. 방에 문제가 생겨서 연락드렸습니다.","Hello. I am contacting you because a problem has occurred in my room."],
+["집주인","어떤 문제인지 자세히 설명해 주시겠어요?","Could you explain the problem in detail?"],
+["세입자","며칠 전부터 싱크대 아래쪽에서 물이 조금씩 새고 있습니다.","For the past few days, water has been slowly leaking from under the sink."],
+["집주인","물을 사용할 때만 새는 건가요, 아니면 계속 새고 있나요?","Does it leak only when you use the water, or is it leaking continuously?"],
+["세입자","물을 틀 때 특히 심해지고, 사용하지 않을 때도 바닥이 젖어 있는 경우가 있습니다.","It gets worse especially when I turn on the water, and sometimes the floor is wet even when I am not using it."],
+["집주인","그렇다면 배관에 문제가 있을 가능성이 있겠네요.","In that case, there may be a problem with the plumbing."],
+["세입자","네, 물이 계속 새면 바닥까지 손상될까 봐 걱정됩니다.","Yes, I am worried that if it keeps leaking, even the floor might be damaged."],
+["집주인","사진을 찍어서 보내 주실 수 있나요?","Could you take a photo and send it to me?"],
+["세입자","네, 지금 사진을 찍어서 보내 드리겠습니다.","Yes, I will take a photo now and send it to you."],
+["집주인","수리 기사님과 일정을 확인해 보겠습니다.","I will check the schedule with the repair technician."],
+["세입자","혹시 내일 오후에 방문하실 수 있을까요?","Would it be possible for someone to visit tomorrow afternoon?"],
+["집주인","내일은 어려울 수도 있고, 모레 오전은 가능할 것 같습니다.","Tomorrow may be difficult, but the morning after tomorrow should be possible."],
+["세입자","모레 오전에는 집에 있을 수 있으니 그때 방문해 주시면 감사하겠습니다.","I can be home the morning after tomorrow, so I would appreciate a visit then."],
+["집주인","수리 비용은 원인을 확인한 다음에 말씀드리겠습니다.","I will discuss the repair cost after checking the cause."],
+["세입자","일반적인 시설 노후로 인한 문제라면 집주인께서 부담하시는 것이 맞는지 궁금합니다.","I would like to know whether you would cover it if the issue is due to normal wear and tear."],
+["집주인","네, 건물 시설 자체의 문제라면 제가 처리하겠습니다.","Yes, if it is a problem with the building facilities themselves, I will take care of it."],
+["세입자","제가 잘못 사용해서 생긴 문제가 아니라는 점도 확인해 주시면 좋겠습니다.","I would also appreciate it if you could confirm that the issue was not caused by my misuse."],
+["집주인","기사님이 확인한 후에 원인을 알려 드리도록 하겠습니다.","I will have the technician check it and let you know the cause."],
+["세입자","알겠습니다. 방문 전에 대략적인 시간을 알려 주실 수 있을까요?","Understood. Could you let me know approximately what time before the visit?"],
+["집주인","네, 일정이 정해지는 대로 연락드리겠습니다.","Yes, I will contact you as soon as the schedule is set."]
+]},
+{title:"Clinic: explaining symptoms and understanding instructions",goal:"Describe symptoms over time, clarify instructions and check whether follow-up is needed.",challenge:"Explain that your symptoms have continued for several days. Ask about medicine timing, side effects and when to return. This is language practice, not medical advice.",lines:[
+["환자","안녕하세요. 며칠 전부터 목이 아프고 기침이 계속 나서 진료를 받으러 왔습니다.","Hello. I have had a sore throat and persistent coughing for several days, so I came for an appointment."],
+["접수 직원","증상이 언제부터 시작됐는지 말씀해 주시겠어요?","Could you tell me when the symptoms started?"],
+["환자","사흘 전부터 시작됐고, 어제부터는 열도 조금 나는 것 같습니다.","They started three days ago, and since yesterday I think I have also had a slight fever."],
+["의사","기침은 주로 밤에 심해지나요, 아니면 낮에도 계속되나요?","Does the cough get worse mainly at night, or does it continue during the day too?"],
+["환자","밤에 더 심해지는 편이고, 잠을 제대로 자기 어려울 정도입니다.","It tends to be worse at night, to the point that it is difficult to sleep properly."],
+["의사","숨이 차거나 가슴에 통증이 느껴진 적은 있습니까?","Have you experienced shortness of breath or chest pain?"],
+["환자","숨이 차지는 않지만 기침을 많이 하면 가슴이 조금 아픕니다.","I am not short of breath, but my chest hurts a little when I cough a lot."],
+["의사","알겠습니다. 다른 약을 복용하고 있거나 알레르기가 있나요?","Understood. Are you taking any other medication or do you have allergies?"],
+["환자","현재 복용하는 약은 없고, 특별한 알레르기도 없습니다.","I am not currently taking any medication, and I do not have any particular allergies."],
+["의사","검사 결과를 확인한 후에 약을 처방해 드리겠습니다.","I will prescribe medication after checking the test results."],
+["환자","약은 식사 전과 후 중 언제 복용해야 하는지 알려 주시겠어요?","Could you tell me whether I should take the medicine before or after meals?"],
+["의사","약마다 다를 수 있으니 약 봉투에 적힌 복용법을 확인하셔야 합니다.","It can differ by medication, so you should check the instructions written on the medicine packet."],
+["환자","복용하는 동안 피해야 할 음식이나 행동도 있습니까?","Are there any foods or activities I should avoid while taking it?"],
+["의사","처방된 약의 설명을 따르시고, 증상이 악화되면 다시 진료를 받으세요.","Follow the instructions for the prescribed medicine, and seek another consultation if your symptoms worsen."],
+["환자","며칠 정도 지나도 나아지지 않으면 다시 방문하는 것이 좋을까요?","If I do not improve after a few days, would it be best to visit again?"],
+["의사","네, 증상이 계속되거나 심해지면 재진료를 받는 것이 좋습니다.","Yes, if the symptoms continue or get worse, it is advisable to come for a follow-up."],
+["환자","약을 먹고 졸릴 수도 있는지 궁금합니다.","I would like to know whether the medicine might make me sleepy."],
+["의사","그럴 수 있는 약도 있으니 운전이나 위험한 작업을 하기 전에 주의사항을 확인하세요.","Some medicines can do that, so check the precautions before driving or doing hazardous work."],
+["환자","설명해 주셔서 감사합니다. 안내해 주신 대로 복용하겠습니다.","Thank you for explaining. I will take it according to your instructions."],
+["접수 직원","수납 후 약국에서 처방전을 제출하시면 됩니다. 조심히 돌아가세요.","After payment, submit your prescription at the pharmacy. Take care on your way home."]
+]}
+];
+const $=s=>document.querySelector(s);let active=0;const storeKey="aviLevel4PracticeV1";
+$("#grammar").innerHTML=grammar.map(g=>'<article><h3>'+g[0]+' · '+g[1]+'</h3><p>'+g[2]+'</p><div class="example" lang="ko">'+g[3]+'</div><p>'+g[3]+'</p><p class="muted">'+g[3]+'</p><details><summary>English translation</summary><p>'+g[3]+'</p><p>'+g[1]+'</p></details></article>').join("");
+function showScene(i){active=i;const s=scenes[i];$("#scene-title").textContent=s.title;$("#scene-tag").textContent="SCENE "+(i+1)+" · 20 SPOKEN LINES";$("#scene-goal").textContent=s.goal;$("#challenge").textContent=s.challenge;$("#dialogue").innerHTML=s.lines.map((l,n)=>'<article class="line"><div class="speaker">'+(n+1)+'. '+l[0]+'</div><div><div class="ko" lang="ko">'+l[1]+'</div><div class="en hidden">'+l[2]+'</div><button type="button" data-reveal="'+n+'">Reveal English</button></div></article>').join("");$("#tabs").innerHTML="";$("#answer").value=JSON.parse(localStorage.getItem(storeKey)||"{}").answers?.[i]||"";$("#saved").textContent=""}
+$("#scene-tabs").innerHTML=scenes.map((s,i)=>'<button type="button" data-scene="'+i+'">'+(i+1)+'. '+s.title.split(":")[0]+'</button>').join("");$("#scene-tabs").addEventListener("click",e=>{const b=e.target.closest("[data-scene]");if(!b)return;document.querySelectorAll("[data-scene]").forEach(x=>x.classList.toggle("active",x===b));showScene(+b.dataset.scene)});$("#dialogue").addEventListener("click",e=>{const b=e.target.closest("[data-reveal]");if(!b)return;const en=b.previousElementSibling;en.classList.toggle("hidden");b.textContent=en.classList.contains("hidden")?"Reveal English":"Hide English"});$("#save-answer").addEventListener("click",()=>{const d=JSON.parse(localStorage.getItem(storeKey)||"{}");d.answers=d.answers||{};d.answers[active]=$("#answer").value;localStorage.setItem(storeKey,JSON.stringify(d));$("#saved").textContent=" · Saved in this browser."});$("#check").addEventListener("click",()=>{$("#quiz-feedback").textContent=document.querySelector('input[name="q"]:checked')?.value==="b"?"Correct. The class timetable conflicts with the original shift.":"Try again. Look for the line explaining the changed university timetable."});$("#save-weekly").addEventListener("click",()=>{const d=JSON.parse(localStorage.getItem(storeKey)||"{}");d.weekly=$("#weekly").value;localStorage.setItem(storeKey,JSON.stringify(d));$("#weekly-saved").textContent=" · Writing saved in this browser."});const saved=JSON.parse(localStorage.getItem(storeKey)||"{}");$("#weekly").value=saved.weekly||"";showScene(0);
+</script></body></html>
