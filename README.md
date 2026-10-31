@@ -43,3 +43,17 @@ Changes:
 - Homepage accessibility changes: [9d47451](https://github.com/abinaah2004-maker/WebClass/commit/9d47451e70da9bf6f25a83c68c4e50245b81a3de)
 - Memory Match HTML changes: [cf8de41](https://github.com/abinaah2004-maker/WebClass/commit/cf8de413656bc9f390dd6fbc96cf4cabfb130d14)
 - Memory Match CSS changes: [dc173b1](https://github.com/abinaah2004-maker/WebClass/commit/dc173b19f457ecacb55e71e816152890490c6550)
+
+
+## Personal project — Korean Learning 🇰🇷
+
+A practical Korean-learning website created as part of this repository. It includes vocabulary, grammar practice, real-life conversation scenes, interactive roleplay, TOPIK II chapters, and Level 4 skills practice.
+
+- [Open the Korean learning website](korean-learning/index.html)
+- [TOPIK II chapter library](korean-learning/chapters.html)
+- [Level 4 — Korean in Korea](korean-learning/level4-practical.html)
+- [Level 4 — Skills Lab](korean-learning/level4-skills-lab.html)
+- [View the Korean project folder on GitHub](https://github.com/abinaah2004-maker/WebClass/tree/main/korean-learning)
+- [Open the deployed Korean learning website](https://abinaah2004-maker.github.io/WebClass/korean-learning/)
+
+The project is also linked from the [main coursework homepage](index.html), under **Projects and repository information**.
