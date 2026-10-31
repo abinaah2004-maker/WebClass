@@ -67,3 +67,17 @@ The main course is supported by a separate intermediate TOPIK II chapter track. 
 - Vanilla JavaScript (ES6)
 - Browser localStorage
 - Google Fonts: DM Sans and Noto Sans KR
+
+
+## Korean Quest — 40-level game
+
+Open `quest.html` for a staged game-based course with 40 unlockable levels:
+
+- Levels 1–10: TOPIK I Level 2 foundations and everyday communication.
+- Levels 11–25: TOPIK II Level 3 grammar, sentence building and practical comprehension.
+- Levels 26–40: TOPIK II Level 4 intermediate structures, reading and expression.
+- Every level includes five challenges: grammar, sentence formation, listening, pronunciation/speaking, and reading comprehension.
+- Clear all five challenges to unlock the next level. Progress and XP are saved in browser localStorage.
+- Listening uses Korean browser text-to-speech where available. Pronunciation practice supports browser speech recognition when available, with an honest self-practice fallback.
+
+The game is designed as a learning pathway, not an official TOPIK score predictor. Speech recognition availability and quality depend on the browser and device.
