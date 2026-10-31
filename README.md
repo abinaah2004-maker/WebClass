@@ -57,3 +57,8 @@ A practical Korean-learning website created as part of this repository. It inclu
 - [Open the deployed Korean learning website](https://abinaah2004-maker.github.io/WebClass/korean-learning/)
 
 The project is also linked from the [main coursework homepage](index.html), under **Projects and repository information**.
+
+
+## Korean Quest — 40-level learning game
+
+Play the new staged Korean course: [Open Korean Quest](korean-learning/quest.html). It contains 40 unlockable levels from TOPIK I Level 2 through TOPIK II Levels 3 and 4, with grammar, sentence formation, listening, pronunciation/speaking, and reading in every level.
