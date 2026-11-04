@@ -19,40 +19,24 @@ body[data-stage="2"] .movie-card img{height:190px}
 body[data-stage="3"] .movie-card{border-radius:10px;box-shadow:0 3px 10px #0002}
 body[data-stage="3"] .movie-card img{height:210px;object-fit:cover}
 body[data-stage="3"] .featured img{border-radius:8px}
-/* Step 4: improved contrast and clear visual hierarchy */
-body[data-stage="4"]{background:#101827;color:#f8fafc}
-body[data-stage="4"] .site-header,body[data-stage="4"] .hero,body[data-stage="4"] .featured,body[data-stage="4"] footer{background:#172337;color:#fff}
-body[data-stage="4"] .movie-card,body[data-stage="4"] .newsletter{background:#202e43;border-color:#50627b;color:#fff}
-body[data-stage="4"] a{color:#ffb4bd}
-body[data-stage="4"] .movie-card p,body[data-stage="4"] .hero p,body[data-stage="4"] .featured p{color:#e1e8f2}
-body[data-stage="4"] button{background:#c90020;color:white;border-color:#c90020}
-/* Step 5: form feedback is more prominent and associated with fields */
-body[data-stage="5"] .newsletter{border:2px solid #e75a68;border-radius:12px}
-body[data-stage="5"] .newsletter input{background:#0c1421;color:white;border:1px solid #aab8ca;padding:12px}
-body[data-stage="5"] .error{color:#ff9da7;font-weight:bold}
-body[data-stage="5"] input[aria-invalid="true"]{border:2px solid #ff6978}
-body[data-stage="5"] .newsletter button{width:100%;margin-top:8px}
-/* Step 6: stable image sizing and responsive card layout */
+/* Step 4: repair the low-contrast text while retaining the simple page design */
+body[data-stage="4"] .site-header{background:#333;color:#fff}
+body[data-stage="4"] .site-header a,body[data-stage="4"] .brand{color:#fff}
+body[data-stage="4"] .hero{background:#333;color:#eee}
+body[data-stage="4"] .movie-info p,body[data-stage="4"] .featured p,body[data-stage="4"] .newsletter p{color:#555}
+body[data-stage="4"] footer{background:#222;color:#ccc}
+body[data-stage="4"] footer a,body[data-stage="4"] a{color:#a30810}
+body[data-stage="4"] button{background:#b20710;color:#fff;border-color:#b20710}
+/* Step 5: labels and accessible validation feedback */
+body[data-stage="5"] .newsletter label{display:block;font-weight:bold;margin:10px 0 5px}
+body[data-stage="5"] .newsletter input{padding:11px;border:1px solid #777}
+body[data-stage="5"] .error{color:#9c1520;font-weight:bold;min-height:1.3em}
+body[data-stage="5"] input[aria-invalid="true"]{border:2px solid #9c1520}
+/* Step 6: reserve image space and load below-the-fold images efficiently */
 body[data-stage="6"] .movie-card img,body[data-stage="6"] .featured img{aspect-ratio:4/5;height:auto;object-fit:cover}
 body[data-stage="6"] .movie-card{overflow:hidden}
 body[data-stage="6"] .grid{gap:20px}
-body[data-stage="6"] .movie-card{box-shadow:0 8px 24px #0005}
-/* Step 7: completed cinematic design */
-body[data-stage="7"]{background:#090d16;color:#f5f7fb;font-family:Inter,Arial,sans-serif}
-body[data-stage="7"] .site-header{background:#090d16;border-bottom:1px solid #344054}
-body[data-stage="7"] .brand{color:#fff;text-decoration:none}
-body[data-stage="7"] .hero{background:radial-gradient(circle at 80% 20%,#7b1428,#111827 60%);padding:62px 6%;color:#fff}
-body[data-stage="7"] .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.05}
-body[data-stage="7"] .movie-card,body[data-stage="7"] .newsletter{background:#172235;border:1px solid #35445a;border-radius:14px;color:#fff}
-body[data-stage="7"] .movie-card img{height:260px}
-body[data-stage="7"] .featured,body[data-stage="7"] footer{background:#1b2638;color:#fff}
-body[data-stage="7"] .featured img{height:190px}
-body[data-stage="7"] button{background:#e50925;border:1px solid #e50925;color:#fff;border-radius:7px;padding:10px 15px;font-weight:bold}
-body[data-stage="7"] a{color:#ff9eaa}
-body[data-stage="7"] input{background:#0d1523;color:#fff;border:1px solid #68778d;border-radius:7px}
-body[data-stage="7"] .details{background:#27364c;border-left:3px solid #ed334c;padding:10px}
-body[data-stage="7"] .newsletter{box-shadow:0 12px 30px #0005}
-body[data-stage="7"] a:focus-visible,body[data-stage="7"] button:focus-visible,body[data-stage="7"] input:focus-visible{outline:3px solid #ffbd59;outline-offset:4px}
+/* Step 7 deliberately adds no new visual treatment: the same completed page now loads its scripts with defer. */
 @media(max-width:650px){.grid{grid-template-columns:1fr}.movie-card img{height:280px}.site-header{align-items:flex-start;flex-direction:column}.featured{align-items:flex-start;flex-direction:column}body[data-stage="1"] .grid{display:block}}
 [hidden]{display:none!important}
 .lab-progress{position:sticky;top:0;z-index:20;display:flex;gap:8px;flex-wrap:wrap;padding:12px 4%;background:#111827;color:#fff;border-bottom:1px solid #39465b}
