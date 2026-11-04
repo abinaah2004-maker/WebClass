@@ -1,0 +1,57 @@
+*{box-sizing:border-box}body{margin:0;padding:0 0 30px;font:16px/1.5 Arial,sans-serif;color:#222;background:#fff}.site-header{padding:14px 5%;display:flex;justify-content:space-between;gap:16px;align-items:center}.brand{font-size:1.4rem;font-weight:bold}.site-header nav{display:flex;gap:16px}a{color:#1558a6}.hero{padding:48px 6%;background:#eee}.hero h1{font-size:2.6rem;margin:8px 0}.eyebrow{font-size:.75rem;letter-spacing:.12em}.hero form{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.hero label{width:100%}input,button{font:inherit;padding:9px;border:1px solid #888;border-radius:3px}button{cursor:pointer;background:#ddd;color:#111}.movies{padding:30px 5%}.movies h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.movie-card{border:1px solid #ccc;background:#fafafa;overflow:hidden}.movie-card img{width:100%;height:230px;object-fit:cover;display:block}.movie-info{padding:12px}.movie-info h3{margin:0}.movie-info p{margin:8px 0}.details{padding:8px;background:#eee}.featured{padding:24px 6%;display:flex;gap:22px;align-items:center;background:#f2f2f2}.featured img{width:130px;height:160px;object-fit:cover}.newsletter{margin:30px auto;padding:22px;max-width:600px;border:1px solid #ccc}.newsletter label{display:block;margin-top:10px}.newsletter input{width:100%}.error{color:#a00;min-height:1em}footer{text-align:center;padding:18px;background:#eee}.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9}
+/* Step 1: semantic structure, deliberately simple default styling */
+body[data-stage="1"] .site-header,body[data-stage="1"] .hero,body[data-stage="1"] .featured,body[data-stage="1"] footer{background:#f1f1f1;color:#222}
+body[data-stage="1"] .site-header{display:block}
+body[data-stage="1"] .site-header nav{margin-top:10px}
+body[data-stage="1"] .grid{display:block}
+body[data-stage="1"] .movie-card{margin:12px 0;max-width:260px}
+body[data-stage="1"] .movie-card img{height:150px}
+body[data-stage="1"] .featured{display:block}
+body[data-stage="1"] .featured img{display:block}
+body[data-stage="1"] .newsletter{margin:20px 5%}
+/* Step 2: visible keyboard focus and clear interactive controls */
+body[data-stage="2"] a:focus,body[data-stage="2"] button:focus,body[data-stage="2"] input:focus{outline:3px solid #e28b00;outline-offset:3px}
+body[data-stage="2"] button{background:#174f91;color:#fff;border-color:#174f91;border-radius:6px}
+body[data-stage="2"] .grid{display:grid}
+body[data-stage="2"] .movie-card{max-width:none;margin:0}
+body[data-stage="2"] .movie-card img{height:190px}
+/* Step 3: meaningful image alternatives are added; image content becomes a proper part of each card */
+body[data-stage="3"] .movie-card{border-radius:10px;box-shadow:0 3px 10px #0002}
+body[data-stage="3"] .movie-card img{height:210px;object-fit:cover}
+body[data-stage="3"] .featured img{border-radius:8px}
+/* Step 4: improved contrast and clear visual hierarchy */
+body[data-stage="4"]{background:#101827;color:#f8fafc}
+body[data-stage="4"] .site-header,body[data-stage="4"] .hero,body[data-stage="4"] .featured,body[data-stage="4"] footer{background:#172337;color:#fff}
+body[data-stage="4"] .movie-card,body[data-stage="4"] .newsletter{background:#202e43;border-color:#50627b;color:#fff}
+body[data-stage="4"] a{color:#ffb4bd}
+body[data-stage="4"] .movie-card p,body[data-stage="4"] .hero p,body[data-stage="4"] .featured p{color:#e1e8f2}
+body[data-stage="4"] button{background:#c90020;color:white;border-color:#c90020}
+/* Step 5: form feedback is more prominent and associated with fields */
+body[data-stage="5"] .newsletter{border:2px solid #e75a68;border-radius:12px}
+body[data-stage="5"] .newsletter input{background:#0c1421;color:white;border:1px solid #aab8ca;padding:12px}
+body[data-stage="5"] .error{color:#ff9da7;font-weight:bold}
+body[data-stage="5"] input[aria-invalid="true"]{border:2px solid #ff6978}
+body[data-stage="5"] .newsletter button{width:100%;margin-top:8px}
+/* Step 6: stable image sizing and responsive card layout */
+body[data-stage="6"] .movie-card img,body[data-stage="6"] .featured img{aspect-ratio:4/5;height:auto;object-fit:cover}
+body[data-stage="6"] .movie-card{overflow:hidden}
+body[data-stage="6"] .grid{gap:20px}
+body[data-stage="6"] .movie-card{box-shadow:0 8px 24px #0005}
+/* Step 7: completed cinematic design */
+body[data-stage="7"]{background:#090d16;color:#f5f7fb;font-family:Inter,Arial,sans-serif}
+body[data-stage="7"] .site-header{background:#090d16;border-bottom:1px solid #344054}
+body[data-stage="7"] .brand{color:#fff;text-decoration:none}
+body[data-stage="7"] .hero{background:radial-gradient(circle at 80% 20%,#7b1428,#111827 60%);padding:62px 6%;color:#fff}
+body[data-stage="7"] .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.05}
+body[data-stage="7"] .movie-card,body[data-stage="7"] .newsletter{background:#172235;border:1px solid #35445a;border-radius:14px;color:#fff}
+body[data-stage="7"] .movie-card img{height:260px}
+body[data-stage="7"] .featured,body[data-stage="7"] footer{background:#1b2638;color:#fff}
+body[data-stage="7"] .featured img{height:190px}
+body[data-stage="7"] button{background:#e50925;border:1px solid #e50925;color:#fff;border-radius:7px;padding:10px 15px;font-weight:bold}
+body[data-stage="7"] a{color:#ff9eaa}
+body[data-stage="7"] input{background:#0d1523;color:#fff;border:1px solid #68778d;border-radius:7px}
+body[data-stage="7"] .details{background:#27364c;border-left:3px solid #ed334c;padding:10px}
+body[data-stage="7"] .newsletter{box-shadow:0 12px 30px #0005}
+body[data-stage="7"] a:focus-visible,body[data-stage="7"] button:focus-visible,body[data-stage="7"] input:focus-visible{outline:3px solid #ffbd59;outline-offset:4px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.movie-card img{height:280px}.site-header{align-items:flex-start;flex-direction:column}.featured{align-items:flex-start;flex-direction:column}body[data-stage="1"] .grid{display:block}}
+[hidden]{display:none!important}
