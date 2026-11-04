@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CineReview — Step-by-step preview</title>
+<link rel="stylesheet" href="stage-preview.css">
+<script src="stage-preview.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><a class="brand" href="#home">CineReview</a><nav aria-label="Main navigation"><a href="#movies">Movies</a><a href="#featured">Featured</a><a href="#newsletter">Newsletter</a></nav></header>
+<main id="main">
+<section class="hero" id="home"><p class="eyebrow">YOUR MOVIE GUIDE</p><h1>Discover Great Movies</h1><p>Read reviews and find your next favorite film.</p><form id="search-form" role="search"><label for="movie-search">Search movies</label><input id="movie-search" type="search" placeholder="Try Harbor"><button type="submit">Search</button></form><p id="search-status" role="status"></p></section>
+<section class="movies" id="movies"><h2>Now Showing</h2><div class="grid">
+<article class="movie-card"><img src="https://picsum.photos/seed/cine1/400/500" alt="Placeholder artwork for Echoes of Tomorrow" width="400" height="500"><div class="movie-info"><h3>Echoes of Tomorrow</h3><p>2024 · Sci-Fi · ★★★★☆ 4.1/5</p><button type="button" data-details="detail1" aria-expanded="false">View Details</button><p class="details" id="detail1" hidden>A science-fiction story about choices that shape tomorrow.</p></div></article>
+<article class="movie-card"><img src="https://picsum.photos/seed/cine2/400/500" alt="Placeholder artwork for The Last Harbor" width="400" height="500"><div class="movie-info"><h3>The Last Harbor</h3><p>2024 · Drama · ★★★★★ 4.8/5</p><button type="button" data-details="detail2" aria-expanded="false">View Details</button><p class="details" id="detail2" hidden>A drama about grief and redemption in a coastal town.</p></div></article>
+<article class="movie-card"><img src="https://picsum.photos/seed/cine3/400/500" alt="Placeholder artwork for Crimson Horizon" width="400" height="500"><div class="movie-info"><h3>Crimson Horizon</h3><p>2023 · Thriller · ★★★☆☆ 3.5/5</p><button type="button" data-details="detail3" aria-expanded="false">View Details</button><p class="details" id="detail3" hidden>A mystery thriller beyond the city.</p></div></article>
+</div></section>
+<section class="featured" id="featured"><img src="https://picsum.photos/seed/featuredcine/300/400" alt="Featured movie artwork"><div><h2>Editor's Pick: The Last Harbor</h2><p>A thoughtful story of loss and reconciliation.</p><a href="#newsletter">Read more</a></div></section>
+<section class="newsletter" id="newsletter"><h2>Stay Updated</h2><p>Sign up for movie news.</p><form id="newsletter-form" novalidate><label for="name">Your name</label><input id="name" name="name" required aria-describedby="name-error"><p class="error" id="name-error"></p><label for="email">Email address</label><input id="email" name="email" type="email" required aria-describedby="email-error"><p class="error" id="email-error"></p><button type="submit">Subscribe Now</button><p id="form-status" role="status"></p></form></section>
+</main><footer><p>CineReview · Fictional classroom project</p></footer>
+</body></html>
