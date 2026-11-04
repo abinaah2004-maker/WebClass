@@ -1,3 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Step 2 · Keyboard controls and links | CineReview Lab</title><link rel="stylesheet" href="lab.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="top"><a href="index.html">CineReview Lab</a><nav class="nav"><a href="index.html">Lab guide</a><a href="broken.html">Broken starter</a><a href="solution.html">Completed solution</a></nav></header><nav class="progress" aria-label="Lab steps"><a href="step1.html" >1</a> <a href="step2.html" aria-current="step">2</a> <a href="step3.html" >3</a> <a href="step4.html" >4</a> <a href="step5.html" >5</a> <a href="step6.html" >6</a> <a href="step7.html" >7</a></nav><main id="main" class="wrap"><p>FIX THE BROKEN WEBSITE · STEP 02 OF 07</p><h1>Keyboard controls and links</h1><p>Replace clickable div elements with real buttons and descriptive links. Native buttons support Enter and Space and expose their purpose to assistive technology.</p><section class="panel"><h2>Example</h2><pre class="code"><code>&lt;button type="button" aria-expanded="false"
-  aria-controls="movie-details"&gt;View Details&lt;/button&gt;
-&lt;a href="#full-review"&gt;Read the full review&lt;/a&gt;</code></pre></section><section class="panel"><h2>Try the improvement</h2><p>Open the completed movie website and test the relevant improvement. Use the keyboard as well as the mouse where appropriate.</p><a class="btn" href="solution.html">Try completed solution</a> <a class="btn secondary" href="index.html">Back to lab guide</a></section><div class="actions"><a class="btn secondary" href="step1.html">← Previous step</a><a class="btn" href="step3.html">Next step →</a></div></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Step 2: Keyboard controls and links in the interactive CineReview accessibility and performance lab.">
+<title>Step 2: Keyboard controls and links | CineReview Lab</title>
+<link rel="stylesheet" href="lab.css">
+<style>
+.stage-shell{max-width:1180px;margin:auto;padding:34px 22px 60px}
+.stage-kicker{color:#ff7881;font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.stage-shell h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.05em;margin:8px 0 14px}
+.stage-intro{max-width:820px;color:#c3ccda;font-size:1.05rem}
+.stage-demo{margin-top:28px;padding:18px;background:#141925;border:1px solid rgba(255,255,255,.13);border-radius:16px}
+.stage-demo h2{margin:0 0 6px;font-size:1.2rem}
+.stage-demo p{margin:0 0 16px;color:#aeb8c8}
+.stage-frame{display:block;width:100%;height:1750px;border:1px solid #30394b;border-radius:10px;background:#090b12}
+.stage-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;margin-top:22px}
+@media(max-width:600px){.stage-shell{padding:24px 14px}.stage-frame{height:2050px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="progress" aria-label="Lab steps"><a href="step1.html" aria-current="page">Step 1: Semantic HTML</a><a href="step2.html">Step 2: Keyboard controls and links</a><a href="step3.html">Step 3: Image alternatives</a><a href="step4.html">Step 4: Color contrast</a><a href="step5.html">Step 5: Form labels and error messages</a><a href="step6.html">Step 6: Image loading and layout stability</a><a href="step7.html">Step 7: Deferred JavaScript</a></nav>
+<main id="main" class="stage-shell">
+<p class="stage-kicker">Fix the Broken Website · Step 02 of 07</p>
+<h1>Keyboard controls and links</h1>
+<p class="stage-intro">Movie details use real buttons, search is a real form, and links jump to meaningful sections. Try opening a movie detail panel with mouse or keyboard.</p>
+<section class="stage-demo" aria-labelledby="demo-title">
+<h2 id="demo-title">Interactive website preview</h2>
+<p>This is the working movie website. Try the controls directly below; use the step links above to move between the seven topics.</p>
+<iframe class="stage-frame" src="solution.html" title="Interactive CineReview movie website preview" loading="lazy"></iframe>
+</section>
+<nav class="stage-actions" aria-label="Previous and next lab step"><a class="btn secondary" href="step1.html">← Previous step</a><a class="btn secondary" href="index.html">All seven steps</a><a class="btn" href="step3.html">Next step →</a></nav>
+</main>
+</body>
+</html>
