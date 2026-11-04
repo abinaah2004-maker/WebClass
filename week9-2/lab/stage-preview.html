@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CineReview — Step-by-step preview</title>
+<title>CineReview — Progressive lab preview</title>
 <link rel="stylesheet" href="stage-preview.css">
 <script src="stage-preview.js" defer></script>
 </head>
-<body>
+<body data-stage="1">
 <a class="skip" href="#main">Skip to main content</a>
-<header class="site-header"><a class="brand" href="#home">CineReview</a><nav aria-label="Main navigation"><a href="#movies">Movies</a><a href="#featured">Featured</a><a href="#newsletter">Newsletter</a></nav></header>
-<main id="main">
+<nav class="lab-progress" aria-label="Lab steps"><a href="../index.html">Week 9.2</a><a href="index.html">Lab guide</a><a href="broken.html">Broken starter</a><a href="step1.html">1 Semantic HTML</a><a href="step2.html">2 Buttons and links</a><a href="step3.html">3 Image alternatives</a><a href="step4.html">4 Contrast</a><a href="step5.html">5 Form feedback</a><a href="step6.html">6 Image stability</a><a href="step7.html">7 Deferred scripts</a></nav><header class="site-header"><a class="brand" href="#home">CineReview</a><nav aria-label="Main navigation"><a href="#movies">Movies</a><a href="#featured">Featured</a><a href="#newsletter">Newsletter</a></nav></header>
+<main id="main"><section class="stage-explainer"><p class="eyebrow">WEEK 9.2 · STEP-BY-STEP LIVE RESULT</p><h1 id="stage-title">Step 1 · Semantic HTML</h1><p id="stage-description">This stage introduces meaningful page landmarks and a clear heading structure.</p><p class="stage-count">LIVE VERSION <strong id="stage-count">01 / 07</strong></p><p id="stage-code" class="stage-code">The page uses header, nav, main, section, article and footer landmarks.</p></section>
 <section class="hero" id="home"><p class="eyebrow">YOUR MOVIE GUIDE</p><h1>Discover Great Movies</h1><p>Read reviews and find your next favorite film.</p><form id="search-form" role="search"><label for="movie-search">Search movies</label><input id="movie-search" type="search" placeholder="Try Harbor"><button type="submit">Search</button></form><p id="search-status" role="status"></p></section>
 <section class="movies" id="movies"><h2>Now Showing</h2><div class="grid">
 <article class="movie-card"><img src="https://picsum.photos/seed/cine1/400/500" alt="Placeholder artwork for Echoes of Tomorrow" width="400" height="500"><div class="movie-info"><h3>Echoes of Tomorrow</h3><p>2024 · Sci-Fi · ★★★★☆ 4.1/5</p><button type="button" data-details="detail1" aria-expanded="false">View Details</button><p class="details" id="detail1" hidden>A science-fiction story about choices that shape tomorrow.</p></div></article>
