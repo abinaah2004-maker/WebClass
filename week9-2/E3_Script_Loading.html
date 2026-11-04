@@ -1,5 +1,95 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Interactive demonstration of defer and async script loading."><title>Exercise 3 | defer and async</title><script defer src="E3_app.js"></script><script async src="E3_analytics.js"></script><style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#182238;font:16px/1.65 system-ui,sans-serif}.wrap{max-width:900px;margin:auto;padding:24px}.panel{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}.back{color:#1d4ed8}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}.code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto}.actions{display:flex;gap:10px;flex-wrap:wrap}button{padding:10px 14px;border:0;border-radius:9px;background:#2563eb;color:white;font-weight:700;cursor:pointer}button.secondary{background:#475569}.status{background:#eff6ff;border-radius:12px;padding:14px;margin:12px 0}.event{border-bottom:1px solid #e5eaf1;padding:8px 0;font-family:ui-monospace,monospace;font-size:.9rem}a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}@media(max-width:600px){.wrap{padding:14px}.panel{padding:16px}}</style></head><body><main class="wrap"><p><a class="back" href="index.html">← All Week 9.2 exercises</a></p><header class="panel"><div class="eyebrow">EXERCISE 03 · SCRIPT LOADING</div><h1>defer and async</h1><p>Both attributes let the browser download an external script without pausing HTML parsing. They differ in when and in what order the scripts execute.</p></header><section class="panel"><h2>Live execution demonstration</h2><p>The app waits until the DOM is ready. The independent analytics task runs when its download finishes; its order is not guaranteed. This local simulation uses timers to make the concept visible and does not send analytics data.</p><div class="status"><strong>DOM available:</strong> <span id="dom">Checking…</span><br><strong>App script:</strong> <span id="app">Waiting…</span><br><strong>Independent task:</strong> <span id="analytics">Waiting…</span></div><div class="actions"><button id="run" type="button">Run demonstration again</button><button id="clear" class="secondary" type="button">Clear timeline</button></div><h3>Observed timeline</h3><div id="timeline" aria-live="polite"></div></section><section class="panel"><h2>Correct code structure</h2><pre class="code"><code>&lt;head&gt;
-  &lt;script src="app-script.js" defer&gt;&lt;/script&gt;
-  &lt;script src="analytics.js" async&gt;&lt;/script&gt;
-&lt;/head&gt;</code></pre><ul><li><strong>defer:</strong> downloads in parallel, then executes after HTML parsing; deferred scripts preserve document order.</li><li><strong>async:</strong> downloads in parallel and executes as soon as ready; execution order is not guaranteed.</li><li><strong>Important:</strong> <code>defer</code> and <code>async</code> are intended for external scripts. They do not defer ordinary inline classic scripts.</li></ul><a class="back" href="E2_Responsive_Images.html">← Previous exercise</a></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical demonstration of normal, deferred, and asynchronous JavaScript loading for Week 9.2.">
+  <title>Exercise 3 | defer and async</title>
+  <script defer src="E3_app.js"></script>
+  <script async src="E3_analytics.js"></script>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#f5f7fb;color:#182238;font:16px/1.65 system-ui,sans-serif}
+    .wrap{max-width:940px;margin:auto;padding:24px}
+    .panel{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}
+    .back{color:#1d4ed8}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}
+    .code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    button{padding:10px 14px;border:0;border-radius:9px;background:#2563eb;color:white;font-weight:700;cursor:pointer}
+    button.secondary{background:#475569}
+    .status{background:#eff6ff;border-radius:12px;padding:14px;margin:12px 0}
+    .timeline{padding-left:24px}.timeline li{padding:7px 0;border-bottom:1px solid #e5eaf1;font-family:ui-monospace,monospace;font-size:.9rem}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .mini{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px}
+    .mini h3{margin-top:0}.tag{display:inline-block;background:#eaf1ff;color:#1e40af;border-radius:999px;padding:3px 9px;font-size:.8rem;font-weight:700}
+    a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+    @media(max-width:650px){.wrap{padding:14px}.panel{padding:16px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p><a class="back" href="index.html">← All Week 9.2 exercises</a></p>
+    <header class="panel">
+      <div class="eyebrow">EXERCISE 03 · SCRIPT LOADING</div>
+      <h1>Understanding defer and async</h1>
+      <p>External JavaScript can be downloaded while the browser parses HTML. The script attributes control when the browser executes each file.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="live-title">
+      <h2 id="live-title">Live execution timeline</h2>
+      <p>The two external scripts below run independently. Reload this page to observe their real execution order; the async script may finish before or after the deferred app script.</p>
+      <div class="status" aria-live="polite">
+        <strong>DOM status:</strong> <span id="dom">Waiting for the deferred app…</span><br>
+        <strong>Deferred app:</strong> <span id="app">Waiting…</span><br>
+        <strong>Async script:</strong> <span id="analytics">Waiting…</span><br>
+        <strong>DOMContentLoaded:</strong> <span id="domcontent">Waiting…</span>
+      </div>
+      <div class="actions">
+        <button id="run" type="button">Test app button</button>
+        <button id="clear" class="secondary" type="button">Clear timeline</button>
+      </div>
+      <p id="click-status" role="status"></p>
+      <h3>Events in observed order</h3>
+      <ol id="timeline" class="timeline"><li>HTML is being parsed…</li></ol>
+    </section>
+
+    <section class="panel">
+      <h2>Compare the three loading methods</h2>
+      <div class="grid">
+        <article class="mini">
+          <span class="tag">Normal</span>
+          <h3>Parser-blocking</h3>
+          <p><code>&lt;script src="app.js"&gt;</code></p>
+          <p>The browser pauses HTML parsing while it fetches and executes a classic script.</p>
+        </article>
+        <article class="mini">
+          <span class="tag">defer</span>
+          <h3>After HTML parsing</h3>
+          <p><code>&lt;script src="app.js" defer&gt;</code></p>
+          <p>The file downloads during parsing, then runs after parsing finishes. Deferred scripts keep document order.</p>
+        </article>
+        <article class="mini">
+          <span class="tag">async</span>
+          <h3>As soon as ready</h3>
+          <p><code>&lt;script src="analytics.js" async&gt;</code></p>
+          <p>The file downloads independently and runs as soon as it is ready. Its execution order is not guaranteed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Code used in this page</h2>
+      <pre class="code"><code>&lt;head&gt;
+  &lt;script defer src="E3_app.js"&gt;&lt;/script&gt;
+  &lt;script async src="E3_analytics.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+      <ul>
+        <li><strong>defer</strong> and <strong>async</strong> apply to external scripts; adding them to a normal inline classic script does not defer its execution.</li>
+        <li>Use <strong>defer</strong> for scripts that depend on the parsed page or need to preserve order.</li>
+        <li>Use <strong>async</strong> for independent scripts that do not rely on another script's execution order.</li>
+      </ul>
+      <p><a class="back" href="E2_Responsive_Images.html">← Previous exercise: Responsive images</a></p>
+    </section>
+  </main>
+</body>
+</html>
