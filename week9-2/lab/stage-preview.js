@@ -46,7 +46,7 @@ document.querySelectorAll("img").forEach((img, index) => {
   }
 });
 
-if (stage >= 2) {
+if (stage >= 2 && stage < 7) {
   document.querySelectorAll("[data-details]").forEach(button => button.addEventListener("click", () => {
     const panel = document.getElementById(button.dataset.details);
     const open = button.getAttribute("aria-expanded") !== "true";
@@ -67,19 +67,19 @@ if (stage >= 2) {
   });
 }
 
-if (stage >= 5) {
+if (stage >= 5 && stage < 7) {
   const form = document.getElementById("newsletter-form");
   if (form) form.addEventListener("submit", event => {
     event.preventDefault();
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
+    const name = document.getElementById("subscriber-name");
+    const email = document.getElementById("subscriber-email");
     const errors = [
       ["name", name, name.value.trim() ? "" : "Please enter your name."],
       ["email", email, !email.value.trim() ? "Please enter your email address." : email.validity.valid ? "" : "Enter a valid email address."]
     ];
     let firstInvalid = null;
     errors.forEach(([id, input, message]) => {
-      document.getElementById(id + "-error").textContent = message;
+      document.getElementById("subscriber-" + id + "-error").textContent = message;
       input.setAttribute("aria-invalid", String(Boolean(message)));
       if (message && !firstInvalid) firstInvalid = input;
     });
