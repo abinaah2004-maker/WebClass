@@ -1,35 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Step 7: Deferred JavaScript in the interactive CineReview accessibility and performance lab.">
-<title>Step 7: Deferred JavaScript | CineReview Lab</title>
-<link rel="stylesheet" href="lab.css">
-<style>
-.stage-shell{max-width:1180px;margin:auto;padding:34px 22px 60px}
-.stage-kicker{color:#ff7881;font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.stage-shell h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.05em;margin:8px 0 14px}
-.stage-intro{max-width:820px;color:#c3ccda;font-size:1.05rem}
-.stage-demo{margin-top:28px;padding:18px;background:#141925;border:1px solid rgba(255,255,255,.13);border-radius:16px}
-.stage-demo h2{margin:0 0 6px;font-size:1.2rem}
-.stage-demo p{margin:0 0 16px;color:#aeb8c8}
-.stage-frame{display:block;width:100%;height:1750px;border:1px solid #30394b;border-radius:10px;background:#090b12}
-.stage-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;margin-top:22px}
-@media(max-width:600px){.stage-shell{padding:24px 14px}.stage-frame{height:2050px}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CineReview — Step 7: Deferred scripts</title>
+<link rel="stylesheet" href="stage-preview.css">
+<script src="stage-preview.js" defer></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="progress" aria-label="Lab steps"><a href="step1.html">Step 1</a><a href="step2.html">Step 2</a><a href="step3.html">Step 3</a><a href="step4.html">Step 4</a><a href="step5.html">Step 5</a><a href="step6.html">Step 6</a><a href="step7.html" aria-current="page">Step 7</a></nav>
-<main id="main" class="stage-shell">
-<p class="stage-kicker">Fix the Broken Website · Step 07 of 07</p>
-<h1>Deferred JavaScript</h1>
-<p class="stage-intro">The final step combines the improvements into the finished cinematic site, with working search, movie details and form validation.</p>
-<section class="stage-demo" aria-labelledby="demo-title">
-<h2 id="demo-title">Live preview — enhancement 7 of 7</h2><p>Each step shows the website at this stage. Click another step above to see the next improvement.</p>
-<iframe class="stage-frame" src="stage-preview.html?stage=7" title="CineReview live preview at enhancement 7" loading="lazy"></iframe>
-</section>
-<nav class="stage-actions" aria-label="Previous and next lab step"><a class="btn secondary" href="step6.html">← Previous step</a><a class="btn secondary" href="index.html">All seven steps</a><a class="btn" href="solution.html">Open full completed website →</a></nav>
-</main>
-</body>
-</html>
+<body data-stage="7">
+<a class="skip" href="#main">Skip to main content</a>
+<nav class="lab-progress" aria-label="Lab steps"><a href="../index.html">Week 9.2</a><a href="index.html">Lab guide</a><a href="broken.html">Broken starter</a><a href="step1.html">1 Semantic HTML</a><a href="step2.html">2 Buttons and links</a><a href="step3.html">3 Image alternatives</a><a href="step4.html">4 Contrast</a><a href="step5.html">5 Form feedback</a><a href="step6.html">6 Image stability</a><a href="step7.html" aria-current="page">7 Deferred scripts</a></nav><header class="site-header"><a class="brand" href="#home">CineReview</a><nav aria-label="Main navigation"><a href="#movies">Movies</a><a href="#featured">Featured</a><a href="#newsletter">Newsletter</a></nav></header>
+<main id="main"><section class="stage-explainer"><p class="eyebrow">WEEK 9.2 · STEP-BY-STEP LIVE RESULT</p><h1 id="stage-title">Step 1 · Semantic HTML</h1><p id="stage-description">This stage introduces meaningful page landmarks and a clear heading structure.</p><p class="stage-count">LIVE VERSION <strong id="stage-count">01 / 07</strong></p><p id="stage-code" class="stage-code">The page uses header, nav, main, section, article and footer landmarks.</p></section>
+<section class="hero" id="home"><p class="eyebrow">YOUR MOVIE GUIDE</p><h1>Discover Great Movies</h1><p>Read reviews and find your next favorite film.</p><form id="search-form" role="search"><label for="movie-search">Search movies</label><input id="movie-search" type="search" placeholder="Try Harbor"><button type="submit">Search</button></form><p id="search-status" role="status"></p></section>
+<section class="movies" id="movies"><h2>Now Showing</h2><div class="grid">
+<article class="movie-card"><img src="https://picsum.photos/seed/cine1/400/500" alt="Placeholder artwork for Echoes of Tomorrow" width="400" height="500"><div class="movie-info"><h3>Echoes of Tomorrow</h3><p>2024 · Sci-Fi · ★★★★☆ 4.1/5</p><button type="button" data-details="detail1" aria-expanded="false">View Details</button><p class="details" id="detail1" hidden>A science-fiction story about choices that shape tomorrow.</p></div></article>
+<article class="movie-card"><img src="https://picsum.photos/seed/cine2/400/500" alt="Placeholder artwork for The Last Harbor" width="400" height="500"><div class="movie-info"><h3>The Last Harbor</h3><p>2024 · Drama · ★★★★★ 4.8/5</p><button type="button" data-details="detail2" aria-expanded="false">View Details</button><p class="details" id="detail2" hidden>A drama about grief and redemption in a coastal town.</p></div></article>
+<article class="movie-card"><img src="https://picsum.photos/seed/cine3/400/500" alt="Placeholder artwork for Crimson Horizon" width="400" height="500"><div class="movie-info"><h3>Crimson Horizon</h3><p>2023 · Thriller · ★★★☆☆ 3.5/5</p><button type="button" data-details="detail3" aria-expanded="false">View Details</button><p class="details" id="detail3" hidden>A mystery thriller beyond the city.</p></div></article>
+</div></section>
+<section class="featured" id="featured"><img src="https://picsum.photos/seed/featuredcine/300/400" alt="Featured movie artwork"><div><h2>Editor's Pick: The Last Harbor</h2><p>A thoughtful story of loss and reconciliation.</p><a href="#newsletter">Read more</a></div></section>
+<section class="newsletter" id="newsletter"><h2>Stay Updated</h2><p>Sign up for movie news.</p><form id="newsletter-form" novalidate><label for="name">Your name</label><input id="name" name="name" required aria-describedby="name-error"><p class="error" id="name-error"></p><label for="email">Email address</label><input id="email" name="email" type="email" required aria-describedby="email-error"><p class="error" id="email-error"></p><button type="submit">Subscribe Now</button><p id="form-status" role="status"></p></form></section>
+</main><footer><p>CineReview · Fictional classroom project</p></footer>
+</body></html>
