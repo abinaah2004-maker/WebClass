@@ -23,7 +23,7 @@ if (stage < 2) {
   });
 }
 document.querySelectorAll('label[for="movie-search"]').forEach(label => label.hidden = stage < 2);
-document.querySelectorAll('label[for="name"], label[for="email"]').forEach(label => label.hidden = stage < 5);
+document.querySelectorAll('label[for="subscriber-name"], label[for="subscriber-email"]').forEach(label => label.hidden = stage < 5);
 
 document.querySelectorAll("img").forEach((img, index) => {
   if (stage < 3) {
@@ -83,7 +83,7 @@ if (stage >= 5 && stage < 7) {
       input.setAttribute("aria-invalid", String(Boolean(message)));
       if (message && !firstInvalid) firstInvalid = input;
     });
-    document.getElementById("form-status").textContent = firstInvalid ? "Please correct the highlighted fields." : "Form validated. This classroom demo does not send or store your information.";
+    document.getElementById("newsletter-status").textContent = firstInvalid ? "Please correct the highlighted fields." : "Form validated. This classroom demo does not send or store your information.";
     if (firstInvalid) firstInvalid.focus();
   });
 }
