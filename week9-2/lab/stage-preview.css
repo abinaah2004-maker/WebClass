@@ -66,3 +66,8 @@ body[data-stage="7"] a:focus-visible,body[data-stage="7"] button:focus-visible,b
 .stage-code{padding:12px 15px;background:#e3e8ef;border-left:4px solid #b20710;font-family:ui-monospace,monospace;white-space:pre-wrap}
 body[data-stage="4"] .stage-explainer,body[data-stage="5"] .stage-explainer,body[data-stage="6"] .stage-explainer,body[data-stage="7"] .stage-explainer{background:#172337;color:#f8fafc;border-color:#394b65}
 body[data-stage="4"] .stage-code,body[data-stage="5"] .stage-code,body[data-stage="6"] .stage-code,body[data-stage="7"] .stage-code{background:#26364d;color:#fff}
+
+.fake-btn{display:inline-block;padding:9px 14px;background:#ddd;color:#111;border:1px solid #888;border-radius:3px;cursor:default}
+body[data-stage="2"] .fake-btn{background:#174f91;color:#fff;border-color:#174f91;border-radius:6px}
+body[data-stage="4"] .fake-btn,body[data-stage="5"] .fake-btn,body[data-stage="6"] .fake-btn{background:#c90020;color:#fff;border-color:#c90020}
+body[data-stage="7"] .fake-btn{background:#e50925;color:#fff;border-color:#e50925;border-radius:7px}
