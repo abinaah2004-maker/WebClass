@@ -3,98 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A practical demonstration of normal, deferred, and asynchronous JavaScript loading for Week 9.2.">
-  <title>Exercise 3 | defer and async</title>
-  <script defer src="E3_app.js"></script>
-  <script async src="E3_analytics.js"></script>
+  <meta name="description" content="Week 9.2 Exercise 3: a live demonstration of normal, deferred, and asynchronous JavaScript loading.">
+  <title>E3 · defer and async · Abinash Lamichhane</title>
+  <script src="E3_app.js" defer></script>
+  <script src="E3_analytics.js" async></script>
   <style>
-    *{box-sizing:border-box}
-    body{margin:0;background:#f5f7fb;color:#182238;font:16px/1.65 system-ui,sans-serif}
-    .wrap{max-width:940px;margin:auto;padding:24px}
-    .panel{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}
-    .back{color:#1d4ed8}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}
-    .code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto}
-    .actions{display:flex;gap:10px;flex-wrap:wrap}
-    button{padding:10px 14px;border:0;border-radius:9px;background:#2563eb;color:white;font-weight:700;cursor:pointer}
-    button.secondary{background:#475569}
-    .status{background:#eff6ff;border-radius:12px;padding:14px;margin:12px 0}
-    .timeline{padding-left:24px}.timeline li{padding:7px 0;border-bottom:1px solid #e5eaf1;font-family:ui-monospace,monospace;font-size:.9rem}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .mini{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px}
-    .mini h3{margin-top:0}.tag{display:inline-block;background:#eaf1ff;color:#1e40af;border-radius:999px;padding:3px 9px;font-size:.8rem;font-weight:700}
-    a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
-    @media(max-width:650px){.wrap{padding:14px}.panel{padding:16px}.grid{grid-template-columns:1fr}}
+    :root{color-scheme:light;--paper:#f7f7f2;--ink:#242b24;--sub:#62695e;--line:#d9dfd3;--panel:#fff;--lime:#ddecaf;--accent:#3c6023}
+    html[data-theme="dark"]{color-scheme:dark;--paper:#141815;--ink:#eef0e8;--sub:#b5bfad;--line:#374032;--panel:#1e251f;--lime:#384b28;--accent:#c5e79e}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+    a{color:inherit;text-underline-offset:4px}button{font:inherit;padding:10px 15px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);cursor:pointer}
+    button:hover{border-color:var(--ink)}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .wrap{max-width:1000px;margin:auto;padding-left:28px;padding-right:28px}
+    .topbar{border-bottom:1px solid var(--line)}.topbar nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
+    .brand{font-weight:800;text-decoration:none;letter-spacing:-.4px}.navlinks,.exercise-nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .navlinks a,.exercise-nav a{text-decoration:none;font-size:13px}.page{max-width:900px;margin:auto;padding:38px 28px}
+    .skip{position:absolute;left:-10000px;top:10px;background:var(--panel);padding:10px;z-index:5}.skip:focus{left:12px}
+    .eyebrow{font:11px/1.7 ui-monospace,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub)}
+    h1{font-size:clamp(35px,5vw,52px);letter-spacing:-2px;line-height:1.08;margin:12px 0 16px}
+    h2{font-size:25px;letter-spacing:-.8px;line-height:1.2;margin:0 0 14px}h3{font-size:18px;margin:18px 0 8px}
+    p{color:var(--sub)}.exercise-nav{margin:20px 0 25px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .demo{padding:23px;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin:22px 0}
+    .status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+    .status-item{padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:7px}
+    .status-item strong{display:block;font-size:12px;color:var(--sub);margin-bottom:5px}
+    .status-item span{font-weight:600;overflow-wrap:anywhere}
+    .actions{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.primary,button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+    .timeline{padding-left:25px}.timeline li{padding:7px 0;border-bottom:1px solid var(--line);font:12px/1.6 ui-monospace,monospace;overflow-wrap:anywhere}
+    .method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .method{padding:17px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+    .tag{display:inline-block;padding:3px 8px;background:var(--lime);color:var(--ink);font:11px ui-monospace,monospace;border-radius:4px}
+    pre{overflow:auto;max-width:100%;padding:18px;background:var(--ink);color:var(--paper);border-radius:8px;font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+    code{font-family:ui-monospace,monospace}.note{padding:14px;background:var(--lime);color:var(--ink);border-radius:7px}
+    footer{border-top:1px solid var(--line);padding-top:20px;padding-bottom:24px;margin-top:28px;font:11px/1.8 ui-monospace,monospace;color:var(--sub)}
+    @media(max-width:650px){.wrap{padding-left:18px;padding-right:18px}.page{padding:25px 18px}.method-grid{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr}.demo{padding:17px}h1{letter-spacing:-1.2px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <p><a class="back" href="index.html">← All Week 9.2 exercises</a></p>
-    <header class="panel">
-      <div class="eyebrow">EXERCISE 03 · SCRIPT LOADING</div>
-      <h1>Understanding defer and async</h1>
-      <p>External JavaScript can be downloaded while the browser parses HTML. The script attributes control when the browser executes each file.</p>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="wrap" aria-label="Coursework">
+      <a class="brand" href="../index.html">Avi · Web Programming</a>
+      <div class="navlinks"><a href="index.html">Week 9.2</a><button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button></div>
+    </nav>
+  </header>
 
-    <section class="panel" aria-labelledby="live-title">
-      <h2 id="live-title">Live execution timeline</h2>
-      <p>The two external scripts below run independently. Reload this page to observe their real execution order; the async script may finish before or after the deferred app script.</p>
-      <div class="status" aria-live="polite">
-        <strong>DOM status:</strong> <span id="dom">Waiting for the deferred app…</span><br>
-        <strong>Deferred app:</strong> <span id="app">Waiting…</span><br>
-        <strong>Async script:</strong> <span id="analytics">Waiting…</span><br>
-        <strong>DOMContentLoaded:</strong> <span id="domcontent">Waiting…</span>
+  <main id="main" class="page">
+    <p class="eyebrow">WEEK 9.2 / PERFORMANCE PRACTICE</p>
+    <h1>E3 · defer and async</h1>
+    <p>This exercise demonstrates how the browser loads external JavaScript. Compare a normal script with <code>defer</code> and <code>async</code>, then watch the real execution events on this page.</p>
+
+    <nav class="exercise-nav" aria-label="Exercises">
+      <a href="index.html">All exercises</a>
+      <a href="E1_Lighthouse.html">E1 · Lighthouse</a>
+      <a href="E2_Responsive_Images.html">E2 · Images</a>
+      <a href="E3_Script_Loading.html" aria-current="page">E3 · Scripts</a>
+      <a href="lab/index.html">Accessibility lab</a>
+    </nav>
+
+    <section class="demo" aria-labelledby="live-title">
+      <h2 id="live-title">Live loading results</h2>
+      <p>The deferred app script waits until HTML parsing is complete. The independent async script runs as soon as it is downloaded. Reload the page to observe the actual order; async timing can vary.</p>
+      <div class="status-grid">
+        <div class="status-item"><strong>DOM ready when app ran</strong><span id="dom">Waiting for the deferred app…</span></div>
+        <div class="status-item"><strong>Deferred app script</strong><span id="app">Waiting…</span></div>
+        <div class="status-item"><strong>Independent async script</strong><span id="analytics">Waiting…</span></div>
+        <div class="status-item"><strong>DOMContentLoaded event</strong><span id="domcontent">Waiting…</span></div>
       </div>
-      <div class="actions">
-        <button id="run" type="button">Test app button</button>
-        <button id="clear" class="secondary" type="button">Clear timeline</button>
-      </div>
-      <p id="click-status" role="status"></p>
-      <h3>Events in observed order</h3>
+      <p><strong>Observed execution timeline</strong></p>
       <ol id="timeline" class="timeline"><li>HTML is being parsed…</li></ol>
+      <div class="actions">
+        <button class="primary" id="run" type="button">Test the app button</button>
+        <button id="clear" type="button">Clear timeline</button>
+      </div>
+      <p id="click-status" role="status" aria-live="polite"></p>
     </section>
 
-    <section class="panel">
+    <section class="demo">
       <h2>Compare the three loading methods</h2>
-      <div class="grid">
-        <article class="mini">
+      <div class="method-grid">
+        <article class="method">
           <span class="tag">Normal</span>
           <h3>Parser-blocking</h3>
           <p><code>&lt;script src="app.js"&gt;</code></p>
           <p>The browser pauses HTML parsing while it fetches and executes a classic script.</p>
         </article>
-        <article class="mini">
+        <article class="method">
           <span class="tag">defer</span>
           <h3>After HTML parsing</h3>
           <p><code>&lt;script src="app.js" defer&gt;</code></p>
-          <p>The file downloads during parsing, then runs after parsing finishes. Deferred scripts keep document order.</p>
+          <p>The file downloads during parsing, then runs after parsing finishes. Deferred scripts preserve document order.</p>
         </article>
-        <article class="mini">
+        <article class="method">
           <span class="tag">async</span>
           <h3>As soon as ready</h3>
           <p><code>&lt;script src="analytics.js" async&gt;</code></p>
-          <p>The file downloads independently and runs as soon as it is ready. Its execution order is not guaranteed.</p>
+          <p>The file downloads independently and executes as soon as it is ready. Its order relative to other scripts is not guaranteed.</p>
         </article>
       </div>
     </section>
 
-    <section class="panel">
-      <h2>Code used in this page</h2>
-      <pre class="code"><code>&lt;head&gt;
-  &lt;script defer src="E3_app.js"&gt;&lt;/script&gt;
-  &lt;script async src="E3_analytics.js"&gt;&lt;/script&gt;
+    <section class="demo">
+      <h2>Code used in this exercise</h2>
+      <pre><code>&lt;head&gt;
+  &lt;script src="E3_app.js" defer&gt;&lt;/script&gt;
+  &lt;script src="E3_analytics.js" async&gt;&lt;/script&gt;
 &lt;/head&gt;</code></pre>
+      <h3>What each file does</h3>
       <ul>
-        <li><strong>defer</strong> and <strong>async</strong> apply to external scripts; adding them to a normal inline classic script does not defer its execution.</li>
-        <li>Use <strong>defer</strong> for scripts that depend on the parsed page or need to preserve order.</li>
-        <li>Use <strong>async</strong> for independent scripts that do not rely on another script's execution order.</li>
+        <li><strong>E3_app.js:</strong> waits until the parsed page is available, updates the status fields, records events, and attaches the test and clear button actions.</li>
+        <li><strong>E3_analytics.js:</strong> runs independently, records a local timestamp, and notifies the app. It does not collect or send personal data.</li>
       </ul>
-      <p><a class="back" href="E2_Responsive_Images.html">← Previous exercise: Responsive images</a></p>
+      <p class="note"><strong>Important:</strong> <code>defer</code> and <code>async</code> affect external scripts. Adding either attribute to a normal inline classic script does not delay that inline script.</p>
+      <p>Use <strong>defer</strong> when a script needs the parsed HTML or must preserve order. Use <strong>async</strong> for independent scripts that do not rely on another script's execution order.</p>
     </section>
-    <footer class="panel">
-      <strong>Abinash Lamichhane · Gachon University</strong>
-      <p>My Week 9.2 coursework — Web Programming.</p>
-      <p><a class="back" href="index.html">My Week 9.2 exercise hub</a> · <a class="back" href="lab/index.html">My Fix the Broken Website lab</a></p>
-    </footer>
+
+    <p><a href="E2_Responsive_Images.html">← Previous: Responsive images</a> · <a href="index.html">Back to Week 9.2</a></p>
+    <footer>Abinash Lamichhane · Gachon University · Web Programming</footer>
   </main>
+  <script>
+    (function(){
+      const toggle=document.getElementById('theme-toggle');
+      if(!toggle)return;
+      toggle.addEventListener('click',function(){
+        const dark=document.documentElement.dataset.theme!=='dark';
+        document.documentElement.dataset.theme=dark?'dark':'light';
+        toggle.textContent=dark?'Light mode':'Dark mode';
+        toggle.setAttribute('aria-pressed',String(dark));
+      });
+    })();
+  </script>
 </body>
 </html>
