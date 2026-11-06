@@ -49,24 +49,36 @@ footer{border-top:1px solid var(--line);padding-top:24px;padding-bottom:28px;mar
 <nav class="course-toc" aria-label="Completed lab stages">
 <a href="step1.html">Step 1</a><a href="step2.html">Step 2</a><a href="step3.html">Step 3</a><a href="step4.html">Step 4</a><a href="step5.html">Step 5</a><a href="step6.html">Step 6</a><a href="step7.html">Step 7</a>
 </nav>
-<p class="report-note"><strong>Lab progress:</strong> The seven working stage pages and completed solution are included. Lighthouse screenshots, saved reports and measured contrast evidence have not yet been added to this repository, so no before/after scores are claimed here.</p>
+<p class="report-note"><strong>Audit evidence:</strong> Your completed Week 9 Lighthouse audit report is included below. It records the actual Memory Match (Neon Arcade) audit results and the improvements made after reviewing Lighthouse findings.</p>
 
-<details class="disclosure">
-<summary>Audit evidence · before and after</summary>
+<details class="disclosure" open>
+<summary>Audit evidence · your completed Lighthouse report</summary>
 <section class="demo">
-<h3>Week 9 Accessibility Audit Report</h3>
-<p>The Week 9 audit report is included here as a PDF reference. It documents the Memory Match project audit, the initial findings, the accessibility improvements, and the later results.</p>
-<p><a class="button primary" href="Week9_Accessibility_Audit_Report.pdf" target="_blank" rel="noopener">Open audit report (PDF)</a></p>
-<iframe src="Week9_Accessibility_Audit_Report.pdf" title="Week 9 Accessibility Audit Report PDF" style="display:block;width:100%;height:680px;border:1px solid var(--line);border-radius:8px;background:#fff" loading="lazy"></iframe>
-<p><strong>Note:</strong> This PDF is the Week 9 accessibility audit report for the Memory Match project. It is included in this section as requested; it is not a Lighthouse before-and-after report for the fictional movie-site broken.html and solution.html pages.</p>
-<p>For the movie-site lab's own before-and-after evidence, run Lighthouse on the original starter and completed solution using the same device profile and settings. Add your own screenshots and measured reports here when available.</p>
-<div class="evidence">
-<figure class="pending"><strong>Before · original starter</strong><p>Evidence not uploaded yet. Add your own Lighthouse screenshot and report here after running the audit.</p></figure>
-<figure class="pending"><strong>After · completed solution</strong><p>Evidence not uploaded yet. Add your own Lighthouse screenshot and report here after running the audit.</p></figure>
-</div>
-<p>Automated scores should be supplemented with manual keyboard, form and screen-reader checks. A Lighthouse score alone does not establish full WCAG conformance.</p>
+<h3>Week 9: Accessibility Audit Report</h3>
+<p>This is the Lighthouse/accessibility audit you completed for your Memory Match — Neon Arcade project. The report below preserves the results and explanations from your submitted PDF; no new scores have been generated.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Lighthouse category</th><th scope="col">Result recorded in your report</th></tr></thead>
+<tbody>
+<tr><th scope="row">Performance</th><td>88/100 in the initial results; a later screenshot also showed 77/100</td></tr>
+<tr><th scope="row">Accessibility</th><td>96/100 initially; a later screenshot showed 100/100</td></tr>
+<tr><th scope="row">Best Practices</th><td>77/100</td></tr>
+<tr><th scope="row">SEO</th><td>90/100</td></tr>
+</tbody></table></div>
+<h3>Why the initial results were lower</h3>
+<ul>
+<li><strong>Performance:</strong> the report notes main-content rendering delay, possible render-blocking CSS and long main-thread tasks that can delay LCP.</li>
+<li><strong>Accessibility:</strong> the initial 96/100 indicated at least one automated check still needed attention; keyboard navigation and focus behavior also require manual testing.</li>
+<li><strong>Best Practices:</strong> the 77/100 showed Lighthouse warnings; the report recommends checking the individual diagnostics rather than guessing at a cause.</li>
+<li><strong>SEO:</strong> the 90/100 was associated with missing page metadata, including a meta description.</li>
+</ul>
+<h3>Improvements and later result</h3>
+<p>Your report records adding a skip link, a focusable main-content target (<code>&lt;main id="main-content" tabindex="-1"&gt;</code>), reviewing keyboard use and interactive controls, identifying the missing SEO description, and reviewing performance diagnostics. A later Lighthouse screenshot recorded Accessibility 100/100, up from 96/100.</p>
+<p><a class="button primary" href="Week9_Accessibility_Audit_Report.pdf" target="_blank" rel="noopener">Open your Week 9 audit PDF</a></p>
+<iframe src="Week9_Accessibility_Audit_Report.pdf" title="Your Week 9 Lighthouse accessibility audit report" style="display:block;width:100%;height:720px;border:1px solid var(--line);border-radius:8px;background:#fff" loading="lazy"></iframe>
+<p class="report-note"><strong>Important:</strong> The PDF is your evidence for the Memory Match project. The movie-site pages in this lab are a separate practice exercise; this section presents your existing audit report rather than claiming that Lighthouse was run on the fictional CineReview starter and solution.</p>
+<p>Automated Lighthouse scores are useful evidence, but the manual checks listed in your report—keyboard order, skip-link focus, visible focus, game controls and small-screen layout—remain important.</p>
 </section>
-</details>
+</details>>
 
 <details class="disclosure">
 <summary>Contrast measurements</summary>
