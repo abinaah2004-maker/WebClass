@@ -105,11 +105,19 @@ The newsletter form is a classroom demonstration only. It does not send or store
 | `stage-preview.css` | Styles for the progressive stage pages |
 | `stage-preview.js` | Shows the relevant explanation and feature state for each stage |
 
-## Testing and evidence
+## Before-and-after Lighthouse audit
 
-Run Lighthouse separately on the original and completed pages using the same browser, device setting and audit conditions. Save your own screenshots and reports if your instructor requires evidence.
+The submitted CineReview audit compares the original `broken.html` page with the improved `solution.html` page. The recorded screenshots show:
 
-Lighthouse scores can vary between runs. No specific score or percentage improvement is claimed in this README. Also test keyboard access and form feedback manually; an automated score alone does not prove complete accessibility.
+| Category | Before | After | Change |
+|---|---:|---:|---:|
+| Performance | 92/100 | 100/100 | +8 points |
+| Accessibility | 69/100 | 100/100 | +31 points |
+| Best Practices | 100/100 | 100/100 | No change |
+
+The audit documents seven improvement areas: semantic structure and keyboard navigation; real interactive controls and result announcements; image alternative text; contrast and responsive layout; form labels and validation feedback; image dimensions and loading behavior; and deferred JavaScript loading. The full comparison, audit conditions, limitations and manual-validation recommendations are recorded in `index.html` under **Before-and-after audit · CineReview**.
+
+The screenshots were supplied by the author and the scores were transcribed from those captures; the audit was not independently rerun. Lighthouse results can vary between runs, and a 100/100 automated score does not prove full WCAG conformance. Keyboard, screen-reader, form and contrast checks should still be tested manually.
 
 ---
 
