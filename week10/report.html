@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Week 10_2 keyboard accessibility report template by Abinash Lamichhane.">
+<title>Week 10_2 — Accessibility Report | Abinash Lamichhane</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f3eb;color:#202e27;font:16px/1.7 system-ui,sans-serif}a{color:#255b3b;text-underline-offset:4px}a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #255b3b;outline-offset:3px}.skip{position:absolute;left:12px;top:-70px;background:#255b3b;color:#fff;padding:10px 14px}.skip:focus{top:10px}header,main,footer{width:min(900px,calc(100% - 40px));margin:auto}header{padding:22px 0;border-bottom:1px solid #c9cdc0}main{padding:32px 0 55px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#49664e}h1{font:500 clamp(36px,6vw,58px)/1.1 Georgia,serif;margin:12px 0}h2{font:500 28px Georgia,serif;margin:36px 0 10px}.muted{color:#59665d}.panel{background:#fffef8;border:1px solid #c9cdc0;border-radius:10px;padding:18px;margin:18px 0}.note{background:#e6eadf;border-left:4px solid #789477;padding:14px 18px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fffef8}th,td{border:1px solid #c9cdc0;padding:11px;text-align:left;vertical-align:top}th{background:#e6eadf}textarea{width:100%;min-height:90px;padding:12px;border:1px solid #9ca99b;border-radius:7px;background:#fffef8;color:#202e27;font:inherit}button{border:0;border-radius:7px;background:#255b3b;color:white;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}footer{border-top:1px solid #c9cdc0;padding:20px 0 30px;font-size:13px;color:#59665d}@media print{body{background:white}header,main,footer{width:100%}.skip,.actions{display:none}.panel,table{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the main content</a>
+<header><a href="./">← Back to Week 10 submission</a> · <a href="./accessibility/">Open keyboard test</a></header>
+<main id="main" tabindex="-1">
+<p class="eyebrow">WEB PROGRAMMING / WEEK 10_2 / ACCESSIBILITY</p>
+<h1>Keyboard accessibility<br>modification report</h1>
+<p><strong>Student:</strong> Abinash Lamichhane · <strong>University:</strong> Gachon University</p>
+<div class="note"><strong>Report status:</strong> This is my report template. I must complete the observation fields after testing the published pages on my own computer. It does not claim that a test has passed.</div>
+<h2>1. Purpose</h2>
+<p>A skip link helps keyboard users bypass repeated navigation and move directly to the main content. It should be the first keyboard-focusable control, become visible when focused and move focus to a meaningful main-content target when activated.</p>
+<h2>2. Implementation in my coursework</h2>
+<div class="table-wrap"><table><thead><tr><th>Page</th><th>Implementation to inspect</th><th>My test status</th></tr></thead><tbody>
+<tr><th>Week 10 hub</th><td>Skip link before the header and a focusable <code>main</code> element.</td><td>Not yet recorded</td></tr>
+<tr><th>Portfolio</th><td>Skip link, main landmark and visible keyboard focus styles.</td><td>Not yet recorded</td></tr>
+<tr><th>Exercise pages</th><td>Skip link and a main content target on each exercise page.</td><td>Not yet recorded</td></tr>
+<tr><th>Project pages</th><td>Check keyboard access to forms, buttons, filters and navigation.</td><td>Not yet recorded</td></tr>
+</tbody></table></div>
+<h2>3. Test procedure</h2>
+<ol><li>Open the deployed page and reload it without clicking anywhere.</li><li>Press <kbd>Tab</kbd> once and check whether the skip link receives focus and becomes visible.</li><li>Press <kbd>Enter</kbd> to activate the link.</li><li>Check whether focus moves to the main content, then press Tab to continue through the page.</li><li>Repeat on the Week 10 hub, portfolio and selected exercise/project pages.</li></ol>
+<p class="note">Tab moves focus between controls. Enter activates the focused link. The expected behavior is not that Tab itself activates the skip link.</p>
+<h2>4. My test observations</h2>
+<p>Complete these fields after testing. Include the browser/device used and describe what actually happened.</p>
+<div class="panel"><label for="device"><strong>Browser and device</strong></label><textarea id="device" placeholder="Example: Chrome on my laptop / Android Chrome"></textarea><label for="tab"><strong>What happened after the first Tab?</strong></label><textarea id="tab" placeholder="Did the skip link become visible and focused?"></textarea><label for="enter"><strong>What happened after pressing Enter?</strong></label><textarea id="enter" placeholder="Where did keyboard focus move?"></textarea><label for="issues"><strong>Issues or improvements noticed</strong></label><textarea id="issues" placeholder="Write any issue you noticed, or say none if that is what you observed."></textarea><label for="conclusion"><strong>Conclusion</strong></label><textarea id="conclusion" placeholder="Explain whether the keyboard test worked and why skip links are useful."></textarea><div class="actions"><button id="copy">Copy completed report</button><button type="button" onclick="window.print()">Print / Save as PDF</button></div><p id="status" role="status" aria-live="polite"></p></div>
+<h2>5. Evidence to attach</h2>
+<ul><li>Screenshot showing the skip link after the first Tab press.</li><li>Screenshot or short recording showing the destination after Enter.</li><li>List the pages tested and the actual result for each page.</li></ul>
+<p class="muted">Do not write “Pass” for a page until it has been tested. Add your real screenshots to the submission rather than creating example evidence.</p>
+<h2>6. Reflection</h2>
+<p>Keyboard testing helps identify navigation barriers that may not be obvious when using a mouse. A clear focus indicator and a working skip link make a page easier to navigate for keyboard users and people who use assistive technologies.</p>
+</main>
+<footer>Abinash Lamichhane · Week 10_2 Accessibility Report</footer>
+<script>
+document.getElementById('copy').addEventListener('click',async()=>{const fields=['device','tab','enter','issues','conclusion'];const labels=['Browser and device','First Tab observation','Enter observation','Issues or improvements','Conclusion'];const output=['Week 10_2 Keyboard Accessibility Report','Student: Abinash Lamichhane',...fields.map((id,i)=>labels[i]+': '+document.getElementById(id).value)].join('\n\n');try{await navigator.clipboard.writeText(output);document.getElementById('status').textContent='Report copied. Paste it into your document and attach your own screenshots.'}catch(error){document.getElementById('status').textContent='Clipboard access was blocked. Select and copy the report text manually.'}});
+</script>
+</body></html>
