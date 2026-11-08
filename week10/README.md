@@ -15,7 +15,8 @@ This folder contains my Week 10 coursework: Git and GitHub exercises, GitHub Pag
 - `projects/job-tracker/` — job application tracker
 - `projects/study-planner/` — weekly study planner
 - `projects/book-search/` — Open Library API search
-- `accessibility/` — keyboard test and report template
+- `accessibility/` — interactive keyboard test
+- `report.html` — Week 10_2 keyboard accessibility report template (complete it with your own test observations and screenshots)
 
 ## Evidence
 Terminal commands and browser tests must be run and captured by me on my own computer. Screenshots and test results will be added after I complete those steps. This README does not claim that unperformed tests have passed.
