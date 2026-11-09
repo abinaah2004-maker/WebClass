@@ -23,10 +23,16 @@
 <p>Resize the browser or open this page on a phone. The browser uses the portrait crop at narrow widths and the landscape crop at wider widths. Within each layout, <code>srcset</code> lets the browser choose an appropriate file width.</p>
 <figure class="image-frame">
 <picture>
-<source media="(max-width:600px)" width="480" height="640" srcset="https://picsum.photos/id/1011/480/640 480w, https://picsum.photos/id/1011/720/960 720w" sizes="calc(100vw - 60px)">
-<img id="responsive-photo" class="responsive-image" src="https://picsum.photos/id/1011/960/640" srcset="https://picsum.photos/id/1011/480/320 480w, https://picsum.photos/id/1011/960/640 960w, https://picsum.photos/id/1011/1440/960 1440w" sizes="(max-width: 600px) calc(100vw - 60px), (max-width: 980px) calc(100vw - 80px), 932px" alt="A scenic outdoor landscape with trees and a lake" width="960" height="640" fetchpriority="high" decoding="async">
+<img id="responsive-photo" class="responsive-image"
+ src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/960px-Lisboa_trams.jpg"
+ srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/330px-Lisboa_trams.jpg 330w,
+         https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/960px-Lisboa_trams.jpg 960w,
+         https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/1280px-Lisboa_trams.jpg 1280w"
+ sizes="(max-width: 600px) calc(100vw - 60px), (max-width: 980px) calc(100vw - 80px), 932px"
+ alt="Yellow Lisbon trams on a city street beside a tram stop, with pigeons flying overhead"
+ width="960" height="671" fetchpriority="high" decoding="async">
 </picture>
-<figcaption>The same photographic subject is offered in different dimensions. The mobile source uses a portrait crop; the desktop fallback uses a landscape crop.</figcaption>
+<figcaption>Real photograph by Ivan Aleksić, from Wikimedia Commons, licensed CC BY-SA 4.0. The browser can choose a 330px, 960px or 1280px JPEG candidate. The image is not AI-generated.</figcaption>
 </figure>
 <div class="pills"><span class="pill">picture: art direction</span><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">alt: text alternative</span></div>
 <button id="inspect-image" type="button">Inspect selected image</button>
@@ -92,7 +98,7 @@
 <li>A narrow/mobile screenshot showing the portrait crop fitting the screen.</li>
 <li>Optional: a DevTools Network screenshot showing the selected image resource and its dimensions.</li>
 </ul>
-<p>Use your own browser screenshots. The displayed image is a normal photographic placeholder for demonstrating responsive behavior; replace it with a photograph you choose if your professor requires an original image.</p>
+<p>The example uses a real Creative Commons photograph, not generated artwork. Credit: Ivan Aleksić, <a href="https://commons.wikimedia.org/wiki/File:Lisboa_trams.jpg">Lisboa trams.jpg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. The source file is delivered by Wikimedia Commons at multiple JPEG widths; this version does not claim measured local WebP/JPEG file-size savings. To reproduce Sudip's exact format comparison, create local WebP and JPEG exports from a photograph you have permission to use, then compare their actual byte sizes.</p>
 <p><a class="back" href="E1_Lighthouse.html">← Previous: Lighthouse</a> · <a class="back" href="E3_Script_Loading.html">Next: Script Loading →</a></p>
 </section>
 </main>
