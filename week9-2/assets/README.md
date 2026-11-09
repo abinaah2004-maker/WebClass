@@ -1,16 +1,9 @@
-# Week 9.2 responsive image assets
+# E2 image source
 
-These four local files are used by `E2_Responsive_Images.html`.
+The responsive image exercise uses a photograph hosted by Unsplash. It is loaded in the browser at 400px and 800px candidate widths in JPEG and WebP formats, so this folder does not need copied image exports.
 
-| File | Dimensions | File size |
-|---|---:|---:|
-| `photo-400.jpg` | 400 × 200 | 21,448 bytes |
-| `photo-400.webp` | 400 × 200 | 13,466 bytes |
-| `photo-800.jpg` | 800 × 400 | 53,204 bytes |
-| `photo-800.webp` | 800 × 400 | 28,346 bytes |
+Photo: Aayush Gupta, “Summers of Lisbon,” published March 26, 2020.
+Original: https://unsplash.com/photos/yellow-tram-in-historic-lisbon-street-ljhCEaHYWJ8
+License: https://unsplash.com/license
 
-The WebP versions are 37.2% smaller at 400px and 46.7% smaller at 800px in this reference set. Results vary with the source photograph and encoder settings.
-
-**Provenance:** the image derivatives were adapted from Sudip Sah's public Week 9.2 reference repository: https://github.com/sudip09-sys/WebProgramming/tree/main/week9_2/assets. The reference E2 page does not identify the original photographer or licence. Do not claim the photo as your own. If the instructor requires a fully traceable image licence, replace these with derivatives from an image whose licence and author are clearly documented.
-
-To test: open DevTools → Network → Img, reload the E2 page at a narrow and a wide viewport, and inspect which file is requested.
+The page uses `srcset`, `sizes`, and `picture` to let the browser choose an appropriate resource. Check the actual request and transferred size in Developer Tools → Network → Img.
