@@ -40,7 +40,7 @@ skillButtons.forEach(button=>button.addEventListener('click',()=>{
  document.getElementById('skillEyebrow').textContent=item.eyebrow;document.getElementById('skillTitle').textContent=item.title;document.getElementById('skillDescription').textContent=item.description;
  document.getElementById('skillChips').replaceChildren(...item.chips.map(label=>{const span=document.createElement('span');span.textContent=label;return span}));
 }));
-const revealItems=[...document.querySelectorAll('.reveal')];
+const revealItems=[...document.querySelectorAll('.reveal, .section-head')];
 if('IntersectionObserver'in window&&!motionPreference.matches){
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('visible',entry.isIntersecting)),{threshold:.1});
  revealItems.forEach(item=>observer.observe(item));
