@@ -28,4 +28,153 @@ button:hover{background:#174c39}.secondary{background:#e7eee5;color:#244b39}.dan
 <section class="grid"><div class="stat"><small>Balance</small><strong id="balance">₩0</strong></div><div class="stat"><small>Income</small><strong id="income">₩0</strong></div><div class="stat"><small>Expenses</small><strong id="expenses">₩0</strong></div></section>
 <section class="panel"><h2>Monthly budget</h2><div class="form-row"><label class="muted" for="budget">Budget (KRW)</label><input class="field" id="budget" type="number" min="0" step="1000" placeholder="e.g. 500000"><button id="saveBudget">Save budget</button></div><p id="budgetMessage" class="muted" aria-live="polite">Set a budget to track your spending.</p></section>
 <section class="panel"><h2>Add a transaction</h2><form id="transactionForm"><div class="form-row"><input class="field" id="title" placeholder="Description" required maxlength="60"><input class="field" id="amount" type="number" min="1" step="1" placeholder="Amount (₩)" required></div><div class="form-row"><select class="field" id="type"><option value="expense">Expense</option><option value="income">Income</option></select><select class="field" id="category"><option>Food</option><option>Transport</option><option>Rent</option><option>Study</option><option>Health</option><option>Salary</option><option>Other</option></select><input class="field" id="date" type="date" required><button>Add transaction</button></div></form></section>
-<section class="panel"><div class="form-row" style="justify-content:space-between"><h2>Transactions</h2><button class="secondary" id="clearAll" type="button">Clear all</button></div><div id="transactions" class="list" aria-live="polite"><p class="empty">No transactions yet. Add your first one above.</p></div></section></main><script>const key='avi-expenses-v1';function readList(k){try{const value=JSON.parse(localStorage.getItem(k)||'[]');return Array.isArray(value)?value:[]}catch{return[]}}function localDate(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}let entries=readList(key);let budget=Math.max(0,Number(localStorage.getItem(key+'-budget'))||0);const $=id=>document.getElementById(id);$('date').value=localDate();$('budget').value=budget||'';const money=n=>'₩'+Math.round(n).toLocaleString('en-US');function render(){const inc=entries.filter(x=>x.type==='income').reduce((s,x)=>s+x.amount,0),out=entries.filter(x=>x.type==='expense').reduce((s,x)=>s+x.amount,0);$('income').textContent=money(inc);$('expenses').textContent=money(out);$('balance').textContent=money(inc-out);const month=localDate().slice(0,7),spent=entries.filter(x=>x.type==='expense'&&x.date.startsWith(month)).reduce((s,x)=>s+x.amount,0);$('budgetMessage').textContent=budget?money(spent)+' spent this month of '+money(budget)+' ('+Math.round(spent/budget*100)+'%). '+(spent>budget?'You are over budget.':'You are within budget.'):'Set a budget to track your spending.';const host=$('transactions');host.innerHTML='';if(!entries.length){host.innerHTML='<p class="empty">No transactions yet. Add your first one above.</p>';return;}entries.slice().sort((a,b)=>b.date.localeCompare(a.date)).forEach(x=>{const row=document.createElement('div');row.className='item';const info=document.createElement('div');const title=document.createElement('strong');title.textContent=x.title;const meta=document.createElement('small');meta.textContent=x.date+' · '+x.category;info.append(title,meta);const amount=document.createElement('strong');amount.textContent=(x.type==='income'?'+':'−')+money(x.amount);amount.style.color=x.type==='income'?'var(--cyan)':'#ff9b9b';const del=document.createElement('button');del.className='danger';del.textContent='Delete';del.onclick=()=>{entries=entries.filter(e=>e.id!==x.id);save()};row.append(info,amount,del);host.append(row)});}function save(){localStorage.setItem(key,JSON.stringify(entries));render()}$('transactionForm').addEventListener('submit',e=>{e.preventDefault();const amount=Number($('amount').value);if(!Number.isFinite(amount)||amount<=0||!$('title').value.trim()||!$('date').value){$('amount').setCustomValidity('Enter an amount greater than zero.');$('amount').reportValidity();$('amount').setCustomValidity('');return;}entries.push({id:Date.now(),title:$('title').value.trim(),amount,type:$('type').value,category:$('category').value,date:$('date').value});e.target.reset();$('date').value=new Date().toISOString().slice(0,10);save()});$('saveBudget').onclick=()=>{budget=Math.max(0,Number($('budget').value)||0);localStorage.setItem(key+'-budget',budget);render()};$('clearAll').onclick=()=>{if(confirm('Delete every saved transaction?')){entries=[];save()}};render();</script></body></html>
+<section class="panel"><div class="form-row" style="justify-content:space-between"><h2>Transactions</h2><button class="secondary" id="clearAll" type="button">Clear all</button></div><div id="transactions" class="list" aria-live="polite"><p class="empty">No transactions yet. Add your first one above.</p></div></section></main><script>
+(() => {
+  'use strict';
+  const STORAGE_KEY = 'avi-expenses-v1';
+  const $ = id => document.getElementById(id);
+  const money = value => '₩' + Math.round(value).toLocaleString('en-US');
+  const today = () => {
+    const d = new Date();
+    return [d.getFullYear(), String(d.getMonth()+1).padStart(2,'0'), String(d.getDate()).padStart(2,'0')].join('-');
+  };
+  function readEntries() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      return Array.isArray(parsed) ? parsed.filter(x =>
+        x && typeof x.title === 'string' && Number.isFinite(Number(x.amount)) &&
+        Number(x.amount) > 0 && (x.type === 'income' || x.type === 'expense')
+      ).map(x => ({...x, amount:Number(x.amount)})) : [];
+    } catch (error) {
+      return [];
+    }
+  }
+  function readBudget() {
+    try { return Math.max(0, Number(localStorage.getItem(STORAGE_KEY + '-budget')) || 0); }
+    catch (error) { return 0; }
+  }
+  let entries = readEntries();
+  let budget = readBudget();
+  $('date').value = today();
+  $('budget').value = budget || '';
+
+  function persist() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+      localStorage.setItem(STORAGE_KEY + '-budget', String(budget));
+      return true;
+    } catch (error) {
+      showMessage('Your browser blocked local storage. Please allow site data for this page.', true);
+      return false;
+    }
+  }
+  function showMessage(message, isError = false) {
+    let node = $('trackerMessage');
+    if (!node) {
+      node = document.createElement('p');
+      node.id = 'trackerMessage';
+      node.setAttribute('role','status');
+      node.setAttribute('aria-live','polite');
+      node.className = 'muted';
+      $('transactionForm').insertAdjacentElement('afterend', node);
+    }
+    node.textContent = message;
+    node.style.color = isError ? '#a33b2d' : 'var(--lime)';
+  }
+  function render() {
+    const income = entries.filter(x => x.type === 'income').reduce((sum,x) => sum + x.amount, 0);
+    const expenses = entries.filter(x => x.type === 'expense').reduce((sum,x) => sum + x.amount, 0);
+    $('income').textContent = money(income);
+    $('expenses').textContent = money(expenses);
+    $('balance').textContent = money(income - expenses);
+
+    const month = today().slice(0,7);
+    const spent = entries.filter(x => x.type === 'expense' && x.date.startsWith(month))
+      .reduce((sum,x) => sum + x.amount, 0);
+    $('budgetMessage').textContent = budget
+      ? money(spent) + ' spent this month of ' + money(budget) + ' (' +
+        Math.round(spent / budget * 100) + '%). ' +
+        (spent > budget ? 'You are over budget.' : 'You are within budget.')
+      : 'Set a budget to track your spending.';
+
+    const host = $('transactions');
+    host.replaceChildren();
+    if (!entries.length) {
+      const empty = document.createElement('p');
+      empty.className = 'empty';
+      empty.textContent = 'No transactions yet. Add your first one above.';
+      host.append(empty);
+      return;
+    }
+    [...entries].sort((a,b) => b.date.localeCompare(a.date)).forEach(entry => {
+      const row = document.createElement('div');
+      row.className = 'item';
+      const info = document.createElement('div');
+      const title = document.createElement('strong');
+      title.textContent = entry.title;
+      const meta = document.createElement('small');
+      meta.textContent = entry.date + ' · ' + entry.category + ' · ' +
+        (entry.type === 'income' ? 'Income' : 'Expense');
+      info.append(title, meta);
+      const amount = document.createElement('strong');
+      amount.textContent = (entry.type === 'income' ? '+' : '−') + money(entry.amount);
+      amount.style.color = entry.type === 'income' ? '#287b55' : '#a33b2d';
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'danger';
+      remove.textContent = 'Delete';
+      remove.addEventListener('click', () => {
+        entries = entries.filter(item => item.id !== entry.id);
+        persist();
+        render();
+        showMessage('Transaction deleted.');
+      });
+      row.append(info, amount, remove);
+      host.append(row);
+    });
+  }
+
+  $('transactionForm').addEventListener('submit', event => {
+    event.preventDefault();
+    const title = $('title').value.trim();
+    const amount = Number($('amount').value);
+    const date = $('date').value;
+    if (!title || !Number.isFinite(amount) || amount <= 0 || !date) {
+      showMessage('Please enter a description, an amount greater than zero, and a date.', true);
+      return;
+    }
+    const entry = {
+      id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random(),
+      title,
+      amount,
+      type: $('type').value,
+      category: $('category').value,
+      date
+    };
+    entries.push(entry);
+    persist();
+    render();
+    event.target.reset();
+    $('date').value = today();
+    showMessage((entry.type === 'income' ? 'Income' : 'Expense') + ' added successfully.');
+  });
+
+  $('saveBudget').addEventListener('click', () => {
+    budget = Math.max(0, Number($('budget').value) || 0);
+    persist();
+    render();
+    showMessage('Monthly budget saved.');
+  });
+
+  $('clearAll').addEventListener('click', () => {
+    if (window.confirm('Delete every saved transaction?')) {
+      entries = [];
+      persist();
+      render();
+      showMessage('All transactions cleared.');
+    }
+  });
+
+  render();
+})();
+</script></body></html>
