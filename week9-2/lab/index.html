@@ -154,8 +154,8 @@ a { color: #ff7881; }</code></pre>
 </section></details>
 
 <details class="disclosure" id="step-6">
-<summary>Step 6 · Image loading and layout stability</summary><section class="demo">
-<p>Set intrinsic image dimensions to reserve space before images load. Keep initially visible images eager and lazy-load images farther down the page where appropriate.</p>
+<summary>Step 6 · Responsive images and layout stability</summary><section class="demo">
+<p>Use srcset and sizes to let the browser choose an image width, picture for a narrow-screen crop, and intrinsic dimensions to reserve space. Keep initially visible images eager and lazy-load images farther down the page.</p>
 <pre><code>&lt;img src="movie.jpg" alt="Movie artwork"
   width="400" height="500"
   loading="lazy" decoding="async"&gt;</code></pre>
