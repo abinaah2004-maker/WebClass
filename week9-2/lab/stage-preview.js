@@ -49,6 +49,8 @@ document.querySelectorAll("picture source").forEach(source => {
   if (stage < 6) {
     source.removeAttribute("srcset");
     source.removeAttribute("sizes");
+    source.removeAttribute("width");
+    source.removeAttribute("height");
   }
 });
 
