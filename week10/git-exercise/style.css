@@ -50,3 +50,31 @@ p { max-width: 48ch; color: #52645a; font-size: 1.08rem; line-height: 1.7; }
   color: #315a3c;
   font-size: .94rem;
 }
+
+
+/* Keyboard accessibility: visible skip link and focusable main target. */
+.skip-link {
+  position: absolute;
+  top: -5rem;
+  left: 1rem;
+  z-index: 10;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  background: #173d29;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #4d9b65;
+  outline-offset: 3px;
+}
+main:focus {
+  outline: 3px solid #4d9b65;
+  outline-offset: 5px;
+}
+a:focus-visible {
+  outline: 3px solid #4d9b65;
+  outline-offset: 3px;
+}
