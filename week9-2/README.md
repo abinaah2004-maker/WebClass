@@ -4,9 +4,9 @@ Start at [the Week 9.2 overview](index.html).
 
 ## Coursework parts
 
-1. [Homework report](homework.html) — your CineReview before-and-after audit, recorded Lighthouse results, changes and limitations.
+1. [Homework report](homework.html) — CineReview before-and-after audit, recorded Lighthouse results, changes and limitations.
 2. [Practice exercises](exercises/index.html) — E1 Lighthouse, E2 responsive images, and E3 script loading.
-3. [Seven-step CineReview lab](lab/index.html) — original broken starter, progressive stages, and completed solution.
+3. [Seven-step CineReview lab](lab/index.html) — broken starter, progressive stages, and completed solution.
 
 ## Exercise pages
 
@@ -14,23 +14,25 @@ Start at [the Week 9.2 overview](index.html).
 - [E2 — Responsive images](E2_Responsive_Images.html)
 - [E3 — defer and async](E3_Script_Loading.html)
 
-## E2 image exercise status
+## E2 — Responsive images
 
-The live example uses a real Wikimedia Commons photograph by Ivan Aleksić, licensed CC BY-SA 4.0, and responsive JPEG width candidates. The page also explains how to create local 400px and 800px JPEG/WebP exports with Squoosh.
+The exercise uses a credited photograph by Aayush Gupta from Unsplash. The page offers JPEG and WebP image candidates at 400px and 800px widths using `srcset`, `sizes`, and `picture`. It also includes a small browser check that displays the selected image URL and its intrinsic dimensions.
 
-The local image exports are not yet committed. Do not claim local WebP/JPEG byte-size savings until those four files exist and their sizes have been measured. The required filenames are listed in [assets/README.md](assets/README.md).
+To verify the result, resize the browser or use a phone, then inspect the image request in Developer Tools → Network → Img. The selected candidate can vary with viewport width, device pixel ratio, and browser format support. Do not report byte-size savings unless you measure the actual downloaded files in your own browser.
+
+Photo: [Aayush Gupta — “Summers of Lisbon”](https://unsplash.com/photos/yellow-tram-in-historic-lisbon-street-ljhCEaHYWJ8), published March 26, 2020, used under the [Unsplash License](https://unsplash.com/license).
 
 ## Audit evidence and accuracy
 
-The CineReview homework page records the actual figures transcribed from your supplied report: Performance 92 → 100, Accessibility 69 → 100, and Best Practices 100 → 100. These are historical screenshot results, not a fresh run performed by the website.
+The CineReview homework page records the figures transcribed from your supplied report: Performance 92 → 100, Accessibility 69 → 100, and Best Practices 100 → 100. These are historical screenshot results, not a fresh run performed by the website.
 
 The original PDF has not yet been copied into this repository. The HTML homework page preserves the key report content; upload the PDF here if a downloadable copy is required.
 
-## Important remaining submission work
+## Submission checks
 
-- Add the four local image variants described in E2 and record their real byte sizes.
-- Export your own E1 and lab Lighthouse reports (HTML/JSON) if your professor asks for those files.
-- Upload your original PDF report into this repository if a downloadable PDF is required.
-- Repeat any manual keyboard or screen-reader checks before marking them as passed.
+- Run E1 and save your own Lighthouse report if the professor requests it.
+- Test E2 at wide and narrow widths and capture the Network panel if image-selection evidence is required.
+- Run the lab checks yourself before describing them as passed.
+- Keep screenshots from your own browser; do not invent audit results.
 
 Prepared by Abinash Lamichhane · Gachon University · Web Programming.
