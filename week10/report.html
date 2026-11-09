@@ -3,96 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Week 10_2 keyboard accessibility modifications and verification report by Abinash Lamichhane.">
+<meta name="description" content="Week 10_2 accessibility modifications report by Abinash Lamichhane.">
 <title>Week 10_2 — Accessibility Modifications Report | Abinash Lamichhane</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f5f3eb;color:#202e27;font:16px/1.7 system-ui,sans-serif}
+body{margin:0;background:#f5f3eb;color:#202e27;font:16px/1.65 system-ui,sans-serif}
+header,main,footer{max-width:960px;margin:auto;padding:24px}
+header{border-bottom:1px solid #c9cdc0}
+h1{font:500 clamp(34px,5vw,54px)/1.12 Georgia,serif}
+h2{font:500 28px Georgia,serif;margin-top:36px}
 a{color:#255b3b;text-underline-offset:4px}
-a:focus-visible{outline:3px solid #255b3b;outline-offset:3px}
-.skip{position:absolute;left:12px;top:-70px;background:#255b3b;color:#fff;padding:10px 14px;z-index:10}
+a:focus-visible,button:focus-visible{outline:3px solid #255b3b;outline-offset:4px}
+.skip{position:absolute;left:12px;top:-70px;background:#255b3b;color:white;padding:10px 14px;z-index:10}
 .skip:focus{top:10px}
-header,main,footer{width:min(900px,calc(100% - 40px));margin:auto}
-header{padding:22px 0;border-bottom:1px solid #c9cdc0}
-main{padding:32px 0 55px}
-.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#49664e}
-h1{font:500 clamp(36px,6vw,58px)/1.1 Georgia,serif;margin:12px 0}
-h2{font:500 28px Georgia,serif;margin:36px 0 10px}
-.muted{color:#59665d}
-.note{background:#e6eadf;border-left:4px solid #789477;padding:14px 18px;margin:18px 0}
-.table-wrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;background:#fffef8}
-th,td{border:1px solid #c9cdc0;padding:11px;text-align:left;vertical-align:top}
+.label{font-size:12px;letter-spacing:1px;font-weight:700}
+table{border-collapse:collapse;width:100%;background:#fffef8;margin:20px 0}
+th,td{padding:14px;border:1px solid #c9cdc0;text-align:left;vertical-align:top}
 th{background:#e6eadf}
-code,kbd{background:#e9ece4;border-radius:4px;padding:2px 5px}
-.status{font-weight:700;color:#76551b}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
-button{border:0;border-radius:7px;background:#255b3b;color:white;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer}
-button:focus-visible{outline:3px solid #255b3b;outline-offset:3px}
-footer{border-top:1px solid #c9cdc0;padding:20px 0 30px;font-size:13px;color:#59665d}
-@media(max-width:600px){header,main,footer{width:min(100% - 28px,900px)}h1{font-size:38px}table{font-size:14px}}
-@media print{body{background:white}header,main,footer{width:100%}.skip,.actions{display:none}.note,table{break-inside:avoid}}
+code,kbd{background:#e6eadf;padding:2px 5px;border-radius:3px}
+pre{background:#e6eadf;padding:18px;overflow:auto;white-space:pre-wrap}
+.table-wrap{overflow:auto}
+.note{border-left:4px solid #255b3b;padding:15px 20px;background:#e6eadf}
+footer{font-size:13px;border-top:1px solid #c9cdc0}
+@media(max-width:600px){th,td{padding:10px;font-size:14px}}
+@media print{body{background:white;font-size:11pt}header,main,footer{max-width:none;padding:12px}a.skip{display:none}h2{break-after:avoid}tr,pre,.note{break-inside:avoid}a{color:inherit}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the main content</a>
-<header><a href="./">← Week 10 submission</a> · <a href="./accessibility/">Open keyboard test</a> · <a href="./portfolio/">Portfolio</a></header>
+<header><nav aria-label="Report navigation"><a href="./">← Week 10 submission</a> · <a href="./portfolio/">Portfolio</a></nav></header>
 <main id="main" tabindex="-1">
-<p class="eyebrow">WEB PROGRAMMING / WEEK 10_2 / 9 NOVEMBER 2026</p>
+<p class="label">WEB PROGRAMMING / WEEK 10_2 / 9 NOVEMBER 2026</p>
 <h1>Accessibility modifications<br>and verification report</h1>
-<p><strong>Student:</strong> Abinash Lamichhane · <strong>University:</strong> Gachon University</p>
-<div class="note"><strong>Report status:</strong> Source-code review and the Git exercise skip-link update are documented below. Live keyboard verification is still pending your own browser test; no page is marked as passed until you test it.</div>
+<p>Abinash Lamichhane · Gachon University</p>
 
 <h2>1. Problem and purpose</h2>
-<p>The accessibility task checks whether keyboard users can bypass repeated navigation and reach the main content directly. The skip link should be the first keyboard stop, become visible when focused, and move focus to a meaningful main-content target when activated.</p>
+<p>The Week 10 accessibility task focuses on keyboard access to the main content. A skip link should be the first keyboard stop, become visible when focused and allow a keyboard user to bypass repeated navigation. The destination must be a meaningful main-content landmark that can receive focus.</p>
+<p>The repository already included skip links on the course homepage, Week 10 hub, portfolio and Book Search project. The Git exercise was updated to include the same basic keyboard-access pattern. This report records the implementation and source-level verification without claiming keyboard tests that have not been performed.</p>
 
 <h2>2. Changes made</h2>
-<div class="table-wrap"><table><thead><tr><th>Area</th><th>Before</th><th>After</th></tr></thead><tbody>
-<tr><th>Skip-link placement</th><td>The main coursework pages already placed a skip link before the page content. The Git exercise had no skip link.</td><td>The Git exercise now starts with a visible-on-focus “Skip to the main content” link before its main content.</td></tr>
-<tr><th>Main target</th><td>The Git exercise main element had no ID and was not explicitly focusable.</td><td>The Git exercise now uses <code>main id="main-content" tabindex="-1"</code> as the skip-link destination.</td></tr>
-<tr><th>Focus styling</th><td>The Git exercise did not define a visible focus style for its new skip link or main target.</td><td>Added a high-contrast focus outline and a visible focused skip-link position in the Git exercise stylesheet.</td></tr>
-<tr><th>Other pages</th><td>The homepage, Week 10 hub, portfolio and Book Search already contained skip links and focusable main targets in the source reviewed.</td><td>Those existing implementations are included in the verification checklist; they still need live keyboard testing.</td></tr>
-<tr><th>Evidence</th><td>The report page was a fill-in template without a page-by-page implementation summary.</td><td>This report records the source review, code changes, test procedure and evidence still to capture.</td></tr>
+<div class="table-wrap"><table><thead><tr><th scope="col">Area</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody>
+<tr><th scope="row">First keyboard stop</th><td>The Git exercise did not include a skip link.</td><td>“Skip to the main content” is the first link after the body opening.</td></tr>
+<tr><th scope="row">Main target</th><td>The Git exercise did not have a main landmark or a skip-link destination.</td><td>The page now uses <code>&lt;main id="main-content" tabindex="-1"&gt;</code>.</td></tr>
+<tr><th scope="row">Visibility and focus</th><td>The Git exercise did not have skip-link or main-target focus styling.</td><td>The stylesheet positions the skip link off-screen until focused and provides a visible focus outline for the main target and links.</td></tr>
+<tr><th scope="row">Existing pages</th><td>The course homepage, Week 10 hub, portfolio and Book Search already had skip links and focusable main landmarks in their source.</td><td>Those implementations are documented in the verification table; no unnecessary duplicate skip links were added.</td></tr>
+<tr><th scope="row">Report</th><td>The report did not explain the changes and page-by-page implementation.</td><td>This report documents the purpose, modifications, keyboard procedure, source review and modified files.</td></tr>
 </tbody></table></div>
 
 <h2>3. Keyboard test procedure</h2>
-<ol>
-<li>Open a deployed page in Chrome and reload it without clicking anywhere.</li>
-<li>Press <kbd>Tab</kbd> once. Check whether “Skip to the main content” becomes visible and receives focus.</li>
-<li>Press <kbd>Enter</kbd> to activate the skip link.</li>
-<li>Check whether the main content receives focus. Press <kbd>Tab</kbd> again to confirm that focus continues from the main content rather than returning through the page navigation.</li>
-<li>Repeat the same test for each page listed in the verification table.</li>
-</ol>
-<p class="note"><strong>Important:</strong> Tab moves keyboard focus; Enter activates the focused link. Tab should not automatically activate the skip link.</p>
+<ol><li>Open a deployed page in the browser and reload it.</li><li>Press <kbd>Tab</kbd> once. The “Skip to the main content” link should become visible and receive focus.</li><li>Press <kbd>Enter</kbd>. The browser should navigate to the main landmark and the page's skip-link behavior should place focus on that target.</li><li>Press <kbd>Tab</kbd> again. Focus should continue from the main content rather than traversing the navigation before it.</li><li>Repeat on each page listed in the verification table.</li></ol>
+<p class="note">Tab moves keyboard focus between controls. Enter activates the focused link. Tab does not activate a skip link by itself.</p>
 
 <h2>4. Verification results</h2>
-<p>The following pages were reviewed in the repository source. The live keyboard test must still be completed in Chrome after the latest deployment.</p>
-<div class="table-wrap"><table><thead><tr><th>Page</th><th>First Tab</th><th>After Enter</th><th>Live result</th></tr></thead><tbody>
-<tr><th><a href="../">Course homepage</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main-content</code>.</td><td class="status">Pending browser test</td></tr>
-<tr><th><a href="./">Week 10 hub</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main-content</code>.</td><td class="status">Pending browser test</td></tr>
-<tr><th><a href="./portfolio/">Portfolio</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main</code>.</td><td class="status">Pending browser test</td></tr>
-<tr><th><a href="./projects/book-search/">Book Search</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main</code>.</td><td class="status">Pending browser test</td></tr>
-<tr><th><a href="./git-exercise/">Git exercise</a></th><td>Skip link added before main.</td><td>Targets <code>#main-content</code>.</td><td class="status">Pending deployment and browser test</td></tr>
+<p>The following table records what is present in the deployed source code. It is an implementation review, not a claim that a live keyboard test or screen-reader audit has been completed.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Page</th><th scope="col">Skip link in source</th><th scope="col">Main target</th><th scope="col">Implementation review</th></tr></thead><tbody>
+<tr><th scope="row"><a href="../">Course homepage</a></th><td>First link after body</td><td><code>#main-content</code>, <code>tabindex="-1"</code></td><td>Implemented</td></tr>
+<tr><th scope="row"><a href="./">Week 10 hub</a></th><td>First link after body</td><td><code>#main-content</code>, <code>tabindex="-1"</code></td><td>Implemented; click handler focuses main</td></tr>
+<tr><th scope="row"><a href="./portfolio/">Portfolio</a></th><td>First link after body</td><td><code>#main</code>, <code>tabindex="-1"</code></td><td>Implemented</td></tr>
+<tr><th scope="row"><a href="./projects/book-search/">Book Search</a></th><td>First link after body</td><td><code>#main</code>, <code>tabindex="-1"</code></td><td>Implemented</td></tr>
+<tr><th scope="row"><a href="./git-exercise/">Git exercise</a></th><td>First link after body</td><td><code>#main-content</code>, <code>tabindex="-1"</code></td><td>Added in this Week 10 update</td></tr>
 </tbody></table></div>
+<p class="note"><strong>Verification scope:</strong> source-code inspection confirms the markup and focus styles listed above. Live Tab/Enter behavior, browser/device testing and assistive-technology testing are not recorded as passed here.</p>
 
-<h2>5. Evidence to capture</h2>
+<h2>5. Portfolio checklist and evidence</h2>
 <ul>
-<li>Screenshot of the first Tab press showing the visible skip link on the deployed page.</li>
-<li>Screenshot after pressing Enter, showing the main content focus destination.</li>
-<li>Record the browser/device and actual outcome for each page in the verification table.</li>
-<li>Capture the GitHub commit showing the Git exercise accessibility update.</li>
+<li>The portfolio page has semantic header, navigation, main and footer landmarks.</li>
+<li>The portfolio includes an introduction, project section, skills section, coursework links and contact section.</li>
+<li>The portfolio uses responsive layout styling and visible focus indicators for keyboard navigation.</li>
+<li>The portfolio is linked from the Week 10 hub and can be opened directly from this report.</li>
+<li>The report links to the actual coursework pages so the implementation can be reviewed directly.</li>
 </ul>
-<p class="muted">Do not mark a page as “Pass” until the live keyboard test has been completed. This report does not claim a new Lighthouse score, screen-reader audit or mobile-device test.</p>
+<p>This report does not include a screenshot gallery because the keyboard modification report can document the code changes and page links directly. It does not claim a new Lighthouse score, screen-reader audit, mobile-device test or LMS submission.</p>
 
 <h2>6. Modified files</h2>
+<p>Modified for this report and accessibility update:</p>
 <ul>
-<li><code>week10/git-exercise/index.html</code> — added the skip link and focusable main target.</li>
-<li><code>week10/git-exercise/style.css</code> — added visible keyboard focus styling.</li>
-<li><code>week10/report.html</code> — replaced the report template with this implementation and verification report.</li>
+<li><code>week10/git-exercise/index.html</code> — added the skip link and focusable main landmark.</li>
+<li><code>week10/git-exercise/style.css</code> — added visible-on-focus skip-link styling and focus outlines.</li>
+<li><code>week10/report.html</code> — documented the Week 10_2 accessibility modifications.</li>
 </ul>
-<p><a href="https://github.com/abinaah2004-maker/WebClass/commits/main/week10">View Week 10 commit history on GitHub ↗</a></p>
-<div class="actions"><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
+<p><a href="https://github.com/abinaah2004-maker/WebClass/commit/4e16bd63f68b12953ee35fb2ee08526b79563916">View Git exercise HTML update</a> · <a href="https://github.com/abinaah2004-maker/WebClass/commit/ef5ce8d872040f967e6c2218ded3cc817dbd654d">View stylesheet update</a></p>
+<p>To save this report as PDF, use the browser’s Print → Save as PDF.</p>
 </main>
-<footer>Abinash Lamichhane · Web Programming · Week 10_2 accessibility report</footer>
+<footer>Abinash Lamichhane / Web Programming · Week 10_2 modification report</footer>
 </body>
 </html>
