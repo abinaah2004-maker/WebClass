@@ -1,14 +1,113 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Interactive Lighthouse performance audit learning exercise."><title>Exercise 1 | Lighthouse audit</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#182238;font:16px/1.65 system-ui,sans-serif}.wrap{max-width:900px;margin:auto;padding:24px}.back{color:#1d4ed8}.hero,section{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}h1{line-height:1.1;font-size:clamp(2rem,5vw,3rem)}.scores{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.score{background:#eff6ff;border-radius:12px;padding:14px;text-align:center}.score strong{display:block;font-size:2rem}.score small{color:#52627a}table{width:100%;border-collapse:collapse}td,th{padding:10px;text-align:left;border-bottom:1px solid #e5eaf1}button{border:0;border-radius:9px;padding:10px 14px;background:#2563eb;color:white;font-weight:700;cursor:pointer}.note{padding:12px;background:#fff7ed;border-left:4px solid #f59e0b}.code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto}a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}@media(max-width:620px){.scores{grid-template-columns:repeat(2,1fr)}.wrap{padding:14px}.hero,section{padding:16px}table{font-size:.9rem}}</style></head><body><main class="wrap"><p><a class="back" href="index.html">← All Week 9.2 exercises</a></p><header class="hero"><div class="eyebrow">EXERCISE 01 · PERFORMANCE PRACTICE</div><h1>Lighthouse audit</h1><p>Measure a page, identify the slowest metric, make improvements, and measure again. This page demonstrates how to interpret a before-and-after audit.</p></header><section><h2>Performance audit results</h2><p class="note"><strong>Evidence note:</strong> The screenshots and measurements below are the supplied Week 9.2 exercise example. They are shown as reference evidence for learning how to compare Lighthouse reports; they are not claimed as a fresh audit of my own project.</p><div class="scores"><div class="score"><strong>77</strong><small>Before · Performance</small></div><div class="score"><strong>100</strong><small>After · Performance</small></div><div class="score"><strong>96</strong><small>Accessibility</small></div><div class="score"><strong>100</strong><small>Best practices</small></div></div><h3>Before-and-after Lighthouse screenshots</h3><div class="compare" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px"><figure style="margin:0"><img src="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/evidence/e1-before.png" alt="Lighthouse performance audit screenshot before optimization, score 77" style="width:100%;height:auto" loading="lazy"><figcaption>Before optimization · Performance score 77</figcaption></figure><figure style="margin:0"><img src="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/evidence/e1-after.png" alt="Lighthouse performance audit screenshot after optimization, score 100" style="width:100%;height:auto" loading="lazy"><figcaption>After optimization · Performance score 100</figcaption></figure></div><h3>Metric comparison from the reports</h3><table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Why it matters</th></tr></thead><tbody><tr><td>First Contentful Paint</td><td>1.5 s</td><td>0.6 s</td><td>When the first content appears</td></tr><tr><td>Largest Contentful Paint</td><td>5.0 s</td><td>1.2 s</td><td>When the main content appears</td></tr><tr><td>Speed Index</td><td>2.4 s</td><td>0.6 s</td><td>How quickly the page becomes visually complete</td></tr><tr><td>Total Blocking Time</td><td>0 ms</td><td>0 ms</td><td>Time the main thread is blocked</td></tr><tr><td>Cumulative Layout Shift</td><td>0.116</td><td>0.001</td><td>Unexpected movement during loading</td></tr></tbody></table><p>The largest time-based metric in the starter report is Largest Contentful Paint at 5.0 seconds. CLS is unitless, so it should not be compared with seconds or milliseconds.</p><p><strong>Optimization explanation:</strong> The starter page downloads large remote images, does not reserve image dimensions, and loads an unused blocking jQuery dependency. The optimized version removes the unused library, uses smaller local images with explicit dimensions, and lazy-loads only lower-page gallery images. This is a combined exercise comparison, not proof that one change alone caused the full improvement.</p><p>The before-and-after screenshots are displayed above as evidence images.</p></section><section><h2>Identify the bottleneck</h2><p>Largest Contentful Paint is the slowest time-based metric in the sample starter run at <strong>5.1 seconds</strong>. CLS is unitless, so it should not be compared with time values such as seconds or milliseconds.</p><button id="reveal" type="button">Show the improvement explanation</button><div id="explanation" hidden><h3>What changed?</h3><ul><li>Reduced oversized image downloads and used appropriately sized assets.</li><li>Added width and height attributes so the browser can reserve layout space.</li><li>Deferred the application script so HTML parsing is not blocked.</li><li>Removed unused JavaScript and checked for long main-thread tasks.</li></ul><p>These changes target image transfer, render blocking, and layout stability. A real audit is still needed to verify the effect on a specific website.</p></div></section><section><h2>Code example</h2><pre class="code"><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lighthouse audit exercise by Abinash Lamichhane, with recorded CineReview results and a repeatable audit checklist.">
+<title>Exercise 1 | Lighthouse Audit</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#182238;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:960px;margin:auto;padding:24px}.back{color:#1d4ed8}.hero,section{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}h1{line-height:1.1;font-size:clamp(2rem,5vw,3rem)}.scores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.score{background:#eff6ff;border-radius:12px;padding:14px;text-align:center}.score strong{display:block;font-size:clamp(1.5rem,4vw,2.2rem)}.score small{color:#52627a}.change{font-weight:800;color:#166534}.note{padding:13px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:6px}.warning{padding:13px;background:#fff7ed;border-left:4px solid #f59e0b;border-radius:6px}table{width:100%;border-collapse:collapse}td,th{padding:10px;text-align:left;border-bottom:1px solid #e5eaf1;vertical-align:top}.code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}button{border:0;border-radius:9px;padding:10px 14px;background:#2563eb;color:white;font-weight:700;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}.checklist li{margin:9px 0}.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.links a{display:inline-block;padding:9px 13px;border:1px solid #2563eb;border-radius:8px;text-decoration:none;color:#1d4ed8;font-weight:700}@media(max-width:620px){.scores{grid-template-columns:1fr}.wrap{padding:14px}.hero,section{padding:16px}table{font-size:.9rem}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<p><a class="back" href="index.html">← All Week 9.2 exercises</a></p>
+<header class="hero">
+<p class="eyebrow">EXERCISE 01 · PERFORMANCE PRACTICE</p>
+<h1>Lighthouse Audit</h1>
+<p>Use Lighthouse to measure a real page, read its diagnostics, make focused improvements and repeat the audit using the same test settings.</p>
+</header>
 
-&lt;img src="hero.webp"
-     alt="Description of the image"
-     width="800"
-     height="400"
-     fetchpriority="high"&gt;
+<section>
+<h2>My CineReview audit results</h2>
+<p class="note"><strong>Evidence source:</strong> These scores are transcribed from my own Week 9.2 CineReview audit report and the Lighthouse screenshots I captured. The screenshots are preserved in that report; this page does not substitute screenshots from another student's repository.</p>
+<div class="scores" aria-label="Recorded Lighthouse score improvements">
+<div class="score"><strong>92 → 100</strong><small>Performance</small><div class="change">+8 points</div></div>
+<div class="score"><strong>69 → 100</strong><small>Accessibility</small><div class="change">+31 points</div></div>
+<div class="score"><strong>100 → 100</strong><small>Best Practices</small><div>No change</div></div>
+</div>
+<p><strong>Pages compared:</strong> my broken CineReview starter (<code>lab/broken.html</code>) and my completed version (<code>lab/solution.html</code>).</p>
+<p><strong>Recorded environment:</strong> Microsoft Edge DevTools, responsive viewport at 400 × 653 pixels, with “No throttling” shown in the supplied screenshots.</p>
+<div class="links"><a href="lab/broken.html">Open my broken starter</a><a href="lab/solution.html">Open my completed solution</a><a href="lab/index.html">Open audit and lab notes</a></div>
+</section>
 
-&lt;img src="gallery.webp"
-     alt="Gallery image"
-     width="400"
-     height="300"
-     loading="lazy"&gt;</code></pre><h2>My audit checklist</h2><ol><li>Open the page in Chrome DevTools.</li><li>Select Lighthouse and choose the mobile profile.</li><li>Run the audit and save the report.</li><li>Fix the highest-impact issue first.</li><li>Run the audit again with the same settings and compare the results.</li></ol><p><a class="back" href="../teamproject/index.html">Open Memory Match project →</a></p></section></main><script>document.getElementById('reveal').addEventListener('click',function(){const panel=document.getElementById('explanation');panel.hidden=!panel.hidden;this.textContent=panel.hidden?'Show the improvement explanation':'Hide the improvement explanation'});</script></body></html>
+<section>
+<h2>What the scores tell me</h2>
+<table>
+<thead><tr><th scope="col">Category</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Interpretation</th></tr></thead>
+<tbody>
+<tr><th scope="row">Performance</th><td>92</td><td>100</td><td>The recorded optimized run received a higher performance score.</td></tr>
+<tr><th scope="row">Accessibility</th><td>69</td><td>100</td><td>The recorded optimized run passed more of Lighthouse's automated accessibility checks.</td></tr>
+<tr><th scope="row">Best Practices</th><td>100</td><td>100</td><td>The score stayed the same in both recorded runs.</td></tr>
+</tbody>
+</table>
+<p class="warning"><strong>Important limitation:</strong> Lighthouse scores can vary with browser, device, cache and network conditions. A 100 Accessibility score does not prove full WCAG compliance. Keyboard, screen-reader and other manual checks are still needed. The scores above describe the supplied screenshots, not a new audit run performed by this page.</p>
+</section>
+
+<section>
+<h2>How to run your own Lighthouse audit</h2>
+<ol class="checklist">
+<li>Open the page you want to test in Chrome or Microsoft Edge.</li>
+<li>Open DevTools with <kbd>F12</kbd> or right-click and choose Inspect.</li>
+<li>Open the Lighthouse panel. Select the categories required by the assignment.</li>
+<li>Choose the same device mode and throttling settings for both runs.</li>
+<li>Run the audit and save a screenshot showing the page URL and scores.</li>
+<li>Fix one or more specific issues, reload the page, and run the audit again with the same settings.</li>
+<li>Save the second screenshot and explain what changed. Do not claim a fix unless the code and new result support it.</li>
+</ol>
+</section>
+
+<section>
+<h2>Common performance improvements</h2>
+<ul>
+<li>Use appropriately sized responsive images with <code>srcset</code> and <code>sizes</code>.</li>
+<li>Set image <code>width</code> and <code>height</code> to reserve layout space.</li>
+<li>Lazy-load images below the initial viewport; do not lazy-load the main hero image when it is the LCP image.</li>
+<li>Use <code>defer</code> for application scripts that need the parsed document.</li>
+<li>Remove unused scripts and styles only after confirming they are not needed.</li>
+<li>Check the Lighthouse diagnostics instead of guessing which change caused a score improvement.</li>
+</ul>
+<pre class="code"><code>&lt;img
+  src="photo-960.jpg"
+  srcset="photo-480.jpg 480w, photo-960.jpg 960w"
+  sizes="(max-width: 600px) 100vw, 800px"
+  alt="Describe the photograph"
+  width="960"
+  height="640"
+  loading="lazy"
+  decoding="async"&gt;
+
+&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+</section>
+
+<section>
+<h2>My audit evidence checklist</h2>
+<ul class="checklist">
+<li>Before screenshot: broken.html with the scores visible.</li>
+<li>After screenshot: solution.html with the scores visible.</li>
+<li>Both runs use the same browser, viewport and throttling settings.</li>
+<li>The report explains the actual fixes made in the code.</li>
+<li>Manual accessibility checks are listed separately from automated scores.</li>
+</ul>
+<p>The original before-and-after screenshots are included in my submitted <strong>CineReview Week 9.2 Audit Report</strong>. Keep that report with the assignment submission if your professor asks for evidence.</p>
+</section>
+
+<section>
+<h2>Check your understanding</h2>
+<p>Why should the before and after Lighthouse runs use the same viewport and throttling settings?</p>
+<button id="answer-button" type="button" aria-expanded="false" aria-controls="answer">Show answer</button>
+<p id="answer" hidden>Using the same settings makes the comparison fairer. Otherwise, score differences may come from the test environment rather than the code changes.</p>
+<p><a class="back" href="E2_Responsive_Images.html">Next exercise: Responsive Images →</a></p>
+</section>
+</main>
+<script>
+document.getElementById("answer-button").addEventListener("click",function(){
+ const answer=document.getElementById("answer");
+ const open=answer.hidden;
+ answer.hidden=!open;
+ this.setAttribute("aria-expanded",String(open));
+ this.textContent=open?"Hide answer":"Show answer";
+});
+</script>
+</body>
+</html>
