@@ -1,11 +1,56 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="E1 — Git repository — Week 10 Web Programming by Abinash Lamichhane"><title>E1 — Git repository | Week 10</title><link rel="stylesheet" href="../assets/style.css"><script src="../assets/main.js" defer></script></head>
-<body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><a class="brand" href="../"><span class="brand-mark">AL</span><span>ABINASH <small>WEEK 10 / WEB PROGRAMMING</small></span></a><nav aria-label="Main navigation"><a href="../">Week 10 home</a><a href="../#projects">Projects</a></nav><button class="theme-toggle" type="button" aria-label="Switch color theme">☼ <span>Theme</span></button></header>
-<main id="main" class="content-page" tabindex="-1"><p class="eyebrow">MONDAY / VERSION CONTROL</p><h1>E1 — Git repository<span class="accent">.</span></h1><p>In this exercise I practice creating a local Git repository, tracking files and reviewing the commit history.</p>
-<h2>1. Open the project folder</h2><p>Open the folder you want to track in VS Code, then open its integrated terminal.</p>
-<h2>2. Initialize Git</h2><pre class="code-box">git init</pre><p>This creates a hidden <code>.git</code> directory and starts version control in the current folder.</p>
-<h2>3. Stage and commit</h2><pre class="code-box">git status
-git add .
-git commit -m "Initial commit"</pre><p>Staging selects the changes for the next snapshot. A commit saves that snapshot with a message.</p>
-<h2>4. Read the history</h2><pre class="code-box">git log --oneline</pre><p>This shows a compact list of commits. Use <code>git status</code> again to check whether there are uncommitted changes.</p>
-<div class="note">Evidence to capture: terminal showing the initialization, successful commit and one-line commit history. Run these commands locally before adding your screenshot.</div><p><a class="button secondary" href="../index.html">← Back to Week 10</a></p></main><footer><span>© 2026 Abinash Lamichhane</span><a href="../">Week 10 home ↑</a><span>WEB PROGRAMMING</span></footer></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive E1 Git basics exercise by Abinash Lamichhane.">
+<title>E1 — First Git repository | Week 10</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/main.js" defer></script>
+<style>
+.exercise-intro{max-width:760px}.exercise-kicker{color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.16em}.exercise-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:1.2rem;margin:2rem 0}.exercise-panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:1.35rem;min-width:0}.exercise-panel h2{margin:.2rem 0 1rem;font-size:1.2rem}.preview-window{background:#f6f7f4;color:#1d2922;border-radius:12px;overflow:hidden;border:1px solid #dce2da}.preview-bar{height:34px;background:#e8ece6;display:flex;align-items:center;gap:6px;padding:0 12px}.preview-dot{width:8px;height:8px;border-radius:50%;background:#aab5a9}.preview-content{padding:26px 22px;min-height:190px}.preview-content h3{font:700 2rem/1.1 Georgia,serif;color:#24392c;margin:0 0 12px}.preview-content p{color:#526258;margin:0}.code-block{position:relative;background:#080c12;border:1px solid var(--line);border-radius:10px;padding:1rem;margin:.8rem 0;overflow:auto}.code-block pre{margin:0;color:#d9f5c4;font: .82rem/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.copy-btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:7px;padding:.38rem .65rem;font-size:.72rem;cursor:pointer}.code-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.6rem;color:var(--muted);font-size:.72rem}.step-list{display:grid;gap:.75rem}.step-item{display:flex;gap:.8rem;align-items:flex-start;padding:.9rem;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.step-item input{accent-color:var(--accent);width:18px;height:18px;margin-top:4px;flex:none}.step-item strong{display:block;margin-bottom:.2rem}.step-item p{margin:0;color:var(--muted);font-size:.85rem}.progress-track{height:7px;background:var(--panel2);border-radius:20px;overflow:hidden;margin:.7rem 0}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .2s}.inline-code{font-family:ui-monospace,monospace;color:var(--accent2)}.callout{border-left:3px solid var(--accent);padding:.8rem 1rem;background:var(--panel2);border-radius:0 9px 9px 0;color:var(--muted);font-size:.85rem}.exercise-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}@media(max-width:760px){.exercise-layout{grid-template-columns:1fr}.content-page{padding-top:2.5rem}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><a class="brand" href="../"><span class="brand-mark">AL</span><span>ABINASH <small>WEEK 10 / WEB PROGRAMMING</small></span></a><nav aria-label="Main navigation"><a href="../">Week 10 home</a><a href="../#projects">Projects</a></nav><button class="theme-toggle" type="button" aria-label="Switch color theme">☼ <span>Theme</span></button></header>
+<main id="main" class="content-page" tabindex="-1">
+<div class="exercise-intro"><p class="exercise-kicker">MONDAY / EXERCISE 01</p><h1>My first Git repository<span class="accent">.</span></h1><p>In this exercise I create a small HTML page, save it in Git, and inspect the commit history. The preview on this page shows what the HTML file looks like in a browser—not just the source code.</p></div>
+<div class="exercise-layout">
+<section class="exercise-panel" aria-labelledby="preview-title"><div class="code-head"><span>LIVE HTML RESULT</span><span>index.html</span></div><h2 id="preview-title">What the browser displays</h2><div class="preview-window"><div class="preview-bar"><i class="preview-dot"></i><i class="preview-dot"></i><i class="preview-dot"></i></div><div class="preview-content"><h3>Hello Git</h3><p>I practiced creating a file, committing changes, and tracking my work with Git.</p></div></div><p class="callout" style="margin-top:1rem">This is the rendered result of the HTML example. The browser displays the heading and paragraph instead of showing the tags.</p></section>
+<section class="exercise-panel"><div class="code-head"><span>HTML SOURCE</span><button class="copy-btn" data-copy="html-source">Copy HTML</button></div><h2>The code behind the preview</h2><div class="code-block"><pre id="html-source">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Hello Git&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello Git&lt;/h1&gt;
+  &lt;p&gt;I practiced creating a file,
+     committing changes, and tracking
+     my work with Git.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div></section>
+</div>
+<section class="exercise-panel"><div class="code-head"><span>FOLLOW THE WORKFLOW</span><span id="progress-label" aria-live="polite">0 of 4 complete</span></div><h2>Complete these steps on your computer</h2><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+<div class="step-list">
+<label class="step-item"><input type="checkbox" class="task-check"><span><strong>1. Open your project folder</strong><p>Open VS Code, choose the folder for this practice, and open its integrated terminal.</p></span></label>
+<label class="step-item"><input type="checkbox" class="task-check"><span><strong>2. Initialize the repository</strong><p>Run <code class="inline-code">git init</code>. Git creates a hidden <code class="inline-code">.git</code> folder to track your project.</p><div class="code-block"><div class="code-head"><span>TERMINAL</span><button class="copy-btn" data-copy="cmd-init">Copy</button></div><pre id="cmd-init">git init</pre></div></span></label>
+<label class="step-item"><input type="checkbox" class="task-check"><span><strong>3. Stage and commit your HTML file</strong><p>Save your file as <code class="inline-code">index.html</code>, then stage it and create your first snapshot.</p><div class="code-block"><div class="code-head"><span>TERMINAL</span><button class="copy-btn" data-copy="cmd-commit">Copy</button></div><pre id="cmd-commit">git status
+git add index.html
+git commit -m "Create first HTML page"</pre></div></span></label>
+<label class="step-item"><input type="checkbox" class="task-check"><span><strong>4. Review the commit history</strong><p>Confirm that your commit exists and check whether your working folder is clean.</p><div class="code-block"><div class="code-head"><span>TERMINAL</span><button class="copy-btn" data-copy="cmd-log">Copy</button></div><pre id="cmd-log">git log --oneline
+git status</pre></div></span></label>
+</div><p class="callout">Tick a step after you have actually completed it in your terminal. The progress bar is a personal checklist; it does not run Git commands or create evidence automatically.</p></section>
+<section class="exercise-panel" style="margin-top:1.2rem"><h2>What I learned</h2><ul><li><strong>git init</strong> starts version control in a folder.</li><li><strong>git add</strong> stages the file for the next commit.</li><li><strong>git commit</strong> saves a snapshot with a message.</li><li><strong>git log</strong> displays the saved commit history.</li></ul><div class="exercise-actions"><a class="button primary" href="https://github.com/abinaah2004-maker/WebClass">Open my GitHub repository ↗</a><a class="button secondary" href="e2-branch-merge.html">Continue to E2 →</a><a class="button secondary" href="../">← Week 10 home</a></div></section>
+</main>
+<footer><span>© 2026 Abinash Lamichhane</span><a href="../">Week 10 home ↑</a><span>WEB PROGRAMMING</span></footer>
+<script>
+(() => {
+ const checks=[...document.querySelectorAll(".task-check")], fill=document.getElementById("progress-fill"), label=document.getElementById("progress-label");
+ function update(){const done=checks.filter(c=>c.checked).length;fill.style.width=(done/checks.length*100)+"%";label.textContent=done+" of "+checks.length+" complete";}
+ checks.forEach(c=>c.addEventListener("change",update));
+ document.querySelectorAll("[data-copy]").forEach(btn=>btn.addEventListener("click",async()=>{const el=document.getElementById(btn.dataset.copy);if(!el)return;const value=el.textContent;try{await navigator.clipboard.writeText(value);btn.textContent="Copied!";}catch(e){btn.textContent="Select code";}setTimeout(()=>btn.textContent=btn.dataset.copy==="html-source"?"Copy HTML":"Copy",1400);}));
+})();
+</script>
+</body></html>
