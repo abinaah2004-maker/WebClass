@@ -1,5 +1,135 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="E2 — Test a 404 page — Week 10 Web Programming by Abinash Lamichhane"><title>E2 — Test a 404 page | Week 10</title><link rel="stylesheet" href="../assets/style.css"><script src="../assets/main.js" defer></script></head>
-<body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><a class="brand" href="../"><span class="brand-mark">AL</span><span>ABINASH <small>WEEK 10 / WEB PROGRAMMING</small></span></a><nav aria-label="Main navigation"><a href="../">Week 10 home</a><a href="../#projects">Projects</a></nav><button class="theme-toggle" type="button" aria-label="Switch color theme">☼ <span>Theme</span></button></header>
-<main id="main" class="content-page" tabindex="-1"><p class="eyebrow">FRIDAY / ERROR HANDLING</p><h1>E2 — Test a 404 page<span class="accent">.</span></h1><p>A 404 response means the server could not find the requested resource. A helpful site should explain what happened and help visitors recover.</p>
-<h2>1. Open a route that does not exist</h2><p>After the site is deployed, add a made-up path to its URL, such as:</p><pre class="code-box">https://abinaah2004-maker.github.io/WebClass/this-page-does-not-exist</pre><h2>2. Observe the response</h2><p>Record what the browser displays. Check whether the page explains that the address is missing and whether it offers a link back to the homepage.</p><h2>3. Compare after adding a custom page</h2><p>Repeat the same test after the custom root <code>404.html</code> has deployed. The custom page should be more useful than an unexplained error.</p><div class="note">Evidence to capture: a screenshot of the missing route before and after the custom page is deployed. GitHub Pages may take a short time to publish the new file.</div><p><a class="button secondary" href="../index.html">← Back to Week 10</a></p></main><footer><span>© 2026 Abinash Lamichhane</span><a href="../">Week 10 home ↑</a><span>WEB PROGRAMMING</span></footer></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive E2 exercise: test a missing URL and inspect the custom 404 page on Abinash Lamichhane's GitHub Pages site.">
+<title>E2 — Test a 404 page | Week 10</title>
+<link rel="stylesheet" href="../assets/style.css"><script src="../assets/main.js" defer></script>
+<style>
+.test-intro{max-width:760px}.test-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0}.test-card{min-width:0;padding:1.25rem;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.test-card h2{font-size:1.15rem;margin:.2rem 0 .7rem}.tag{font-size:.68rem;font-weight:800;letter-spacing:.13em;color:var(--accent)}.mock-error{min-height:220px;display:grid;place-content:center;text-align:center;padding:1.5rem;border-radius:10px;background:#f0f2f4;color:#26313d}.mock-error strong{font-size:2.4rem;color:#596675}.mock-error p{color:#526070;margin:.4rem auto;max-width:30ch}.preview-frame{display:block;width:100%;height:260px;border:1px solid var(--line);border-radius:10px;background:#0c1017}.action-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}.field-row{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0}.field-row input{flex:1;min-width:180px;padding:.75rem .85rem;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--text);font:inherit}.field-row button,.action-link{display:inline-flex;align-items:center;justify-content:center;padding:.7rem 1rem;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--text);font:inherit;font-weight:700;cursor:pointer;text-decoration:none}.action-link.primary{background:var(--accent);color:#14200f;border-color:var(--accent)}.status{min-height:1.5em;color:var(--muted);font-size:.85rem}.steps{display:grid;gap:.7rem;margin:1rem 0}.step{display:flex;gap:.8rem;align-items:flex-start;padding:.9rem;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.step input{width:18px;height:18px;margin-top:4px;accent-color:var(--accent);flex:none}.step p{margin:.2rem 0 0;color:var(--muted);font-size:.86rem}.progress{height:7px;background:var(--panel2);border-radius:99px;overflow:hidden}.progress>span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}.explain{padding:1rem 1.1rem;border-left:3px solid var(--accent);border-radius:0 9px 9px 0;background:var(--panel2);color:var(--muted);font-size:.88rem}.observation{width:100%;min-height:105px;padding:.8rem;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--text);font:inherit}.small{font-size:.82rem;color:var(--muted)}@media(max-width:720px){.test-grid{grid-template-columns:1fr}.content-page{padding-top:2.5rem}.preview-frame{height:240px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="../"><span class="brand-mark">AL</span><span>ABINASH <small>WEEK 10 / WEB PROGRAMMING</small></span></a>
+<nav aria-label="Main navigation"><a href="../">Week 10 home</a><a href="../#homework">Projects</a></nav>
+<button class="theme-toggle" type="button" aria-label="Switch color theme">☼ <span>Theme</span></button>
+</header>
+<main id="main" class="content-page" tabindex="-1">
+<p class="eyebrow">FRIDAY / EXERCISE 02</p>
+<h1>Test a 404 page<span class="accent">.</span></h1>
+<div class="test-intro"><p>A 404 error means the requested page could not be found. In this exercise I test a deliberately incorrect address, inspect the custom error page used by GitHub Pages, and record what I observe.</p></div>
+
+<section aria-labelledby="compare-title">
+<h2 id="compare-title">1. Compare an unhelpful error with my custom page</h2>
+<div class="test-grid">
+<article class="test-card">
+<p class="tag">EXAMPLE / GENERIC ERROR</p><h2>What an unhelpful error can feel like</h2>
+<div class="mock-error"><strong>404</strong><b>Not found</b><p>The requested address is unavailable. No next step is provided in this example.</p></div>
+<p class="small">This is an illustration for comparison, not a screenshot or a live server response.</p>
+</article>
+<article class="test-card">
+<p class="tag">MY PAGE / ROOT 404.HTML</p><h2>Preview the custom error page</h2>
+<iframe class="preview-frame" src="/WebClass/404.html" title="Preview of my custom WebClass 404 page"></iframe>
+<div class="action-row"><a class="action-link primary" href="/WebClass/404.html" target="_blank" rel="noopener">Open custom 404 page ↗</a></div>
+</article>
+</div>
+<p class="explain">GitHub Pages looks for a file named <code>404.html</code> at the publishing source root. My repository contains <code>/WebClass/404.html</code>, with links back to the WebClass homepage and Week 10.</p>
+</section>
+
+<section aria-labelledby="live-test-title">
+<h2 id="live-test-title">2. Test a real missing address</h2>
+<p>Use the button to open a URL that does not exist in this repository. The browser should show the custom root-level 404 page if GitHub Pages has deployed the latest version.</p>
+<div class="test-card">
+<label for="missing-path"><strong>Missing path to test</strong></label>
+<div class="field-row"><input id="missing-path" type="text" value="week10/e2-this-page-does-not-exist.html" autocomplete="off" spellcheck="false"><button type="button" id="prepare-test">Prepare test link</button></div>
+<p id="path-status" class="status" aria-live="polite">The example path is ready. Open it to test the live 404 behavior.</p>
+<div class="action-row"><a class="action-link primary" id="open-test" href="/WebClass/week10/e2-this-page-does-not-exist.html" target="_blank" rel="noopener">Open missing URL ↗</a><a class="action-link" href="/WebClass/">Open homepage</a></div>
+</div>
+</section>
+
+<section aria-labelledby="record-title">
+<h2 id="record-title">3. Record your observations</h2>
+<p>Complete the checks after opening the missing URL. Tick only what you actually verified in your browser.</p>
+<div class="test-card">
+<div class="tag">TEST PROGRESS</div><p id="progress-label" class="small" aria-live="polite">0 of 4 checks completed</p><div class="progress" role="progressbar" aria-label="404 test checklist progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="progress"><span id="progress-fill"></span></div>
+<div class="steps">
+<label class="step"><input type="checkbox" class="test-check"><span><strong>I opened a URL that does not exist.</strong><p>Use the live missing-URL link above, not the custom-page preview.</p></span></label>
+<label class="step"><input type="checkbox" class="test-check"><span><strong>The custom 404 page appeared.</strong><p>Check the page heading and confirm the page explains that the address is missing.</p></span></label>
+<label class="step"><input type="checkbox" class="test-check"><span><strong>The recovery links work.</strong><p>Test the homepage and Week 10 links from the custom 404 page.</p></span></label>
+<label class="step"><input type="checkbox" class="test-check"><span><strong>I captured my own screenshot.</strong><p>Save a browser screenshot showing the missing URL and the displayed 404 page.</p></span></label>
+</div>
+<label for="observation"><strong>My observation</strong></label>
+<textarea id="observation" class="observation" rows="4" placeholder="Example: I opened the missing URL. The custom page displayed the 404 heading and both navigation links worked."></textarea>
+<p class="small">Your observation stays in this page while it is open. Copy it into your report and attach your own screenshot if your instructor requires evidence.</p>
+<div class="action-row"><button type="button" class="action-link" id="copy-observation">Copy observation</button><a class="action-link" href="../report.html">Open Week 10 report ↗</a></div>
+<p id="copy-status" class="status" aria-live="polite"></p>
+</div>
+</section>
+
+<section aria-labelledby="why-title">
+<h2 id="why-title">4. What I learned</h2>
+<ul>
+<li>A 404 status tells the visitor that the requested resource was not found.</li>
+<li>A custom 404 page should explain the problem in plain language.</li>
+<li>Useful recovery links help visitors continue instead of leaving the website.</li>
+<li>The root-level <code>404.html</code> is used by GitHub Pages for missing pages in this site.</li>
+</ul>
+<p class="explain">Important: this exercise does not invent a test result. The checklist starts empty so I can record the result after testing the deployed page myself.</p>
+<div class="action-row"><a class="action-link" href="e1-github-pages.html">← Previous: E1 GitHub Pages</a><a class="action-link primary" href="e3-custom-404.html">Next: E3 Custom 404 →</a><a class="action-link" href="../">Week 10 home</a></div>
+</section>
+</main>
+<footer><span>© 2026 Abinash Lamichhane</span><a href="../">Week 10 home ↑</a><span>WEB PROGRAMMING</span></footer>
+<script>
+(() => {
+  const pathInput = document.getElementById("missing-path");
+  const prepare = document.getElementById("prepare-test");
+  const openLink = document.getElementById("open-test");
+  const pathStatus = document.getElementById("path-status");
+  const checks = [...document.querySelectorAll(".test-check")];
+  const progress = document.getElementById("progress");
+  const progressLabel = document.getElementById("progress-label");
+  const progressFill = document.getElementById("progress-fill");
+  const observation = document.getElementById("observation");
+  const copyButton = document.getElementById("copy-observation");
+  const copyStatus = document.getElementById("copy-status");
+
+  prepare.addEventListener("click", () => {
+    const path = pathInput.value.trim().replace(/^\/+/, "");
+    if (!path || path.split("/").some(part => part === "..") || /^https?:/i.test(path)) {
+      pathStatus.textContent = "Enter a site-relative path without '..' or a full URL.";
+      return;
+    }
+    const encoded = path.split("/").map(encodeURIComponent).join("/");
+    openLink.href = "/WebClass/" + encoded;
+    pathStatus.textContent = "Test link prepared: " + openLink.href;
+  });
+
+  function updateProgress() {
+    const done = checks.filter(item => item.checked).length;
+    progressLabel.textContent = done + " of " + checks.length + " checks completed";
+    progressFill.style.width = (done / checks.length * 100) + "%";
+    progress.setAttribute("aria-valuenow", String(done));
+  }
+  checks.forEach(item => item.addEventListener("change", updateProgress));
+
+  copyButton.addEventListener("click", async () => {
+    const value = observation.value.trim();
+    if (!value) {
+      copyStatus.textContent = "Write your observation before copying it.";
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(value);
+      copyStatus.textContent = "Observation copied.";
+    } catch (error) {
+      observation.focus();
+      observation.select();
+      copyStatus.textContent = "Clipboard access is unavailable. Your observation is selected; copy it manually.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
