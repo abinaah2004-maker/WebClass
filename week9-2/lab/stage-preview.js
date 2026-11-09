@@ -6,7 +6,7 @@ const stages = [
 ["Color contrast","Text, metadata, buttons and links use stronger foreground/background contrast so normal text is easier to read.","color: #555; /* on a light background */"],
 ["Form labels and errors","Newsletter fields now have visible labels, connected error messages and focus management for invalid entries.","<input required aria-describedby=\"email-error\"><p id=\"email-error\"></p>"],
 ["Responsive images and layout stability","The browser can select an image candidate with srcset and sizes. Image dimensions reserve layout space; below-the-fold images load lazily. The featured image also uses picture for a narrow-screen crop.","<img srcset=\"photo-480.jpg 480w, photo-960.jpg 960w\" sizes=\"(max-width: 600px) 100vw, 800px\" width=\"960\" height=\"640\" loading=\"lazy\">"],
-["Deferred scripts","The completed page loads its external JavaScript after the HTML has been parsed. The defer attribute keeps execution predictable while the app remains interactive.","<!-- End of body -->\\n<script src=\"lab.js\" defer></script>"]
+["Deferred scripts","The completed page loads its external JavaScript after the HTML has been parsed. The defer attribute keeps execution predictable while the app remains interactive.","<!-- End of body -->\n<script src=\"lab.js\" defer></script>"]
 ];
 const info = stages[stage - 1];
 document.getElementById("stage-title").textContent = "Step " + stage + " · " + info[0];
