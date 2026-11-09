@@ -18,6 +18,7 @@ This folder contains my Week 10 coursework: Git and GitHub exercises, GitHub Pag
 - `../teamproject/` — existing Memory Match team project, linked from the Week 10 hub
 - `accessibility/` — interactive keyboard test
 - `report.html` — Week 10_2 keyboard accessibility report template (complete it with your own test observations and screenshots)
+- `evidence/` — screenshot checklist and a place for original evidence files
 
 ## Evidence checklist
 
