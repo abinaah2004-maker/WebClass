@@ -125,12 +125,43 @@
     const photo = document.querySelector("#responsive-photo");
     const info = document.querySelector("#image-info");
 
-    document.querySelector("#inspect-image").addEventListener("click", () => {
-      info.textContent =
-        "Selected file: " + photo.currentSrc +
-        " | Displayed width: " + Math.round(photo.getBoundingClientRect().width) +
-        " CSS pixels | Image size: " + photo.naturalWidth + " × " + photo.naturalHeight +
-        " pixels | Device pixel ratio: " + window.devicePixelRatio;
+    const inspectButton = document.querySelector("#inspect-image");
+
+    inspectButton.addEventListener("click", async () => {
+      info.textContent = "Checking the image selected by your browser…";
+      info.setAttribute("aria-busy", "true");
+
+      try {
+        // Wait for the browser to finish decoding the selected responsive image.
+        if (typeof photo.decode === "function") {
+          await photo.decode();
+        } else if (!photo.complete) {
+          await new Promise((resolve, reject) => {
+            photo.addEventListener("load", resolve, { once: true });
+            photo.addEventListener("error", reject, { once: true });
+          });
+        }
+
+        const selectedFile = photo.currentSrc || photo.src;
+
+        if (!photo.naturalWidth) {
+          throw new Error("The image file could not be loaded. Check your internet connection or reload the page.");
+        }
+
+        const displayedWidth = Math.round(photo.getBoundingClientRect().width);
+        const displayedHeight = Math.round(photo.getBoundingClientRect().height);
+
+        info.textContent =
+          "Browser-selected file: " + selectedFile +
+          " | Displayed size: " + displayedWidth + " × " + displayedHeight +
+          " CSS pixels | Original image size: " + photo.naturalWidth + " × " + photo.naturalHeight +
+          " pixels | Device pixel ratio: " + window.devicePixelRatio;
+      } catch (error) {
+        info.textContent = error.message ||
+          "The image information could not be read. Please reload the page and try again.";
+      } finally {
+        info.removeAttribute("aria-busy");
+      }
     });
   </script>
 </body>
