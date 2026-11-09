@@ -24,7 +24,7 @@ The local image exports are not yet committed. Do not claim local WebP/JPEG byte
 
 The CineReview homework page records the actual figures transcribed from your supplied report: Performance 92 → 100, Accessibility 69 → 100, and Best Practices 100 → 100. These are historical screenshot results, not a fresh run performed by the website.
 
-The original PDF is retained in your ChatGPT Library, but it has not been copied into this repository yet. The HTML homework page preserves the key report content without pretending that a PDF download is hosted.
+The original PDF has not yet been copied into this repository. The HTML homework page preserves the key report content; upload the PDF here if a downloadable copy is required.
 
 ## Important remaining submission work
 
