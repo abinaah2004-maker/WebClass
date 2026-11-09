@@ -23,42 +23,39 @@
 <p>Resize the browser or open this page on a phone. The photograph stays the same, but <code>srcset</code> and <code>sizes</code> let the browser choose an appropriate JPEG file width. This is resolution switching; it does not crop the photo differently for mobile.</p>
 <figure class="image-frame">
 <picture>
+<source type="image/webp"
+ srcset="assets/photo-400.webp 400w, assets/photo-800.webp 800w"
+ sizes="(max-width:650px) calc(100vw - 36px), 800px">
 <img id="responsive-photo" class="responsive-image"
- src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/960px-Lisboa_trams.jpg"
- srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/330px-Lisboa_trams.jpg 330w,
-         https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/960px-Lisboa_trams.jpg 960w,
-         https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lisboa_trams.jpg/1280px-Lisboa_trams.jpg 1280w"
- sizes="(max-width: 600px) calc(100vw - 60px), (max-width: 980px) calc(100vw - 80px), 932px"
- alt="Yellow Lisbon trams on a city street beside a tram stop, with pigeons flying overhead"
- width="960" height="671" fetchpriority="high" decoding="async">
+ src="assets/photo-800.jpg"
+ srcset="assets/photo-400.jpg 400w, assets/photo-800.jpg 800w"
+ sizes="(max-width:650px) calc(100vw - 36px), 800px"
+ alt="Two yellow trams on tracks along a Lisbon street"
+ width="800" height="400" fetchpriority="high" decoding="async">
 </picture>
-<figcaption>Real photograph by Ivan Aleksić, from Wikimedia Commons, licensed CC BY-SA 4.0. The browser can choose a 330px, 960px or 1280px JPEG candidate. The image is not AI-generated.</figcaption>
+<figcaption>One photograph in four local exports: 400px and 800px JPEG, plus 400px and 800px WebP. Image derivatives adapted from the public Week 9.2 reference exercise by Sudip Sah; its source page does not identify the original photographer or image licence.</figcaption>
 </figure>
-<div class="pills"><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">alt: text alternative</span><span class="pill">width + height: layout stability</span></div>
+<div class="pills"><span class="pill">picture: format choice</span><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">width + height: layout stability</span></div>
 <button id="inspect-image" type="button">Inspect selected image</button>
 <p id="image-status" class="status" role="status" aria-live="polite">The browser will choose an image after it evaluates the viewport and device pixel ratio.</p>
 </section>
 
 <section class="panel">
 <h2>2. Understand the HTML</h2>
+<p>The WebP source is listed first. Browsers that support WebP can use it; browsers that do not support it fall back to the JPEG inside <code>img</code>. The width descriptors (400w and 800w) describe the actual pixel widths of the files.</p>
+<div class="status"><strong>Measured file sizes from the four local assets</strong><br>400 × 200: JPEG 21,448 bytes; WebP 13,466 bytes (37.2% smaller).<br>800 × 400: JPEG 53,204 bytes; WebP 28,346 bytes (46.7% smaller).<br>These values are recorded from the reference exercise's assets; compression results depend on the image and export settings.</div>
 <pre class="code"><code>&lt;picture&gt;
-  &lt;!-- Art direction: portrait crop on small screens --&gt;
-  &lt;source
-    media="(max-width: 600px)"
-    srcset="photo-480x640.jpg 480w,
-            photo-720x960.jpg 720w"
-    sizes="calc(100vw - 60px)"&gt;
-
-  &lt;!-- Landscape candidates for larger screens --&gt;
+  &lt;source type="image/webp"
+    srcset="assets/photo-400.webp 400w,
+            assets/photo-800.webp 800w"
+    sizes="(max-width:650px) calc(100vw - 36px), 800px"&gt;
   &lt;img
-    src="photo-960x640.jpg"
-    srcset="photo-480x320.jpg 480w,
-            photo-960x640.jpg 960w,
-            photo-1440x960.jpg 1440w"
-    sizes="(max-width: 980px) calc(100vw - 80px), 932px"
-    alt="Describe what the photograph shows"
-    width="960"
-    height="640"&gt;
+    src="assets/photo-800.jpg"
+    srcset="assets/photo-400.jpg 400w,
+            assets/photo-800.jpg 800w"
+    sizes="(max-width:650px) calc(100vw - 36px), 800px"
+    alt="Two yellow trams on tracks along a Lisbon street"
+    width="800" height="400"&gt;
 &lt;/picture&gt;</code></pre>
 <ul>
 <li><strong>picture:</strong> gives the browser alternative image sources.</li>
@@ -102,35 +99,26 @@
 <li>A narrow/mobile screenshot showing the portrait crop fitting the screen.</li>
 <li>Optional: a DevTools Network screenshot showing the selected image resource and its dimensions.</li>
 </ul>
-<p>The example currently uses a real Creative Commons photograph. Credit: Ivan Aleksić, <a href="https://commons.wikimedia.org/wiki/File:Lisboa_trams.jpg">Lisboa trams.jpg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. The source file is delivered by Wikimedia Commons at multiple JPEG widths. This demonstrates resolution switching, but it does not yet demonstrate a local WebP/JPEG comparison or an image you personally took. For the strongest submission, replace this with your own photograph, credit it as your own work, and create the four local exports described below.</p>
+<p>The exercise structure and four local image variants are adapted from <a href="https://github.com/sudip09-sys/WebProgramming/tree/main/week9_2">Sudip Sah's public Week 9.2 reference repository</a>. The reference E2 page does not state the original photographer or licence for its image files. The HTML, responsive image markup and measured asset-size comparison are included here for learning and should be cited as adapted work.</p>
 <p><a class="back" href="E1_Lighthouse.html">← Previous: Lighthouse</a> · <a class="back" href="E3_Script_Loading.html">Next: Script Loading →</a></p>
 </section>
 
 <section class="panel">
-<h2>6. Build your own local WebP and JPEG files</h2>
-<p>Sudip's version stores several optimized files in the project. The current live example above uses a real, credited Commons photograph at multiple JPEG widths. To make your version match the local-file comparison, download a photograph you are allowed to reuse and create these four exports with <a href="https://squoosh.app/">Squoosh</a>:</p>
+<h2>6. Local image files and verification</h2>
+<p>The four local image files are now included in this repository's <code>assets</code> folder. They are the same photograph at two widths and two formats.</p>
 <ul>
-<li><code>assets/photo-400.jpg</code> — 400 pixels wide, JPEG.</li>
-<li><code>assets/photo-800.jpg</code> — 800 pixels wide, JPEG.</li>
-<li><code>assets/photo-400.webp</code> — 400 pixels wide, WebP.</li>
-<li><code>assets/photo-800.webp</code> — 800 pixels wide, WebP.</li>
+<li><code>assets/photo-400.jpg</code> — 400 × 200, 21,448 bytes.</li>
+<li><code>assets/photo-400.webp</code> — 400 × 200, 13,466 bytes.</li>
+<li><code>assets/photo-800.jpg</code> — 800 × 400, 53,204 bytes.</li>
+<li><code>assets/photo-800.webp</code> — 800 × 400, 28,346 bytes.</li>
 </ul>
-<p>In Squoosh, open the same source photograph, resize it to 400px and 800px wide while preserving its aspect ratio, then export each size once as JPEG and once as WebP. Save the four files in a folder named <code>assets</code> beside this exercise page. Check each exported file's byte size in File Explorer and write down the actual values; do not guess them.</p>
-<pre class="code"><code>&lt;picture&gt;
-  &lt;source type="image/webp"
-    srcset="assets/photo-400.webp 400w,
-            assets/photo-800.webp 800w"
-    sizes="(max-width:650px) calc(100vw - 36px), 800px"&gt;
-  &lt;img
-    src="assets/photo-800.jpg"
-    srcset="assets/photo-400.jpg 400w,
-            assets/photo-800.jpg 800w"
-    sizes="(max-width:650px) calc(100vw - 36px), 800px"
-    alt="Write an accurate description of your photograph"
-    width="800" height="533"&gt;
-&lt;/picture&gt;</code></pre>
-<p><strong>How to test:</strong> open DevTools → Network, filter by Img, reload the page, and inspect the downloaded filename. Repeat at a narrow and wide viewport. Then use the Inspect selected image button to read <code>currentSrc</code> and <code>naturalWidth</code>.</p>
-<p class="status">Do not claim WebP savings until the four local files exist and their real byte sizes have been measured.</p>
+<table>
+<thead><tr><th>Dimensions</th><th>JPEG</th><th>WebP</th><th>WebP reduction</th></tr></thead>
+<tbody><tr><td>400 × 200</td><td>21,448 bytes</td><td>13,466 bytes</td><td>37.2%</td></tr>
+<tr><td>800 × 400</td><td>53,204 bytes</td><td>28,346 bytes</td><td>46.7%</td></tr></tbody>
+</table>
+<p><strong>Test it:</strong> open DevTools → Network → Img, reload at a narrow viewport and then a wide viewport. Compare the selected filename. Press <strong>Inspect selected image</strong> to see <code>currentSrc</code>, rendered width and natural dimensions.</p>
+<p><strong>Image provenance:</strong> these four derivatives were adapted from the public Week 9.2 reference repository. The reference page does not identify the original photographer or image licence, so do not claim the photograph as your own. If your professor requires a fully traceable image licence, replace it with a clearly licensed image and keep the attribution.</p>
 </section>
 </main>
 <script>
