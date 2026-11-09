@@ -1,44 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Week 10_2 keyboard accessibility report template by Abinash Lamichhane.">
-<title>Week 10_2 — Accessibility Report | Abinash Lamichhane</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Week 10_2 keyboard accessibility modifications and verification report by Abinash Lamichhane.">
+<title>Week 10_2 — Accessibility Modifications Report | Abinash Lamichhane</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f5f3eb;color:#202e27;font:16px/1.7 system-ui,sans-serif}a{color:#255b3b;text-underline-offset:4px}a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #255b3b;outline-offset:3px}.skip{position:absolute;left:12px;top:-70px;background:#255b3b;color:#fff;padding:10px 14px}.skip:focus{top:10px}header,main,footer{width:min(900px,calc(100% - 40px));margin:auto}header{padding:22px 0;border-bottom:1px solid #c9cdc0}main{padding:32px 0 55px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#49664e}h1{font:500 clamp(36px,6vw,58px)/1.1 Georgia,serif;margin:12px 0}h2{font:500 28px Georgia,serif;margin:36px 0 10px}.muted{color:#59665d}.panel{background:#fffef8;border:1px solid #c9cdc0;border-radius:10px;padding:18px;margin:18px 0}.note{background:#e6eadf;border-left:4px solid #789477;padding:14px 18px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fffef8}th,td{border:1px solid #c9cdc0;padding:11px;text-align:left;vertical-align:top}th{background:#e6eadf}textarea{width:100%;min-height:90px;padding:12px;border:1px solid #9ca99b;border-radius:7px;background:#fffef8;color:#202e27;font:inherit}button{border:0;border-radius:7px;background:#255b3b;color:white;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}footer{border-top:1px solid #c9cdc0;padding:20px 0 30px;font-size:13px;color:#59665d}@media print{body{background:white}header,main,footer{width:100%}.skip,.actions{display:none}.panel,table{break-inside:avoid}}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f3eb;color:#202e27;font:16px/1.7 system-ui,sans-serif}
+a{color:#255b3b;text-underline-offset:4px}
+a:focus-visible{outline:3px solid #255b3b;outline-offset:3px}
+.skip{position:absolute;left:12px;top:-70px;background:#255b3b;color:#fff;padding:10px 14px;z-index:10}
+.skip:focus{top:10px}
+header,main,footer{width:min(900px,calc(100% - 40px));margin:auto}
+header{padding:22px 0;border-bottom:1px solid #c9cdc0}
+main{padding:32px 0 55px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#49664e}
+h1{font:500 clamp(36px,6vw,58px)/1.1 Georgia,serif;margin:12px 0}
+h2{font:500 28px Georgia,serif;margin:36px 0 10px}
+.muted{color:#59665d}
+.note{background:#e6eadf;border-left:4px solid #789477;padding:14px 18px;margin:18px 0}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:#fffef8}
+th,td{border:1px solid #c9cdc0;padding:11px;text-align:left;vertical-align:top}
+th{background:#e6eadf}
+code,kbd{background:#e9ece4;border-radius:4px;padding:2px 5px}
+.status{font-weight:700;color:#76551b}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+button{border:0;border-radius:7px;background:#255b3b;color:white;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer}
+button:focus-visible{outline:3px solid #255b3b;outline-offset:3px}
+footer{border-top:1px solid #c9cdc0;padding:20px 0 30px;font-size:13px;color:#59665d}
+@media(max-width:600px){header,main,footer{width:min(100% - 28px,900px)}h1{font-size:38px}table{font-size:14px}}
+@media print{body{background:white}header,main,footer{width:100%}.skip,.actions{display:none}.note,table{break-inside:avoid}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the main content</a>
-<header><a href="./">← Back to Week 10 submission</a> · <a href="./accessibility/">Open keyboard test</a></header>
+<header><a href="./">← Week 10 submission</a> · <a href="./accessibility/">Open keyboard test</a> · <a href="./portfolio/">Portfolio</a></header>
 <main id="main" tabindex="-1">
-<p class="eyebrow">WEB PROGRAMMING / WEEK 10_2 / ACCESSIBILITY</p>
-<h1>Keyboard accessibility<br>modification report</h1>
+<p class="eyebrow">WEB PROGRAMMING / WEEK 10_2 / 9 NOVEMBER 2026</p>
+<h1>Accessibility modifications<br>and verification report</h1>
 <p><strong>Student:</strong> Abinash Lamichhane · <strong>University:</strong> Gachon University</p>
-<div class="note"><strong>Report status:</strong> This is my report template. I must complete the observation fields after testing the published pages on my own computer. It does not claim that a test has passed.</div>
-<h2>1. Purpose</h2>
-<p>A skip link helps keyboard users bypass repeated navigation and move directly to the main content. It should be the first keyboard-focusable control, become visible when focused and move focus to a meaningful main-content target when activated.</p>
-<h2>2. Implementation in my coursework</h2>
-<div class="table-wrap"><table><thead><tr><th>Page</th><th>Implementation to inspect</th><th>My test status</th></tr></thead><tbody>
-<tr><th>Week 10 hub</th><td>Skip link before the header and a focusable <code>main</code> element.</td><td>Not yet recorded</td></tr>
-<tr><th>Portfolio</th><td>Skip link, main landmark and visible keyboard focus styles.</td><td>Not yet recorded</td></tr>
-<tr><th>Exercise pages</th><td>Skip link and a main content target on each exercise page.</td><td>Not yet recorded</td></tr>
-<tr><th>Project pages</th><td>Check keyboard access to forms, buttons, filters and navigation.</td><td>Not yet recorded</td></tr>
+<div class="note"><strong>Report status:</strong> Source-code review and the Git exercise skip-link update are documented below. Live keyboard verification is still pending your own browser test; no page is marked as passed until you test it.</div>
+
+<h2>1. Problem and purpose</h2>
+<p>The accessibility task checks whether keyboard users can bypass repeated navigation and reach the main content directly. The skip link should be the first keyboard stop, become visible when focused, and move focus to a meaningful main-content target when activated.</p>
+
+<h2>2. Changes made</h2>
+<div class="table-wrap"><table><thead><tr><th>Area</th><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><th>Skip-link placement</th><td>The main coursework pages already placed a skip link before the page content. The Git exercise had no skip link.</td><td>The Git exercise now starts with a visible-on-focus “Skip to the main content” link before its main content.</td></tr>
+<tr><th>Main target</th><td>The Git exercise main element had no ID and was not explicitly focusable.</td><td>The Git exercise now uses <code>main id="main-content" tabindex="-1"</code> as the skip-link destination.</td></tr>
+<tr><th>Focus styling</th><td>The Git exercise did not define a visible focus style for its new skip link or main target.</td><td>Added a high-contrast focus outline and a visible focused skip-link position in the Git exercise stylesheet.</td></tr>
+<tr><th>Other pages</th><td>The homepage, Week 10 hub, portfolio and Book Search already contained skip links and focusable main targets in the source reviewed.</td><td>Those existing implementations are included in the verification checklist; they still need live keyboard testing.</td></tr>
+<tr><th>Evidence</th><td>The report page was a fill-in template without a page-by-page implementation summary.</td><td>This report records the source review, code changes, test procedure and evidence still to capture.</td></tr>
 </tbody></table></div>
-<h2>3. Test procedure</h2>
-<ol><li>Open the deployed page and reload it without clicking anywhere.</li><li>Press <kbd>Tab</kbd> once and check whether the skip link receives focus and becomes visible.</li><li>Press <kbd>Enter</kbd> to activate the link.</li><li>Check whether focus moves to the main content, then press Tab to continue through the page.</li><li>Repeat on the Week 10 hub, portfolio and selected exercise/project pages.</li></ol>
-<p class="note">Tab moves focus between controls. Enter activates the focused link. The expected behavior is not that Tab itself activates the skip link.</p>
-<h2>4. My test observations</h2>
-<p>Complete these fields after testing. Include the browser/device used and describe what actually happened.</p>
-<div class="panel"><label for="device"><strong>Browser and device</strong></label><textarea id="device" placeholder="Example: Chrome on my laptop / Android Chrome"></textarea><label for="tab"><strong>What happened after the first Tab?</strong></label><textarea id="tab" placeholder="Did the skip link become visible and focused?"></textarea><label for="enter"><strong>What happened after pressing Enter?</strong></label><textarea id="enter" placeholder="Where did keyboard focus move?"></textarea><label for="issues"><strong>Issues or improvements noticed</strong></label><textarea id="issues" placeholder="Write any issue you noticed, or say none if that is what you observed."></textarea><label for="conclusion"><strong>Conclusion</strong></label><textarea id="conclusion" placeholder="Explain whether the keyboard test worked and why skip links are useful."></textarea><div class="actions"><button id="copy">Copy completed report</button><button type="button" onclick="window.print()">Print / Save as PDF</button></div><p id="status" role="status" aria-live="polite"></p></div>
-<h2>5. Evidence to attach</h2>
-<ul><li>Screenshot showing the skip link after the first Tab press.</li><li>Screenshot or short recording showing the destination after Enter.</li><li>List the pages tested and the actual result for each page.</li></ul>
-<p class="muted">Do not write “Pass” for a page until it has been tested. Add your real screenshots to the submission rather than creating example evidence.</p>
-<h2>6. Reflection</h2>
-<p>Keyboard testing helps identify navigation barriers that may not be obvious when using a mouse. A clear focus indicator and a working skip link make a page easier to navigate for keyboard users and people who use assistive technologies.</p>
+
+<h2>3. Keyboard test procedure</h2>
+<ol>
+<li>Open a deployed page in Chrome and reload it without clicking anywhere.</li>
+<li>Press <kbd>Tab</kbd> once. Check whether “Skip to the main content” becomes visible and receives focus.</li>
+<li>Press <kbd>Enter</kbd> to activate the skip link.</li>
+<li>Check whether the main content receives focus. Press <kbd>Tab</kbd> again to confirm that focus continues from the main content rather than returning through the page navigation.</li>
+<li>Repeat the same test for each page listed in the verification table.</li>
+</ol>
+<p class="note"><strong>Important:</strong> Tab moves keyboard focus; Enter activates the focused link. Tab should not automatically activate the skip link.</p>
+
+<h2>4. Verification results</h2>
+<p>The following pages were reviewed in the repository source. The live keyboard test must still be completed in Chrome after the latest deployment.</p>
+<div class="table-wrap"><table><thead><tr><th>Page</th><th>First Tab</th><th>After Enter</th><th>Live result</th></tr></thead><tbody>
+<tr><th><a href="../">Course homepage</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main-content</code>.</td><td class="status">Pending browser test</td></tr>
+<tr><th><a href="./">Week 10 hub</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main-content</code>.</td><td class="status">Pending browser test</td></tr>
+<tr><th><a href="./portfolio/">Portfolio</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main</code>.</td><td class="status">Pending browser test</td></tr>
+<tr><th><a href="./projects/book-search/">Book Search</a></th><td>Skip link is first in the source.</td><td>Targets <code>#main</code>.</td><td class="status">Pending browser test</td></tr>
+<tr><th><a href="./git-exercise/">Git exercise</a></th><td>Skip link added before main.</td><td>Targets <code>#main-content</code>.</td><td class="status">Pending deployment and browser test</td></tr>
+</tbody></table></div>
+
+<h2>5. Evidence to capture</h2>
+<ul>
+<li>Screenshot of the first Tab press showing the visible skip link on the deployed page.</li>
+<li>Screenshot after pressing Enter, showing the main content focus destination.</li>
+<li>Record the browser/device and actual outcome for each page in the verification table.</li>
+<li>Capture the GitHub commit showing the Git exercise accessibility update.</li>
+</ul>
+<p class="muted">Do not mark a page as “Pass” until the live keyboard test has been completed. This report does not claim a new Lighthouse score, screen-reader audit or mobile-device test.</p>
+
+<h2>6. Modified files</h2>
+<ul>
+<li><code>week10/git-exercise/index.html</code> — added the skip link and focusable main target.</li>
+<li><code>week10/git-exercise/style.css</code> — added visible keyboard focus styling.</li>
+<li><code>week10/report.html</code> — replaced the report template with this implementation and verification report.</li>
+</ul>
+<p><a href="https://github.com/abinaah2004-maker/WebClass/commits/main/week10">View Week 10 commit history on GitHub ↗</a></p>
+<div class="actions"><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
 </main>
-<footer>Abinash Lamichhane · Week 10_2 Accessibility Report</footer>
-<script>
-document.getElementById('copy').addEventListener('click',async()=>{const fields=['device','tab','enter','issues','conclusion'];const labels=['Browser and device','First Tab observation','Enter observation','Issues or improvements','Conclusion'];const output=['Week 10_2 Keyboard Accessibility Report','Student: Abinash Lamichhane',...fields.map((id,i)=>labels[i]+': '+document.getElementById(id).value)].join('\n\n');try{await navigator.clipboard.writeText(output);document.getElementById('status').textContent='Report copied. Paste it into your document and attach your own screenshots.'}catch(error){document.getElementById('status').textContent='Clipboard access was blocked. Select and copy the report text manually.'}});
-</script>
-</body></html>
+<footer>Abinash Lamichhane · Web Programming · Week 10_2 accessibility report</footer>
+</body>
+</html>
