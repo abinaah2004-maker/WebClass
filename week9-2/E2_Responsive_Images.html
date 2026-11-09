@@ -1,16 +1,116 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Responsive image exercise demonstrating picture, srcset, sizes and fallback."><title>Exercise 2 | Responsive images</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#182238;font:16px/1.65 system-ui,sans-serif}.wrap{max-width:900px;margin:auto;padding:24px}.panel{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}.back{color:#1d4ed8}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}.visual{width:100%;max-width:800px;display:block;border-radius:14px;background:#dbeafe}.code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto}button{padding:9px 13px;border:0;border-radius:8px;background:#2563eb;color:#fff;font-weight:700}a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}.pill{display:inline-block;background:#eff6ff;padding:5px 10px;border-radius:30px;margin:4px}@media(max-width:600px){.wrap{padding:14px}.panel{padding:16px}}</style></head><body><main class="wrap"><p><a class="back" href="index.html">← All Week 9.2 exercises</a></p><header class="panel"><div class="eyebrow">EXERCISE 02 · IMAGE OPTIMIZATION</div><h1>Responsive Web images</h1><p>A responsive image lets the browser select an appropriate resource for the available layout and screen density. The picture element can also offer modern formats with a fallback.</p></header><section class="panel"><h2>Working responsive illustration</h2><picture>
-<source type="image/webp" media="(max-width:600px)" srcset="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/photo-400.webp">
-<source type="image/webp" srcset="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/photo-800.webp">
-<img class="visual" src="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/photo-800.jpg" srcset="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/photo-400.jpg 400w, https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/photo-800.jpg 800w" sizes="(max-width:650px) calc(100vw - 36px),800px" alt="Two yellow trams on tracks along a Lisbon street" width="800" height="400" fetchpriority="high">
-</picture><p><span class="pill">Mobile: compact source</span><span class="pill">Desktop: wide source</span><span class="pill">Fallback: img element</span></p><p id="viewport">Resize the browser window to test the media condition.</p></section><section class="panel"><h2>Code pattern for WebP with JPEG fallback</h2><p>The real Lisbon photograph is provided in JPEG and WebP formats at 400 × 200 and 800 × 400. The browser checks supported formats and chooses a suitable width using <code>srcset</code> and <code>sizes</code>.</p><pre class="code"><code>&lt;picture&gt;
-  &lt;source type="image/webp"
-    srcset="photo-400.webp 400w, photo-800.webp 800w"
-    sizes="(max-width: 650px) calc(100vw - 36px), 800px"&gt;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hands-on responsive image exercise by Abinash Lamichhane: srcset, sizes, picture, art direction and lazy loading.">
+<title>Exercise 2 | Responsive Images</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#182238;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:980px;margin:auto;padding:24px}.back{color:#1d4ed8}.panel{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}.hero{padding:clamp(24px,5vw,42px)}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:.35em 0}.image-frame{margin:0}.responsive-image{display:block;width:100%;height:auto;max-height:560px;object-fit:cover;border-radius:13px;background:#dbeafe}.image-frame figcaption{color:#52627a;font-size:.9rem;margin-top:9px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.pill{display:inline-block;background:#eff6ff;color:#1e40af;padding:5px 10px;border-radius:30px;font-size:.85rem}.code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.65 ui-monospace,monospace}.status{padding:13px 15px;background:#f1f5f9;border-radius:9px;color:#263449;overflow-wrap:anywhere}button{padding:10px 14px;border:0;border-radius:8px;background:#2563eb;color:#fff;font:inherit;font-weight:700;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.gallery figure{margin:0}.gallery img{width:100%;height:auto;display:block;border-radius:12px}.checklist li{margin:7px 0}@media(max-width:600px){.wrap{padding:14px}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<p><a class="back" href="index.html">← All Week 9.2 exercises</a></p>
+<header class="panel hero">
+<p class="eyebrow">EXERCISE 02 · RESPONSIVE IMAGE FIX</p>
+<h1>Responsive Images</h1>
+<p>A responsive image is not only made smaller with CSS. The browser can choose a suitable image file for the available space and screen density. This exercise demonstrates responsive file selection, art direction, image dimensions and lazy loading using ordinary photographic images rather than AI-generated artwork.</p>
+</header>
+
+<section class="panel">
+<h2>1. Working responsive image</h2>
+<p>Resize the browser or open this page on a phone. The browser uses the portrait crop at narrow widths and the landscape crop at wider widths. Within each layout, <code>srcset</code> lets the browser choose an appropriate file width.</p>
+<figure class="image-frame">
+<picture>
+<source media="(max-width:600px)" srcset="https://picsum.photos/id/1011/480/640 480w, https://picsum.photos/id/1011/720/960 720w" sizes="calc(100vw - 60px)">
+<img id="responsive-photo" class="responsive-image" src="https://picsum.photos/id/1011/960/640" srcset="https://picsum.photos/id/1011/480/320 480w, https://picsum.photos/id/1011/960/640 960w, https://picsum.photos/id/1011/1440/960 1440w" sizes="(max-width: 600px) calc(100vw - 60px), (max-width: 980px) calc(100vw - 80px), 932px" alt="A scenic outdoor landscape with trees and a lake" width="960" height="640" fetchpriority="high" decoding="async">
+</picture>
+<figcaption>The same photographic subject is offered in different dimensions. The mobile source uses a portrait crop; the desktop fallback uses a landscape crop.</figcaption>
+</figure>
+<div class="pills"><span class="pill">picture: art direction</span><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">alt: text alternative</span></div>
+<button id="inspect-image" type="button">Inspect selected image</button>
+<p id="image-status" class="status" role="status" aria-live="polite">The browser will choose an image after it evaluates the viewport and device pixel ratio.</p>
+</section>
+
+<section class="panel">
+<h2>2. Understand the HTML</h2>
+<pre class="code"><code>&lt;picture&gt;
+  &lt;!-- Art direction: portrait crop on small screens --&gt;
+  &lt;source
+    media="(max-width: 600px)"
+    srcset="photo-480x640.jpg 480w,
+            photo-720x960.jpg 720w"
+    sizes="calc(100vw - 60px)"&gt;
+
+  &lt;!-- Landscape candidates for larger screens --&gt;
   &lt;img
-    src="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/photo-800.jpg"
-    srcset="photo-400.jpg 400w, photo-800.jpg 800w"
-    sizes="(max-width: 650px) calc(100vw - 36px), 800px"
-    alt="Describe the photograph"
-    width="800" height="400"&gt;
-&lt;/picture&gt;</code></pre><p><strong>Why width and height?</strong> They reserve the image's aspect ratio before download and help prevent layout shifts. The JPEG <code>img</code> remains the fallback when the browser cannot use the WebP source.</p></section><section class="panel"><h2>Additional reference photographs</h2><div class="gallery"><figure><img class="visual" src="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/movie3.jpg" alt="Wooded coastline photograph used in the image loading exercise" width="400" height="560" loading="lazy"><figcaption>Gallery image 1 · Lazy loaded</figcaption></figure><figure><img class="visual" src="https://raw.githubusercontent.com/sudip09-sys/WebProgramming/main/week9_2/assets/movie4.jpg" alt="Tools and work gloves on a wooden surface" width="400" height="560" loading="lazy"><figcaption>Gallery image 2 · Lazy loaded</figcaption></figure></div></section><section class="panel"><h2>Try it</h2><button id="check" type="button">Check current viewport</button><p id="result" aria-live="polite">No check yet.</p><a class="back" href="E1_Lighthouse.html">Previous exercise</a> · <a class="back" href="E3_Script_Loading.html">Next exercise →</a></section></main><script>const viewport=document.getElementById('viewport');function update(){viewport.textContent=window.matchMedia('(max-width:600px)').matches?'Mobile layout condition is active.':'Desktop layout condition is active.'}window.addEventListener('resize',update,{passive:true});update();document.getElementById('check').addEventListener('click',()=>{document.getElementById('result').textContent='Viewport width: '+window.innerWidth+' CSS pixels. '+(window.innerWidth<=600?'The compact source condition is active.':'The wide source condition is active.')});</script></body></html>
+    src="photo-960x640.jpg"
+    srcset="photo-480x320.jpg 480w,
+            photo-960x640.jpg 960w,
+            photo-1440x960.jpg 1440w"
+    sizes="(max-width: 980px) calc(100vw - 80px), 932px"
+    alt="Describe what the photograph shows"
+    width="960"
+    height="640"&gt;
+&lt;/picture&gt;</code></pre>
+<ul>
+<li><strong>picture:</strong> gives the browser alternative image sources.</li>
+<li><strong>source media:</strong> selects a portrait crop when the viewport is narrow.</li>
+<li><strong>srcset:</strong> lists image candidates with their intrinsic pixel widths.</li>
+<li><strong>sizes:</strong> tells the browser approximately how wide the image will appear in the layout.</li>
+<li><strong>img:</strong> is the required fallback and carries the alternative text.</li>
+<li><strong>width and height:</strong> reserve space and help prevent layout shifts.</li>
+</ul>
+</section>
+
+<section class="panel">
+<h2>3. Image loading below the fold</h2>
+<p>Images that are not visible when the page first opens can use <code>loading="lazy"</code>. Do not lazy-load the main hero image if it is the page's Largest Contentful Paint image.</p>
+<div class="gallery">
+<figure><img src="https://picsum.photos/id/1025/640/420" srcset="https://picsum.photos/id/1025/320/210 320w, https://picsum.photos/id/1025/640/420 640w" sizes="(max-width: 600px) calc(100vw - 60px), 440px" alt="A dog looking toward the camera outdoors" width="640" height="420" loading="lazy" decoding="async"><figcaption>Gallery image A · lazy loaded</figcaption></figure>
+<figure><img src="https://picsum.photos/id/1039/640/420" srcset="https://picsum.photos/id/1039/320/210 320w, https://picsum.photos/id/1039/640/420 640w" sizes="(max-width: 600px) calc(100vw - 60px), 440px" alt="A mountain landscape beneath a cloudy sky" width="640" height="420" loading="lazy" decoding="async"><figcaption>Gallery image B · lazy loaded</figcaption></figure>
+</div>
+</section>
+
+<section class="panel">
+<h2>4. Try it yourself</h2>
+<ol class="checklist">
+<li>Open this page on a laptop and note the selected image source.</li>
+<li>Make the browser window narrow or open the page on your phone.</li>
+<li>Press <strong>Inspect selected image</strong> again and compare the current source and rendered width.</li>
+<li>Open DevTools → Network → Img, reload the page, and inspect which image resource was downloaded.</li>
+<li>Try changing the <code>sizes</code> value and observe whether the browser chooses a different candidate.</li>
+</ol>
+<p id="viewport-status" class="status">Viewport information will appear here.</p>
+</section>
+
+<section class="panel">
+<h2>5. What to capture for evidence</h2>
+<ul>
+<li>A wide-screen screenshot showing the landscape image and this exercise page.</li>
+<li>A narrow/mobile screenshot showing the portrait crop fitting the screen.</li>
+<li>Optional: a DevTools Network screenshot showing the selected image resource and its dimensions.</li>
+</ul>
+<p>Use your own browser screenshots. The displayed image is a normal photographic placeholder for demonstrating responsive behavior; replace it with a photograph you choose if your professor requires an original image.</p>
+<p><a class="back" href="E1_Lighthouse.html">← Previous: Lighthouse</a> · <a class="back" href="E3_Script_Loading.html">Next: Script Loading →</a></p>
+</section>
+</main>
+<script>
+const photo=document.getElementById("responsive-photo");
+const imageStatus=document.getElementById("image-status");
+const viewportStatus=document.getElementById("viewport-status");
+function inspectImage(){
+ const selected=photo.currentSrc||photo.src;
+ imageStatus.textContent="Selected file: "+selected+" | Rendered width: "+Math.round(photo.getBoundingClientRect().width)+" CSS px | Natural size: "+photo.naturalWidth+" × "+photo.naturalHeight+" px | Device pixel ratio: "+window.devicePixelRatio;
+}
+function updateViewport(){
+ viewportStatus.textContent="Viewport: "+window.innerWidth+" CSS px wide. "+(window.matchMedia("(max-width:600px)").matches?"The narrow-screen portrait source is eligible.":"The landscape source is eligible.")+" The browser still chooses the best candidate using srcset, sizes and device pixel ratio.";
+}
+document.getElementById("inspect-image").addEventListener("click",inspectImage);
+window.addEventListener("resize",updateViewport,{passive:true});
+photo.addEventListener("load",inspectImage);
+updateViewport();
+</script>
+</body>
+</html>
