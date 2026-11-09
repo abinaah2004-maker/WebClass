@@ -68,6 +68,8 @@ The pages provide a skip link and a focusable main-content target. The report is
 
 ## 6. Comparison with the reference Week 10 folder
 
+For the expanded side-by-side review, see [COMPARISON-AND-MISSING-WORK.md](COMPARISON-AND-MISSING-WORK.md).
+
 Reference inspected: https://sudip09-sys.github.io/WebProgramming/week10/
 
 | Area | My Week 10 | Reference Week 10 | Review |
