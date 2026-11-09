@@ -27,7 +27,7 @@ button:hover{background:#174c39}.secondary{background:#e7eee5;color:#244b39}.dan
 </head><body><a class="skip" href="#main">Skip to main content</a><main id="main" class="wrap" tabindex="-1"><header class="top"><a href="../../">← Week 10 coursework</a><span class="tag">PERSONAL PROJECT / 2026</span></header><p class="tag">PROJECT 01 / PERSONAL FINANCE</p><h1>Expense Tracker<span style="color:var(--lime)">.</span></h1><p class="intro">A simple dashboard to record income and spending, understand where money goes and keep an eye on a monthly budget. Data is saved in this browser using local storage.</p>
 <section class="grid"><div class="stat"><small>Balance</small><strong id="balance">₩0</strong></div><div class="stat"><small>Income</small><strong id="income">₩0</strong></div><div class="stat"><small>Expenses</small><strong id="expenses">₩0</strong></div></section>
 <section class="panel"><h2>Monthly budget</h2><div class="form-row"><label class="muted" for="budget">Budget (KRW)</label><input class="field" id="budget" type="number" min="0" step="1000" placeholder="e.g. 500000"><button id="saveBudget">Save budget</button></div><p id="budgetMessage" class="muted" aria-live="polite">Set a budget to track your spending.</p></section>
-<section class="panel"><h2>Add a transaction</h2><form id="transactionForm"><div class="form-row"><input class="field" id="title" placeholder="Description" required maxlength="60"><input class="field" id="amount" type="number" min="1" step="1" placeholder="Amount (₩)" required></div><div class="form-row"><select class="field" id="type"><option value="expense">Expense</option><option value="income">Income</option></select><select class="field" id="category"><option>Food</option><option>Transport</option><option>Rent</option><option>Study</option><option>Health</option><option>Salary</option><option>Other</option></select><input class="field" id="date" type="date" required><button>Add transaction</button></div></form></section>
+<section class="panel"><h2>Add a transaction</h2><form id="transactionForm"><div class="form-row"><input class="field" id="title" placeholder="Description" required maxlength="60"><input class="field" id="amount" type="number" min="1" step="1" placeholder="Amount (₩)" required></div><div class="form-row"><label class="muted" for="type">Transaction type</label><select class="field" id="type" required><option value="" selected disabled>Choose income or expense</option><option value="income">Income (money received)</option><option value="expense">Expense (money spent)</option></select><select class="field" id="category"><option>Food</option><option>Transport</option><option>Rent</option><option>Study</option><option>Health</option><option>Salary</option><option>Other</option></select><input class="field" id="date" type="date" required><button>Add transaction</button></div></form></section>
 <section class="panel"><div class="form-row" style="justify-content:space-between"><h2>Transactions</h2><button class="secondary" id="clearAll" type="button">Clear all</button></div><div id="transactions" class="list" aria-live="polite"><p class="empty">No transactions yet. Add your first one above.</p></div></section></main><script>
 (() => {
   'use strict';
@@ -139,15 +139,16 @@ button:hover{background:#174c39}.secondary{background:#e7eee5;color:#244b39}.dan
     const title = $('title').value.trim();
     const amount = Number($('amount').value);
     const date = $('date').value;
-    if (!title || !Number.isFinite(amount) || amount <= 0 || !date) {
-      showMessage('Please enter a description, an amount greater than zero, and a date.', true);
+    const type = $('type').value;
+    if (!title || !Number.isFinite(amount) || amount <= 0 || !date || (type !== 'income' && type !== 'expense')) {
+      showMessage('Please enter a description, a valid amount, a date, and choose Income or Expense.', true);
       return;
     }
     const entry = {
       id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random(),
       title,
       amount,
-      type: $('type').value,
+      type,
       category: $('category').value,
       date
     };
