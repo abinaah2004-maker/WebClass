@@ -101,6 +101,33 @@
 <p>The example uses a real Creative Commons photograph, not generated artwork. Credit: Ivan Aleksić, <a href="https://commons.wikimedia.org/wiki/File:Lisboa_trams.jpg">Lisboa trams.jpg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. The source file is delivered by Wikimedia Commons at multiple JPEG widths; this version does not claim measured local WebP/JPEG file-size savings. To reproduce Sudip's exact format comparison, create local WebP and JPEG exports from a photograph you have permission to use, then compare their actual byte sizes.</p>
 <p><a class="back" href="E1_Lighthouse.html">← Previous: Lighthouse</a> · <a class="back" href="E3_Script_Loading.html">Next: Script Loading →</a></p>
 </section>
+
+<section class="panel">
+<h2>6. Build local WebP and JPEG files (the next improvement)</h2>
+<p>Sudip's version stores several optimized files in the project. The current live example above uses a real, credited Commons photograph at multiple JPEG widths. To make your version match the local-file comparison, download a photograph you are allowed to reuse and create these four exports with <a href="https://squoosh.app/">Squoosh</a>:</p>
+<ul>
+<li><code>assets/photo-400.jpg</code> — 400 pixels wide, JPEG.</li>
+<li><code>assets/photo-800.jpg</code> — 800 pixels wide, JPEG.</li>
+<li><code>assets/photo-400.webp</code> — 400 pixels wide, WebP.</li>
+<li><code>assets/photo-800.webp</code> — 800 pixels wide, WebP.</li>
+</ul>
+<p>In Squoosh, open the same source photograph, resize it to 400px and 800px wide while preserving its aspect ratio, then export each size once as JPEG and once as WebP. Save the four files in a folder named <code>assets</code> beside this exercise page. Check each exported file's byte size in File Explorer and write down the actual values; do not guess them.</p>
+<pre class="code"><code>&lt;picture&gt;
+  &lt;source type="image/webp"
+    srcset="assets/photo-400.webp 400w,
+            assets/photo-800.webp 800w"
+    sizes="(max-width:650px) calc(100vw - 36px), 800px"&gt;
+  &lt;img
+    src="assets/photo-800.jpg"
+    srcset="assets/photo-400.jpg 400w,
+            assets/photo-800.jpg 800w"
+    sizes="(max-width:650px) calc(100vw - 36px), 800px"
+    alt="Write an accurate description of your photograph"
+    width="800" height="533"&gt;
+&lt;/picture&gt;</code></pre>
+<p><strong>How to test:</strong> open DevTools → Network, filter by Img, reload the page, and inspect the downloaded filename. Repeat at a narrow and wide viewport. Then use the Inspect selected image button to read <code>currentSrc</code> and <code>naturalWidth</code>.</p>
+<p class="status">Do not claim WebP savings until the four local files exist and their real byte sizes have been measured.</p>
+</section>
 </main>
 <script>
 const photo=document.getElementById("responsive-photo");
