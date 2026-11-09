@@ -24,16 +24,16 @@
 <figure class="image-frame">
 <picture>
 <source type="image/webp"
- srcset="assets/photo-400.webp 400w, assets/photo-800.webp 800w"
+ srcset="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=webp&amp;q=80&amp;w=400 400w, https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=webp&amp;q=80&amp;w=800 800w"
  sizes="(max-width:650px) calc(100vw - 36px), 800px">
 <img id="responsive-photo" class="responsive-image"
- src="assets/photo-800.jpg"
- srcset="assets/photo-400.jpg 400w, assets/photo-800.jpg 800w"
+ src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800"
+ srcset="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=400 400w, https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800 800w"
  sizes="(max-width:650px) calc(100vw - 36px), 800px"
  alt="Two yellow trams on tracks along a Lisbon street"
  width="800" height="400" fetchpriority="high" decoding="async">
 </picture>
-<figcaption>One photograph in four local exports: 400px and 800px JPEG, plus 400px and 800px WebP. Image derivatives adapted from the public Week 9.2 reference exercise by Sudip Sah; its source page does not identify the original photographer or image licence.</figcaption>
+<figcaption>One real photograph, offered at two widths and in WebP/JPEG formats. Photo: Aayush Gupta, “Summers of Lisbon” (2020), used under the <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash License</a>. <a href="https://unsplash.com/photos/yellow-and-white-tram-on-road-during-daytime-ljhCEaHYWJ8" target="_blank" rel="noreferrer">View the original photograph on Unsplash</a>.</figcaption>
 </figure>
 <div class="pills"><span class="pill">picture: format choice</span><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">width + height: layout stability</span></div>
 <button id="inspect-image" type="button">Inspect selected image</button>
@@ -104,22 +104,13 @@
 </section>
 
 <section class="panel">
-<h2>6. Local image files and verification</h2>
-<p>The four local image files are now included in this repository's <code>assets</code> folder. They are the same photograph at two widths and two formats.</p>
-<ul>
-<li><code>assets/photo-400.jpg</code> — 400 × 200, 21,448 bytes.</li>
-<li><code>assets/photo-400.webp</code> — 400 × 200, 13,466 bytes.</li>
-<li><code>assets/photo-800.jpg</code> — 800 × 400, 53,204 bytes.</li>
-<li><code>assets/photo-800.webp</code> — 800 × 400, 28,346 bytes.</li>
-</ul>
-<table>
-<thead><tr><th>Dimensions</th><th>JPEG</th><th>WebP</th><th>WebP reduction</th></tr></thead>
-<tbody><tr><td>400 × 200</td><td>21,448 bytes</td><td>13,466 bytes</td><td>37.2%</td></tr>
-<tr><td>800 × 400</td><td>53,204 bytes</td><td>28,346 bytes</td><td>46.7%</td></tr></tbody>
-</table>
-<p><strong>Test it:</strong> open DevTools → Network → Img, reload at a narrow viewport and then a wide viewport. Compare the selected filename. Press <strong>Inspect selected image</strong> to see <code>currentSrc</code>, rendered width and natural dimensions.</p>
-<p><strong>Image provenance:</strong> these four derivatives were adapted from the public Week 9.2 reference repository. The reference page does not identify the original photographer or image licence, so do not claim the photograph as your own. If your professor requires a fully traceable image licence, replace it with a clearly licensed image and keep the attribution.</p>
+<h2>6. Image source and verification</h2>
+<p>This exercise uses a real Lisbon tram photograph by Aayush Gupta, published on Unsplash in 2020. It is not generated artwork and is not copied from another student's local project. It is free to use under the Unsplash License; the photographer and original photo page are credited below the image.</p>
+<p><strong>Photo credit:</strong> <a href="https://unsplash.com/photos/yellow-and-white-tram-on-road-during-daytime-ljhCEaHYWJ8" target="_blank" rel="noreferrer">Aayush Gupta — “Summers of Lisbon”</a>, <a href="https://unsplash.com/@aayush_guptaa" target="_blank" rel="noreferrer">photographer profile</a>, via <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash License</a>.</p>
+<p><strong>Test it:</strong> open DevTools → Network → Img, reload at a narrow viewport and then a wide viewport. Compare the selected resource width. Press <strong>Inspect selected image</strong> to see <code>currentSrc</code>, rendered width and natural dimensions.</p>
+<p>The browser selects a candidate based on the viewport, <code>sizes</code>, device pixel ratio and supported image format. The CDN returns the requested width and format; your browser's Network panel is the evidence for the file actually selected.</p>
 </section>
+
 </main>
 <script>
 const photo=document.getElementById("responsive-photo");
