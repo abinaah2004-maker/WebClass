@@ -91,16 +91,16 @@ footer{border-top:1px solid var(--line);padding-top:24px;padding-bottom:28px;mar
 <details class="disclosure">
 <summary>Contrast measurements</summary>
 <section class="demo">
-<p>The completed movie site uses a dark interface with light text, clear borders and visible focus indicators. Add the actual foreground/background pairs and contrast ratios measured from the original and completed CSS here once verified.</p>
+<p>The following ratios are calculated from the flat foreground/background color pairs defined in <code>lab.css</code>. They describe those exact pairs; gradient sections and images need separate visual testing because their background changes across the element.</p>
 <div class="table-scroll"><table>
 <thead><tr><th scope="col">Element</th><th scope="col">Original CSS</th><th scope="col">Completed CSS</th><th scope="col">Verified ratio</th></tr></thead>
 <tbody>
-<tr><th scope="row">Body text</th><td>Measure from starter</td><td>Measure from solution</td><td>Pending measurement</td></tr>
-<tr><th scope="row">Movie metadata</th><td>Measure from starter</td><td>Measure from solution</td><td>Pending measurement</td></tr>
-<tr><th scope="row">Navigation and links</th><td>Measure from starter</td><td>Measure from solution</td><td>Pending measurement</td></tr>
-<tr><th scope="row">Buttons and focus</th><td>Measure from starter</td><td>Measure from solution</td><td>Pending measurement</td></tr>
+<tr><th scope="row">Main body text</th><td>Not measured</td><td><code>#f5f7fb</code> on <code>#090b12</code></td><td>18.33:1</td></tr>
+<tr><th scope="row">Movie metadata</th><td>Not measured</td><td><code>#a8b1c2</code> on <code>#141925</code></td><td>8.14:1</td></tr>
+<tr><th scope="row">Links</th><td>Not measured</td><td><code>#ff7881</code> on <code>#090b12</code></td><td>7.73:1</td></tr>
+<tr><th scope="row">Primary button text</th><td>Not measured</td><td><code>#ffffff</code> on <code>#e50914</code></td><td>4.79:1</td></tr>
 </tbody></table></div>
-<p>WCAG AA requires at least 4.5:1 for normal text and 3:1 for large text. Record measured values rather than estimating them.</p>
+<p>Each listed pair meets the WCAG AA 4.5:1 minimum for normal text. These are calculated stylesheet pairs, not a claim that every text/background combination, gradient, image overlay or focus indicator has been tested.</p>
 </section>
 </details>
 
