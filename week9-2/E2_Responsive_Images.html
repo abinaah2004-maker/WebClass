@@ -15,12 +15,12 @@
 <header class="panel hero">
 <p class="eyebrow">EXERCISE 02 · RESPONSIVE IMAGE FIX</p>
 <h1>Responsive Images</h1>
-<p>A responsive image is not only made smaller with CSS. The browser can choose a suitable image file for the available space and screen density. This exercise demonstrates responsive file selection, art direction, image dimensions and lazy loading using ordinary photographic images rather than AI-generated artwork.</p>
+<p>This page demonstrates resolution switching: the browser can choose a smaller or larger file of the same real photograph. The photograph below is a credited real-world image, not generated artwork. For the final submission, you can replace it with a photograph you take yourself and create your own optimized files.</p>
 </header>
 
 <section class="panel">
 <h2>1. Working responsive image</h2>
-<p>Resize the browser or open this page on a phone. The browser uses the portrait crop at narrow widths and the landscape crop at wider widths. Within each layout, <code>srcset</code> lets the browser choose an appropriate file width.</p>
+<p>Resize the browser or open this page on a phone. The photograph stays the same, but <code>srcset</code> and <code>sizes</code> let the browser choose an appropriate JPEG file width. This is resolution switching; it does not crop the photo differently for mobile.</p>
 <figure class="image-frame">
 <picture>
 <img id="responsive-photo" class="responsive-image"
@@ -34,7 +34,7 @@
 </picture>
 <figcaption>Real photograph by Ivan Aleksić, from Wikimedia Commons, licensed CC BY-SA 4.0. The browser can choose a 330px, 960px or 1280px JPEG candidate. The image is not AI-generated.</figcaption>
 </figure>
-<div class="pills"><span class="pill">picture: art direction</span><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">alt: text alternative</span></div>
+<div class="pills"><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">alt: text alternative</span><span class="pill">width + height: layout stability</span></div>
 <button id="inspect-image" type="button">Inspect selected image</button>
 <p id="image-status" class="status" role="status" aria-live="polite">The browser will choose an image after it evaluates the viewport and device pixel ratio.</p>
 </section>
@@ -71,12 +71,16 @@
 </section>
 
 <section class="panel">
-<h2>3. Image loading below the fold</h2>
-<p>Images that are not visible when the page first opens can use <code>loading="lazy"</code>. Do not lazy-load the main hero image if it is the page's Largest Contentful Paint image.</p>
-<div class="gallery">
-<figure><img src="https://picsum.photos/id/1025/640/420" srcset="https://picsum.photos/id/1025/320/210 320w, https://picsum.photos/id/1025/640/420 640w" sizes="(max-width: 600px) calc(100vw - 60px), 440px" alt="A dog looking toward the camera outdoors" width="640" height="420" loading="lazy" decoding="async"><figcaption>Gallery image A · lazy loaded</figcaption></figure>
-<figure><img src="https://picsum.photos/id/1039/640/420" srcset="https://picsum.photos/id/1039/320/210 320w, https://picsum.photos/id/1039/640/420 640w" sizes="(max-width: 600px) calc(100vw - 60px), 440px" alt="A mountain landscape beneath a cloudy sky" width="640" height="420" loading="lazy" decoding="async"><figcaption>Gallery image B · lazy loaded</figcaption></figure>
-</div>
+<h2>3. Lazy loading images</h2>
+<p>Images lower down a long page can use <code>loading="lazy"</code>, so the browser can wait until they are close to the viewport before downloading them. The main image at the top of this page is intentionally not lazy-loaded because it is visible immediately.</p>
+<pre class="code"><code>&lt;img
+  src="assets/gallery-photo-800.jpg"
+  alt="Describe the actual subject in your photograph"
+  width="800"
+  height="533"
+  loading="lazy"
+  decoding="async"&gt;</code></pre>
+<p>Use lazy loading for below-the-fold images, not for the main image that appears immediately when the page opens.</p>
 </section>
 
 <section class="panel">
@@ -98,12 +102,12 @@
 <li>A narrow/mobile screenshot showing the portrait crop fitting the screen.</li>
 <li>Optional: a DevTools Network screenshot showing the selected image resource and its dimensions.</li>
 </ul>
-<p>The example uses a real Creative Commons photograph, not generated artwork. Credit: Ivan Aleksić, <a href="https://commons.wikimedia.org/wiki/File:Lisboa_trams.jpg">Lisboa trams.jpg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. The source file is delivered by Wikimedia Commons at multiple JPEG widths; this version does not claim measured local WebP/JPEG file-size savings. To reproduce Sudip's exact format comparison, create local WebP and JPEG exports from a photograph you have permission to use, then compare their actual byte sizes.</p>
+<p>The example currently uses a real Creative Commons photograph. Credit: Ivan Aleksić, <a href="https://commons.wikimedia.org/wiki/File:Lisboa_trams.jpg">Lisboa trams.jpg</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>. The source file is delivered by Wikimedia Commons at multiple JPEG widths. This demonstrates resolution switching, but it does not yet demonstrate a local WebP/JPEG comparison or an image you personally took. For the strongest submission, replace this with your own photograph, credit it as your own work, and create the four local exports described below.</p>
 <p><a class="back" href="E1_Lighthouse.html">← Previous: Lighthouse</a> · <a class="back" href="E3_Script_Loading.html">Next: Script Loading →</a></p>
 </section>
 
 <section class="panel">
-<h2>6. Build local WebP and JPEG files (the next improvement)</h2>
+<h2>6. Build your own local WebP and JPEG files</h2>
 <p>Sudip's version stores several optimized files in the project. The current live example above uses a real, credited Commons photograph at multiple JPEG widths. To make your version match the local-file comparison, download a photograph you are allowed to reuse and create these four exports with <a href="https://squoosh.app/">Squoosh</a>:</p>
 <ul>
 <li><code>assets/photo-400.jpg</code> — 400 pixels wide, JPEG.</li>
