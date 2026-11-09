@@ -1,130 +1,137 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Hands-on responsive image exercise by Abinash Lamichhane: srcset, sizes, picture, art direction and lazy loading.">
-<title>Exercise 2 | Responsive Images</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:#182238;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:980px;margin:auto;padding:24px}.back{color:#1d4ed8}.panel{background:#fff;border:1px solid #dce4ef;border-radius:16px;padding:22px;margin:16px 0}.eyebrow{color:#2563eb;font-size:.78rem;font-weight:800;letter-spacing:.12em}.hero{padding:clamp(24px,5vw,42px)}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:.35em 0}.image-frame{margin:0}.responsive-image{display:block;width:100%;height:auto;max-height:560px;object-fit:cover;border-radius:13px;background:#dbeafe}.image-frame figcaption{color:#52627a;font-size:.9rem;margin-top:9px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.pill{display:inline-block;background:#eff6ff;color:#1e40af;padding:5px 10px;border-radius:30px;font-size:.85rem}.code{background:#101827;color:#e2e8f0;padding:16px;border-radius:12px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.65 ui-monospace,monospace}.status{padding:13px 15px;background:#f1f5f9;border-radius:9px;color:#263449;overflow-wrap:anywhere}button{padding:10px 14px;border:0;border-radius:8px;background:#2563eb;color:#fff;font:inherit;font-weight:700;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.gallery figure{margin:0}.gallery img{width:100%;height:auto;display:block;border-radius:12px}.checklist li{margin:7px 0}@media(max-width:600px){.wrap{padding:14px}.panel{padding:16px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical responsive image exercise using srcset, sizes and picture.">
+  <title>E2 — Responsive Images | Week 9.2</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #202b3c;
+      background: #f5f6f8;
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    main { width: min(900px, calc(100% - 32px)); margin: 32px auto 56px; }
+    a { color: #2457a7; }
+    .back { display: inline-block; margin-bottom: 18px; }
+    header, section {
+      background: #fff;
+      border: 1px solid #dfe4eb;
+      border-radius: 12px;
+      padding: clamp(18px, 4vw, 30px);
+      margin-bottom: 18px;
+    }
+    .eyebrow { margin: 0 0 8px; color: #526b8c; font-size: .82rem; font-weight: 700; letter-spacing: .08em; }
+    h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.12; }
+    h2 { margin-top: 0; font-size: 1.35rem; }
+    p { max-width: 72ch; }
+    figure { margin: 20px 0 10px; }
+    .main-photo { display: block; width: 100%; height: auto; border-radius: 8px; background: #e7ebf0; }
+    figcaption { margin-top: 9px; color: #5d6878; font-size: .9rem; }
+    .note { padding: 12px 14px; background: #f1f5f9; border-left: 3px solid #6b88ad; border-radius: 4px; }
+    pre { overflow-x: auto; padding: 16px; border-radius: 8px; background: #172235; color: #edf2f7; font: .86rem/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    button { padding: 10px 14px; border: 0; border-radius: 7px; background: #2457a7; color: white; font: inherit; cursor: pointer; }
+    button:hover { background: #194580; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #e5a52b; outline-offset: 3px; }
+    #image-info { overflow-wrap: anywhere; }
+    @media (max-width: 600px) {
+      main { width: min(100% - 22px, 900px); margin-top: 18px; }
+    }
+  </style>
 </head>
 <body>
-<main class="wrap">
-<p><a class="back" href="index.html">← All Week 9.2 exercises</a></p>
-<header class="panel hero">
-<p class="eyebrow">EXERCISE 02 · RESPONSIVE IMAGE FIX</p>
-<h1>Responsive Images</h1>
-<p>This page demonstrates resolution switching: the browser can choose a smaller or larger file of the same real photograph. The photograph below is a credited real-world image, not generated artwork. For the final submission, you can replace it with a photograph you take yourself and create your own optimized files.</p>
-</header>
+  <main>
+    <a class="back" href="exercises/index.html">← Back to exercises</a>
 
-<section class="panel">
-<h2>1. Working responsive image</h2>
-<p>Resize the browser or open this page on a phone. The photograph stays the same, but <code>srcset</code> and <code>sizes</code> let the browser choose an appropriate JPEG file width. This is resolution switching; it does not crop the photo differently for mobile.</p>
-<figure class="image-frame">
-<picture>
-<source type="image/webp"
- srcset="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=webp&amp;q=80&amp;w=400 400w, https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=webp&amp;q=80&amp;w=800 800w"
- sizes="(max-width:650px) calc(100vw - 36px), 800px">
-<img id="responsive-photo" class="responsive-image"
- src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800"
- srcset="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=400 400w, https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800 800w"
- sizes="(max-width:650px) calc(100vw - 36px), 800px"
- alt="A yellow and white tram traveling along a Lisbon street"
- width="800" height="400" fetchpriority="high" decoding="async">
-</picture>
-<figcaption>One real photograph, offered at two widths and in WebP/JPEG formats. Photo: Aayush Gupta, “Summers of Lisbon” (2020), used under the <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash License</a>. <a href="https://unsplash.com/photos/yellow-and-white-tram-on-road-during-daytime-ljhCEaHYWJ8" target="_blank" rel="noreferrer">View the original photograph on Unsplash</a>.</figcaption>
-</figure>
-<div class="pills"><span class="pill">picture: format choice</span><span class="pill">srcset: file candidates</span><span class="pill">sizes: rendered width hint</span><span class="pill">width + height: layout stability</span></div>
-<button id="inspect-image" type="button">Inspect selected image</button>
-<p id="image-status" class="status" role="status" aria-live="polite">The browser will choose an image after it evaluates the viewport and device pixel ratio.</p>
-</section>
+    <header>
+      <p class="eyebrow">WEEK 9.2 · EXERCISE 02</p>
+      <h1>Responsive images</h1>
+      <p>One photograph can be saved at different widths. The browser does not need to download the largest file every time: it can choose an image that suits the space available on the page and the screen resolution.</p>
+    </header>
 
-<section class="panel">
-<h2>2. Understand the HTML</h2>
-<p>The WebP source is listed first. Browsers that support WebP can use it; browsers that do not support it fall back to the JPEG inside <code>img</code>. The width descriptors (400w and 800w) describe the actual pixel widths of the files.</p>
-<div class="status"><strong>Compare the delivered file sizes in your own browser.</strong><br>Open DevTools → Network → Img and compare the 400w and 800w requests. The CDN may return different byte sizes depending on format support and compression settings, so use the values shown in your own Network panel rather than copied measurements.</div>
-<pre class="code"><code>&lt;picture&gt;
-  &lt;source type="image/webp"
-    srcset="photo-400.webp 400w, photo-800.webp 800w"
-    sizes="(max-width:650px) calc(100vw - 36px), 800px"&gt;
-  &lt;img
-    src="photo-800.jpg"
-    srcset="photo-400.jpg 400w, photo-800.jpg 800w"
-    sizes="(max-width:650px) calc(100vw - 36px), 800px"
-    alt="Two yellow trams on tracks along a Lisbon street"
-    width="800" height="400"&gt;
-&lt;/picture&gt;</code></pre>
-<ul>
-<li><strong>picture:</strong> gives the browser alternative image sources.</li>
-<li><strong>source type:</strong> offers WebP to browsers that support it; the JPEG in <code>img</code> is the fallback.</li>
-<li><strong>srcset:</strong> lists image candidates with their intrinsic pixel widths.</li>
-<li><strong>sizes:</strong> tells the browser approximately how wide the image will appear in the layout.</li>
-<li><strong>img:</strong> is the required fallback and carries the alternative text.</li>
-<li><strong>width and height:</strong> reserve space and help prevent layout shifts.</li>
-</ul>
-</section>
+    <section>
+      <h2>Try the image</h2>
+      <p>Resize this page or open it on your phone. The photograph keeps the same shape, but the browser can select the 400-pixel or 800-pixel version. The image is a real photograph from Unsplash, not generated artwork.</p>
 
-<section class="panel">
-<h2>3. Lazy loading images</h2>
-<p>Images lower down a long page can use <code>loading="lazy"</code>, so the browser can wait until they are close to the viewport before downloading them. The main image at the top of this page is intentionally not lazy-loaded because it is visible immediately.</p>
-<pre class="code"><code>&lt;img
-  src="assets/gallery-photo-800.jpg"
-  alt="Describe the actual subject in your photograph"
+      <figure>
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=webp&amp;q=80&amp;w=400 400w,
+              https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=webp&amp;q=80&amp;w=800 800w"
+            sizes="(max-width: 700px) calc(100vw - 54px), 836px">
+          <img
+            id="responsive-photo"
+            class="main-photo"
+            src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800"
+            srcset="
+              https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=400 400w,
+              https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800 800w"
+            sizes="(max-width: 700px) calc(100vw - 54px), 836px"
+            width="800"
+            height="400"
+            alt="A yellow tram traveling along a street lined with historic buildings in Lisbon"
+            fetchpriority="high"
+            decoding="async">
+        </picture>
+        <figcaption>
+          Photo: Aayush Gupta, “Summers of Lisbon” (2020).
+          <a href="https://unsplash.com/photos/yellow-tram-in-historic-lisbon-street-ljhCEaHYWJ8" target="_blank" rel="noreferrer">View the original photo</a>.
+          Used under the <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash License</a>.
+        </figcaption>
+      </figure>
+
+      <button id="inspect-image" type="button">Check the image selected by my browser</button>
+      <p id="image-info" class="note" role="status" aria-live="polite">Select the button to see the image file and its dimensions.</p>
+    </section>
+
+    <section>
+      <h2>What the HTML does</h2>
+      <p><code>srcset</code> lists available image widths. <code>sizes</code> tells the browser how wide the image is expected to appear in the layout. The browser uses that information, along with the device pixel ratio, to choose a suitable file.</p>
+      <pre><code>&lt;img
+  src="photo-800.jpg"
+  srcset="photo-400.jpg 400w,
+          photo-800.jpg 800w"
+  sizes="(max-width: 700px) 100vw, 800px"
   width="800"
-  height="533"
-  loading="lazy"
-  decoding="async"&gt;</code></pre>
-<p>Use lazy loading for below-the-fold images, not for the main image that appears immediately when the page opens.</p>
-</section>
+  height="400"
+  alt="A yellow tram on a Lisbon street"&gt;</code></pre>
+      <p>The <code>picture</code> element above also offers WebP. If the browser supports WebP it can use that source; otherwise it falls back to the JPEG in <code>img</code>.</p>
+      <p class="note">The <code>width</code> and <code>height</code> attributes reserve space before the photo loads. This helps prevent the page from jumping while the image appears.</p>
+    </section>
 
-<section class="panel">
-<h2>4. Try it yourself</h2>
-<ol class="checklist">
-<li>Open this page on a laptop and note the selected image source.</li>
-<li>Make the browser window narrow or open the page on your phone.</li>
-<li>Press <strong>Inspect selected image</strong> again and compare the current source and rendered width.</li>
-<li>Open DevTools → Network → Img, reload the page, and inspect which image resource was downloaded.</li>
-<li>Try changing the <code>sizes</code> value and observe whether the browser chooses a different candidate.</li>
-</ol>
-<p id="viewport-status" class="status">Viewport information will appear here.</p>
-</section>
+    <section>
+      <h2>Check it yourself</h2>
+      <ol>
+        <li>Open this page in a wide browser window and press the button.</li>
+        <li>Make the window narrow or open the page on your phone, then press the button again.</li>
+        <li>Open Developer Tools → Network → Img and reload the page to see which image request was made.</li>
+        <li>Compare the selected file and its dimensions. The browser may choose differently depending on the screen and device pixel ratio.</li>
+      </ol>
+      <p>For images further down a long page, add <code>loading="lazy"</code>. Do not lazy-load the main image at the top if it is likely to be visible as soon as the page opens.</p>
+    </section>
 
-<section class="panel">
-<h2>5. What to capture for evidence</h2>
-<ul>
-<li>A wide-screen screenshot showing the responsive photo and this exercise page.</li>
-<li>A narrow/mobile screenshot showing the same photo fitting the smaller screen, plus the selected image filename.</li>
-<li>Optional: a DevTools Network screenshot showing the selected image resource and its dimensions.</li>
-</ul>
-<p>The exercise structure and four local image variants are adapted from <a href="https://github.com/sudip09-sys/WebProgramming/tree/main/week9_2">Sudip Sah's public Week 9.2 reference repository</a>. The reference E2 page does not state the original photographer or licence for its image files. The HTML, responsive image markup and measured asset-size comparison are included here for learning and should be cited as adapted work.</p>
-<p><a class="back" href="E1_Lighthouse.html">← Previous: Lighthouse</a> · <a class="back" href="E3_Script_Loading.html">Next: Script Loading →</a></p>
-</section>
+    <section>
+      <h2>What I learned</h2>
+      <p>A responsive image is not just an image that shrinks with CSS. The browser can also download a smaller file when a smaller version is enough. This saves data on smaller screens while keeping a larger option available when it is needed.</p>
+      <p><a href="E1_Lighthouse.html">← E1 Lighthouse</a> · <a href="E3_Script_Loading.html">E3 Script loading →</a></p>
+    </section>
+  </main>
 
-<section class="panel">
-<h2>6. Image source and verification</h2>
-<p>This exercise uses a real Lisbon tram photograph by Aayush Gupta, published on Unsplash in 2020. It is not generated artwork and is not copied from another student's local project. It is free to use under the Unsplash License; the photographer and original photo page are credited below the image.</p>
-<p><strong>Photo credit:</strong> <a href="https://unsplash.com/photos/yellow-and-white-tram-on-road-during-daytime-ljhCEaHYWJ8" target="_blank" rel="noreferrer">Aayush Gupta — “Summers of Lisbon”</a>, <a href="https://unsplash.com/@aayush_guptaa" target="_blank" rel="noreferrer">photographer profile</a>, via <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash License</a>.</p>
-<p><strong>Test it:</strong> open DevTools → Network → Img, reload at a narrow viewport and then a wide viewport. Compare the selected resource width. Press <strong>Inspect selected image</strong> to see <code>currentSrc</code>, rendered width and natural dimensions.</p>
-<p>The browser selects a candidate based on the viewport, <code>sizes</code>, device pixel ratio and supported image format. The CDN returns the requested width and format; your browser's Network panel is the evidence for the file actually selected.</p>
-</section>
+  <script>
+    const photo = document.querySelector("#responsive-photo");
+    const info = document.querySelector("#image-info");
 
-</main>
-<script>
-const photo=document.getElementById("responsive-photo");
-const imageStatus=document.getElementById("image-status");
-const viewportStatus=document.getElementById("viewport-status");
-function inspectImage(){
- const selected=photo.currentSrc||photo.src;
- imageStatus.textContent="Selected file: "+selected+" | Rendered width: "+Math.round(photo.getBoundingClientRect().width)+" CSS px | Natural size: "+photo.naturalWidth+" × "+photo.naturalHeight+" px | Device pixel ratio: "+window.devicePixelRatio;
-}
-function updateViewport(){
- viewportStatus.textContent="Viewport: "+window.innerWidth+" CSS px wide. "+(window.matchMedia("(max-width:600px)").matches?"The narrow-screen portrait source is eligible.":"The landscape source is eligible.")+" The browser still chooses the best candidate using srcset, sizes and device pixel ratio.";
-}
-document.getElementById("inspect-image").addEventListener("click",inspectImage);
-window.addEventListener("resize",updateViewport,{passive:true});
-photo.addEventListener("load",inspectImage);
-updateViewport();
-</script>
+    document.querySelector("#inspect-image").addEventListener("click", () => {
+      info.textContent =
+        "Selected file: " + photo.currentSrc +
+        " | Displayed width: " + Math.round(photo.getBoundingClientRect().width) +
+        " CSS pixels | Image size: " + photo.naturalWidth + " × " + photo.naturalHeight +
+        " pixels | Device pixel ratio: " + window.devicePixelRatio;
+    });
+  </script>
 </body>
 </html>
