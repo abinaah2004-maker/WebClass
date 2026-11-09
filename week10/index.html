@@ -7,6 +7,36 @@
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f3eb;color:#202e27;font:16px/1.65 system-ui,sans-serif}a{color:#255b3b;text-underline-offset:4px}a:focus-visible,button:focus-visible{outline:3px solid #255b3b;outline-offset:4px}.skip{position:absolute;left:12px;top:-70px;background:#255b3b;color:white;padding:10px 14px;border-radius:6px;z-index:5}.skip:focus{top:10px}.wrap{width:min(1050px,calc(100% - 40px));margin:auto}header{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid #bec8b8}header strong{letter-spacing:.08em;font-size:13px}nav,.links{display:flex;flex-wrap:wrap;gap:12px 22px}.eyebrow,.label{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#49664e}.intro{padding:48px 0 34px}.intro h1{font:500 clamp(42px,7vw,76px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:16px 0}.intro p{max-width:680px}.meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid #bec8b8;padding-top:14px;margin-top:28px;font-size:11px;letter-spacing:1px}.section{margin:44px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:18px}.section-head h2{font:500 clamp(28px,4vw,38px)/1.1 Georgia,serif;margin:5px 0}.section-head>p{max-width:440px;color:#526157;margin:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:#fffef8;border:1px solid #c9cdc0;border-radius:12px;padding:20px;min-width:0}.card h3{font-size:18px;margin:6px 0}.card p{font-size:14px;color:#526157}.card .label{margin:0}.card a{font-weight:650}.feature{background:#e6eadf;border-radius:12px;padding:24px;margin:16px 0}.feature h3{font:500 26px Georgia,serif;margin:5px 0}.feature p{max-width:700px;color:#526157}.project-card{background:#fffef8;border:1px solid #c9cdc0;border-radius:12px;padding:22px;display:flex;flex-direction:column;min-height:220px}.project-card h3{font:500 24px Georgia,serif;margin:12px 0 4px}.project-card p{font-size:14px;color:#526157;flex:1}.project-card a{font-weight:700}.tag{font-size:11px;letter-spacing:1px;font-weight:800;color:#49664e}.check{padding-left:20px}.check li{margin:8px 0}footer{border-top:1px solid #bec8b8;padding:22px 0 30px;margin-top:50px;font-size:13px;color:#526157}.note{background:#fffef8;border-left:3px solid #789477;padding:14px 18px;font-size:14px}@media(max-width:720px){.grid{grid-template-columns:1fr}.section-head{display:block}.section-head>p{margin-top:10px}header{align-items:flex-start;flex-direction:column}nav{gap:10px 16px}}
 </style>
+<style id="week10-polish">
+body{background:#101713;color:#eff4eb;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.wrap{width:min(1160px,calc(100% - 40px))}
+header.wrap{border-bottom:1px solid #334238;padding:22px 0;color:#d8e8d5}
+header nav a{color:#d8e8d5;text-decoration:none;font-size:13px;font-weight:700}
+.skip{background:#c6f36b;color:#172017;font-weight:800}
+.eyebrow,.label,.tag{color:#b5d98d}
+.intro{padding:76px 0 55px}
+.intro h1{font:500 clamp(54px,9vw,104px)/.91 Georgia,serif;letter-spacing:-.06em;color:#f4f5eb;margin:22px 0}
+.intro>p:not(.eyebrow){color:#aebcaf;font-size:16px;max-width:690px}
+.intro .links{margin-top:25px}
+.links a,.card a,.project-card a,.feature a{color:#d1f58b;font-weight:750;text-decoration:none}
+.links a:hover,.card a:hover,.project-card a:hover,.feature a:hover{text-decoration:underline}
+.meta{border-color:#34443a;color:#a9b8aa;margin-top:42px}
+.section{margin:64px 0}
+.section-head h2{font:500 clamp(34px,5vw,50px) Georgia,serif;color:#f3f5ed}
+.section-head>p{color:#aebcaf}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card,.project-card{background:#19231d;border:1px solid #344238;border-radius:15px;padding:23px;min-height:235px;transition:transform .2s,border-color .2s}
+.card:hover,.project-card:hover{transform:translateY(-4px);border-color:#a4cb78}
+.card h3{font:500 24px Georgia,serif;color:#f0f4e9;margin:12px 0}
+.card p,.project-card p{color:#aebcaf}
+.feature{background:#202e24;border:1px solid #40513e;border-radius:17px;padding:30px}
+.feature h3{font:500 34px Georgia,serif;color:#f0f4e9}
+.feature p{color:#b8c5b8}
+.note{background:#1b2720;border-left-color:#b5d98d;color:#c5d0c4}
+.check{color:#c5d0c4}
+footer.wrap{border-color:#344238;color:#aebcaf}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.intro{padding:54px 0 38px}.card,.project-card{min-height:unset}.feature{padding:22px}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the main content</a>
