@@ -30,7 +30,7 @@
  src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800"
  srcset="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=400 400w, https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=800 800w"
  sizes="(max-width:650px) calc(100vw - 36px), 800px"
- alt="Two yellow trams on tracks along a Lisbon street"
+ alt="A yellow and white tram traveling along a Lisbon street"
  width="800" height="400" fetchpriority="high" decoding="async">
 </picture>
 <figcaption>One real photograph, offered at two widths and in WebP/JPEG formats. Photo: Aayush Gupta, “Summers of Lisbon” (2020), used under the <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash License</a>. <a href="https://unsplash.com/photos/yellow-and-white-tram-on-road-during-daytime-ljhCEaHYWJ8" target="_blank" rel="noreferrer">View the original photograph on Unsplash</a>.</figcaption>
@@ -43,16 +43,14 @@
 <section class="panel">
 <h2>2. Understand the HTML</h2>
 <p>The WebP source is listed first. Browsers that support WebP can use it; browsers that do not support it fall back to the JPEG inside <code>img</code>. The width descriptors (400w and 800w) describe the actual pixel widths of the files.</p>
-<div class="status"><strong>Measured file sizes from the four local assets</strong><br>400 × 200: JPEG 21,448 bytes; WebP 13,466 bytes (37.2% smaller).<br>800 × 400: JPEG 53,204 bytes; WebP 28,346 bytes (46.7% smaller).<br>These values are recorded from the reference exercise's assets; compression results depend on the image and export settings.</div>
+<div class="status"><strong>Compare the delivered file sizes in your own browser.</strong><br>Open DevTools → Network → Img and compare the 400w and 800w requests. The CDN may return different byte sizes depending on format support and compression settings, so use the values shown in your own Network panel rather than copied measurements.</div>
 <pre class="code"><code>&lt;picture&gt;
   &lt;source type="image/webp"
-    srcset="assets/photo-400.webp 400w,
-            assets/photo-800.webp 800w"
+    srcset="photo-400.webp 400w, photo-800.webp 800w"
     sizes="(max-width:650px) calc(100vw - 36px), 800px"&gt;
   &lt;img
-    src="assets/photo-800.jpg"
-    srcset="assets/photo-400.jpg 400w,
-            assets/photo-800.jpg 800w"
+    src="photo-800.jpg"
+    srcset="photo-400.jpg 400w, photo-800.jpg 800w"
     sizes="(max-width:650px) calc(100vw - 36px), 800px"
     alt="Two yellow trams on tracks along a Lisbon street"
     width="800" height="400"&gt;
