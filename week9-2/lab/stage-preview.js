@@ -5,8 +5,8 @@ const stages = [
 ["Image alternatives","Informative images receive meaningful alt text. The featured decorative image uses alt=\"\" so assistive technology can skip it.","<img src=\"movie.jpg\" alt=\"Movie poster artwork for The Last Harbor\">"],
 ["Color contrast","Text, metadata, buttons and links use stronger foreground/background contrast so normal text is easier to read.","color: #555; /* on a light background */"],
 ["Form labels and errors","Newsletter fields now have visible labels, connected error messages and focus management for invalid entries.","<input required aria-describedby=\"email-error\"><p id=\"email-error\"></p>"],
-["Image loading and layout stability","Images reserve space with intrinsic width and height. Above-the-fold images load eagerly; lower images can load lazily.","<img width=\"400\" height=\"500\" loading=\"lazy\" decoding=\"async\">"],
-["Deferred scripts","The completed page loads its external JavaScript after the HTML has been parsed. The defer attribute keeps execution predictable while the app remains interactive.","<!-- End of body -->\n<script src=\"lab.js\" defer></script>"]
+["Responsive images and layout stability","The browser can select an image candidate with srcset and sizes. Image dimensions reserve layout space; below-the-fold images load lazily. The featured image also uses picture for a narrow-screen crop.","<img srcset=\"photo-480.jpg 480w, photo-960.jpg 960w\" sizes=\"(max-width: 600px) 100vw, 800px\" width=\"960\" height=\"640\" loading=\"lazy\">"],
+["Deferred scripts","The completed page loads its external JavaScript after the HTML has been parsed. The defer attribute keeps execution predictable while the app remains interactive.","<!-- End of body -->\\n<script src=\"lab.js\" defer></script>"]
 ];
 const info = stages[stage - 1];
 document.getElementById("stage-title").textContent = "Step " + stage + " · " + info[0];
@@ -38,11 +38,17 @@ document.querySelectorAll("img").forEach((img, index) => {
     img.removeAttribute("height");
     img.removeAttribute("loading");
     img.removeAttribute("decoding");
+    img.removeAttribute("srcset");
+    img.removeAttribute("sizes");
   } else {
-    img.width = index === 3 ? 300 : 400;
-    img.height = index === 3 ? 400 : 500;
     img.decoding = "async";
     img.loading = index >= 2 ? "lazy" : "eager";
+  }
+});
+document.querySelectorAll("picture source").forEach(source => {
+  if (stage < 6) {
+    source.removeAttribute("srcset");
+    source.removeAttribute("sizes");
   }
 });
 
@@ -83,7 +89,7 @@ if (stage >= 5 && stage < 7) {
       input.setAttribute("aria-invalid", String(Boolean(message)));
       if (message && !firstInvalid) firstInvalid = input;
     });
-    document.getElementById("newsletter-status").textContent = firstInvalid ? "Please correct the highlighted fields." : "Form validated. This classroom demo does not send or store your information.";
+    document.getElementById("newsletter-status").textContent = firstInvalid ? "Please correct the highlighted fields." : "Form validated. This is a local classroom demo.";
     if (firstInvalid) firstInvalid.focus();
   });
 }
