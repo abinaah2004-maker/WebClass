@@ -1,125 +1,86 @@
-# CineReview — Broken Website Fix
+# Week 9.2 lab: Fix the Broken Website
 
-**Week 9.2 · Web Programming**  
-**Author:** Abinash Lamichhane  
-**Project:** Accessibility and performance improvement lab
+**Student:** Abinash Lamichhane  
+**Course:** Web Programming  
+**Example site:** CineReview (fictional movie-review page)
 
-## Project overview
+## Files
 
-This folder contains an intentionally inaccessible/poorly structured starter website and an improved version of the same fictional movie-review website.
+- `broken.html` — the starter page with the problems kept in it for comparison.
+- `solution.html` — the improved page.
+- `step1.html` to `step7.html` — one example for each change.
+- `lab.css` and `lab.js` — styles and interactions used by the completed page.
+- `index.html` — the lab guide.
 
-- **`broken.html`** is the original starter page. It is kept unchanged so it can be used as the **before** version for comparison.
-- **`solution.html`** is the completed improved version.
-- **`step1.html` to `step7.html`** demonstrate the improvements progressively. Each page shows the state of the website at a particular stage.
-- **`lab.css`** contains the styling for the completed website.
-- **`lab.js`** contains the search, movie-details and form-validation interactions.
-- **`stage-preview.js`** controls the step-by-step demonstrations.
+The movie titles, reviews and ratings are sample content for this exercise. They are not real movie listings.
 
-## Problems in the original starter
+## Problems I looked for in the starter
 
-The original `broken.html` was deliberately made with several issues for the exercise:
+1. The page used generic `div` elements for the main page areas.
+2. Some controls looked like buttons but were clickable `div` elements.
+3. Some images had missing or unhelpful alternative text.
+4. Some text was difficult to read against its background.
+5. The form inputs did not have proper labels or useful error messages.
+6. The images did not show a clear responsive-image or loading strategy.
+7. The page did not show an external application script loaded with `defer`.
 
-1. It uses generic `div` elements instead of clear semantic page landmarks.
-2. Some clickable controls are `div` elements with click handlers rather than real buttons.
-3. Images have missing or unhelpful alternative text.
-4. Several text and background color combinations have weak contrast.
-5. Form fields do not have proper visible labels or useful validation feedback.
-6. Images do not declare intrinsic dimensions or loading behavior.
-7. The page does not demonstrate an organized deferred application-script setup.
+## What each step demonstrates
 
-These are the issues addressed in the completed version and the seven learning stages.
+| Step | Change | What to look at |
+|---|---|---|
+| 1 | Semantic HTML | The page landmarks and the skip link |
+| 2 | Buttons and links | Real buttons and controls that can be used with a keyboard |
+| 3 | Image alternatives | The `alt` text on informative images and empty alt text on the decorative image |
+| 4 | Contrast | Text and control colors |
+| 5 | Form feedback | Labels, error messages and focus on the first invalid field |
+| 6 | Responsive images | `srcset`, `sizes`, image dimensions and loading behavior |
+| 7 | Script loading | The external JavaScript file loaded with `defer` |
 
-## Improvements made in the completed solution
+## How the page works
 
-### 1. Semantic HTML and keyboard navigation
+- The search checks the movie titles. Leaving the search field empty shows all cards again.
+- Each **View Details** button opens or closes the description belonging to that movie.
+- The form checks the name and email fields. It only shows a local validation message; it does not send or save personal information.
+- The first movie images load eagerly. Images further down the page use lazy loading.
+- The page uses a skip link and visible keyboard focus styles.
 
-- Added the document language with `lang="en"`.
-- Added a skip link that moves keyboard users to the main content.
-- Organized the page with semantic elements such as `header`, `nav`, `main`, `section`, `article` and `footer`.
-- Added meaningful navigation labels and a clear heading structure.
-- Added visible keyboard focus styles for links, buttons and form fields.
+## Checks to perform before submitting
 
-### 2. Real buttons and working interactions
+Please do these checks in the browser yourself and record what happens. Do not mark a check as passed until you have tried it.
 
-- Replaced clickable-looking elements with actual `button` elements.
-- Added `type="button"` to movie detail buttons and `type="submit"` to form buttons.
-- Added `aria-expanded` and `aria-controls` to the movie detail controls.
-- Added JavaScript so each **View Details** button opens and closes its matching description.
-- Added a working client-side movie search that filters the movie cards and announces the number of matching results.
+- [ ] Open `broken.html` and note at least two problems you can see.
+- [ ] Open `solution.html` and search for a movie title.
+- [ ] Search for a title that is not in the list and check the result message.
+- [ ] Open and close each movie's **View Details** panel.
+- [ ] Submit the form empty and check the error messages and focus.
+- [ ] Enter a name and a valid email, then check the success message.
+- [ ] Use Tab, Shift+Tab, Enter and Space without using the mouse.
+- [ ] Open the page at phone width and desktop width.
+- [ ] If the assignment requires Lighthouse, run it on the deployed page and keep your own report.
 
-### 3. Image alternative text
+## Before-and-after audit
 
-- Added descriptive `alt` text to informative movie images.
-- Used an empty `alt=""` for the decorative featured image so assistive technology can ignore it.
+The PDF report records the scores visible in the supplied screenshots:
 
-### 4. Improved color contrast and visual design
+| Category | Before | After |
+|---|---:|---:|
+| Performance | 92 | 100 |
+| Accessibility | 69 | 100 |
+| Best Practices | 100 | 100 |
 
-- Reworked the page with a dark movie-review theme, readable text, clearer metadata, visible links and distinct buttons.
-- Improved the contrast of important page content and controls.
-- Added clear hover and keyboard-focus states.
-- Used responsive layouts so the movie cards and featured section adapt to smaller screens.
+The scores were transcribed from those screenshots. I have not treated them as a new Lighthouse run. A score of 100 also does not prove that every accessibility requirement has been met. Keyboard and screen-reader checks still matter.
 
-**Note:** This describes the design changes; it is not a claim that every color combination has been independently measured or that the page has been certified as fully WCAG conformant.
+The original report is named `CineReview_Week9_2_Audit_Report_Abinash_Lamichhane.pdf`. The lab guide links to it, but the PDF itself still needs to be uploaded to the `week9-2/` folder in GitHub before the published download link will work.
 
-### 5. Form labels and validation feedback
+## My explanation to prepare for the professor
 
-- Added visible labels connected to the name and email fields using `for` and `id`.
-- Added `required` and email-format validation.
-- Connected each field to its error message with `aria-describedby`.
-- Used `aria-invalid` to communicate invalid fields.
-- Added clear error and success-status messages.
-- Moved keyboard focus to the first invalid field after an unsuccessful submission.
+Before the demonstration, I should be able to explain in my own words:
 
-The newsletter form is a classroom demonstration only. It does not send or store personal information.
+- Why a real `button` is better than a clickable `div`.
+- What the `alt` attribute is for.
+- How `srcset` and `sizes` help the browser choose an image.
+- Why `width` and `height` are useful on images.
+- What the `defer` attribute changes about script loading.
+- How I checked the skip link and form using only the keyboard.
 
-### 6. Image loading and layout stability
-
-- Added explicit `width` and `height` attributes to images to reserve layout space while they load.
-- Used eager loading for the first visible movie images.
-- Used lazy loading for images farther down the page.
-- Added asynchronous image decoding hints.
-
-### 7. Deferred JavaScript
-
-- Loaded the completed website's external `lab.js` file with the `defer` attribute.
-- This allows the browser to parse the HTML before executing the application script.
-
-## How to compare the original and improved websites
-
-1. Open **`broken.html`** to see the original starter.
-2. Open **`solution.html`** to see the completed version.
-3. Use the navigation at the top of the lab guide to open each of the seven stages.
-4. In the completed version, test the movie detail buttons, search field and newsletter form.
-5. Use the keyboard (Tab, Shift+Tab, Enter and Space) to check navigation and controls.
-
-## Files in this folder
-
-| File | Purpose |
-|---|---|
-| `index.html` | Lab guide and interactive stage preview |
-| `broken.html` | Original starter website; intentionally left broken |
-| `solution.html` | Completed improved website |
-| `step1.html` – `step7.html` | Progressive demonstrations of the seven changes |
-| `lab.css` | Completed website styles |
-| `lab.js` | Search, details and newsletter validation behavior |
-| `stage-preview.css` | Styles for the progressive stage pages |
-| `stage-preview.js` | Shows the relevant explanation and feature state for each stage |
-
-## Before-and-after Lighthouse audit
-
-The submitted CineReview audit compares the original `broken.html` page with the improved `solution.html` page. The recorded screenshots show:
-
-| Category | Before | After | Change |
-|---|---:|---:|---:|
-| Performance | 92/100 | 100/100 | +8 points |
-| Accessibility | 69/100 | 100/100 | +31 points |
-| Best Practices | 100/100 | 100/100 | No change |
-
-The audit documents seven improvement areas: semantic structure and keyboard navigation; real interactive controls and result announcements; image alternative text; contrast and responsive layout; form labels and validation feedback; image dimensions and loading behavior; and deferred JavaScript loading. The full comparison, audit conditions, limitations and manual-validation recommendations are recorded in `index.html` under **Before-and-after audit · CineReview**.
-
-The screenshots were supplied by the author and the scores were transcribed from those captures; the audit was not independently rerun. Lighthouse results can vary between runs, and a 100/100 automated score does not prove full WCAG conformance. Keyboard, screen-reader, form and contrast checks should still be tested manually.
-
----
-
-**Prepared by Abinash Lamichhane**  
-Gachon University · Web Programming
+I should use my own test results when answering. This README is a guide to the files and checks, not proof that every check has already been completed.
