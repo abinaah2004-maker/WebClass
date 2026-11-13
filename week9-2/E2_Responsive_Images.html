@@ -128,39 +128,45 @@
     const inspectButton = document.querySelector("#inspect-image");
 
     inspectButton.addEventListener("click", async () => {
-      info.textContent = "Checking the image selected by your browser…";
+      info.textContent = "Waiting for the browser to load the image…";
       info.setAttribute("aria-busy", "true");
+      inspectButton.disabled = true;
 
       try {
-        // Wait for the browser to finish decoding the selected responsive image.
-        if (typeof photo.decode === "function") {
-          await photo.decode();
-        } else if (!photo.complete) {
+        // Wait for the selected image file to load before reading currentSrc.
+        if (!photo.complete) {
           await new Promise((resolve, reject) => {
             photo.addEventListener("load", resolve, { once: true });
-            photo.addEventListener("error", reject, { once: true });
+            photo.addEventListener("error", () => {
+              reject(new Error("The image did not load. Check your connection and reload the page."));
+            }, { once: true });
           });
         }
 
-        const selectedFile = photo.currentSrc || photo.src;
-
         if (!photo.naturalWidth) {
-          throw new Error("The image file could not be loaded. Check your internet connection or reload the page.");
+          throw new Error("The image did not load. Check your connection and reload the page.");
         }
 
+        // decode() resolves when the selected image is ready to display.
+        if (typeof photo.decode === "function") {
+          await photo.decode();
+        }
+
+        const selectedFile = photo.currentSrc || photo.src;
         const displayedWidth = Math.round(photo.getBoundingClientRect().width);
         const displayedHeight = Math.round(photo.getBoundingClientRect().height);
 
         info.textContent =
           "Browser-selected file: " + selectedFile +
           " | Displayed size: " + displayedWidth + " × " + displayedHeight +
-          " CSS pixels | Original image size: " + photo.naturalWidth + " × " + photo.naturalHeight +
+          " CSS pixels | Source image size: " + photo.naturalWidth + " × " + photo.naturalHeight +
           " pixels | Device pixel ratio: " + window.devicePixelRatio;
       } catch (error) {
         info.textContent = error.message ||
-          "The image information could not be read. Please reload the page and try again.";
+          "The image information could not be read. Reload the page and try again.";
       } finally {
         info.removeAttribute("aria-busy");
+        inspectButton.disabled = false;
       }
     });
   </script>
