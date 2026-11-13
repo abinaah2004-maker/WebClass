@@ -16,6 +16,8 @@ This README is the reader's guide to my Week 10 work. It explains where each exe
 
 The hub links to all six study-guide exercises, the portfolio, the JavaScript projects, and the keyboard-accessibility task.
 
+**Published custom 404:** GitHub Pages uses the repository-root [`/404.html`](../404.html), not a file nested inside `week10/`. [Open the custom 404 page](https://abinaah2004-maker.github.io/WebClass/404.html) or [test a deliberately missing URL](https://abinaah2004-maker.github.io/WebClass/week10/this-page-does-not-exist-for-testing.html).
+
 ## 2. Six study-guide exercises
 
 ### Monday — Git
