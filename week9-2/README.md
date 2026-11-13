@@ -26,7 +26,7 @@ Photo: [Aayush Gupta — “Summers of Lisbon”](https://unsplash.com/photos/ye
 
 The CineReview homework page records the figures transcribed from your supplied report: Performance 92 → 100, Accessibility 69 → 100, and Best Practices 100 → 100. These are historical screenshot results, not a fresh run performed by the website.
 
-The original PDF has not yet been copied into this repository. The HTML homework page preserves the key report content; upload the PDF here if a downloadable copy is required.
+The original three-page report is named `CineReview_Week9_2_Audit_Report_Abinash_Lamichhane.pdf`. It includes the original before-and-after Lighthouse screenshots in Appendix A. Add that exact PDF to this `week9-2/` folder in GitHub so the PDF links on `homework.html` and `lab/index.html` resolve on the published site. Do not recreate or alter the screenshots.
 
 ## Submission checks
 
