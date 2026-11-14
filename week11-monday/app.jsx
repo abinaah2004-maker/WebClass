@@ -1,11 +1,83 @@
-const {useState}=React;
-function StudentCard(props){return <article className="card"><div className="avatar">{props.name.split(" ").map(x=>x[0]).slice(0,2).join("")}</div><h3>{props.name}</h3><p>{props.major}</p><p>{props.university} · {props.year}</p></article>}
-function App(){const [tab,setTab]=useState("overview");const [name,setName]=useState("Abinash Lamichhane");const [major,setMajor]=useState("Computer Engineering");const [year,setYear]=useState("First year");const [answers,setAnswers]=useState({});const [checked,setChecked]=useState(false);
-const questions=[{q:"What is a React component?",opts:["A reusable piece of UI","A CSS selector"],a:0},{q:"What does JSX describe?",opts:["User interfaces","Database tables"],a:0},{q:"How is data passed to a child?",opts:["Props","CSS"],a:0}];
-return <div className="shell"><header><b>AVI / WEB PROGRAMMING</b><span>Gachon University · Computer Engineering</span></header><section className="hero"><div className="tag">WEEK 11 · MONDAY</div><h1>React foundations.</h1><p>Components, JSX and props. A hands-on introduction using Abinash's own student profile.</p></section><div className="layout"><nav className="sidebar" aria-label="Lesson menu">{["overview","concepts","student","quiz"].map(x=><button className={"navbtn "+(tab===x?"active":"")} onClick={()=>setTab(x)}>{x==="student"?"StudentCard lab":x==="quiz"?"Quick checks":x==="concepts"?"Components & JSX":"Overview"}</button>)}</nav><main id="main" className="content" tabIndex="-1">
-{tab==="overview"&&<section className="panel"><h2>What is React?</h2><p>React is a JavaScript library for building user interfaces from reusable components.</p><div className="grid"><article className="card"><h3>Components</h3><p>Small reusable pieces of a page.</p></article><article className="card"><h3>JSX</h3><p>HTML-like syntax used inside JavaScript.</p></article><article className="card"><h3>Props</h3><p>Inputs passed from parent to child components.</p></article></div><div className="code">function Welcome() {<br/>  return &lt;h1&gt;Hello, React!&lt;/h1&gt;;<br/>}</div></section>}
-{tab==="concepts"&&<section className="panel"><h2>Components and props</h2><p>A component is a JavaScript function that returns JSX. Props let a parent customize the child.</p><div className="code">function Greeting(props) {<br/>  return &lt;h2&gt;Hello, &#123;props.name&#125;!&lt;/h2&gt;;<br/>}<br/><br/>&lt;Greeting name="Avi" /&gt;</div></section>}
-{tab==="student"&&<section className="panel"><h2>StudentCard live lab</h2><p>Edit the values and see the React component update.</p><div className="grid"><div className="card"><label>Name<input value={name} onChange={e=>setName(e.target.value)}/></label><label>Major<input value={major} onChange={e=>setMajor(e.target.value)}/></label><label>Year<select value={year} onChange={e=>setYear(e.target.value)}><option>First year</option><option>Second year</option><option>Third year</option><option>Fourth year</option></select></label></div><StudentCard name={name||"Student"} major={major} university="Gachon University" year={year}/></div><p className="muted">One component can display different students by receiving different props.</p></section>}
-{tab==="quiz"&&<section className="panel"><h2>Three quick checks</h2>{questions.map((q,i)=><article className="card"><h3>{i+1}. {q.q}</h3>{q.opts.map((o,j)=><label className="option"><input type="radio" name={"q"+i} checked={answers[i]===j} onChange={()=>{setAnswers({...answers,[i]:j});setChecked(false)}}/>{o}</label>)}{checked&&<p>{answers[i]===q.a?"Correct.":"Review this idea and try again."}</p>}</article>)}<div className="actions"><button className="primary" onClick={()=>setChecked(true)}>Check answers</button><button className="secondary" onClick={()=>{setAnswers({});setChecked(false)}}>Reset</button></div>{checked&&<h3>Score: {questions.filter((q,i)=>answers[i]===q.a).length}/3</h3>}</section>}
-</main></div><footer>Week 11 Monday · Abinash Lamichhane</footer></div>}
-ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+(function () {
+  const h = React.createElement;
+  const useState = React.useState;
+  const questions = [
+    { q: "What is React?", options: ["A JavaScript library for building user interfaces", "A database", "A CSS property"], answer: 0, why: "React helps us build interfaces from reusable components." },
+    { q: "What does JSX let us write?", options: ["SQL inside CSS", "HTML-like markup inside JavaScript", "Only plain text"], answer: 1, why: "JSX is a syntax extension that looks similar to HTML and is used in React components." },
+    { q: "How does a parent pass data to a child component?", options: ["Props", "A CSS class", "A file name"], answer: 0, why: "Props are inputs passed from a parent component to a child component." }
+  ];
+  function StudentCard(props) {
+    return h("article", { className: "student-card" },
+      h("div", { className: "avatar" }, props.name.split(" ").map(function (part) { return part[0]; }).slice(0,2).join("")),
+      h("div", null, h("p", { className: "tag" }, "STUDENT COMPONENT"), h("h3", null, props.name),
+        h("p", null, "Student ID: " + (props.id || "Add your ID")),
+        h("p", null, "Major: " + props.major))
+    );
+  }
+  function App() {
+    const [tab, setTab] = useState("overview");
+    const [name, setName] = useState("Abinash Lamichhane");
+    const [id, setId] = useState("");
+    const [major, setMajor] = useState("Computer Engineering");
+    const [answers, setAnswers] = useState({});
+    const [checked, setChecked] = useState(false);
+    const nav = [["overview","Overview"],["concepts","Components & JSX"],["student","StudentCard lab"],["quiz","Concept checks"]];
+    return h("div", { className: "shell" },
+      h("header", { className: "topbar" }, h("a", { className: "brand", href: "../index.html" }, "AVI / WEB PROGRAMMING"),
+        h("div", { className: "toplinks" }, h("a", { href: "../index.html" }, "Course home"), h("a", { href: "../week11-friday/index.html" }, "Friday exercises →"))),
+      h("section", { className: "hero" }, h("p", { className: "tag" }, "WEEK 11 · MONDAY / REACT FOUNDATIONS"),
+        h("h1", null, "React foundations."),
+        h("p", null, "Components, JSX and props — learned through small examples and hands-on practice."),
+        h("div", { className: "meta" }, h("span", { className: "pill" }, "Gachon University"), h("span", { className: "pill" }, "Computer Engineering"), h("span", { className: "pill" }, "2 exercises"))),
+      h("div", { className: "layout" },
+        h("nav", { className: "sidebar", "aria-label": "Monday lesson sections" }, nav.map(function (item) {
+          return h("button", { key: item[0], className: "navbtn " + (tab === item[0] ? "active" : ""), onClick: function () { setTab(item[0]); } }, item[1]);
+        })),
+        h("main", { id: "main", className: "content", tabIndex: "-1" },
+          tab === "overview" && h("section", { className: "panel" }, h("p", { className: "tag" }, "START HERE"),
+            h("h2", null, "What is React?"),
+            h("p", null, "React is a JavaScript library for building user interfaces. A page can be split into small components, then reused wherever the same structure is needed."),
+            h("div", { className: "grid" },
+              h("article", { className: "card" }, h("h3", null, "Components"), h("p", null, "Reusable parts of a user interface. Example: a profile card or navigation bar.")),
+              h("article", { className: "card" }, h("h3", null, "JSX"), h("p", null, "HTML-like syntax written inside JavaScript to describe what the page should show.")),
+              h("article", { className: "card" }, h("h3", null, "Props"), h("p", null, "Values passed from a parent component to a child component."))),
+            h("h3", null, "A tiny component"), h("pre", { className: "code" }, "function Welcome() {\n  return <h1>Hello, React!</h1>;\n}"),
+            h("p", { className: "muted" }, "Open the sections on the left to try the ideas yourself.")),
+          tab === "concepts" && h("section", { className: "panel" }, h("p", { className: "tag" }, "EXERCISE 01 / COMPONENTS + JSX"),
+            h("h2", null, "A component is a function"),
+            h("p", null, "A function component starts with a capital letter and returns JSX. Keep one parent element around multiple elements."),
+            h("pre", { className: "code" }, "function Greeting(props) {\n  return <h2>Hello, {props.name}!</h2>;\n}\n\n<Greeting name=\"Avi\" />"),
+            h("div", { className: "callout" }, h("strong", null, "Remember: "), "Component names begin with a capital letter. JSX expressions use curly braces."),
+            h("h3", null, "Try to explain it"), h("p", null, "The parent writes <Greeting name=\"Avi\" />. The child receives the name value through props and displays it.")),
+          tab === "student" && h("section", { className: "panel" }, h("p", { className: "tag" }, "EXERCISE 02 / STUDENTCARD"),
+            h("h2", null, "Change the props"),
+            h("p", null, "Edit the values. The same StudentCard component updates when its props change."),
+            h("div", { className: "grid" },
+              h("div", { className: "card form-card" },
+                h("label", null, "Student name", h("input", { value: name, onChange: function (e) { setName(e.target.value); } })),
+                h("label", null, "Student ID (optional)", h("input", { value: id, onChange: function (e) { setId(e.target.value); }, placeholder: "Enter your ID when needed" })),
+                h("label", null, "Major", h("input", { value: major, onChange: function (e) { setMajor(e.target.value); } })),
+                h("pre", { className: "code" }, "<StudentCard\n  name={name}\n  id={id}\n  major={major}\n/>")),
+              h(StudentCard, { name: name || "Student", id: id, major: major || "Major not entered" })),
+            h("p", { className: "muted" }, "This example uses three props: name, id and major.")),
+          tab === "quiz" && h("section", { className: "panel" }, h("p", { className: "tag" }, "CHECK YOUR UNDERSTANDING"),
+            h("h2", null, "Three concept checks"),
+            questions.map(function (q, index) {
+              return h("fieldset", { className: "quiz-card", key: index }, h("legend", null, (index + 1) + ". " + q.q),
+                q.options.map(function (option, optionIndex) {
+                  return h("label", { className: "option", key: optionIndex },
+                    h("input", { type: "radio", name: "q" + index, checked: answers[index] === optionIndex, onChange: function () { setAnswers(Object.assign({}, answers, (function(){const a={};a[index]=optionIndex;return a;})())); setChecked(false); } }), option);
+                }),
+                checked && h("p", { className: answers[index] === q.answer ? "feedback good" : "feedback retry" }, (answers[index] === q.answer ? "Correct. " : "Not quite. ") + q.why));
+            }),
+            h("div", { className: "actions" }, h("button", { className: "primary", onClick: function () { setChecked(true); } }, "Check answers"),
+              h("button", { className: "secondary", onClick: function () { setAnswers({}); setChecked(false); } }, "Reset")),
+            checked && h("h3", { role: "status" }, "Practice score: " + questions.filter(function (q, i) { return answers[i] === q.answer; }).length + " / 3"),
+            h("p", { className: "muted" }, "Practice feedback only — not an official grade or attendance record.")))
+      ),
+      h("footer", { className: "footer" }, h("span", null, "Week 11 Monday · Abinash Lamichhane"),
+        h("a", { href: "../week11-friday/index.html" }, "Continue to Week 11 Friday →"))
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(h(App));
+})();
