@@ -28,7 +28,7 @@ Open: [Week 11 Friday](https://abinaah2004-maker.github.io/WebClass/week11-frida
 
 - The lesson source is written as JSX in `app.jsx`, with named function components and React state hooks.
 - React 18 UMD and Babel Standalone are loaded from public CDNs so the JSX can run on GitHub Pages without a local build step. An internet connection is required.
-- Student ID and GPA are editable but blank by default. Additional directory entries are clearly identified as sample profiles.
+- The Friday directory uses the student ID supplied by me; GPA remains blank until I enter a real value. Additional directory entries are clearly identified as sample profiles.
 - Course examples and practice scores are demonstrations, not official university records or grades.
 
 ## Source files
