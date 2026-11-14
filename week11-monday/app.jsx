@@ -4,7 +4,7 @@ const questions=[
  {q:"What does JSX allow?",o:["SQL in CSS","HTML-like markup in JavaScript","Only plain text"],a:1,why:"JSX describes the interface inside JavaScript."},
  {q:"How does a parent pass data to a child?",o:["Props","CSS classes","File names"],a:0,why:"Props are inputs passed from parent to child."}
 ];
-function StudentCard({name,id,major}){return <article className="student-card"><div className="avatar">{name.trim().split(/\\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase()||"?"}</div><div><p className="tag">STUDENT COMPONENT</p><h3>{name||"Student name"}</h3><p>Student ID: {id||"Not entered"}</p><p>Major: {major||"Not entered"}</p></div></article>}
+function StudentCard({name,id,major}){return <article className="student-card"><div className="avatar">{name.trim().split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase()||"?"}</div><div><p className="tag">STUDENT COMPONENT</p><h3>{name||"Student name"}</h3><p>Student ID: {id||"Not entered"}</p><p>Major: {major||"Not entered"}</p></div></article>}
 function App(){
  const [tab,setTab]=useState("overview"),[name,setName]=useState("Abinash Lamichhane"),[id,setId]=useState(""),[major,setMajor]=useState("Computer Engineering"),[answers,setAnswers]=useState({}),[checked,setChecked]=useState(false);
  const nav=[["overview","Start here"],["concepts","Components & JSX"],["student","StudentCard lab"],["quiz","Knowledge check"]];
