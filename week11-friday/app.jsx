@@ -58,9 +58,9 @@
  function Alert(props){if(!props.message)return null;return h("p",{className:"alert alert-"+props.type},(props.type==="warning"?"Warning: ":"Update: ")+props.message);}
  function GradeCard(props){const pass=Number(props.score)>=60;return h("article",{className:"grade-card"},h("h3",null,props.name),h("p",null,"Practice score: "+props.score),h("span",{className:"badge "+(pass?"available":"unavailable")},pass?"Pass":"Fail"));}
  function App(){
-  const [tab,setTab]=useState("product"),[filter,setFilter]=useState("All"),[profileName,setProfileName]=useState("Abinash Lamichhane"),[role,setRole]=useState("Computer Engineering student"),[email,setEmail]=useState("avi@example.com"),[directory,setDirectory]=useState(students),[scores,setScores]=useState([88,45]),[showAlert,setShowAlert]=useState(true);
+  const [tab,setTab]=useState("product"),[courseFilter,setCourseFilter]=useState("All"),[projectFilter,setProjectFilter]=useState("All"),[profileName,setProfileName]=useState("Abinash Lamichhane"),[role,setRole]=useState("Computer Engineering student"),[email,setEmail]=useState("avi@example.com"),[directory,setDirectory]=useState(students),[scores,setScores]=useState([88,45]),[showAlert,setShowAlert]=useState(true);
   const sections=[["product","01 · ProductCard"],["courses","02 · Course Catalog"],["practice","03 · Defaults, lists & children"],["directory","04 · Student Directory"],["gallery","05 · Portfolio Gallery"],["examples","06 · Component Lab"]];
-  const shownCourses=courses.filter(c=>filter==="All"||(filter==="Required"?c.required:!c.required));
+  const shownCourses=courses.filter(c=>courseFilter==="All"||(courseFilter==="Required"?c.required:!c.required));
   const techs=["All","JavaScript","CSS","API","HTML"];
   function updateStudent(field,value){setDirectory(directory.map((s,i)=>i===0?Object.assign({},s,{[field]:value}):s));}
   return h("div",{className:"shell"},
@@ -79,7 +79,7 @@
       h("div",{className:"callout"},h("strong",null,"Notice: "),"price is formatted as Korean won, and inStock controls which status badge appears.")),
      tab==="courses"&&h("section",{className:"panel"},h("p",{className:"eyebrow"},"EXERCISE 02 / .MAP() + CONDITIONAL BADGES"),h("h2",null,"Course Catalog"),
       h("p",null,"The courses array is rendered with .map(). Each item has a stable id used as its React key."),
-      h("div",{className:"filters","aria-label":"Filter courses"},["All","Required","Elective"].map(f=>h("button",{key:f,className:filter===f?"filter active":"filter",onClick:()=>setFilter(f),"aria-pressed":filter===f},f))),
+      h("div",{className:"filters","aria-label":"Filter courses"},["All","Required","Elective"].map(f=>h("button",{key:f,className:courseFilter===f?"filter active":"filter",onClick:()=>setCourseFilter(f),"aria-pressed":courseFilter===f},f))),
       h("p",{className:"muted","aria-live":"polite"},shownCourses.length+" courses shown · "+shownCourses.reduce((n,c)=>n+c.credits,0)+" credits in this view"),
       h("div",{className:"catalog-grid"},shownCourses.map(c=>h(CourseCard,Object.assign({key:c.id},c)))),
       h("p",{className:"small-note"},"Course names are practice examples. Required/elective badges are not an official Gachon course classification.")),
@@ -107,9 +107,9 @@
       h("p",{className:"small-note"},"The two additional profiles are clearly marked sample data. Your ID and GPA are left blank for you to enter only if your professor requires them.")),
      tab==="gallery"&&h("section",{className:"panel"},h("p",{className:"eyebrow"},"EXERCISE 05 / PROJECTCARD · PROJECTLIST · FILTERBAR"),h("h2",null,"Portfolio Gallery"),
       h("p",null,"Filter your own coursework projects by technology. Each project card includes its source repository and live page."),
-      h("div",{className:"filters","aria-label":"Filter projects by technology"},techs.map(t=>h("button",{key:t,className:filter===t?"filter active":"filter",onClick:()=>setFilter(t),"aria-pressed":filter===t},t))),
-      h("p",{className:"muted","aria-live":"polite"},projects.filter(p=>filter==="All"||p.tech.includes(filter)).length+" projects shown"),
-      h("div",{className:"project-grid"},projects.filter(p=>filter==="All"||p.tech.includes(filter)).map(p=>h(ProjectCard,Object.assign({key:p.id},p))))),
+      h("div",{className:"filters","aria-label":"Filter projects by technology"},techs.map(t=>h("button",{key:t,className:projectFilter===t?"filter active":"filter",onClick:()=>setProjectFilter(t),"aria-pressed":projectFilter===t},t))),
+      h("p",{className:"muted","aria-live":"polite"},projects.filter(p=>projectFilter==="All"||p.tech.includes(projectFilter)).length+" projects shown"),
+      h("div",{className:"project-grid"},projects.filter(p=>projectFilter==="All"||p.tech.includes(projectFilter)).map(p=>h(ProjectCard,Object.assign({key:p.id},p))))),
      tab==="examples"&&h("section",{className:"panel"},h("p",{className:"eyebrow"},"EXERCISE 06 / COMPONENT LAB"),h("h2",null,"Four React patterns"),
       h("div",{className:"practice-grid"},
        h("article",{className:"exercise"},h("p",{className:"exercise-number"},"06A / PROPS"),h("h3",null,"Greeting component"),h("p",null,"Same component, different names."),h(Greeting,{name:"Abinash"}),h(Greeting,{name:"A new classmate"})),
