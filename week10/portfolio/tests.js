@@ -38,7 +38,7 @@
     const filterButtons=[...doc.querySelectorAll(".portfolio-react-filters button")];
     filterButtons.find(button=>button.textContent.trim()==="React")?.click();await pause();
     test("React technology filter updates the rendered carousel",()=>doc.querySelectorAll(".portfolio-react-card").length===1&&doc.querySelector(".portfolio-react-card h3")?.textContent==="React Components & Props");
-    filterButtons.find(button=>button.textContent.trim()==="All")?.click();await pause();
+    filterButtons.find(button=>button.textContent.trim()==="All projects")?.click();await pause();
     test("All projects restores the six-card carousel",()=>doc.querySelectorAll(".portfolio-react-card").length===6);
     const deck=doc.querySelector(".portfolio-project-deck");
     const next=doc.querySelector('[aria-label="Next project"]');
