@@ -109,7 +109,11 @@ Capture these on my own computer or phone. Save the original screenshots in `wee
 
 Run Lighthouse against **my own deployed URL** if the assignment asks for it. Save the report or screenshots with the tested URL and date. Do not copy the reference student's scores or describe them as results for my site. If Lighthouse is not required, do not invent a score.
 
-## React component work added for Week 11\n\nThe selected-work section of `portfolio/index.html` is rendered by `portfolio/portfolio-gallery.jsx`. It demonstrates reusable React project cards, a filter bar, a keyboard/touch carousel, and a native details dialog. Existing portfolio project destinations and descriptions are retained.\n\n## 8. Submission links
+## React component work added for Week 11
+
+The selected-work section of `portfolio/index.html` is rendered by `portfolio/portfolio-gallery.jsx`. It demonstrates reusable React project cards, a filter bar, a keyboard/touch carousel, and a native details dialog. Existing portfolio project destinations and descriptions are retained.
+
+## 8. Submission links
 
 - [Week 10 hub](https://abinaah2004-maker.github.io/WebClass/week10/)
 - [Portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/)
