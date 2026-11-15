@@ -31,8 +31,8 @@
     nav.find(x=>x.textContent.includes("StudentCard lab"))?.click();
     check("StudentCard displays Abinash's own student ID",()=>doc.querySelector(".student-card")?.textContent.includes("202637724"));
     const nameInput=doc.querySelector(".form-card input");
-    if(nameInput){nameInput.value="Abinash Test";nameInput.dispatchEvent(new win.Event("input",{bubbles:true}));nameInput.dispatchEvent(new win.Event("change",{bubbles:true}));}
-    check("StudentCard lab has editable component props",()=>Boolean(doc.querySelector(".form-card input")&&doc.querySelector(".preview-card .student-card")));
+    if(nameInput){const setter=Object.getOwnPropertyDescriptor(win.HTMLInputElement.prototype,"value").set;setter.call(nameInput,"Abinash Test");nameInput.dispatchEvent(new win.Event("input",{bubbles:true}));}
+    check("StudentCard lab has editable component props",()=>Boolean(doc.querySelector(".form-card input")&&doc.querySelector(".preview-card .student-card")?.textContent.includes("Abinash Test")));
     nav.find(x=>x.textContent.includes("Knowledge check"))?.click();
     const first=doc.querySelector('input[name="question-0"][value="0"]');
     first?.click();
