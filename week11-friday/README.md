@@ -14,22 +14,26 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 | JSX syntax | React foundations: className, htmlFor, curly-brace expressions, self-closing tags and JSX compilation |
 | UserCard | React foundations: initials, name, role and current year |
 | Props and one-way data flow | React foundations explanation and component examples |
-| ProfileCard and default props | Defaults, lists & children: name, role, followers, isVerified and formatted follower count |
+| ProfileCard and default props | Defaults, lists & children: editable name/role/email, default or initials avatar, followers and verified flag |
 | Button default props | Defaults, lists & children: default Click me / md and custom Save / lg |
 | PropTypes and TypeScript | Explanation in the Button example |
 | Component composition and children | Card and Header + Page + Card + Footer composition |
 | Lists, map() and stable keys | Course Catalog, interactive notifications, Student Directory, StudentList and score list |
 | Conditional rendering | Alert with null, ternary pass/fail, and Dashboard with && / !user && |
 | ProductCard challenge | ProductCard exercise with safe defaults, price, rating and stock status |
-| Portfolio homework | ProjectCard, ProjectList, FilterBar and three personal projects |
+| Portfolio homework | ProjectCard, ProjectList, FilterBar and four personal/coursework projects |
 | Component best practices | Takeaways & resources |
 | Key takeaways and next session | Takeaways & resources, including an interactive useState counter |
 | Learning resources | React docs, Scrimba, CodeSandbox and Fireship YouTube search |
 
-## React integration in my main portfolio\n\nThe Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, touch swiping and an accessible project details dialog. The five existing project descriptions and destinations are retained.\n\n## Exercises
+## React integration in my main portfolio
+
+The Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, touch swiping and an accessible project details dialog. The five existing project descriptions and destinations are retained.
+
+## Exercises
 1. ProductCard — nine products with KRW prices, ratings, categories, safe defaults and both stock states.
 2. Course Catalog — array rendering, filtering and stable keys.
-3. Practice — ProfileCard defaults, notification list, children composition, Button defaults and prop type guidance.
+3. Practice — ProfileCard defaults with live editor/avatar switch; interactive notification inbox with All/Unread filters, read/dismiss, mark-all-read, add, clear and reset controls; children composition, Button defaults and prop type guidance.
 4. Student Directory — three profile cards with editable personal details and stable student ID keys.
 5. Portfolio Gallery — reusable ProjectCard, ProjectList and FilterBar components; four projects with technology filters, case-insensitive search, featured-only mode, live result counts and an accessible native project-details dialog. Each card links to its source and live project.
 6. Component Lab — StudentList with grades, Alert, Dashboard conditional rendering and GradeBoard.
@@ -38,7 +42,7 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 
 ## Quality checks
 
-Open `tests.html` from the Friday task hub to run browser-based checks against helper functions used by the live lesson. The checks cover KRW formatting, invalid-price fallback, the 60-point pass boundary, React/All project filtering, case-insensitive project search, featured-only filtering, and stock-only filtering. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.
+Open `tests.html` from the Friday task hub to run browser-based checks against helper functions used by the live lesson. The checks cover KRW formatting, invalid-price fallback, the 60-point pass boundary, React/All project filtering, case-insensitive project search, featured-only filtering, stock-only filtering, unread notification filtering, unread counts, toggling, dismissing and marking all notifications read. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.
 
 ## Portfolio Gallery React components
 
