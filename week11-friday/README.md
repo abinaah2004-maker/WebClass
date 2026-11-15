@@ -28,7 +28,7 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 
 ## React integration in my main portfolio
 
-The Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, touch swiping and an accessible project details dialog. The five existing project descriptions and destinations are retained.
+The Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, touch swiping and an accessible project details dialog. The five existing project descriptions and destinations are retained, and a sixth card links to the Week 11 React component lesson. Browser checks are available at `week10/portfolio/tests.html`.
 
 ## Exercises
 1. ProductCard — nine products with KRW prices, ratings, categories, safe defaults and both stock states.
