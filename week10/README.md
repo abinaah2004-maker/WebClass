@@ -83,7 +83,7 @@ Reference inspected: https://sudip09-sys.github.io/WebProgramming/week10/
 | Custom 404 | Repository-root `404.html`, plus E2/E3 explanation pages | Root and Week 10 custom 404 pages | My root-level file is appropriate for the project site; test a genuinely nonexistent URL |
 | Portfolio | Responsive portfolio with interactive project and skill sections | Portfolio with a portrait, theme control, project filtering and skills | My portfolio is present; add my own portrait when ready and manually check mobile/keyboard use |
 | Book Search | `projects/book-search/index.html` | Separate HTML, CSS and JavaScript files under `week10/book-search/` | My project exists; keep the code organized and verify a real search works |
-| Extra projects | Expense Tracker, Job Tracker and Study Planner | The reference Week 10 folder has Book Search and its portfolio/team links | My folder has additional project work |
+| Extra projects | Expense Tracker and Study Planner | The reference Week 10 folder has Book Search and its portfolio/team links | My folder has additional project work |
 | Evidence files | Evidence folder currently contains the checklist README | Reference folder contains a Lighthouse screenshot and audit PDF | Main submission gap: add my own original screenshots and any report required by the professor |
 | Accessibility report | Interactive report template with blank observation fields | Completed written report with recorded keyboard results | Complete mine only after carrying out the tests; do not copy the reference student's results |
 
