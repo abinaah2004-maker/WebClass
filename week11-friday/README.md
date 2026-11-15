@@ -26,7 +26,7 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 | Key takeaways and next session | Takeaways & resources, including an interactive useState counter |
 | Learning resources | React docs, Scrimba, CodeSandbox and Fireship YouTube search |
 
-## Exercises
+## React integration in my main portfolio\n\nThe Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, touch swiping and an accessible project details dialog. The five existing project descriptions and destinations are retained.\n\n## Exercises
 1. ProductCard — nine products with KRW prices, ratings, categories, safe defaults and both stock states.
 2. Course Catalog — array rendering, filtering and stable keys.
 3. Practice — ProfileCard defaults, notification list, children composition, Button defaults and prop type guidance.
