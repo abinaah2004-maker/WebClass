@@ -111,7 +111,7 @@ Run Lighthouse against **my own deployed URL** if the assignment asks for it. Sa
 
 ## React component work added for Week 11
 
-The selected-work section of `portfolio/index.html` is rendered by `portfolio/portfolio-gallery.jsx`. It demonstrates reusable React project cards, a filter bar, a keyboard/touch carousel, and a native details dialog. Existing portfolio project destinations and descriptions are retained.
+The selected-work section of `portfolio/index.html` is rendered by `portfolio/portfolio-gallery.jsx`. It demonstrates reusable React project cards, a filter bar, a keyboard/touch carousel, and a native details dialog. All five existing portfolio projects remain, and a sixth React Components & Props card links to the Week 11 Friday lesson. Browser checks are available at `portfolio/tests.html`.
 
 ## 8. Submission links
 
