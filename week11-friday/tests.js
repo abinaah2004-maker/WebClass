@@ -40,6 +40,8 @@
       try { results.push({label, passed: Boolean(callback())}); }
       catch (error) { results.push({label, passed: false, detail: error.message}); }
     };
+    test("Reusable React components load from components.js", () => Boolean(frame.contentWindow.Week11Components && ["ProductCard","CourseCard","StudentProfileCard","ProjectCard","ProjectList","FilterBar","StudentList","Greeting","UserCard","Button","Alert","Dashboard","GradeCard"].every(name => typeof frame.contentWindow.Week11Components[name] === "function")));
+    test("Product, course and project records load from data.js", () => frame.contentWindow.Week11Data.products.length === 9 && frame.contentWindow.Week11Data.courses.length === 7 && frame.contentWindow.Week11Data.projects.length === 4);
     test("KRW formatting uses Korean thousands separators", () => checks.formatKrw(89000) === "₩89,000");
     test("Invalid product prices safely fall back to zero", () => checks.formatKrw("not-a-price") === "₩0");
     test("Grade boundary: score 60 passes", () => checks.isPassing(60) === true);
