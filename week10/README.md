@@ -52,13 +52,10 @@ The portfolio is built with HTML, CSS, and JavaScript. It includes an introducti
 | Project | Location | Purpose |
 |---|---|---|
 | Expense Tracker | `projects/expense-tracker/` | Record income and expenses and view totals |
-| Job Tracker | `projects/job-tracker/` | Explore job-search links and manage application records |
 | Study Planner | `projects/study-planner/` | Organize study tasks and weekly planning |
 | Book Search | `projects/book-search/` | Search book information using the Open Library service |
 
 The existing [Memory Match team project](https://abinaah2004-maker.github.io/WebClass/teamproject/) is also linked from the Week 10 hub.
-
-**Important scope note:** The Job Tracker provides links to external job-search services and an application tracker. It does not claim to scrape or display guaranteed live job vacancies directly from those services.
 
 ## 5. Week 10_2 — Keyboard accessibility
 
