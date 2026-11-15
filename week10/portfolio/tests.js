@@ -31,6 +31,7 @@
     const pause=()=>wait(40);
     test("Portfolio data contains five distinct projects",()=>checks.projects.length===5&&new Set(checks.projects.map(p=>p.id)).size===5);
     test("Every project has a live destination and source link",()=>checks.projects.every(p=>p.demoUrl&&p.githubUrl));
+    test("Modular React components and project data load",()=>Boolean(win.PortfolioProjectData&&win.PortfolioReactComponents&&win.PortfolioReactComponents.PortfolioProjectCard&&win.PortfolioGalleryUtils));
     test("React category returns the Week 11 component project",()=>{const items=checks.filterProjects(checks.projects,"React");return items.length===1&&items[0].id==="react-components";});
     test("Open Library technology filter returns Book Search",()=>{const items=checks.filterProjects(checks.projects,"Open Library");return items.length===1&&items[0].id==="book-search";});
     test("All category preserves every project",()=>checks.filterProjects(checks.projects,"All").length===5);
@@ -39,7 +40,7 @@
     filterButtons.find(button=>button.textContent.trim()==="React")?.click();await pause();
     test("React technology filter updates the rendered carousel",()=>doc.querySelectorAll(".portfolio-react-card").length===1&&doc.querySelector(".portfolio-react-card h3")?.textContent==="React Components & Props");
     filterButtons.find(button=>button.textContent.trim()==="All projects")?.click();await pause();
-    test("All projects restores the five-card carousel",()=>doc.querySelectorAll(".portfolio-react-card").length===6);
+    test("All projects restores the five-card carousel",()=>doc.querySelectorAll(".portfolio-react-card").length===5);
     const deck=doc.querySelector(".portfolio-project-deck");
     const next=doc.querySelector('[aria-label="Next project"]');
     next?.click();await pause();
