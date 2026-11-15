@@ -1,8 +1,10 @@
 # Week 11 — React Foundations and Components
 
 **Student:** Abinash Lamichhane  
+**Student ID:** 202637724  
 **University:** Gachon University  
-**Major:** Computer Engineering
+**Major:** Computer Engineering  
+**Email:** Abinaah2004@gmail.com
 
 ## Monday — React foundations
 
@@ -15,23 +17,28 @@ Open: [Week 11 Monday](https://abinaah2004-maker.github.io/WebClass/week11-monda
 
 ## Friday — React components and props
 
-1. **ProductCard:** product name, KRW price, rating, category and conditional stock status; includes an in-stock filter.
-2. **Course Catalog:** array rendering with `.map()`, stable keys, required/elective badges and filters.
-3. **Defaults, lists and children:** ProfileCard default avatar, notification types and a reusable Card that renders children.
-4. **Task 11-A Student Directory:** exactly three profile cards rendered by one five-prop component.
-5. **Portfolio Gallery:** project cards for Memory Match, BookFinder and Learn Korean With Me, with technology filters.
-6. **Component Lab:** Greeting, StudentList, conditional Alert and interactive GradeBoard pass/fail threshold.
+The Friday submission is a React 18 JSX application with reusable function components and interactive examples.
 
-Open: [Week 11 Friday](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
+1. **React foundations:** components, JSX rules, props and one-way data flow.
+2. **ProductCard:** product name, KRW price, rating, category and conditional stock status; includes an in-stock filter.
+3. **Course Catalog:** array rendering with `.map()`, stable keys, required/elective badges and filters.
+4. **Defaults, lists and children:** ProfileCard default props, notification types, Button defaults and a reusable Card that renders `props.children`.
+5. **Task 11-A Student Directory:** exactly three profile cards rendered by one five-prop component; my profile can be edited live.
+6. **Portfolio Gallery:** project cards for Memory Match, BookFinder and Learn Korean With Me, with technology filters.
+7. **Component Lab:** Greeting, StudentList, conditional Alert, logged-in dashboard and interactive GradeBoard.
+8. **Takeaways and resources:** component best practices, key React rules and a `useState` counter.
+
+Open: [Week 11 Friday task hub](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html) · [Open the full React lesson](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
 
 ## Implementation notes
 
-- The lesson source is written as JSX in `app.jsx`, with named function components and React state hooks.
-- React 18 UMD and Babel Standalone are loaded from public CDNs so the JSX can run on GitHub Pages without a local build step. An internet connection is required.
-- The Friday directory uses the student ID supplied by me; GPA remains blank until I enter a real value. Additional directory entries are clearly identified as sample profiles.
+- `week11-friday/app.jsx` contains the React components and `useState` interactions for filters, editable profiles, grade scores, alerts and the counter.
+- `week11-friday/tasks.html` is the Friday submission hub. Each task links directly to its matching lesson section using a URL hash.
+- React 18, ReactDOM and Babel Standalone are loaded in order from public CDNs so GitHub Pages can compile and render the JSX without a local build step. An internet connection is required; a visible fallback explains if a CDN cannot load.
+- The directory uses my student ID. GPA remains blank until I enter a real value. The two other entries are clearly labelled sample profiles.
 - Course examples and practice scores are demonstrations, not official university records or grades.
 
 ## Source files
 
 - Monday: `week11-monday/app.jsx`, `week11-monday/styles.css`
-- Friday: `week11-friday/app.jsx`, `week11-friday/styles.css`
+- Friday: `week11-friday/index.html`, `week11-friday/tasks.html`, `week11-friday/app.jsx`, `week11-friday/styles.css`
