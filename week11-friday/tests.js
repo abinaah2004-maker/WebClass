@@ -59,6 +59,12 @@
     test("Featured-only filter keeps featured projects", () => checks.getFeaturedProjects([{featured:true},{featured:false},{featured:true}], true).length === 2);
     test("Featured filter off keeps all projects", () => checks.getFeaturedProjects([{featured:true},{featured:false}], false).length === 2);
     test("Stock-only filter removes unavailable products", () => checks.getStockProducts([{inStock:true},{inStock:false},{inStock:true}], true).length === 2);
+    test("Unread notification filter excludes read messages", () => checks.filterNotifications([{id:"a",read:false},{id:"b",read:true}],"Unread").length === 1);
+    test("All notification filter preserves read and unread messages", () => checks.filterNotifications([{id:"a",read:false},{id:"b",read:true}],"All").length === 2);
+    test("Unread count is calculated correctly", () => checks.countUnread([{read:false},{read:true},{read:false}]) === 2);
+    test("Notification toggle changes only the matching item", () => {const result=checks.toggleNotification([{id:"a",read:false},{id:"b",read:true}],"a");return result[0].read===true&&result[1].read===true;});
+    test("Dismiss removes only the selected notification", () => checks.dismissNotification([{id:"a"},{id:"b"}],"a").length===1);
+    test("Mark all read updates every notification", () => checks.markAllNotificationsRead([{read:false},{read:false}]).every(item=>item.read));
     test("Unfiltered product list keeps all products", () => checks.getStockProducts([{inStock:true},{inStock:false}], false).length === 2);
     report(results);
   }
