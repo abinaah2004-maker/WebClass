@@ -27,7 +27,7 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 | Learning resources | React docs, Scrimba, CodeSandbox and Fireship YouTube search |
 
 ## Exercises
-1. ProductCard — product name, KRW price, rating, stock status and safe defaults.
+1. ProductCard — nine products with KRW prices, ratings, categories, safe defaults and both stock states.
 2. Course Catalog — array rendering, filtering and stable keys.
 3. Practice — ProfileCard defaults, notification list, children composition, Button defaults and prop type guidance.
 4. Student Directory — three profile cards with editable personal details and stable student ID keys.
@@ -36,8 +36,8 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 7. React foundations — Greeting, JSX rules and UserCard.
 8. Takeaways & resources — component best practices, key takeaways and useState counter.
 
-## Component organisation note
-This GitHub Pages lesson uses React 18 UMD and Babel Standalone, so its runnable examples are kept in one browser-loaded app.jsx file rather than requiring an npm build. The components themselves are separate focused functions. In a larger React application, the same components can be moved into individual files (for example, components/ProductCard.jsx and components/StudentList.jsx), with a default export for the main component and named exports for shared helpers. This keeps the live course page simple to run while teaching the scalable project structure.
+## Quality checks\n\nOpen `tests.html` from the Friday task hub to run browser-based checks against helper functions used by the live lesson. The checks cover KRW formatting, invalid-price fallback, the 60-point pass boundary, React/All project filtering, and stock-only filtering. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.\n\n## Component organisation note
+This GitHub Pages lesson uses React 18 UMD and Babel Standalone, so the live components remain in one browser-loaded `app.jsx` file rather than requiring an npm build. Shared logic used by the lesson is exposed through `window.Week11Checks` and exercised by `tests.html`. A Vite conversion would allow the component functions to move into true ES module files such as `components/ProductCard.jsx` and `components/StudentList.jsx`; that build-system conversion is intentionally not mixed into this already-working GitHub Pages lesson.
 
 ## Run
 Open index.html with an internet connection and JavaScript enabled. React, ReactDOM and Babel are loaded from their CDNs. The interactive lesson runs directly on GitHub Pages without a local build step.
