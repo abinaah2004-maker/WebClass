@@ -38,7 +38,15 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 
 ## Quality checks
 
-Open `tests.html` from the Friday task hub to run browser-based checks against helper functions used by the live lesson. The checks cover KRW formatting, invalid-price fallback, the 60-point pass boundary, React/All project filtering, case-insensitive project search, featured-only filtering, and stock-only filtering. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.\n\n## Portfolio Gallery React components\n\nThe Portfolio Gallery demonstrates a complete component-driven project showcase: `ProjectCard` receives one project through props, `ProjectList` maps the filtered data with stable keys, and `FilterBar` controls the selected technology. React state also controls search text, featured-only mode and the selected project. The native `<dialog>` provides keyboard dismissal, a labelled title, a close control and focus restoration to the Details button.\n\nThe component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.\n\n## Component organisation note
+Open `tests.html` from the Friday task hub to run browser-based checks against helper functions used by the live lesson. The checks cover KRW formatting, invalid-price fallback, the 60-point pass boundary, React/All project filtering, case-insensitive project search, featured-only filtering, and stock-only filtering. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.
+
+## Portfolio Gallery React components
+
+The Portfolio Gallery demonstrates a complete component-driven project showcase: `ProjectCard` receives one project through props, `ProjectList` maps the filtered data with stable keys, and `FilterBar` controls the selected technology. React state also controls search text, featured-only mode and the selected project. The native `<dialog>` provides keyboard dismissal, a labelled title, a close control and focus restoration to the Details button.
+
+The component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.
+
+## Component organisation note
 This GitHub Pages lesson uses React 18 UMD and Babel Standalone, so the live components remain in one browser-loaded `app.jsx` file rather than requiring an npm build. Shared logic used by the lesson is exposed through `window.Week11Checks` and exercised by `tests.html`. A Vite conversion would allow the component functions to move into true ES module files such as `components/ProductCard.jsx` and `components/StudentList.jsx`; that build-system conversion is intentionally not mixed into this already-working GitHub Pages lesson.
 
 ## Run
