@@ -36,6 +36,52 @@ header nav a{color:#d8e8d5;text-decoration:none;font-size:13px;font-weight:700}
 .check{color:#c5d0c4}
 footer.wrap{border-color:#344238;color:#aebcaf}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.intro{padding:54px 0 38px}.card,.project-card{min-height:unset}.feature{padding:22px}}
+
+/* 2026 visual refinement — forest / lime coursework identity */
+:root{color-scheme:dark;scroll-padding-top:28px}
+body{background:radial-gradient(ellipse at 82% 8%,#263a2b 0,transparent 36%),linear-gradient(145deg,#0b100d,#101a13 58%,#0d1510);color:#edf4e9;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.wrap{width:min(1180px,calc(100% - 44px))}
+header.wrap{position:relative;border-color:#34473a;padding:22px 0}
+header strong{font:700 11px/1.5 ui-monospace,monospace;letter-spacing:.16em;color:#d9e8d5}
+header nav{gap:9px}
+header nav a{display:inline-flex;padding:8px 12px;border:1px solid transparent;border-radius:999px;color:#bdcbbb;transition:background .2s,border-color .2s,color .2s}
+header nav a:hover{background:#c8f36b12;border-color:#4b6248;color:#d8ff8c}
+.skip{background:#c8f36b;color:#101710;border-radius:999px}
+.intro{position:relative;padding:clamp(60px,9vw,112px) 0 62px}
+.intro:after{content:"W10";position:absolute;right:1%;top:35px;color:#c8f36b0b;font:900 clamp(130px,24vw,300px)/1 ui-monospace,monospace;letter-spacing:-.12em;pointer-events:none}
+.intro>*{position:relative;z-index:1}
+.intro .eyebrow,.label,.tag{color:#c8f36b}
+.intro h1{font:800 clamp(56px,9vw,112px)/.92 "Space Grotesk",Inter,sans-serif;letter-spacing:-.075em;max-width:850px}
+.intro>p:not(.eyebrow){color:#aab9aa;max-width:720px;font-size:16px}
+.intro .links{gap:10px 22px}
+.meta{border-color:#34473a;color:#92a391;font:10px ui-monospace,monospace}
+.section{margin:72px 0}
+.section-head{align-items:end}
+.section-head h2{font:700 clamp(30px,4.7vw,52px)/1 "Space Grotesk",sans-serif;letter-spacing:-.055em}
+.section-head>p{color:#aab9aa;line-height:1.8}
+.grid{gap:17px}
+.card,.project-card{position:relative;overflow:hidden;background:linear-gradient(145deg,#18251c,#121b15);border:1px solid #34473a;border-radius:16px;padding:23px;min-height:245px;box-shadow:0 16px 45px #0002;transition:transform .22s,border-color .22s,box-shadow .22s}
+.card:before,.project-card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,#c8f36b,transparent 75%);opacity:.7}
+.card:hover,.project-card:hover{transform:translateY(-5px);border-color:#8aa95d;box-shadow:0 22px 55px #0005}
+.card h3,.project-card h3{font:650 23px/1.15 "Space Grotesk",sans-serif;letter-spacing:-.035em;color:#f0f5e9}
+.card p,.project-card p{color:#aab9aa;line-height:1.75}
+.card .label,.project-card .tag{font:600 10px ui-monospace,monospace;letter-spacing:.13em}
+.card a,.project-card a,.feature a,.links a{color:#d4ff82}
+.feature{position:relative;overflow:hidden;background:linear-gradient(120deg,#1e3023,#152019 70%);border:1px solid #4b6245;border-radius:18px;padding:clamp(22px,4vw,38px);box-shadow:0 20px 55px #0003}
+.feature:after{content:"↗";position:absolute;right:26px;top:12px;color:#c8f36b20;font:900 110px "Space Grotesk",sans-serif;pointer-events:none}
+.feature>*{position:relative;z-index:1}
+.feature h3{font:700 clamp(27px,4vw,38px)/1.05 "Space Grotesk",sans-serif;letter-spacing:-.05em}
+.feature p{color:#b2c0b0}
+.note{background:#1a281e;border:1px solid #354b38;border-left:3px solid #c8f36b;border-radius:0 12px 12px 0;color:#c1cfbd}
+.check{color:#c0cdbd}
+.check li{padding:5px 0}
+footer.wrap{border-color:#34473a;color:#91a18f}
+a{transition:color .18s}
+a:hover{color:#e1ffad}
+a:focus-visible,button:focus-visible{outline:3px solid #c8f36b;outline-offset:4px}
+@media(max-width:760px){.wrap{width:min(100% - 30px,620px)}.intro{padding:58px 0 42px}.section{margin:52px 0}.card,.project-card{min-height:0}.feature:after{font-size:76px;right:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -57,7 +103,7 @@ footer.wrap{border-color:#344238;color:#aebcaf}
 <div class="grid">
 <article class="project-card"><p class="tag">JAVASCRIPT / LOCAL STORAGE</p><h3>01 / Expense Tracker</h3><p>Record income and expenses, review transactions and track a monthly budget.</p><div class="links"><a href="projects/expense-tracker/">Launch project ↗</a><a href="https://github.com/abinaah2004-maker/WebClass/blob/main/week10/projects/expense-tracker/index.html">View source ↗</a></div></article>
 <article class="project-card"><p class="tag">JAVASCRIPT / PLANNING</p><h3>02 / Study Planner</h3><p>Organize study tasks by subject, due date and priority, then track progress.</p><div class="links"><a href="projects/study-planner/">Launch project ↗</a><a href="https://github.com/abinaah2004-maker/WebClass/blob/main/week10/projects/study-planner/index.html">View source ↗</a></div></article>
-<article class="project-card"><p class="tag">JAVASCRIPT / TEAM PROJECT</p><h3>04 / Memory Match — Neon Arcade</h3><p>A browser-based memory matching game with multiple play modes. This is my existing team project, linked separately from the individual Week 10 exercises.</p><div class="links"><a href="/WebClass/teamproject/">Launch Memory Match ↗</a><a href="https://github.com/abinaah2004-maker/WebClass/tree/main/teamproject">View source ↗</a></div></article>
+<article class="project-card"><p class="tag">JAVASCRIPT / TEAM PROJECT</p><h3>03 / Memory Match — Neon Arcade</h3><p>A browser-based memory matching game with multiple play modes. This is my existing team project, linked separately from the individual Week 10 exercises.</p><div class="links"><a href="/WebClass/teamproject/">Launch Memory Match ↗</a><a href="https://github.com/abinaah2004-maker/WebClass/tree/main/teamproject">View source ↗</a></div></article>
 </div>
 <div class="feature"><p class="label">API PRACTICE / OPEN LIBRARY</p><h3>Book Search</h3><p>Search for books by title or author. The app includes loading, empty-result and error feedback.</p><div class="links"><a href="projects/book-search/">Open live Book Search ↗</a><a href="https://github.com/abinaah2004-maker/WebClass/blob/main/week10/projects/book-search/index.html">View source ↗</a></div></div>
 </section>
