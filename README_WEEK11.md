@@ -31,12 +31,12 @@ The Friday submission is a React 18 JSX application with reusable function compo
 8. **Takeaways and resources:** component best practices, key React rules and a `useState` counter.
 9. **React portfolio integration:** the Week 10 portfolio selected-work area uses reusable React project cards, filters, a keyboard/touch carousel and a project-details dialog.
 
-Open: [React project showcase in my main portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/#work) · [Portfolio gallery checks](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/tests.html) · [Week 11 Friday task hub](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html) · [Open the full React lesson](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
+Open: [Monday React task hub](https://abinaah2004-maker.github.io/WebClass/week11-monday/tasks.html) · [React project showcase in my main portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/#work) · [Portfolio gallery checks](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/tests.html) · [Week 11 Friday task hub](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html) · [Open the full React lesson](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
 
 ## Implementation notes
 
-- `week11-friday/app.jsx` contains the React components and `useState` interactions for filters, editable profiles, notification inbox actions, grade scores, alerts and the counter. The Portfolio Gallery passes its title, description, technology stack, source URL and demo URL as named `ProjectCard` props.
-- `week10/portfolio/portfolio-gallery.jsx` adds reusable React project cards, a filter bar, carousel controls and a project-details dialog to the main portfolio.
+- `week11-friday/data.js` stores product, course, project and student data; `components.js` contains reusable React components; `app.jsx` owns page state and composition. Dedicated HTML pages open each exercise directly.
+- `week10/portfolio/projects.js`, `utils.js` and `components.js` separate portfolio data, pure helpers and reusable React components; `portfolio-gallery.jsx` owns carousel state and page composition.
 - `week11-friday/tasks.html` is the Friday submission hub. Each task links directly to its matching lesson section using a URL hash.
 - React 18, ReactDOM and Babel Standalone are loaded in order from public CDNs so GitHub Pages can compile and render the JSX without a local build step. An internet connection is required; a visible fallback explains if a CDN cannot load.
 - `week11-friday/tests.html` and `tests.js` check helper logic plus rendered components and core browser interactions. These checks are not a substitute for manual keyboard and screen-reader testing.
@@ -45,6 +45,6 @@ Open: [React project showcase in my main portfolio](https://abinaah2004-maker.gi
 
 ## Source files
 
-- Monday: `week11-monday/app.jsx`, `week11-monday/styles.css`
-- Friday: `week11-friday/index.html`, `week11-friday/tasks.html`, `week11-friday/app.jsx`, `week11-friday/styles.css`, `week11-friday/tests.html`, `week11-friday/tests.js`
-- React portfolio: `week10/portfolio/portfolio-gallery.jsx`, `week10/portfolio/index.html`, `week10/portfolio/style.css`
+- Monday: `week11-monday/data.js`, `week11-monday/components.js`, `week11-monday/app.jsx`, `week11-monday/styles.css`, `week11-monday/tasks.html`, `lab.html`, `review.html`
+- Friday: `week11-friday/index.html`, `week11-friday/tasks.html`, `week11-friday/data.js`, `week11-friday/components.js`, `week11-friday/app.jsx`, individual exercise HTML pages, `styles.css`, `tests.html`, `tests.js`
+- React portfolio: `week10/portfolio/projects.js`, `utils.js`, `components.js`, `portfolio-gallery.jsx`, `index.html`, `style.css`
