@@ -2,7 +2,7 @@
   const frame=document.getElementById("portfolio-test-frame");
   const status=document.getElementById("portfolio-check-status");
   const list=document.getElementById("portfolio-check-results");
-  let attempts=0;
+  let attempts=0,readyTimer;
   const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   function report(results){
     list.replaceChildren();
@@ -24,7 +24,7 @@
     if(!checks||!doc||!doc.querySelector(".portfolio-project-deck")){
       attempts++;
       if(attempts>80){status.textContent="The React gallery did not become ready. Check the CDN connection and reload.";status.style.color="#ff827c";return;}
-      setTimeout(run,250);return;
+      clearTimeout(readyTimer);readyTimer=setTimeout(run,250);return;
     }
     const results=[];
     const test=(label,fn)=>{try{results.push({label,passed:Boolean(fn())});}catch(error){results.push({label,passed:false,detail:error.message});}};
@@ -48,11 +48,11 @@
     test("Keyboard ArrowLeft returns to the previous project",()=>doc.querySelector('.portfolio-react-card[data-slot="0"] h3')?.textContent==="Expense Tracker");
     doc.querySelector('.portfolio-react-card[data-slot="0"] button')?.click();await pause();
     const dialog=doc.querySelector(".portfolio-project-dialog");
-    test("Details button opens the native project dialog",()=>Boolean(dialog&&dialog.open&&dialog.querySelector("h2")?.textContent==="Expense Tracker");
+    test("Details button opens the native project dialog",()=>Boolean(dialog&&dialog.open&&dialog.querySelector("h2")?.textContent==="Expense Tracker"));
     dialog?.querySelector("button")?.click();await pause();
     test("Close button dismisses the project dialog",()=>Boolean(dialog&&!dialog.open));
     report(results);
   }
-  frame.addEventListener("load",()=>{attempts=0;run();});
+  frame.addEventListener("load",()=>{clearTimeout(readyTimer);attempts=0;run();});
   run();
 })();
