@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Browser checks for Abinash Lamichhane's React-powered portfolio gallery.">
+  <meta name="theme-color" content="#111713">
+  <title>React Portfolio Gallery · Checks | Abinash Lamichhane</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .portfolio-checks{max-width:860px;margin:48px auto;padding:28px;background:var(--panel);border:1px solid var(--line)}
+    .portfolio-checks h1{font:500 clamp(30px,6vw,48px)/1.05 "Space Grotesk",sans-serif}
+    .portfolio-check-list{list-style:none;padding:0;display:grid;gap:10px}
+    .portfolio-check-list li{padding:12px 14px;border:1px solid var(--line);display:flex;gap:12px;align-items:center;font-size:13px}
+    .portfolio-check-list .pass{color:var(--accent);font-weight:800}.portfolio-check-list .fail{color:#ff827c;font-weight:800}
+    .portfolio-check-summary{font-weight:700;margin:18px 0}
+    .portfolio-test-frame{position:absolute;width:1200px;height:900px;left:-14000px;top:0;border:0}
+  </style>
+  <script src="./tests.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <main id="main" class="shell" tabindex="-1">
+    <header class="topbar"><a class="brand" href="./index.html#work">ABINASH / PORTFOLIO</a><nav class="nav"><a href="./index.html#work">Selected work</a><a href="../../week11-friday/tasks.html">Week 11 tasks</a></nav></header>
+    <section class="portfolio-checks">
+      <p class="eyebrow">WEEK 11 / REACT PORTFOLIO / QUALITY CHECKS</p>
+      <h1>React gallery checks.</h1>
+      <p>These browser checks load the actual portfolio page in a same-origin frame and exercise its project data, category filters, carousel controls and details dialog.</p>
+      <p id="portfolio-check-status" class="portfolio-check-summary" role="status" aria-live="polite">Loading the React portfolio and preparing checks…</p>
+      <ul id="portfolio-check-results" class="portfolio-check-list" aria-label="React portfolio test results"></ul>
+      <p><a class="text-link" href="./index.html#work">Return to the React project gallery ↗</a></p>
+    </section>
+  </main>
+  <iframe class="portfolio-test-frame" id="portfolio-test-frame" src="./index.html#work" title="Portfolio page used for browser checks" tabindex="-1" aria-hidden="true"></iframe>
+</body>
+</html>
