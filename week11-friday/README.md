@@ -51,10 +51,10 @@ The Portfolio Gallery demonstrates a component-driven project showcase: `Project
 The component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.
 
 ## Component organisation note
-This GitHub Pages lesson uses React 18 UMD and Babel Standalone, so the live components remain in one browser-loaded `app.jsx` file rather than requiring an npm build. The component functions are separated by responsibility inside the lesson source, and shared helper logic is exposed through `window.Week11Checks` and exercised by `tests.html`. The separate Week 10 portfolio now also mounts a React project showcase with reusable cards, filters, a keyboard/touch carousel and a details dialog.
+The live lesson is organised into `data.js`, `components.js` and `app.jsx`: data records, reusable React components and page state/composition are separated. Dedicated HTML entry points open ProductCard, Course Catalog, Practice, Portfolio Gallery and Component Lab directly. React 18 UMD and Babel Standalone are retained for compatibility with the existing GitHub Pages deployment; the source is modular and does not require a local build step. The separate Week 10 portfolio now also mounts a React project showcase with reusable cards, filters, a keyboard/touch carousel and a details dialog.
 
 ## Run
-Open index.html with an internet connection and JavaScript enabled. React, ReactDOM and Babel are loaded from their CDNs. The interactive lesson runs directly on GitHub Pages without a local build step.
+Open `tasks.html` for the exercise index or open an individual exercise page. React, ReactDOM and Babel load before the separate data and component modules. The lesson runs directly on GitHub Pages without a local build step.
 
 ## Notes
 - The two additional directory entries and some course examples are labelled sample data.
