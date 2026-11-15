@@ -34,3 +34,35 @@
 .portfolio-project-index button:focus-visible,.portfolio-carousel-controls button:focus-visible,.portfolio-react-filters button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 @media(hover:hover) and (pointer:fine){.portfolio-react-card[data-slot="0"]{transition:transform .18s ease,opacity .32s ease,border-color .32s ease}}
+
+/* Portfolio refinement: more depth, clearer rhythm and stronger project focus */
+.hero{isolation:isolate}
+.hero:before{border-color:#526c50;box-shadow:0 0 90px #c8f36b0a}
+.hero h1{line-height:.88;text-wrap:balance}
+.section{position:relative}
+.section-head{gap:clamp(24px,5vw,64px)}
+.section-head>p{line-height:1.85}
+.portfolio-react-showcase{position:relative;padding:22px;border:1px solid #34483a;border-radius:18px;background:linear-gradient(145deg,#17221a,#111813);box-shadow:0 22px 65px #0004}
+.portfolio-react-toolbar{align-items:center}
+.portfolio-react-filters button{border-radius:999px;padding:8px 13px;border:1px solid #3a4b3b;background:#17221a;color:#b9c7b5;transition:background .2s,border-color .2s,transform .2s}
+.portfolio-react-filters button[aria-pressed=true]{background:#c8f36b;color:#111810;border-color:#c8f36b}
+.portfolio-react-filters button:hover{border-color:#c8f36b;transform:translateY(-1px)}
+.portfolio-project-deck{min-height:480px}
+.portfolio-react-card{border-radius:16px;border-color:#425642;background:#111a14;box-shadow:0 24px 70px #0006;overflow:hidden}
+.portfolio-react-card[data-slot="0"]{border-color:#8da968;box-shadow:0 28px 80px #0008,0 0 0 1px #c8f36b1c}
+.portfolio-project-art{height:174px;background-image:radial-gradient(circle at 80% 20%,#c8f36b20,transparent 34%),linear-gradient(135deg,#24392a,#142019)}
+.portfolio-project-art:after{border-color:#c8f36b30}
+.portfolio-project-art b{font-size:clamp(28px,4vw,46px)}
+.portfolio-project-body{padding:24px 26px 26px}
+.portfolio-project-body h3{font-size:clamp(25px,3vw,32px)}
+.portfolio-project-body>p{min-height:74px}
+.portfolio-project-tags li{border-color:#3c503d;border-radius:999px;background:#c8f36b0b}
+.portfolio-project-links{border-color:#34473a}
+.portfolio-project-links a,.portfolio-project-links button{color:#d4ff82}
+.portfolio-project-index{border-color:#34473a}
+.portfolio-project-index button[aria-pressed=true]{background:#c8f36b14;border-color:#526b45}
+.portfolio-project-dialog{border-radius:18px;background:#142019}
+.portfolio-carousel-controls button{border:1px solid #3c503d;border-radius:999px;background:#17231a;color:#e7f2e2;padding:9px 14px}
+.portfolio-react-hint{line-height:1.8}
+@media(max-width:760px){.portfolio-react-showcase{padding:14px}.portfolio-project-deck{min-height:470px}}
+@media(prefers-reduced-motion:reduce){.portfolio-react-showcase *{scroll-behavior:auto}}
