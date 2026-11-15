@@ -18,7 +18,7 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 | Button default props | Defaults, lists & children: default Click me / md and custom Save / lg |
 | PropTypes and TypeScript | Explanation in the Button example |
 | Component composition and children | Card and Header + Page + Card + Footer composition |
-| Lists, map() and stable keys | Course Catalog, notifications, Student Directory, StudentList and score list |
+| Lists, map() and stable keys | Course Catalog, interactive notifications, Student Directory, StudentList and score list |
 | Conditional rendering | Alert with null, ternary pass/fail, and Dashboard with && / !user && |
 | ProductCard challenge | ProductCard exercise with safe defaults, price, rating and stock status |
 | Portfolio homework | ProjectCard, ProjectList, FilterBar and three personal projects |
@@ -47,7 +47,7 @@ The Portfolio Gallery demonstrates a complete component-driven project showcase:
 The component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.
 
 ## Component organisation note
-This GitHub Pages lesson uses React 18 UMD and Babel Standalone, so the live components remain in one browser-loaded `app.jsx` file rather than requiring an npm build. Shared logic used by the lesson is exposed through `window.Week11Checks` and exercised by `tests.html`. A Vite conversion would allow the component functions to move into true ES module files such as `components/ProductCard.jsx` and `components/StudentList.jsx`; that build-system conversion is intentionally not mixed into this already-working GitHub Pages lesson.
+This GitHub Pages lesson uses React 18 UMD and Babel Standalone, so the live components remain in one browser-loaded `app.jsx` file rather than requiring an npm build. The component functions are separated by responsibility inside the lesson source, and shared helper logic is exposed through `window.Week11Checks` and exercised by `tests.html`. The separate Week 10 portfolio now also mounts a React project showcase with reusable cards, filters, a keyboard/touch carousel and a details dialog.
 
 ## Run
 Open index.html with an internet connection and JavaScript enabled. React, ReactDOM and Babel are loaded from their CDNs. The interactive lesson runs directly on GitHub Pages without a local build step.
