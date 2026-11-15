@@ -10,6 +10,7 @@
 - [React foundations](https://abinaah2004-maker.github.io/WebClass/week11-monday/index.html)
 - [StudentCard lab](https://abinaah2004-maker.github.io/WebClass/week11-monday/lab.html)
 - [Knowledge check](https://abinaah2004-maker.github.io/WebClass/week11-monday/review.html)
+- [Browser tests](https://abinaah2004-maker.github.io/WebClass/week11-monday/tests.html)
 - [Friday React coursework](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html)
 
 ## Source organisation
