@@ -51,6 +51,13 @@
       return result.length === 1 && result[0].title === "React lesson";
     });
     test("All filter keeps every portfolio project", () => checks.filterProjects([{tech:["CSS"]},{tech:["React"]},{tech:["API"]}], "All").length === 3);
+    test("Project search is case-insensitive and searches technologies", () => {
+      const result = checks.searchProjects([{title:"React lesson",description:"Components",category:"Coursework",tech:["React","JS"]},{title:"BookFinder",description:"Book search",category:"API project",tech:["API"]}], "rEaCt");
+      return result.length === 1 && result[0].title === "React lesson";
+    });
+    test("Empty project search keeps all projects", () => checks.searchProjects([{title:"One"},{title:"Two"}], "  ").length === 2);
+    test("Featured-only filter keeps featured projects", () => checks.getFeaturedProjects([{featured:true},{featured:false},{featured:true}], true).length === 2);
+    test("Featured filter off keeps all projects", () => checks.getFeaturedProjects([{featured:true},{featured:false}], false).length === 2);
     test("Stock-only filter removes unavailable products", () => checks.getStockProducts([{inStock:true},{inStock:false},{inStock:true}], true).length === 2);
     test("Unfiltered product list keeps all products", () => checks.getStockProducts([{inStock:true},{inStock:false}], false).length === 2);
     report(results);
