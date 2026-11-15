@@ -29,12 +29,12 @@
     const results=[];
     const test=(label,fn)=>{try{results.push({label,passed:Boolean(fn())});}catch(error){results.push({label,passed:false,detail:error.message});}};
     const pause=()=>wait(40);
-    test("Portfolio data contains six distinct projects",()=>checks.projects.length===6&&new Set(checks.projects.map(p=>p.id)).size===6);
+    test("Portfolio data contains five distinct projects",()=>checks.projects.length===5&&new Set(checks.projects.map(p=>p.id)).size===6);
     test("Every project has a live destination and source link",()=>checks.projects.every(p=>p.demoUrl&&p.githubUrl));
     test("React category returns the Week 11 component project",()=>{const items=checks.filterProjects(checks.projects,"React");return items.length===1&&items[0].id==="react-components";});
     test("Open Library technology filter returns Book Search",()=>{const items=checks.filterProjects(checks.projects,"Open Library");return items.length===1&&items[0].id==="book-search";});
-    test("All category preserves every project",()=>checks.filterProjects(checks.projects,"All").length===6);
-    test("Gallery initially renders six cards and one active card",()=>doc.querySelectorAll(".portfolio-react-card").length===6&&doc.querySelectorAll('.portfolio-react-card[data-slot="0"]').length===1);
+    test("All category preserves every project",()=>checks.filterProjects(checks.projects,"All").length===5);
+    test("Gallery initially renders five cards and one active card",()=>doc.querySelectorAll(".portfolio-react-card").length===6&&doc.querySelectorAll('.portfolio-react-card[data-slot="0"]').length===1);
     const filterButtons=[...doc.querySelectorAll(".portfolio-react-filters button")];
     filterButtons.find(button=>button.textContent.trim()==="React")?.click();await pause();
     test("React technology filter updates the rendered carousel",()=>doc.querySelectorAll(".portfolio-react-card").length===1&&doc.querySelector(".portfolio-react-card h3")?.textContent==="React Components & Props");
@@ -43,7 +43,7 @@
     const deck=doc.querySelector(".portfolio-project-deck");
     const next=doc.querySelector('[aria-label="Next project"]');
     next?.click();await pause();
-    test("Next button selects the next project",()=>doc.querySelector('.portfolio-react-card[data-slot="0"] h3')?.textContent==="Job Application Tracker");
+    test("Next button selects the next project",()=>doc.querySelector('.portfolio-react-card[data-slot="0"] h3')?.textContent==="Study Planner");
     deck?.dispatchEvent(new win.KeyboardEvent("keydown",{key:"ArrowLeft",bubbles:true}));await pause();
     test("Keyboard ArrowLeft returns to the previous project",()=>doc.querySelector('.portfolio-react-card[data-slot="0"] h3')?.textContent==="Expense Tracker");
     doc.querySelector('.portfolio-react-card[data-slot="0"] button')?.click();await pause();
