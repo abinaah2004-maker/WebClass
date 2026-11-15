@@ -15,6 +15,8 @@
 
 Open: [Week 11 Monday](https://abinaah2004-maker.github.io/WebClass/week11-monday/)
 
+- [Monday React task hub](https://abinaah2004-maker.github.io/WebClass/week11-monday/tasks.html)
+
 ## Friday — React components and props
 
 The Friday submission is a React 18 JSX application with reusable function components and interactive examples.
