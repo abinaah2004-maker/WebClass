@@ -108,7 +108,7 @@ Run Lighthouse against **my own deployed URL** if the assignment asks for it. Sa
 
 ## React component work added for Week 11
 
-The selected-work section of `portfolio/index.html` is rendered by `portfolio/portfolio-gallery.jsx`. It demonstrates reusable React project cards, a filter bar, a keyboard/touch carousel, and a native details dialog. The five-project gallery keeps Expense Tracker, Study Planner, Book Search, Memory Match and React Components & Props; the nonworking Job Application Tracker was removed from the gallery and project index. Browser checks are available at `portfolio/tests.html`.
+The selected-work section of `portfolio/index.html` is a modular React gallery. `portfolio/projects.js` stores project records, `portfolio/utils.js` contains pure filtering helpers, `portfolio/components.js` exports reusable gallery components, and `portfolio/portfolio-gallery.jsx` owns the interactive carousel and page state. The page loads these modules before Babel compiles the JSX. The five-project gallery keeps Expense Tracker, Study Planner, Book Search, Memory Match and React Components & Props; the nonworking Job Application Tracker was removed from the gallery and project index. Browser checks are available at `portfolio/tests.html`.
 
 ## 8. Submission links
 
