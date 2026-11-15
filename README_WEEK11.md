@@ -26,8 +26,8 @@ The Friday submission is a React 18 JSX application with reusable function compo
 5. **Task 11-A Student Directory:** exactly three profile cards rendered by one five-prop component; my profile can be edited live.
 6. **Portfolio Gallery:** four personal/coursework projects with reusable ProjectCard, ProjectList and FilterBar components, search, technology filters, featured-only mode and project details.
 7. **Component Lab:** Greeting, StudentList, conditional Alert, logged-in dashboard and interactive GradeBoard.
-9. **React portfolio integration:** the Week 10 portfolio selected-work area uses reusable React project cards, filters, a keyboard/touch carousel and a project-details dialog.
 8. **Takeaways and resources:** component best practices, key React rules and a `useState` counter.
+9. **React portfolio integration:** the Week 10 portfolio selected-work area uses reusable React project cards, filters, a keyboard/touch carousel and a project-details dialog.
 
 Open: [React project showcase in my main portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/#work) · [Week 11 Friday task hub](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html) · [Open the full React lesson](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
 
@@ -44,3 +44,4 @@ Open: [React project showcase in my main portfolio](https://abinaah2004-maker.gi
 
 - Monday: `week11-monday/app.jsx`, `week11-monday/styles.css`
 - Friday: `week11-friday/index.html`, `week11-friday/tasks.html`, `week11-friday/app.jsx`, `week11-friday/styles.css`
+- React portfolio: `week10/portfolio/portfolio-gallery.jsx`, `week10/portfolio/index.html`, `week10/portfolio/style.css`
