@@ -11,7 +11,7 @@
 <body>
   <a class="skip" href="#main">Skip to main content</a>
   <div id="root">
-    <main class="shell">
+    <main class="shell" id="main">
       <section class="panel loading-panel" aria-live="polite">
         <p class="eyebrow">WEEK 11 · FRIDAY</p>
         <h1>React components</h1>
@@ -26,7 +26,7 @@
   <script>
     if (!window.React || !window.ReactDOM || !window.Babel) {
       document.getElementById("root").innerHTML =
-        '<main class="shell"><section class="panel"><h1>React could not load</h1><p>Check your internet connection and refresh this page. React and Babel are loaded from public CDNs.</p><a href="./tasks.html">Return to Friday tasks</a></section></main>';
+        '<main class="shell" id="main"><section class="panel"><h1>React could not load</h1><p>Check your internet connection and refresh this page. React and Babel are loaded from public CDNs.</p><a href="./tasks.html">Return to Friday tasks</a></section></main>';
     }
   </script>
   <script type="text/babel" data-presets="react" src="./app.jsx"></script>

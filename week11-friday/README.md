@@ -42,11 +42,11 @@ The Week 10 portfolio selected-work section now uses React components: `Portfoli
 
 ## Quality checks
 
-Open `tests.html` from the Friday task hub to run browser-based checks against helper functions used by the live lesson. The checks cover KRW formatting, invalid-price fallback, the 60-point pass boundary, React/All project filtering, case-insensitive project search, featured-only filtering, stock-only filtering, unread notification filtering, unread counts, toggling, dismissing and marking all notifications read. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.
+Open `tests.html` from the Friday task hub to run browser checks against both shared helpers and the rendered lesson. The suite covers KRW formatting, invalid-price fallback, the 60-point pass boundary, project filtering and search, featured and stock filters, notification state helpers, Greeting and ProductCard output, course filtering, initials, unread notifications, the three-card directory, Portfolio Gallery source/demo links, conditional alerts and dashboard output, and the useState counter. These automated checks complement (but do not replace) keyboard, responsive-layout and screen-reader checks.
 
 ## Portfolio Gallery React components
 
-The Portfolio Gallery demonstrates a complete component-driven project showcase: `ProjectCard` receives one project through props, `ProjectList` maps the filtered data with stable keys, and `FilterBar` controls the selected technology. React state also controls search text, featured-only mode and the selected project. The native `<dialog>` provides keyboard dismissal, a labelled title, a close control and focus restoration to the Details button.
+The Portfolio Gallery demonstrates a component-driven project showcase: `ProjectCard` receives named props for its title, description, technology stack, GitHub source and live demo; `ProjectList` spreads each project record into a card with a stable key; and `FilterBar` controls the selected technology. React state also controls search text, featured-only mode and the selected project. The native `<dialog>` provides keyboard dismissal, a labelled title, a close control and focus restoration to the Details button.
 
 The component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.
 

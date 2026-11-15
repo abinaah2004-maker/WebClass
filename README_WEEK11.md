@@ -33,15 +33,16 @@ Open: [React project showcase in my main portfolio](https://abinaah2004-maker.gi
 
 ## Implementation notes
 
-- `week11-friday/app.jsx` contains the React components and `useState` interactions for filters, editable profiles, notification inbox actions, grade scores, alerts and the counter.
+- `week11-friday/app.jsx` contains the React components and `useState` interactions for filters, editable profiles, notification inbox actions, grade scores, alerts and the counter. The Portfolio Gallery passes its title, description, technology stack, source URL and demo URL as named `ProjectCard` props.
 - `week10/portfolio/portfolio-gallery.jsx` adds reusable React project cards, a filter bar, carousel controls and a project-details dialog to the main portfolio.
 - `week11-friday/tasks.html` is the Friday submission hub. Each task links directly to its matching lesson section using a URL hash.
 - React 18, ReactDOM and Babel Standalone are loaded in order from public CDNs so GitHub Pages can compile and render the JSX without a local build step. An internet connection is required; a visible fallback explains if a CDN cannot load.
+- `week11-friday/tests.html` and `tests.js` check helper logic plus rendered components and core browser interactions. These checks are not a substitute for manual keyboard and screen-reader testing.
 - The directory uses my student ID. GPA remains blank until I enter a real value. The two other entries are clearly labelled sample profiles.
 - Course examples and practice scores are demonstrations, not official university records or grades.
 
 ## Source files
 
 - Monday: `week11-monday/app.jsx`, `week11-monday/styles.css`
-- Friday: `week11-friday/index.html`, `week11-friday/tasks.html`, `week11-friday/app.jsx`, `week11-friday/styles.css`
+- Friday: `week11-friday/index.html`, `week11-friday/tasks.html`, `week11-friday/app.jsx`, `week11-friday/styles.css`, `week11-friday/tests.html`, `week11-friday/tests.js`
 - React portfolio: `week10/portfolio/portfolio-gallery.jsx`, `week10/portfolio/index.html`, `week10/portfolio/style.css`
