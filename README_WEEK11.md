@@ -25,10 +25,10 @@ The Friday submission is a React 18 JSX application with reusable function compo
 4. **Defaults, lists and children:** ProfileCard default props, notification types, Button defaults and a reusable Card that renders `props.children`.
 5. **Task 11-A Student Directory:** exactly three profile cards rendered by one five-prop component; my profile can be edited live.
 6. **Portfolio Gallery:** project cards for Memory Match, BookFinder and Learn Korean With Me, with technology filters.
-7. **Component Lab:** Greeting, StudentList, conditional Alert, logged-in dashboard and interactive GradeBoard.
+7. **Component Lab:** Greeting, StudentList, conditional Alert, logged-in dashboard and interactive GradeBoard.\n9. **React portfolio integration:** the Week 10 portfolio selected-work area uses reusable React project cards, filters, a keyboard/touch carousel and a project-details dialog.
 8. **Takeaways and resources:** component best practices, key React rules and a `useState` counter.
 
-Open: [Week 11 Friday task hub](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html) · [Open the full React lesson](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
+Open: [React project showcase in my main portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/#work) · [Week 11 Friday task hub](https://abinaah2004-maker.github.io/WebClass/week11-friday/tasks.html) · [Open the full React lesson](https://abinaah2004-maker.github.io/WebClass/week11-friday/)
 
 ## Implementation notes
 
