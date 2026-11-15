@@ -18,7 +18,7 @@
 |---|---|---|---|
 | Coursework hub | Connected Week 10 page with links to six exercise pages, projects, portfolio and evidence | Connected hub for exercises, portfolio, Book Search and evidence | Both have a hub; mine has more project links |
 | Monday E1–E3 / Friday E1–E3 | Six separate exercise pages | Six exercises linked from the hub and supporting repositories | Present in mine; capture my own completion evidence |
-| Portfolio projects | Expense Tracker, Job Application Tracker, Study Planner, Book Search and Memory Match | Memory Match, Book Search and JokeLab are featured | Mine lists more projects |
+| Portfolio projects | Expense Tracker, Study Planner, Book Search and Memory Match | Memory Match, Book Search and JokeLab are featured | Mine lists more projects |
 | Portfolio interactions | Responsive navigation menu, project filters, skill tabs, scroll progress and reveal effects | Project filters, skill controls, theme toggle and scroll progress | Both interactive; Sudip has a theme toggle |
 | Personal portrait | Initials/decorative profile card; no personal photograph yet | Portrait image included | My portrait is a pending personal-content item; add my own photo when ready |
 | Accessibility report | Report template with blank/unrecorded test results | Completed report with stated keyboard test observations and implementation details | **My report needs completion using my real test results** |
@@ -37,7 +37,7 @@
   - `week10/friday/e2-test-404.html`
   - `week10/friday/e3-custom-404.html`
 - Personal portfolio with separate HTML, CSS and JavaScript files.
-- Expense Tracker, Job Tracker, Study Planner and Book Search.
+- Expense Tracker, Study Planner and Book Search.
 - Existing Memory Match team project linked from the hub.
 - Interactive keyboard accessibility test page.
 - Root-level custom `404.html`.
