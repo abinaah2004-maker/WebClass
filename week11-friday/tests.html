@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Automated browser checks for Week 11 Friday React coursework by Abinash Lamichhane.">
+  <meta name="theme-color" content="#f7f4ee">
+  <title>Week 11 Friday · Quality Checks | Abinash Lamichhane</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .checks-panel{max-width:820px;margin:48px auto;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+    .checks-panel h1{font:800 clamp(30px,6vw,48px)/1.05 Manrope;letter-spacing:-.04em}
+    .check-list{list-style:none;padding:0;display:grid;gap:10px}
+    .check-list li{padding:12px 14px;border:1px solid var(--line);border-radius:9px;display:flex;gap:12px;align-items:center}
+    .check-list .pass{color:#18794e;font-weight:800}.check-list .fail{color:#b42318;font-weight:800}
+    .check-summary{font-weight:800;margin:18px 0}.visually-hidden-frame{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    .check-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  </style>
+  <script src="./tests.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <main class="shell" id="main">
+    <header class="topbar"><a class="brand" href="./tasks.html">ABINASH / WEEK 11</a><nav class="toplinks"><a href="./tasks.html">Friday tasks</a><a href="./index.html">React lesson</a></nav></header>
+    <section class="checks-panel">
+      <p class="eyebrow">WEEK 11 / FRIDAY / QUALITY ASSURANCE</p>
+      <h1>Automated checks.</h1>
+      <p>This page loads the real lesson in a hidden same-origin frame and tests the shared helper functions used by ProductCard, the stock filter, the Portfolio Gallery and GradeCard.</p>
+      <p id="check-status" class="check-summary" role="status" aria-live="polite">Loading the React lesson and preparing checks…</p>
+      <ul id="check-results" class="check-list" aria-label="Test results"></ul>
+      <div class="check-actions"><button type="button" class="filter active" id="run-again">Run checks again</button><a class="filter" href="./index.html#product">Open ProductCard</a><a class="filter" href="./index.html#gallery">Open Gallery</a></div>
+      <p class="small-note">These browser checks verify shared data logic and boundary cases. They do not replace a manual visual, keyboard or screen-reader review.</p>
+    </section>
+    <footer class="footer"><span>Week 11 Friday · Abinash Lamichhane · 202637724</span><a href="./tasks.html">Back to exercise index</a></footer>
+  </main>
+  <iframe class="visually-hidden-frame" id="lesson-frame" src="./index.html#summary" title="Hidden Week 11 React lesson used for automated checks" tabindex="-1" aria-hidden="true"></iframe>
+</body>
+</html>
