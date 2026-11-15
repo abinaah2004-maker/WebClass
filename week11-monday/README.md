@@ -18,6 +18,7 @@
 - `components.js` contains reusable `StudentCard` and `KnowledgeQuestion` React components.
 - `app.jsx` contains the page composition, state and event handling.
 - `styles.css` contains the responsive layout and visual system.
+- `tests.html` runs browser checks for the data module, component module, live StudentCard preview and quiz feedback.
 - `index.html`, `lab.html` and `review.html` are separate entry points that open the relevant lesson section.
 
 The app uses React 18, ReactDOM and Babel Standalone from public CDNs so it can run on GitHub Pages without a local build step. The project content, code and examples are original to this repository.
