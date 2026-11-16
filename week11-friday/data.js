@@ -1,14 +1,127 @@
-/* Week 11 Friday coursework data, separate from presentation. */
-window.Week11Data={
-products:[{id:1,name:"Wireless Earbuds",price:89000,rating:4.5,inStock:true,category:"Audio"},{id:2,name:"Compact Keyboard",price:69000,rating:4.2,inStock:false,category:"Desk"},{id:3,name:"USB-C Hub",price:35000,rating:4,inStock:true,category:"Accessories"},{id:4,name:"Wireless Mouse",price:29000,rating:4.6,inStock:true,category:"Desk"},{id:5,name:"Laptop Stand",price:39000,rating:4.4,inStock:true,category:"Desk"},{id:6,name:"Portable SSD 1TB",price:119000,rating:4.8,inStock:false,category:"Storage"},{id:7,name:"27-inch Monitor",price:249000,rating:4.7,inStock:true,category:"Display"},{id:8,name:"Noise-Cancelling Headphones",price:159000,rating:4.6,inStock:true,category:"Audio"},{id:9,name:"1080p Webcam",price:49000,rating:4.3,inStock:false,category:"Video"}],
-courses:[{id:1,title:"Web Programming",instructor:"Computer Engineering",credits:3,required:true},{id:2,title:"Database Systems",instructor:"Computer Engineering",credits:3,required:true},{id:3,title:"Mobile App Development",instructor:"Sample course team",credits:2,required:false},{id:4,title:"Operating Systems",instructor:"Computer Engineering",credits:3,required:true},{id:5,title:"Artificial Intelligence",instructor:"Sample course team",credits:2,required:false},{id:6,title:"Discrete Mathematics",instructor:"Mathematics department",credits:3,required:true},{id:7,title:"College English",instructor:"Language department",credits:1,required:false}],
-projects:[
-{id:"memory",title:"Memory Match",category:"Interactive game",featured:true,description:"A memory game with timed challenges, hints and a two-player mode.",tech:["JavaScript","CSS"],features:["Match pairs while the timer is running.","Choose a practice or two-player challenge.","Use keyboard-friendly controls and clear game feedback."],source:"https://github.com/abinaah2004-maker/WebClass/tree/main/teamproject",demo:"../teamproject/index.html"},
-{id:"book",title:"BookFinder",category:"API project",featured:true,description:"Search books using the Open Library API and explore live results.",tech:["JavaScript","API","CSS"],features:["Search the Open Library catalogue.","Render book results and cover images.","Handle loading, empty and error states."],source:"https://github.com/abinaah2004-maker/WebClass/tree/main/bookfinder",demo:"../bookfinder/index.html"},
-{id:"korean",title:"Learn Korean With Me",category:"Learning project",featured:true,description:"A practical Korean study project with lessons, vocabulary and real-life speaking practice.",tech:["JavaScript","HTML","CSS"],features:["Study practical Korean vocabulary and grammar.","Practise conversations for everyday situations.","Explore staged lessons and interactive review."],source:"https://github.com/abinaah2004-maker/WebClass/tree/main/korean-learning",demo:"../korean-learning/index.html"},
-{id:"react",title:"React Components & Props",category:"React coursework",featured:false,description:"My Week 11 React lesson demonstrating reusable components, props, JSX, array rendering, filters and conditional rendering.",tech:["React","JavaScript","CSS"],features:["Build reusable ProductCard, CourseCard and ProjectCard components.","Pass information through props and compose components with children.","Use React state for filters, search and interactive project details."],source:"https://github.com/abinaah2004-maker/WebClass/tree/main/week11-friday",demo:"./index.html#foundations"}
-],
-initialStudents:[{id:"abinash-profile",name:"Abinash Lamichhane",studentId:"202637724",major:"Computer Engineering",year:"Year 1",gpa:""},{id:"sample-profile-a",name:"Sample profile A",studentId:"DEMO-001",major:"Computer Engineering",year:"Year 1",gpa:"Sample"},{id:"sample-profile-b",name:"Sample profile B",studentId:"DEMO-002",major:"Computer Engineering",year:"Year 1",gpa:"Sample"}],
-notices:[{id:"notice-a",type:"success",message:"Profile updated successfully"},{id:"notice-b",type:"warning",message:"Password expires in 3 days"},{id:"notice-c",type:"info",message:"New learning resources are available"}],
-classStudents:[{id:"student-avi",name:"Abinash Lamichhane",grade:"A"},{id:"student-a",name:"Sample profile A",grade:"B+"},{id:"student-b",name:"Sample profile B",grade:"A-"}]
+/* Example data used by the Week 11 Friday React exercises. */
+
+window.Week11Data = {
+  products: [
+    { id: 1, name: "Wireless Earbuds", price: 89000, rating: 4.5, inStock: true, category: "Audio" },
+    { id: 2, name: "Compact Keyboard", price: 69000, rating: 4.2, inStock: false, category: "Desk" },
+    { id: 3, name: "USB-C Hub", price: 35000, rating: 4, inStock: true, category: "Accessories" },
+    { id: 4, name: "Wireless Mouse", price: 29000, rating: 4.6, inStock: true, category: "Desk" },
+    { id: 5, name: "Laptop Stand", price: 39000, rating: 4.4, inStock: true, category: "Desk" },
+    { id: 6, name: "Portable SSD 1TB", price: 119000, rating: 4.8, inStock: false, category: "Storage" },
+    { id: 7, name: "27-inch Monitor", price: 249000, rating: 4.7, inStock: true, category: "Display" },
+    { id: 8, name: "Noise-Cancelling Headphones", price: 159000, rating: 4.6, inStock: true, category: "Audio" },
+    { id: 9, name: "1080p Webcam", price: 49000, rating: 4.3, inStock: false, category: "Video" }
+  ],
+
+  courses: [
+    { id: 1, title: "Web Programming", instructor: "Computer Engineering", credits: 3, required: true },
+    { id: 2, title: "Database Systems", instructor: "Computer Engineering", credits: 3, required: true },
+    { id: 3, title: "Mobile App Development", instructor: "Sample course", credits: 2, required: false },
+    { id: 4, title: "Operating Systems", instructor: "Computer Engineering", credits: 3, required: true },
+    { id: 5, title: "Artificial Intelligence", instructor: "Sample course", credits: 2, required: false },
+    { id: 6, title: "Discrete Mathematics", instructor: "Mathematics department", credits: 3, required: true },
+    { id: 7, title: "College English", instructor: "Language department", credits: 1, required: false }
+  ],
+
+  projects: [
+    {
+      id: "memory",
+      title: "Memory Match",
+      category: "Interactive game",
+      featured: true,
+      description: "A memory game with timed challenges, hints and a two-player mode.",
+      tech: ["JavaScript", "CSS"],
+      features: [
+        "Match pairs while the timer is running.",
+        "Choose a practice or two-player challenge.",
+        "Use keyboard-friendly controls and clear game feedback."
+      ],
+      source: "https://github.com/abinaah2004-maker/WebClass/tree/main/teamproject",
+      demo: "../teamproject/index.html"
+    },
+    {
+      id: "book",
+      title: "BookFinder",
+      category: "API project",
+      featured: true,
+      description: "Search books using the Open Library API and explore live results.",
+      tech: ["JavaScript", "API", "CSS"],
+      features: [
+        "Search the Open Library catalogue.",
+        "Render book results and cover images.",
+        "Handle loading, empty and error states."
+      ],
+      source: "https://github.com/abinaah2004-maker/WebClass/tree/main/bookfinder",
+      demo: "../bookfinder/index.html"
+    },
+    {
+      id: "korean",
+      title: "Learn Korean With Me",
+      category: "Learning project",
+      featured: true,
+      description: "A practical Korean study project with lessons, vocabulary and real-life speaking practice.",
+      tech: ["JavaScript", "HTML", "CSS"],
+      features: [
+        "Study practical Korean vocabulary and grammar.",
+        "Practise conversations for everyday situations.",
+        "Explore staged lessons and interactive review."
+      ],
+      source: "https://github.com/abinaah2004-maker/WebClass/tree/main/korean-learning",
+      demo: "../korean-learning/index.html"
+    },
+    {
+      id: "react",
+      title: "React Components & Props",
+      category: "React coursework",
+      featured: false,
+      description: "My Week 11 React lesson demonstrating reusable components, props, JSX, lists, filters and conditional rendering.",
+      tech: ["React", "JavaScript", "CSS"],
+      features: [
+        "Build reusable ProductCard, CourseCard and ProjectCard components.",
+        "Pass information through props and use children to compose components.",
+        "Use React state for filters, search and project details."
+      ],
+      source: "https://github.com/abinaah2004-maker/WebClass/tree/main/week11-friday",
+      demo: "./index.html#foundations"
+    }
+  ],
+
+  initialStudents: [
+    {
+      id: "abinash-profile",
+      name: "Abinash Lamichhane",
+      studentId: "202637724",
+      major: "Computer Engineering",
+      year: "Year 1",
+      gpa: ""
+    },
+    {
+      id: "sample-profile-a",
+      name: "Sample profile A",
+      studentId: "DEMO-001",
+      major: "Computer Engineering",
+      year: "Year 1",
+      gpa: "Sample"
+    },
+    {
+      id: "sample-profile-b",
+      name: "Sample profile B",
+      studentId: "DEMO-002",
+      major: "Computer Engineering",
+      year: "Year 1",
+      gpa: "Sample"
+    }
+  ],
+
+  notices: [
+    { id: "notice-a", type: "success", message: "Profile updated successfully" },
+    { id: "notice-b", type: "warning", message: "Password expires in 3 days" },
+    { id: "notice-c", type: "info", message: "New learning resources are available" }
+  ],
+
+  classStudents: [
+    { id: "student-1", name: "Abinash Lamichhane", grade: "A" },
+    { id: "student-2", name: "Sample student A", grade: "B+" },
+    { id: "student-3", name: "Sample student B", grade: "A-" }
+  ]
 };
