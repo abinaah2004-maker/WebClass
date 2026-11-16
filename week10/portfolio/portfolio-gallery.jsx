@@ -1,19 +1,174 @@
-if(!window.React||!window.ReactDOM){const mount=document.getElementById("react-project-gallery");if(mount)mount.textContent="The React gallery could not load. Check your connection and refresh the page.";}else{
-const {useState,useEffect,useRef}=React;
-const portfolioProjects=window.PortfolioProjectData;
-const {filterPortfolioProjects,getPortfolioTechnologies}=window.PortfolioGalleryUtils;
-const {PortfolioFilterBar,PortfolioProjectList,PortfolioProjectDetails}=window.PortfolioReactComponents;
+// The gallery uses state to filter projects and control the carousel.
+if (!window.React || !window.ReactDOM) {
+  const mount = document.getElementById("react-project-gallery");
 
+  if (mount) {
+    mount.textContent =
+      "The React gallery could not load. Check your connection and refresh the page.";
+  }
+} else {
+  const { useState, useEffect, useRef } = React;
 
+  const projects = window.PortfolioProjectData;
+  const {
+    filterPortfolioProjects,
+    getPortfolioTechnologies
+  } = window.PortfolioGalleryUtils;
 
+  const {
+    PortfolioFilterBar,
+    PortfolioProjectList,
+    PortfolioProjectDetails
+  } = window.PortfolioReactComponents;
 
+  function PortfolioProjects() {
+    const [category, setCategory] = useState("All");
+    const [current, setCurrent] = useState(0);
+    const [details, setDetails] = useState(null);
 
+    const deckRef = useRef(null);
+    const triggerRef = useRef(null);
 
+    const technologies = getPortfolioTechnologies(projects);
+    const visibleProjects = filterPortfolioProjects(projects, category);
 
+    // Start at the first card when the filter changes.
+    useEffect(() => {
+      setCurrent(0);
+    }, [category]);
 
-function PortfolioProjects(){const [category,setCategory]=useState("All"),[current,setCurrent]=useState(0),[details,setDetails]=useState(null);const deckRef=useRef(null),triggerRef=useRef(null),touchStart=useRef(null);const technologies=getPortfolioTechnologies(portfolioProjects);const visible=filterPortfolioProjects(portfolioProjects,category);useEffect(()=>{setCurrent(0);},[category]);function choose(index){if(!visible.length)return;if(deckRef.current?.contains(document.activeElement))deckRef.current.focus({preventScroll:true});setCurrent((index+visible.length)%visible.length);}function showDetails(project,trigger){triggerRef.current=trigger;setDetails(project);}function handleKeys(event){if(event.key==="ArrowRight"){event.preventDefault();choose(current+1);}if(event.key==="ArrowLeft"){event.preventDefault();choose(current-1);}}function pointerDown(event){if(event.pointerType==="touch")touchStart.current={x:event.clientX,y:event.clientY};}function pointerCancel(){touchStart.current=null;}function pointerUp(event){if(!touchStart.current)return;const dx=event.clientX-touchStart.current.x,dy=event.clientY-touchStart.current.y;touchStart.current=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.5)choose(current+(dx<0?1:-1));}return <div className="portfolio-react-showcase"><div className="portfolio-react-toolbar"><PortfolioFilterBar categories={technologies} selected={category} onSelect={setCategory}/><p className="mono" aria-live="polite">{visible.length} {visible.length===1?"project":"projects"} · {current+1} of {visible.length||0}</p></div><PortfolioProjectList projects={visible} current={current} onSelect={choose} onDetails={showDetails} deckRef={deckRef} onKeyDown={handleKeys} onPointerDown={pointerDown} onPointerCancel={pointerCancel} onPointerUp={pointerUp}/>{visible.length>1&&<div className="portfolio-carousel-controls"><button type="button" onClick={()=>choose(current-1)} aria-label="Previous project">← Previous</button><div className="portfolio-carousel-dots" aria-label="Choose a project">{visible.map((project,index)=><button type="button" key={project.id} className={index===current?"active":""} aria-label={"Show "+project.title} aria-pressed={index===current} onClick={()=>choose(index)}>{String(index+1).padStart(2,"0")}</button>)}</div><button type="button" onClick={()=>choose(current+1)} aria-label="Next project">Next →</button></div>}<div className="portfolio-project-index" role="group" aria-label="Choose a project">{visible.map((project,index)=><button type="button" key={project.id} aria-controls="portfolio-project-deck" aria-pressed={index===current} onClick={()=>choose(index)}><span>{String(index+1).padStart(2,"0")}</span>{project.title}</button>)}</div><p className="portfolio-react-hint">Use the arrows, keyboard ← → keys, or swipe on a touch screen to explore the projects. Open Details for a short project summary. <a href="./tests.html">Run browser checks ↗</a></p><PortfolioProjectDetails project={details} triggerRef={triggerRef} onClose={()=>setDetails(null)}/></div>}
+    function chooseProject(index) {
+      if (visibleProjects.length === 0) return;
 
-window.PortfolioGalleryChecks={projects:portfolioProjects,filterProjects:filterPortfolioProjects};
-ReactDOM.createRoot(document.getElementById("react-project-gallery")).render(<PortfolioProjects/>);
+      if (deckRef.current?.contains(document.activeElement)) {
+        deckRef.current.focus({ preventScroll: true });
+      }
 
+      setCurrent((index + visibleProjects.length) % visibleProjects.length);
+    }
+
+    function showDetails(project, button) {
+      triggerRef.current = button;
+      setDetails(project);
+    }
+
+    function handleKeys(event) {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        chooseProject(current + 1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        chooseProject(current - 1);
+      }
+    }
+
+    return (
+      <div className="portfolio-react-showcase">
+        <div className="portfolio-react-toolbar">
+          <PortfolioFilterBar
+            categories={technologies}
+            selected={category}
+            onSelect={setCategory}
+          />
+
+          <p className="mono" aria-live="polite">
+            {visibleProjects.length}{" "}
+            {visibleProjects.length === 1 ? "project" : "projects"}
+            {" · "}
+            {visibleProjects.length ? current + 1 : 0} of {visibleProjects.length}
+          </p>
+        </div>
+
+        <PortfolioProjectList
+          projects={visibleProjects}
+          current={current}
+          onSelect={chooseProject}
+          onDetails={showDetails}
+          deckRef={deckRef}
+          onKeyDown={handleKeys}
+        />
+
+        {visibleProjects.length > 1 && (
+          <div className="portfolio-carousel-controls">
+            <button
+              type="button"
+              onClick={() => chooseProject(current - 1)}
+              aria-label="Previous project"
+            >
+              ← Previous
+            </button>
+
+            <div
+              className="portfolio-carousel-dots"
+              role="group"
+              aria-label="Choose a project"
+            >
+              {visibleProjects.map((project, index) => (
+                <button
+                  type="button"
+                  key={project.id}
+                  className={index === current ? "active" : ""}
+                  aria-label={"Show " + project.title}
+                  aria-pressed={index === current}
+                  onClick={() => chooseProject(index)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => chooseProject(current + 1)}
+              aria-label="Next project"
+            >
+              Next →
+            </button>
+          </div>
+        )}
+
+        <div
+          className="portfolio-project-index"
+          role="group"
+          aria-label="Project list"
+        >
+          {visibleProjects.map((project, index) => (
+            <button
+              type="button"
+              key={project.id}
+              aria-controls="portfolio-project-deck"
+              aria-pressed={index === current}
+              onClick={() => chooseProject(index)}
+            >
+              <span>{index + 1}</span>
+              {project.title}
+            </button>
+          ))}
+        </div>
+
+        <p className="portfolio-react-hint">
+          Use the arrow buttons or keyboard arrow keys to explore the projects.
+          Open Details to read a short summary.{" "}
+          <a href="./tests.html">Run browser checks ↗</a>
+        </p>
+
+        <PortfolioProjectDetails
+          project={details}
+          triggerRef={triggerRef}
+          onClose={() => setDetails(null)}
+        />
+      </div>
+    );
+  }
+
+  window.PortfolioGalleryChecks = {
+    projects,
+    filterProjects: filterPortfolioProjects
+  };
+
+  ReactDOM.createRoot(
+    document.getElementById("react-project-gallery")
+  ).render(<PortfolioProjects />);
 }
