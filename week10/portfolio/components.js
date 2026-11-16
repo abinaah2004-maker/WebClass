@@ -138,9 +138,6 @@
     onDetails,
     deckRef,
     onKeyDown,
-    onPointerDown,
-    onPointerCancel,
-    onPointerUp
   }) {
     if (projects.length === 0) {
       return h(
@@ -160,10 +157,7 @@
         "aria-roledescription": "carousel",
         "aria-label": "Selected portfolio projects",
         tabIndex: 0,
-        onKeyDown,
-        onPointerDown,
-        onPointerCancel,
-        onPointerUp
+        onKeyDown
       },
       projects.map((project, index) => {
         let slot = (index - current + projects.length) % projects.length;
