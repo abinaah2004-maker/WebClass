@@ -1,64 +1,81 @@
-# Recent Changes — Accessibility Assignment
+# Web Programming Coursework
 
-This README records the latest changes made for the accessibility assignment you provided.
+**Student:** Abinash Lamichhane  
+**Student ID:** 202637724  
+**University:** Gachon University  
+**Major:** Computer Engineering  
+**Course:** Web Programming K0126_002
 
-## Changes made
+This repository contains my weekly web-programming exercises, practical projects and learning notes. The published site is arranged in chronological order so each week can be opened from one place.
 
-### Coursework homepage — `index.html`
+- **Live coursework:** https://abinaah2004-maker.github.io/WebClass/
+- **GitHub repository:** https://github.com/abinaah2004-maker/WebClass
 
-- Added a **Skip to content** link as the first element inside `<body>`.
-- Linked it to the main content using `href="#main-content"`.
-- Added `id="main-content"` and `tabindex="-1"` to the main content element.
-- Added CSS so the skip link stays off-screen until it receives keyboard focus.
-- Added a visible focus outline for keyboard users.
+## Coursework map
 
-### Memory Match project
+| Week | Main topic | Main location |
+|---|---|---|
+| 2 | HTML fundamentals, semantic HTML, forms and page structure | `Week2_1/`, `Week2_2/` |
+| 3 | CSS fundamentals, selectors, layout and component styling | `Week3_1/`, `Week3_2/`, `Week3_Assignment/`, `week3-3/` |
+| 4 | JavaScript DOM, events and interactive tasks | [Week 4 hub](week4-1/index.html) |
+| 5 | JavaScript conditions, grading and loops | [Week 5 hub](week5-1/index.html) |
+| 6 | Fetch, promises and public APIs | [Week 6 hub](week6-1/index.html) |
+| 7 | Book search and API practice | [Week 7 hub](week7-1/index.html) |
+| 8 Monday | HTML forms and native validation | [Week 8 Monday](week8-1/index.html) |
+| 8 Friday | JavaScript form validation and registration homework | [Week 8 Friday](week8-2/index.html) |
+| 9.1 | Memory Match accessibility audit | [Week 9.1 hub](week9-1/index.html) · [Audit PDF](Week9.pdf) |
+| 9.2 | Performance, responsive images, script loading and CineReview lab | [Week 9.2 hub](week9-2/index.html) |
+| 10 | Git, GitHub Pages, 404 handling, portfolio and projects | [Week 10 hub](week10/index.html) |
+| 11 Monday | React foundations, JSX, props and StudentCard | [Week 11 Monday](week11-monday/index.html) |
+| 11 Friday | React components, props, lists, state and composition | [Week 11 Friday](week11-friday/index.html) |
 
-Files updated:
-- `teamproject/index.html`
-- `teamproject/style.css`
+For the full set of links, use the [published coursework homepage](https://abinaah2004-maker.github.io/WebClass/).
 
-Changes:
-- Added the same skip link as the first element inside `<body>`.
-- Added the `main-content` target to the main element.
-- Styled the link to become visible on keyboard focus, with a clear outline.
+## Projects
 
-## How to test
+These projects are kept separate from the weekly exercise folders.
 
-1. Open the [coursework homepage](https://abinaah2004-maker.github.io/WebClass/).
-2. Press **Tab** and check that **Skip to content** becomes visible.
-3. Press **Enter** and check that focus moves to the main content.
-4. Repeat on the [Memory Match project](https://abinaah2004-maker.github.io/WebClass/teamproject/).
-5. In Chrome, open Developer Tools → **Lighthouse** → select **Accessibility** → run the audit.
-6. Fix any remaining issues and run the audit again.
+| Project | What it practises | Link |
+|---|---|---|
+| Memory Match | JavaScript, DOM events, game state and keyboard accessibility | [Open project](teamproject/index.html) |
+| StudyHub | DOM events, task management and local storage | [Open project](studyhub/index.html) |
+| JokeLab | Fetch requests, loading states and saved jokes | [Open project](week6-1/jokelab/index.html) |
+| BookFinder | Open Library API search and result rendering | [Open project](bookfinder/index.html) |
+| Idea Mixer | Interactive prompt generation and saved ideas | [Open project](idea-mixer/index.html) |
+| Contact form | Labels, native validation and accessible feedback | [Open form](contact/index.html) |
+| Learn Korean With Me | Personal Korean vocabulary, grammar and practical conversation practice | [Open project](korean-learning/index.html) |
 
-## Verification status
+## React work
 
-- The relevant HTML and CSS were checked in the repository.
-- A Lighthouse audit has **not** been run by me in a real browser, so no accessibility score is claimed.
-- Capture your actual initial and improved Lighthouse results for the assignment screenshots.
+Week 11 is split into two sessions:
 
-## Latest commits
+- **Monday:** React foundations, JSX, component props, a StudentCard lab and a short knowledge check.
+- **Friday:** ProductCard, Course Catalog, ProfileCard, notifications, Student Directory, Portfolio Gallery and component composition.
 
-- Homepage accessibility changes: [9d47451](https://github.com/abinaah2004-maker/WebClass/commit/9d47451e70da9bf6f25a83c68c4e50245b81a3de)
-- Memory Match HTML changes: [cf8de41](https://github.com/abinaah2004-maker/WebClass/commit/cf8de413656bc9f390dd6fbc96cf4cabfb130d14)
-- Memory Match CSS changes: [dc173b1](https://github.com/abinaah2004-maker/WebClass/commit/dc173b19f457ecacb55e71e816152890490c6550)
+The Week 11 pages currently use React 18, ReactDOM and Babel Standalone from public CDNs so the lessons can run directly on GitHub Pages without a local build step. Source is separated into data, component and page files. Browser test pages are included for the Monday and Friday work.
 
+- [Monday tests](week11-monday/tests.html)
+- [Friday tests](week11-friday/tests.html)
+- [Week 10 portfolio tests](week10/portfolio/tests.html)
 
-## Personal project — Korean Learning 🇰🇷
+Automated checks are useful, but they do not replace manual browser, keyboard, mobile and screen-reader testing.
 
-A practical Korean-learning website created as part of this repository. It includes vocabulary, grammar practice, real-life conversation scenes, interactive roleplay, TOPIK II chapters, and Level 4 skills practice.
+## Reports and evidence
 
-- [Open the Korean learning website](korean-learning/index.html)
-- [TOPIK II chapter library](korean-learning/chapters.html)
-- [Level 4 — Korean in Korea](korean-learning/level4-practical.html)
-- [Level 4 — Skills Lab](korean-learning/level4-skills-lab.html)
-- [View the Korean project folder on GitHub](https://github.com/abinaah2004-maker/WebClass/tree/main/korean-learning)
-- [Open the deployed Korean learning website](https://abinaah2004-maker.github.io/WebClass/korean-learning/)
+- [Week 9.1 accessibility audit](week9-1/index.html) links to the existing `Week9.pdf`.
+- [Week 9.2 coursework and report notes](week9-2/README.md) explain the CineReview comparison and the original evidence used.
+- [Week 10 evidence checklist](week10/evidence/README.md) lists the screenshots and local Git steps that still need to be captured by me.
 
-The project is also linked from the [main coursework homepage](index.html), under **Projects and repository information**.
+**Week 9.2 PDF reminder:** the original `CineReview_Week9_2_Audit_Report_Abinash_Lamichhane.pdf` is not yet committed inside `week9-2/`. The report is available in my file library; add that original PDF to the folder before relying on the PDF links in the Week 9.2 pages. Do not replace the original screenshots with recreated evidence.
 
+Scores and manual test results should only be reported when supported by the actual screenshots or tests. A file being present in this repository does not by itself prove that a browser test or local Git step has been completed.
 
-## Korean Quest — 40-level learning game
+## Local use
 
-Play the new staged Korean course: [Open Korean Quest](korean-learning/quest.html). It contains 40 unlockable levels from TOPIK I Level 2 through TOPIK II Levels 3 and 4, with grammar, sentence formation, listening, pronunciation/speaking, and reading in every level.
+Most exercises are static HTML, CSS and JavaScript pages. Open the relevant `index.html` in a browser or use VS Code Live Server.
+
+For the React coursework, open the task hub and select an exercise. The deployed pages load their React dependencies from public CDNs. Run the included browser test pages when checking changes.
+
+## Identity and original work
+
+Coursework pages and examples use my own student details. Other repositories are used only as references for understanding assignment coverage and presentation quality; the code, wording and project content in this repository are maintained as my own coursework.
