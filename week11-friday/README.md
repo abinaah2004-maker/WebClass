@@ -28,7 +28,7 @@ This page completes the Week 11 Friday React lesson and practice using my own co
 
 ## React integration in my main portfolio
 
-The Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, touch swiping and an accessible project details dialog. The four existing project descriptions and destinations are retained, and a fifth card links to the Week 11 React component lesson. Browser checks are available at `week10/portfolio/tests.html`.
+The Week 10 portfolio selected-work section now uses React components: `PortfolioProjects`, `PortfolioProjectCard`, `PortfolioProjectList`, `PortfolioFilterBar` and `PortfolioProjectDetails`. It includes technology/category filtering, a selected-project carousel with previous/next controls, keyboard arrow navigation, previous/next controls and an accessible project details dialog. The four existing project descriptions and destinations are retained, and a fifth card links to the Week 11 React component lesson. Browser checks are available at `week10/portfolio/tests.html`.
 
 ## Exercises
 1. ProductCard — nine products with KRW prices, ratings, categories, safe defaults and both stock states.
@@ -51,7 +51,7 @@ The Portfolio Gallery demonstrates a component-driven project showcase: `Project
 The component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.
 
 ## Component organisation note
-The live lesson is organised into `data.js`, `components.js` and `app.jsx`: data records, reusable React components and page state/composition are separated. Dedicated HTML entry points open ProductCard, Course Catalog, Practice, Portfolio Gallery and Component Lab directly. React 18 UMD and Babel Standalone are retained for compatibility with the existing GitHub Pages deployment; the source is modular and does not require a local build step. The separate Week 10 portfolio now also mounts a React project showcase with reusable cards, filters, a keyboard/touch carousel and a details dialog.
+The live lesson is organised into `data.js`, `components.js` and `app.jsx`: data records, reusable React components and page state/composition are separated. Dedicated HTML entry points open ProductCard, Course Catalog, Practice, Portfolio Gallery and Component Lab directly. React 18 UMD and Babel Standalone are retained for compatibility with the existing GitHub Pages deployment; the source is modular and does not require a local build step. The separate Week 10 portfolio now also mounts a React project showcase with reusable cards, filters, a keyboard-accessible carousel and a details dialog.
 
 ## Run
 Open `tasks.html` for the exercise index or open an individual exercise page. React, ReactDOM and Babel load before the separate data and component modules. The lesson runs directly on GitHub Pages without a local build step.
