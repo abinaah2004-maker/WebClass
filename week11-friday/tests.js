@@ -75,11 +75,13 @@
       if (!tab) throw new Error("Missing lesson section: " + label);
       tab.click();
     };
-    test("React foundations renders three Greetings and the UserCard year", () => {
+    test("React foundations renders Greetings and my UserCard details", () => {
       selectTab("React foundations");
-      const year = String(new Date().getFullYear());
       return doc.querySelectorAll(".greeting").length === 3 &&
-        [...doc.querySelectorAll(".user-card")].some(card => card.textContent.includes("Joined: " + year));
+        [...doc.querySelectorAll(".user-card")].some(card =>
+          card.textContent.includes("Abinash Lamichhane") &&
+          card.textContent.includes("Computer Engineering Student")
+        );
     });
     test("ProductCard renders nine products and both stock states", () => {
       selectTab("ProductCard");
