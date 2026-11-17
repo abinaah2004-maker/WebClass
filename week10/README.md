@@ -40,7 +40,7 @@ The custom error page used by this GitHub Pages project site is the repository-r
 - [Book Search](https://abinaah2004-maker.github.io/WebClass/week10/projects/book-search/)
 - [Memory Match](https://abinaah2004-maker.github.io/WebClass/teamproject/)
 
-The portfolio currently uses a profile/initials placeholder. I will add my own photograph when it is ready.
+The portfolio now displays my own photograph in the profile section.
 
 ## Week 10_2 — Keyboard accessibility
 
@@ -61,7 +61,7 @@ The `evidence/` folder contains a checklist. It is not a set of completed screen
 - [ ] 404: a deliberately missing URL and the custom error page with working recovery links.
 - [ ] Accessibility: Tab to reveal the skip link, then Enter to move to the main content.
 - [ ] Complete any required report using observations from my own tests.
-- [ ] Add my own portfolio photograph when ready.
+- [x] Add my own photograph to the portfolio profile section.
 
 If Lighthouse evidence is required, run it on my deployed page and save the original report with the tested URL and date. No Lighthouse score or manual test result is claimed here unless it has actually been measured.
 
