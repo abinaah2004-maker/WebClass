@@ -78,4 +78,4 @@ For the React coursework, open the task hub and select an exercise. The deployed
 
 ## Identity and original work
 
-Coursework pages and examples use my own student details. Other repositories are used only as references for understanding assignment coverage and presentation quality; the code, wording and project content in this repository are maintained as my own coursework.
+Coursework pages, examples and project content in this repository are maintained as my own coursework and use my own student details.
