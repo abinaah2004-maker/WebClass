@@ -48,7 +48,7 @@ Open `tests.html` from the Friday task hub to run browser checks against both sh
 
 The Portfolio Gallery demonstrates a component-driven project showcase: `ProjectCard` receives named props for its title, description, technology stack, GitHub source and live demo; `ProjectList` spreads each project record into a card with a stable key; and `FilterBar` controls the selected technology. React state also controls search text, featured-only mode and the selected project. The native `<dialog>` provides keyboard dismissal, a labelled title, a close control and focus restoration to the Details button.
 
-The component responsibilities and interactive portfolio ideas were informed by the reference coursework, while the project data, wording, layout and implementation are original to this repository.
+The examples use my own project data, wording, layout and implementation.
 
 ## Component organisation note
 The live lesson is organised into `data.js`, `components.js` and `app.jsx`: data records, reusable React components and page state/composition are separated. Dedicated HTML entry points open ProductCard, Course Catalog, Practice, Portfolio Gallery and Component Lab directly. React 18 UMD and Babel Standalone are retained for compatibility with the existing GitHub Pages deployment; the source is modular and does not require a local build step. The separate Week 10 portfolio now also mounts a React project showcase with reusable cards, filters, a keyboard-accessible carousel and a details dialog.
