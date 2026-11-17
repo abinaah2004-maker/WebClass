@@ -1,123 +1,78 @@
-# Week 10 — Web Programming Submission Guide
+# Week 10 — Web Programming
 
 **Student:** Abinash Lamichhane  
+**Student ID:** 202637724  
 **University:** Gachon University  
 **Major:** Computer Engineering  
-**Repository:** https://github.com/abinaah2004-maker/WebClass  
-**Live Week 10 page:** https://abinaah2004-maker.github.io/WebClass/week10/
+**Course:** Web Programming K0126_002
 
-This README is the reader's guide to my Week 10 work. It explains where each exercise is, what the projects do, how my work compares with the reference Week 10 folder, and what evidence I still need to capture myself.
+This folder contains my Week 10 exercises and projects covering Git, GitHub, GitHub Pages, custom 404 handling, a personal portfolio, and keyboard accessibility.
 
-## 1. Start here
+## Start here
 
-- [Open the Week 10 hub](https://abinaah2004-maker.github.io/WebClass/week10/)
+- [Open the live Week 10 page](https://abinaah2004-maker.github.io/WebClass/week10/)
 - [Open my portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/)
-- [Open the repository's Week 10 source folder](https://github.com/abinaah2004-maker/WebClass/tree/main/week10)
+- [View the Week 10 source folder](https://github.com/abinaah2004-maker/WebClass/tree/main/week10)
 
-The hub links to all six study-guide exercises, the portfolio, the JavaScript projects, and the keyboard-accessibility task.
+## Monday — Git exercises
 
-**Published custom 404:** GitHub Pages uses the repository-root [`/404.html`](../404.html), not a file nested inside `week10/`. [Open the custom 404 page](https://abinaah2004-maker.github.io/WebClass/404.html) or [test a deliberately missing URL](https://abinaah2004-maker.github.io/WebClass/week10/this-page-does-not-exist-for-testing.html).
-
-## 2. Six study-guide exercises
-
-### Monday — Git
-
-| Exercise | File | What it covers |
+| Exercise | File | Topic |
 |---|---|---|
-| E1 — Git basics | `monday/e1-git-basics.html` | Initialize a repository, stage files, commit, and inspect commit history |
-| E2 — Branch and merge | `monday/e2-branch-merge.html` | Create a feature branch, make a CSS change, open a pull request, and merge it |
-| E3 — Push to GitHub | `monday/e3-github-push.html` | Connect a local repository to a remote and push commits |
+| E1 — Git basics | `monday/e1-git-basics.html` | Initialize a repository, stage files, commit, and inspect history |
+| E2 — Branch and merge | `monday/e2-branch-merge.html` | Create a branch, make a change, and merge it |
+| E3 — Push to GitHub | `monday/e3-github-push.html` | Connect a local repository to GitHub and push commits |
 
-### Friday — GitHub Pages and 404
+## Friday — GitHub Pages and 404
 
-| Exercise | File | What it covers |
+| Exercise | File | Topic |
 |---|---|---|
-| E1 — GitHub Pages | `friday/e1-github-pages.html` | Publish a site using GitHub Pages |
-| E2 — Test a 404 | `friday/e2-test-404.html` | Open a deliberately incorrect URL and inspect the not-found response |
-| E3 — Custom 404 | `friday/e3-custom-404.html` | Explain a missing page and provide recovery links |
+| E1 — GitHub Pages | `friday/e1-github-pages.html` | Publish a website using GitHub Pages |
+| E2 — Test a 404 | `friday/e2-test-404.html` | Test a missing-page address |
+| E3 — Custom 404 | `friday/e3-custom-404.html` | Provide a helpful not-found page and recovery links |
 
-**404 implementation note:** The repository has a root-level `404.html` at `/WebClass/404.html`. That is the correct location for the GitHub Pages project site. The Friday E2 and E3 pages link to this root-level page; a second `week10/404.html` is not required for this repository layout.
+The custom error page used by this GitHub Pages project site is the repository-root file [`404.html`](../404.html). [Open the published 404 page](https://abinaah2004-maker.github.io/WebClass/404.html).
 
-## 3. Portfolio
+## Portfolio and projects
 
-- [Open the portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/)
-- [View its source](https://github.com/abinaah2004-maker/WebClass/tree/main/week10/portfolio)
+- [Personal portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/)
+- [Expense Tracker](https://abinaah2004-maker.github.io/WebClass/week10/projects/expense-tracker/)
+- [Study Planner](https://abinaah2004-maker.github.io/WebClass/week10/projects/study-planner/)
+- [Book Search](https://abinaah2004-maker.github.io/WebClass/week10/projects/book-search/)
+- [Memory Match](https://abinaah2004-maker.github.io/WebClass/teamproject/)
 
-The portfolio is built with HTML, CSS, and JavaScript. It includes an introduction, selected projects, interactive skill topics, coursework links, and contact information.
+The portfolio currently uses a profile/initials placeholder. I will add my own photograph when it is ready.
 
-**Personal photo still to add:** The current hero uses a designed initials/profile card rather than a real portrait. I plan to add my own photo later. The reference portfolio contains a portrait image, so this is one visible difference to address when my photo is ready. Do not replace it with somebody else's image or a generated audit screenshot.
+## Week 10_2 — Keyboard accessibility
 
-## 4. Interactive projects
+- [Interactive keyboard test](https://abinaah2004-maker.github.io/WebClass/week10/accessibility/)
+- [Accessibility modifications report](https://abinaah2004-maker.github.io/WebClass/week10/report.html)
+- [Evidence checklist](evidence/README.md)
 
-| Project | Location | Purpose |
-|---|---|---|
-| Expense Tracker | `projects/expense-tracker/` | Record income and expenses and view totals |
-| Study Planner | `projects/study-planner/` | Organize study tasks and weekly planning |
-| Book Search | `projects/book-search/` | Search book information using the Open Library service |
+The report describes the source implementation. Live keyboard checks and any additional screenshots must be completed using my own browser and device before recording them as completed.
 
-The existing [Memory Match team project](https://abinaah2004-maker.github.io/WebClass/teamproject/) is also linked from the Week 10 hub.
+## Evidence still to capture
 
-## 5. Week 10_2 — Keyboard accessibility
+The `evidence/` folder contains a checklist. It is not a set of completed screenshots. Capture and keep original evidence for the work actually performed:
 
-- [Open the interactive keyboard test](https://abinaah2004-maker.github.io/WebClass/week10/accessibility/)
-- [Open the accessibility report template](https://abinaah2004-maker.github.io/WebClass/week10/report.html)
-- [Open the evidence checklist](https://github.com/abinaah2004-maker/WebClass/blob/main/week10/evidence/README.md)
+- [ ] Git E1: terminal showing repository initialization, staging, commit, and commit history.
+- [ ] Git E2: branch/merge work and the actual merged pull request.
+- [ ] Git E3: my terminal showing a successful push and the matching GitHub commit.
+- [ ] GitHub Pages: publishing settings, successful deployment, and the live Week 10 page.
+- [ ] 404: a deliberately missing URL and the custom error page with working recovery links.
+- [ ] Accessibility: Tab to reveal the skip link, then Enter to move to the main content.
+- [ ] Complete any required report using observations from my own tests.
+- [ ] Add my own portfolio photograph when ready.
 
-The pages provide a skip link and a focusable main-content target. The report is intentionally a **template**, not a completed test result. I must test the published pages on my own device, record what actually happens, and attach my own screenshots before marking the test as passed.
+If Lighthouse evidence is required, run it on my deployed page and save the original report with the tested URL and date. No Lighthouse score or manual test result is claimed here unless it has actually been measured.
 
-## 6. Comparison with the reference Week 10 folder
+## Submission links
 
-For the expanded side-by-side review, see [COMPARISON-AND-MISSING-WORK.md](COMPARISON-AND-MISSING-WORK.md).
-
-Reference inspected: https://sudip09-sys.github.io/WebProgramming/week10/
-
-| Area | My Week 10 | Reference Week 10 | Review |
-|---|---|---|---|
-| Six study-guide exercises | Separate Monday and Friday E1–E3 pages | Six exercises linked from the hub | Present in my source |
-| Git E2 branch/merge | Exercise page and linked merged pull request | Exercise page and merged pull request | Present; retain the real PR link |
-| Git E3 push | Step-by-step instructions | Reference describes a local push and links commit evidence | I still need my own local terminal push screenshot and matching GitHub commit evidence |
-| GitHub Pages | Deployment exercise and Week 10 hub | Deployment exercise and live hub | Capture my own Pages settings/deployment evidence |
-| Custom 404 | Repository-root `404.html`, plus E2/E3 explanation pages | Root and Week 10 custom 404 pages | My root-level file is appropriate for the project site; test a genuinely nonexistent URL |
-| Portfolio | Responsive portfolio with interactive project and skill sections | Portfolio with a portrait, theme control, project filtering and skills | My portfolio is present; add my own portrait when ready and manually check mobile/keyboard use |
-| Book Search | `projects/book-search/index.html` | Separate HTML, CSS and JavaScript files under `week10/book-search/` | My project exists; keep the code organized and verify a real search works |
-| Extra projects | Expense Tracker and Study Planner | The reference Week 10 folder has Book Search and its portfolio/team links | My folder has additional project work |
-| Evidence files | Evidence folder currently contains the checklist README | Reference folder contains a Lighthouse screenshot and audit PDF | Main submission gap: add my own original screenshots and any report required by the professor |
-| Accessibility report | Interactive report template with blank observation fields | Completed written report with recorded keyboard results | Complete mine only after carrying out the tests; do not copy the reference student's results |
-
-This is a source-file comparison. A file existing in GitHub does not, by itself, prove that I personally performed the local terminal steps, that a browser test passed, or that a screenshot was captured.
-
-## 7. My remaining submission checklist
-
-Capture these on my own computer or phone. Save the original screenshots in `week10/evidence/` if the professor wants evidence in the repository, and submit them through the professor's required submission channel.
-
-- [ ] **Monday E1:** Terminal showing `git init`, staging, first commit, and `git log --oneline`.
-- [ ] **Monday E2:** The actual merged pull request and the finished styled Hello Git page.
-- [ ] **Monday E3:** My own terminal showing a successful `git push`, plus the matching commit/files on GitHub. Hide tokens and private credentials.
-- [ ] **Friday E1:** GitHub Pages source/settings, successful deployment status, and the live Week 10 page.
-- [ ] **Friday E2:** Browser address bar showing a deliberately nonexistent URL and the custom root-level 404 page.
-- [ ] **Friday E3:** Custom 404 page with its recovery links; click the links to confirm they work.
-- [ ] **Week 10_2:** Screenshot with the skip link visible after pressing Tab.
-- [ ] **Week 10_2:** Screenshot or short recording showing where focus goes after pressing Enter.
-- [ ] **Week 10_2:** Complete the report with the real device/browser, actual observations, and any issues found.
-- [ ] **Portfolio:** Add my own photo when ready; check the page at phone and desktop widths.
-- [ ] **Projects:** Open each project and test its main interaction, especially adding and refreshing saved data and searching for a book.
-
-### Lighthouse evidence
-
-Run Lighthouse against **my own deployed URL** if the assignment asks for it. Save the report or screenshots with the tested URL and date. Do not copy the reference student's scores or describe them as results for my site. If Lighthouse is not required, do not invent a score.
-
-## React component work added for Week 11
-
-The selected-work section of `portfolio/index.html` is a modular React gallery. `portfolio/projects.js` stores project records, `portfolio/utils.js` contains pure filtering helpers, `portfolio/components.js` exports reusable gallery components, and `portfolio/portfolio-gallery.jsx` owns the interactive carousel and page state. The page loads these modules before Babel compiles the JSX. The five-project gallery keeps Expense Tracker, Study Planner, Book Search, Memory Match and React Components & Props; the nonworking Job Application Tracker was removed from the gallery and project index. Browser checks are available at `portfolio/tests.html`.
-
-## 8. Submission links
-
-- [Week 10 hub](https://abinaah2004-maker.github.io/WebClass/week10/)
+- [Week 10 live page](https://abinaah2004-maker.github.io/WebClass/week10/)
 - [Portfolio](https://abinaah2004-maker.github.io/WebClass/week10/portfolio/)
 - [Accessibility test](https://abinaah2004-maker.github.io/WebClass/week10/accessibility/)
-- [Accessibility report template](https://abinaah2004-maker.github.io/WebClass/week10/report.html)
+- [Accessibility report](https://abinaah2004-maker.github.io/WebClass/week10/report.html)
 - [Week 10 source on GitHub](https://github.com/abinaah2004-maker/WebClass/tree/main/week10)
 
 ---
 
-**Evidence policy:** This guide distinguishes implemented source code from work that still needs personal testing or screenshots. Only mark a task complete after performing it and keeping the real evidence.
+This README describes the contents of my Week 10 coursework folder and distinguishes implemented pages from evidence that I still need to capture myself.
