@@ -66,3 +66,10 @@
 .portfolio-react-hint{line-height:1.8}
 @media(max-width:760px){.portfolio-react-showcase{padding:14px}.portfolio-project-deck{min-height:470px}}
 @media(prefers-reduced-motion:reduce){.portfolio-react-showcase *{scroll-behavior:auto}}
+
+
+/* Uploaded profile photo */
+.portrait-box{isolation:isolate}
+.portrait-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:0}
+.portrait-box:before,.portrait-box:after{z-index:1;pointer-events:none}
+.portrait-note{z-index:2;text-shadow:0 1px 5px #000}
