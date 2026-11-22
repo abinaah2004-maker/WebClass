@@ -76,7 +76,3 @@ Scores and manual test results should only be reported when supported by the act
 Most exercises are static HTML, CSS and JavaScript pages. Open the relevant `index.html` in a browser or use VS Code Live Server.
 
 For the React coursework, open the task hub and select an exercise. The deployed pages load their React dependencies from public CDNs. Run the included browser test pages when checking changes.
-
-## Reference
-
-Week 12 is based on the assignment structure and exercise brief in **Sudip Sah's** [WebProgramming repository](https://github.com/sudip09-sys/WebProgramming/tree/main/week12). The implementation and student details here are adapted for my coursework.
