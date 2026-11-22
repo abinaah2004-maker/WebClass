@@ -77,6 +77,6 @@ Most exercises are static HTML, CSS and JavaScript pages. Open the relevant `ind
 
 For the React coursework, open the task hub and select an exercise. The deployed pages load their React dependencies from public CDNs. Run the included browser test pages when checking changes.
 
-## Identity and original work
+## Reference
 
-Coursework pages, examples and project content in this repository are maintained as my own coursework and use my own student details.
+Week 12 is based on the assignment structure and exercise brief in **Sudip Sah's** [WebProgramming repository](https://github.com/sudip09-sys/WebProgramming/tree/main/week12). The implementation and student details here are adapted for my coursework.
