@@ -28,7 +28,7 @@ This repository contains my weekly web-programming exercises, practical projects
 | 10 | Git, GitHub Pages, 404 handling, portfolio and projects | [Week 10 hub](week10/index.html) |
 | 11 Monday | React foundations, JSX, props and StudentCard | [Week 11 Monday](week11-monday/index.html) |
 | 11 Friday | React components, props, lists and composition | [Week 11 Friday](week11-friday/index.html) |
-| 12 Monday | React state, useState, interactive cart and state exercises | [Week 12 Monday](week12/index.html) |
+| 12 Monday | React state, useState, interactive study planner and state exercises | [Week 12 Monday](week12/index.html) |
 
 For the full set of links, use the [published coursework homepage](https://abinaah2004-maker.github.io/WebClass/).
 
