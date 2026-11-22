@@ -6,5 +6,3 @@ Interactive exercises for React state and `useState`: Tech Desk Builder, counter
 
 - [Open the exercise](index.html)
 - [Coursework homepage](../index.html)
-
-**Reference:** Sudip Sah, [WebProgramming · Week 12](https://github.com/sudip09-sys/WebProgramming/tree/main/week12). The assignment structure and exercise brief were used as a reference; this implementation is adapted for my coursework.
