@@ -1,25 +1,24 @@
-# Week 12 Friday · React Effects & useEffect
+# Week 12 Friday — React Effects
 
-**Student:** Abinash Lamichhane · **ID:** 202637724
+A practical React lab covering `useEffect`, dependency arrays, cleanup, asynchronous requests and browser APIs.
 
-This section follows the Friday lecture and contains:
+## Open the exercises
 
-- Effect lifecycle and the three dependency-array patterns.
-- Data fetching, loading/error states, and async functions inside effects.
-- Timer cleanup, AbortController, and race-condition prevention.
-- GitHub User Lookup challenge.
-- localStorage persistence and document-title synchronization.
-- Infinite-loop gotchas and derived-state practice.
-- Open-Meteo Weather Dashboard homework and an eight-question Sprint Quiz.
+- [React Effects workbench](./index.html)
+- [Weather Dashboard homework](./weather-dashboard.html)
 
-## Pages
+## Topics practised
 
-- [Open the interactive React Effects lab](index.html)
-- [Open the Weather Dashboard homework](weather-dashboard.html)
-- [Open SprintQuiz.html](SprintQuiz.html)
-- [Return to Week 12 Monday](../index.html)
-- [Return to course homepage](../../index.html)
+- Effect lifecycle and the three dependency-array patterns
+- Synchronizing the browser tab title
+- GitHub profile lookup and request handling
+- Stopwatch and live-clock intervals with cleanup
+- Saving preferences with `localStorage`
+- Derived values and avoiding effect-driven infinite loops
+- Weather data with Open-Meteo
 
-The Weather Dashboard uses Open-Meteo's public geocoding and forecast endpoints and does not require an API key. Browser geolocation is optional and requires permission.
+## Run
 
-The examples are designed for practice. Test the interactive examples, read the code, and be ready to explain the dependency arrays, cleanup behavior, and loading/error handling.
+Open the page through GitHub Pages or a local development server. The interactive examples use React 18 and Babel from public CDNs. The GitHub and weather exercises require an internet connection.
+
+The Weather Dashboard uses the Open-Meteo geocoding and forecast APIs; no API key is required.
