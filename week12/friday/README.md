@@ -1,24 +1,21 @@
-# Week 12 Friday — React Effects
+# Week 12 Friday — React Effects Studio
 
-A practical React lab covering `useEffect`, dependency arrays, cleanup, asynchronous requests and browser APIs.
+A practical React lab for learning `useEffect`, dependencies, asynchronous requests and cleanup.
 
-## Open the exercises
+## Open
 
-- [React Effects workbench](./index.html)
-- [Weather Dashboard homework](./weather-dashboard.html)
+- [React Effects Studio](./index.html)
 
-## Topics practised
+## Exercises
 
-- Effect lifecycle and the three dependency-array patterns
-- Synchronizing the browser tab title
-- GitHub profile lookup and request handling
-- Stopwatch and live-clock intervals with cleanup
-- Saving preferences with `localStorage`
-- Derived values and avoiding effect-driven infinite loops
-- Weather data with Open-Meteo
+1. Tab-title reminders
+2. GitHub profile dashboard (profile, repository list and sorting)
+3. Stopwatch with lap splits and interval cleanup
+4. Weather dashboard using Open-Meteo geocoding and forecast data
+5. Name badge preview using derived values
+
+The page also includes four effect demonstrations: mount, dependency changes, a live clock with cleanup, and a saved accent using localStorage. A short recap is included at the end.
 
 ## Run
 
-Open the page through GitHub Pages or a local development server. The interactive examples use React 18 and Babel from public CDNs. The GitHub and weather exercises require an internet connection.
-
-The Weather Dashboard uses the Open-Meteo geocoding and forecast APIs; no API key is required.
+Open through GitHub Pages or a local development server. React 18 and Babel load from public CDNs. GitHub and weather exercises require an internet connection. Open-Meteo does not require an API key.
