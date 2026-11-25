@@ -39,7 +39,7 @@ function App(){
  const [done,setDone]=useState([]);
  const [count,setCount]=useState(0),[log,setLog]=useState([]);
  const [unread,setUnread]=useState(4);
- const [username,setUsername]=useState('octocat'),[requestedUser,setRequestedUser]=useState(''),[profile,setProfile]=useState(null),[busy,setBusy]=useState(false),[profileError,setProfileError]=useState('');
+ const [username,setUsername]=useState('octocat'),[requestedUser,setRequestedUser]=useState(''),[searchNonce,setSearchNonce]=useState(0),[profile,setProfile]=useState(null),[busy,setBusy]=useState(false),[profileError,setProfileError]=useState('');
  const [seconds,setSeconds]=useState(0),[running,setRunning]=useState(false),[laps,setLaps]=useState([]);
  const [clockOn,setClockOn]=useState(true),[now,setNow]=useState(new Date());
  const [theme,setTheme]=useState(()=>{try{return localStorage.getItem('effects-lab-theme')||'paper'}catch{return 'paper'}});
@@ -65,8 +65,8 @@ function App(){
   }
   loadProfile();
   return()=>controller.abort();
- },[requestedUser]);
- function searchUser(e){e.preventDefault();const query=username.trim();if(query)setRequestedUser(query)}
+ },[requestedUser,searchNonce]);
+ function searchUser(e){e.preventDefault();const query=username.trim();if(query){setRequestedUser(query);setSearchNonce(n=>n+1)}}
  function mark(){setDone(old=>old.includes(active)?old:[...old,active])}
  const formatTime=n=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
  function renderExercise(){
