@@ -14,6 +14,67 @@ html[data-theme=dark] body{background:var(--bg);color:var(--ink)}html[data-theme
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:34px}.layout{grid-template-columns:1fr}.rail{position:static}.rail nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.grid,.effect-grid{grid-template-columns:1fr}.repos{grid-template-columns:1fr}.forecast{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){.wrap{width:calc(100% - 24px)}.top{align-items:flex-start;flex-direction:column}.links{gap:9px}.links a{font-size:12px}.stats{grid-template-columns:1fr}.weather-grid{grid-template-columns:1fr}.top{align-items:flex-start}.links{gap:9px}.links a{font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Week 12 Friday visual refresh */
+:root{--bg:#edf3ef;--paper:#ffffff;--ink:#172d25;--muted:#62756b;--line:#d5e2d9;--accent:#17634c;--accent2:#dcefe5;--hot:#e5a06b;--shadow:0 18px 48px #183d2b12}
+body{background:radial-gradient(ellipse at 8% 0%,#dcece3 0,transparent 38%),var(--bg)}
+.top{border-bottom-color:#c9d9cf;padding:19px 0}
+.hero{position:relative;overflow:hidden;grid-template-columns:1.25fr .75fr;gap:clamp(20px,4vw,48px);padding:clamp(30px,5vw,62px);margin:24px 0 22px;border:1px solid #c9ddd1;border-radius:22px;background:linear-gradient(125deg,#fdfefd 0%,#e2f1e8 62%,#d2e9dc 100%);box-shadow:0 18px 48px #183d2b10}
+.hero:after{content:"";position:absolute;width:260px;height:260px;right:25%;bottom:-205px;border:1px solid #17634c22;border-radius:50%;box-shadow:0 0 0 24px #17634c08,0 0 0 50px #17634c06;pointer-events:none}
+.hero h1{font-size:clamp(52px,8vw,94px);line-height:.9;letter-spacing:-.085em}
+.hero h1 span{color:#17634c}
+.hero p.lead{max-width:570px;font-size:clamp(16px,1.8vw,19px)}
+.hero-card{position:relative;z-index:1;border-radius:16px;padding:clamp(20px,3vw,30px);background:linear-gradient(145deg,#183e31,#102b23);box-shadow:9px 9px 0 #e5a06b}
+.hero-card code{background:#285342;border:1px solid #ffffff18}
+.progress-card{border-radius:14px;padding:18px 20px}
+.track{height:10px;background:#e6eee8}
+.fill{border-radius:20px;background:linear-gradient(90deg,#17634c,#75b99a)}
+.layout{grid-template-columns:258px minmax(0,1fr);gap:22px}
+.rail{border-radius:15px;padding:17px;box-shadow:0 12px 32px #183d2b0a}
+.rail h2{font-size:18px;margin-bottom:13px}
+.rail button{border-radius:10px;padding:12px 11px;line-height:1.45}
+.rail button[aria-pressed=true]{background:linear-gradient(110deg,#dcefe5,#eef7f1);border-color:#b8d9c6;color:#174c39;box-shadow:inset 3px 0 #17634c}
+.rail button small{margin-bottom:3px;letter-spacing:.12em}
+.stage-head{border-bottom:0;padding:3px 2px 14px;margin-bottom:0}
+.stage-head h2{font-size:clamp(27px,4vw,38px)}
+.panel{border-radius:16px;padding:clamp(20px,3.2vw,32px);box-shadow:0 16px 38px #183d2b0d}
+.panel h3{font-size:clamp(23px,3vw,29px);margin-bottom:8px}
+.demo{border-radius:13px;padding:clamp(16px,2.5vw,22px);background:linear-gradient(145deg,#f7faf8,#eef5f0);border-color:#dce8df}
+button{transition:transform .16s ease,border-color .16s ease,background .16s ease,box-shadow .16s ease}
+button:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 5px 13px #173c2a14}
+button:active:not(:disabled){transform:translateY(0)}
+.panel button:not(:disabled){border-color:#b8d6c5}
+.panel button:hover:not(:disabled){background:#e3f2e9;border-color:#17634c}
+.code{border-radius:12px;border:1px solid #304a3e;background:#172820;color:#d9f1e4;padding:17px;font-size:12.5px}
+.hint,.status{border-radius:0 10px 10px 0;padding:13px 15px;background:#e8f4ec;color:#315d48}
+.profile-result{border-radius:14px;padding:20px;background:#f7faf8;border-color:#d4e4da}
+.stats div,.repo,.weather-cell,.forecast li{border-radius:11px;border-color:#d7e5dc}
+.stats dd{color:#17634c}
+.weather-cell{background:#fff}
+.forecast li{background:#fff;display:grid;gap:7px;align-content:start;min-height:118px}
+.forecast time,.forecast strong{font-weight:800}
+.forecast span{font-size:12px}
+.temperature-track{height:7px;position:relative;overflow:hidden;border-radius:20px;background:#e7eee9;margin:2px 0}
+.temperature-track span{position:absolute;top:0;bottom:0;min-width:4px;border-radius:20px;background:linear-gradient(90deg,#7bb99a,#e5a06b)}
+.stopwatch-dial{width:min(100%,252px);aspect-ratio:1;display:grid;place-items:center;margin:20px auto;border-radius:50%;background:radial-gradient(circle,#fff 65%,transparent 66%),conic-gradient(#17634c var(--sweep),#dce8df 0);box-shadow:0 10px 30px #173c2a12}
+.stopwatch-dial .stat{display:grid;place-items:center;margin:0;font-size:clamp(30px,5vw,44px);font-variant-numeric:tabular-nums;letter-spacing:-.06em;color:#173e30}
+.effect-card{border-radius:13px;padding:19px;background:linear-gradient(145deg,#fff,#f5f9f6)}
+.effect-card .big{font-variant-numeric:tabular-nums;color:#17634c}
+.badge-preview{background:linear-gradient(125deg,#183e31,#285c47);box-shadow:0 12px 25px #173c2a18}
+.bottom{margin-top:28px}
+html[data-theme=dark] body{background:radial-gradient(ellipse at 8% 0%,#203c30 0,transparent 38%),var(--bg)}
+html[data-theme=dark] .hero{background:linear-gradient(125deg,#263c32,#1c332a 65%,#254637);border-color:#3c5c4b}
+html[data-theme=dark] .hero h1 span,html[data-theme=dark] .effect-card .big{color:#9bd7b7}
+html[data-theme=dark] .hero-card{background:linear-gradient(145deg,#102b23,#0d211b)}
+html[data-theme=dark] .demo,html[data-theme=dark] .profile-result,html[data-theme=dark] .effect-card{background:linear-gradient(145deg,#293a32,#24332c)}
+html[data-theme=dark] .stopwatch-dial{background:radial-gradient(circle,#25352d 65%,transparent 66%),conic-gradient(#8ed1b3 var(--sweep),#3b5145 0)}
+html[data-theme=dark] .stopwatch-dial .stat{color:#eaf6ee}
+html[data-theme=dark] .forecast li,html[data-theme=dark] .weather-cell{background:#293a32}
+html[data-theme=dark] .temperature-track{background:#405449}
+html[data-theme=dark] .panel button:hover:not(:disabled){background:#29483d}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:clamp(22px,5vw,34px)}.layout{grid-template-columns:1fr}.rail{position:static}.rail nav{grid-template-columns:repeat(2,minmax(0,1fr))}.stopwatch-dial{width:min(100%,220px)}}
+@media(max-width:440px){.hero{margin-top:16px;border-radius:16px}.rail nav{grid-template-columns:1fr 1fr}.panel{padding:17px}.forecast{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
 </style>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -58,7 +119,7 @@ function Stopwatch(){
  useEffect(()=>{if(started===null)return;const id=setInterval(()=>setNow(performance.now()),40);return()=>clearInterval(id)},[started]);
  const format=ms=>{const n=Math.floor(ms/1000);return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')+'.'+Math.floor(ms%1000/100)};
  const splits=laps.map((v,i)=>v-(laps[i-1]||0)),fastest=splits.length?Math.min(...splits):null;
- return <><h3>Stopwatch and laps</h3><p className="muted">Start the timer, record lap splits, pause, and reset. The interval is cleaned up when stopped.</p><div className="demo"><p className="stat" role="timer">{format(total)}</p><div className="row"><button disabled={started!==null} onClick={()=>{const t=performance.now();setNow(t);setStarted(t)}}>Start</button><button disabled={started===null} onClick={()=>{setElapsed(elapsed+performance.now()-started);setStarted(null)}}>Stop</button><button disabled={started===null} onClick={()=>setLaps(old=>[...old,elapsed+performance.now()-started])}>Lap</button><button onClick={()=>{setStarted(null);setElapsed(0);setLaps([])}}>Reset</button></div><p className="muted">{started===null?'Timer paused':'Timer running'}</p></div>{fastest!==null&&<p className="status">Fastest lap split: <strong>{format(fastest)}</strong></p>}<h4>Lap history</h4>{laps.length?<ol>{laps.map((lap,i)=><li key={i}>Lap {i+1} · Total {format(lap)} · Split {format(splits[i])}</li>)}</ol>:<p className="muted">No laps recorded yet.</p>}<pre className="code">{'useEffect(() => {\n  if (!running) return;\n  const id = setInterval(tick, 40);\n  return () => clearInterval(id);\n}, [running]);'}</pre><p className="hint">The cleanup clears the interval whenever the running state changes or the component unmounts.</p></>
+ return <><h3>Stopwatch and laps</h3><p className="muted">Start the timer, record lap splits, pause, and reset. The interval is cleaned up when stopped.</p><div className="demo"><div className="stopwatch-dial" style={{'--sweep':(total%60000)/60000*360+'deg'}}><p className="stat" role="timer">{format(total)}</p></div><div className="row"><button disabled={started!==null} onClick={()=>{const t=performance.now();setNow(t);setStarted(t)}}>Start</button><button disabled={started===null} onClick={()=>{setElapsed(elapsed+performance.now()-started);setStarted(null)}}>Stop</button><button disabled={started===null} onClick={()=>setLaps(old=>[...old,elapsed+performance.now()-started])}>Lap</button><button onClick={()=>{setStarted(null);setElapsed(0);setLaps([])}}>Reset</button></div><p className="muted">{started===null?'Timer paused':'Timer running'}</p></div>{fastest!==null&&<p className="status">Fastest lap split: <strong>{format(fastest)}</strong></p>}<h4>Lap history</h4>{laps.length?<ol>{laps.map((lap,i)=><li key={i}>Lap {i+1} · Total {format(lap)} · Split {format(splits[i])}</li>)}</ol>:<p className="muted">No laps recorded yet.</p>}<pre className="code">{'useEffect(() => {\n  if (!running) return;\n  const id = setInterval(tick, 40);\n  return () => clearInterval(id);\n}, [running]);'}</pre><p className="hint">The cleanup clears the interval whenever the running state changes or the component unmounts.</p></>
 }
 function weatherLabel(code){if(code===0)return'Clear sky';if(code<=2)return'Partly cloudy';if(code===3)return'Overcast';if(code<=48)return'Fog';if(code<=57)return'Drizzle';if(code<=67)return'Rain';if(code<=77)return'Snow';if(code<=82)return'Rain showers';if(code<=86)return'Snow showers';return'Thunderstorm'}
 function Weather(){
@@ -67,7 +128,10 @@ function Weather(){
  useEffect(()=>{if(!place)return;const controller=new AbortController();async function forecast(){try{const params=new URLSearchParams({latitude:place.latitude,longitude:place.longitude,current:'temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code',daily:'temperature_2m_max,temperature_2m_min,weather_code',forecast_days:'4',timezone:'auto'});const r=await fetch('https://api.open-meteo.com/v1/forecast?'+params,{signal:controller.signal});if(!r.ok)throw Error('Weather service could not complete the request.');const data=await r.json();if(!controller.signal.aborted)setWeather({data})}catch(e){if(!controller.signal.aborted)setWeather({error:e.message})}}setWeather(null);forecast();return()=>controller.abort()},[place]);
  const placeName=p=>[p.name,p.admin1,p.country].filter(Boolean).join(', ');
  const data=weather?.data;
- return <><h3>Weather dashboard</h3><p className="muted">Find a city, select the correct location, and fetch current conditions plus a four-day forecast.</p><form className="row" onSubmit={e=>{e.preventDefault();if(city.trim())setSearch(city.trim())}}><label style={{flex:1}}>City name<input value={city} onChange={e=>setCity(e.target.value)} placeholder="Enter a city"/></label><button disabled={!city.trim()}>Find city</button></form>{!places&&<p className="status" role="status">Searching locations…</p>}{places?.error&&<p className="error">{places.error}</p>}{places?.items?.length===0&&<p className="muted">No matching cities. Try another search.</p>}{places?.items?.length>0&&<div className="demo"><strong>Choose a location</strong><div className="row" style={{marginTop:8}}>{places.items.map(p=><button type="button" key={p.id} aria-pressed={place?.id===p.id} onClick={()=>setPlace(p)}>{placeName(p)}</button>)}</div></div>}{place&&!weather&&<p className="status" role="status">Loading weather for {place.name}…</p>}{weather?.error&&<p className="error" role="alert">{weather.error}</p>}{data&&<div className="demo"><h4>{placeName(place)}</h4><p className="stat">{data.current.temperature_2m} °C</p><p>{weatherLabel(data.current.weather_code)}</p><div className="weather-grid">{[['Feels like',data.current.apparent_temperature+' °C'],['Humidity',data.current.relative_humidity_2m+'%'],['Wind',data.current.wind_speed_10m+' km/h'],['Local time',data.current.time.replace('T',' ')]].map(([k,v])=><div className="weather-cell" key={k}><b>{k}</b><strong>{v}</strong></div>)}</div><h4>Four-day forecast</h4><ul className="forecast">{data.daily.time.map((day,i)=><li key={day}><strong>{new Intl.DateTimeFormat('en',{weekday:'short',timeZone:'UTC'}).format(new Date(day))}</strong><span>{weatherLabel(data.daily.weather_code[i])}</span><strong>{data.daily.temperature_2m_max[i]}° / {data.daily.temperature_2m_min[i]}°</strong></li>)}</ul><small className="muted">Weather data: <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a></small></div>}<pre className="code">{'useEffect(() => {\n  const controller = new AbortController();\n  fetch(weatherUrl, { signal: controller.signal })\n    .then(response => response.json())\n    .then(setForecast);\n  return () => controller.abort();\n}, [selectedCity]);'}</pre><p className="hint">Geocoding and forecast requests are separate effects. Each request is cancelled when its search/location changes.</p></>
+ const low=data?.daily?Math.min(...data.daily.temperature_2m_min):0;
+ const high=data?.daily?Math.max(...data.daily.temperature_2m_max):0;
+ const range=Math.max(1,high-low);
+ return <><h3>Weather dashboard</h3><p className="muted">Find a city, select the correct location, and fetch current conditions plus a four-day forecast.</p><form className="row" onSubmit={e=>{e.preventDefault();if(city.trim())setSearch(city.trim())}}><label style={{flex:1}}>City name<input value={city} onChange={e=>setCity(e.target.value)} placeholder="Enter a city"/></label><button disabled={!city.trim()}>Find city</button></form>{!places&&<p className="status" role="status">Searching locations…</p>}{places?.error&&<p className="error">{places.error}</p>}{places?.items?.length===0&&<p className="muted">No matching cities. Try another search.</p>}{places?.items?.length>0&&<div className="demo"><strong>Choose a location</strong><div className="row" style={{marginTop:8}}>{places.items.map(p=><button type="button" key={p.id} aria-pressed={place?.id===p.id} onClick={()=>setPlace(p)}>{placeName(p)}</button>)}</div></div>}{place&&!weather&&<p className="status" role="status">Loading weather for {place.name}…</p>}{weather?.error&&<p className="error" role="alert">{weather.error}</p>}{data&&<div className="demo"><h4>{placeName(place)}</h4><p className="stat">{data.current.temperature_2m} °C</p><p>{weatherLabel(data.current.weather_code)}</p><div className="weather-grid">{[['Feels like',data.current.apparent_temperature+' °C'],['Humidity',data.current.relative_humidity_2m+'%'],['Wind',data.current.wind_speed_10m+' km/h'],['Local time',data.current.time.replace('T',' ')]].map(([k,v])=><div className="weather-cell" key={k}><b>{k}</b><strong>{v}</strong></div>)}</div><h4>Four-day forecast</h4><ul className="forecast">{data.daily.time.map((day,i)=><li key={day}><strong>{new Intl.DateTimeFormat('en',{weekday:'short',timeZone:'UTC'}).format(new Date(day))}</strong><span>{weatherLabel(data.daily.weather_code[i])}</span><div className="temperature-track" aria-hidden="true"><span style={{left:(data.daily.temperature_2m_min[i]-low)/range*100+'%',width:(data.daily.temperature_2m_max[i]-data.daily.temperature_2m_min[i])/range*100+'%'}}/></div><strong>{data.daily.temperature_2m_max[i]}° / {data.daily.temperature_2m_min[i]}°</strong></li>)}</ul><small className="muted">Weather data: <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a></small></div>}<pre className="code">{'useEffect(() => {\n  const controller = new AbortController();\n  fetch(weatherUrl, { signal: controller.signal })\n    .then(response => response.json())\n    .then(setForecast);\n  return () => controller.abort();\n}, [selectedCity]);'}</pre><p className="hint">Geocoding and forecast requests are separate effects. Each request is cancelled when its search/location changes.</p></>
 }
 function NameBadge(){
  const [first,setFirst]=useState('Abinash'),[last,setLast]=useState('Lamichhane');
