@@ -75,6 +75,83 @@ html[data-theme=dark] .panel button:hover:not(:disabled){background:#29483d}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding:clamp(22px,5vw,34px)}.layout{grid-template-columns:1fr}.rail{position:static}.rail nav{grid-template-columns:repeat(2,minmax(0,1fr))}.stopwatch-dial{width:min(100%,220px)}}
 @media(max-width:440px){.hero{margin-top:16px;border-radius:16px}.rail nav{grid-template-columns:1fr 1fr}.panel{padding:17px}.forecast{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){button{transition:none}}
+
+/* Week 12 Friday visual theme */
+:root{
+ --bg:#101b2a;--paper:#172638;--ink:#edf4f6;--muted:#a9bac5;
+ --line:#34495b;--accent:#55c5bb;--accent2:#203f4b;--hot:#f0b45e;
+ --shadow:0 16px 40px #050d18a8;
+}
+html,body{background:var(--bg);color:var(--ink)}
+body{background:radial-gradient(ellipse at 12% 0%,#1c3b4b 0,transparent 42%),var(--bg)}
+a{color:#75d8d0}
+.top{padding:20px 0;border-bottom-color:#34495b}
+.brand span,.eyebrow{color:var(--accent)}
+.links a{color:#c5d6df}
+.links a:hover{color:var(--hot)}
+.links button{background:#203448;color:#edf4f6;border-color:#476073;border-radius:7px}
+.hero{
+ position:relative;overflow:hidden;
+ grid-template-columns:1.2fr .8fr;gap:clamp(20px,4vw,44px);
+ padding:clamp(26px,5vw,58px);margin:24px 0;
+ border:1px solid #38576a;border-radius:18px;
+ background:radial-gradient(ellipse at 100% 0%,#245365 0,transparent 55%),linear-gradient(115deg,#182b40,#142235 72%);
+ box-shadow:0 16px 38px #050d1880;
+}
+.hero h1{font-size:clamp(48px,8vw,88px);line-height:.94;letter-spacing:-.075em}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{color:#b9cbd4;max-width:600px}
+.hero-card{border:1px solid #477082;border-radius:13px;background:linear-gradient(145deg,#20465a,#183346);box-shadow:8px 8px 0 #f0b45e}
+.hero-card .eyebrow{color:#f0c77f}
+.hero-card p{color:#d4e2e8}
+.hero-card code{background:#102b3b;border:1px solid #ffffff20;border-radius:7px}
+.progress-card{background:var(--paper);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+.track{background:#2c4050;border-radius:20px}
+.fill{background:linear-gradient(90deg,#55c5bb,#f0b45e);border-radius:20px}
+.layout{grid-template-columns:240px minmax(0,1fr);gap:20px}
+.rail{background:#142336;border:1px solid #344b60;border-radius:13px;box-shadow:var(--shadow)}
+.rail h2{color:#edf4f6}
+.rail button{color:#d1dfe5;border-radius:8px}
+.rail button small{color:#91a8b6}
+.rail button[aria-pressed=true]{background:#203f4b;border-color:#3b7778;color:#8ee0d6;box-shadow:inset 3px 0 var(--accent)}
+.stage-head{border-bottom:1px solid #405467;padding:6px 2px 15px}
+.stage-head h2{color:#f2f6f7}
+.panel{background:linear-gradient(145deg,#1a2c40,#142437);border:1px solid #354e63;border-radius:14px;box-shadow:var(--shadow)}
+.panel h3,.panel h4{color:#f0f5f6}
+.muted{color:#a9bac5}
+.demo{background:#112438;border:1px solid #344f64;border-radius:10px;color:#eaf2f5}
+button{background:#20384c;color:#edf4f6;border:1px solid #4a6478;border-radius:7px}
+button:hover:not(:disabled){background:#285365;border-color:var(--accent)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--hot);outline-offset:3px}
+input{background:#0f2031;color:#f2f6f7;border-color:#496176;border-radius:7px}
+label{color:#b8c9d2}
+.hint,.status{background:#193d43;color:#c8eeea;border-left-color:var(--accent);border-radius:0 8px 8px 0}
+.error{background:#482b38;color:#ffd8df;border-radius:0 8px 8px 0}
+.code{background:#0b1725;color:#c7e9e2;border:1px solid #304a60;border-radius:9px}
+.profile{color:#edf4f6}
+.stats div,.repo,.weather-cell,.forecast li{background:#122438;border-color:#344e63;border-radius:9px;color:#eaf2f5}
+.stats dt,.repo small,.forecast span{color:#a9bac5}
+.stats dd{color:var(--accent)}
+.weather-cell b{color:var(--accent)}
+.temperature-track{background:#34485a;border-radius:20px}
+.temperature-track span{background:linear-gradient(90deg,#55c5bb,#f0b45e)}
+.stopwatch-dial{background:radial-gradient(circle,#172638 65%,transparent 66%),conic-gradient(var(--accent) var(--sweep),#34485a 0)}
+.stopwatch-dial .stat{color:#f1f6f7}
+.badge-preview{background:linear-gradient(120deg,#174c55,#1c3851);border:1px solid #3c7180;border-radius:10px}
+.badge-preview .initials{background:var(--hot);color:#172638}
+.effect-card{background:#122438;border:1px solid #344e63;border-top:3px solid var(--accent);border-radius:10px}
+.effect-card h3{color:#f0f5f6}
+.effect-card .big{color:var(--accent)}
+.accent-chip{background:#1b5558;color:#eafffb;border-radius:6px}
+.bottom{border-top-color:#34495b;color:#9fb2bd}
+html[data-theme=dark]{--bg:#101b2a;--paper:#172638;--ink:#edf4f6;--muted:#a9bac5;--line:#34495b;--accent:#55c5bb;--accent2:#203f4b;--shadow:0 16px 40px #050d18a8}
+html[data-theme=dark] body{background:radial-gradient(ellipse at 12% 0%,#1c3b4b 0,transparent 42%),var(--bg);color:var(--ink)}
+html[data-theme=dark] input,html[data-theme=dark] button{background:#20384c;color:#edf4f6;border-color:#4a6478}
+html[data-theme=dark] .hero-card{background:linear-gradient(145deg,#20465a,#183346)}
+html[data-theme=dark] .demo,html[data-theme=dark] .stats div,html[data-theme=dark] .repo,html[data-theme=dark] .weather-cell,html[data-theme=dark] .forecast li,html[data-theme=dark] .effect-card{background:#122438}
+html[data-theme=dark] .hint,html[data-theme=dark] .status{background:#193d43;color:#c8eeea}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.rail{position:static}.rail nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.hero{padding:23px 18px}.rail nav{grid-template-columns:1fr}.panel{padding:17px}}
 </style>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
