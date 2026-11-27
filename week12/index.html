@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Week 12 Monday React state and useState exercises by Abinash Lamichhane.">
-<meta name="theme-color" content="#f4f0e7">
+<meta name="theme-color" content="#071521">
 <title>Week 12 · React State | Abinash Lamichhane</title>
 <style>
 :root{color-scheme:light;--paper:#f4f0e7;--white:#fffdf8;--ink:#17243a;--muted:#657083;--line:#d8d2c6;--accent:#e45d42;--blue:#315b83;--mint:#dce9e1;font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -19,6 +19,41 @@
 @media(max-width:900px){.launchpad{grid-template-columns:1fr}.launch-choices{grid-template-columns:repeat(3,minmax(0,1fr))}.menu-list{grid-template-columns:repeat(3,minmax(0,1fr))}.shop-layout{grid-template-columns:minmax(0,1fr) 260px}}
 @media(max-width:650px){.shell{width:min(100% - 28px,1220px)}.topbar{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr;padding:40px 0 28px;gap:22px}.hero h1{font-size:clamp(54px,16vw,82px)}.launch-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-list{grid-template-columns:repeat(2,minmax(0,1fr))}.shop-layout{grid-template-columns:1fr}.cart{position:static}.content-head h2{font-size:30px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Week 12 Monday palette refresh: midnight blue and cyan */
+:root{color-scheme:dark;--paper:#0b1b27;--white:#122a39;--ink:#eaf4fb;--muted:#a6bac8;--line:#294858;--accent:#55d6e8;--blue:#79cfe0;--mint:#173746}
+body{background:radial-gradient(ellipse at 88% 0%,#174457 0,transparent 40%),linear-gradient(145deg,#071521,#0d202c 65%,#091923);color:var(--ink)}
+a{color:#8ce7ef}.brand{color:#eaf4fb}.topbar,.footer{border-color:#345263}
+.hero h1 span,.eyebrow,.tag,.score{color:var(--accent)}
+.hero p,.muted{color:#aec2cf}
+.hero-card{background:#153345;color:#effaff;box-shadow:10px 10px 0 #1b5363}
+.hero-card .eyebrow{color:#8ce7ef}.hero-card .muted{color:#b8d3dc}
+.hero-card pre,pre{background:#081722;border-color:#345263;color:#dff7ff}
+.chip{background:#173746;color:#e4f8fb;border-left-color:var(--accent)}
+button{background:#173747;border-color:#4b7180;color:#effaff;border-radius:8px}
+button:hover:not(:disabled){background:#55d6e8;border-color:#55d6e8;color:#071820}
+:focus-visible{outline-color:#f4c76b}
+progress{accent-color:var(--accent)}
+.launchpad{background:#142f3d;border-left-color:#55d6e8}
+.launchpad p{color:#aec2cf}
+.launch-choices button{background:#102735;color:#d9edf3;border-color:#3d6170}
+.launch-choices button[aria-pressed=true],.menu button[aria-pressed=true]{background:#55d6e8;border-color:#55d6e8;color:#071820}
+.menu button{color:#c1d2dc;border-color:#345263;background:#102432;border-radius:8px}
+.menu button:hover{background:#173b4c}
+.content-head{border-color:#456272}
+.exercise-card,.product,.mini-card{background:#122a39;border-color:#345263;color:#eaf4fb;box-shadow:0 12px 30px #0003;border-radius:12px}
+.exercise-card h3,.cart h3{color:#effaff}
+.product img{background:#f4f7f8;border-radius:8px}
+.product p{color:#8ce7ef}
+.cart{background:#102735;border-color:#345263;border-top-color:#55d6e8;border-radius:12px;color:#eaf4fb}
+.cart .muted{color:#a6bac8}
+input[type=text],input[type=number],textarea,select{background:#091b27;border-color:#426173;color:#eaf4fb;border-radius:8px}
+input[type=range]{accent-color:#55d6e8}
+.status{background:#173746;color:#cceef3;border-left-color:#55d6e8;border-radius:0 8px 8px 0}
+.task-row{border-color:#345263}
+.done{color:#91a8b6}
+@media(max-width:650px){.hero-card{box-shadow:6px 6px 0 #1b5363}.launchpad{padding:18px}}
+
 </style>
 </head>
 <body>
