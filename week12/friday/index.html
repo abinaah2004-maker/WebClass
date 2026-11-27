@@ -152,6 +152,35 @@ html[data-theme=dark] .demo,html[data-theme=dark] .stats div,html[data-theme=dar
 html[data-theme=dark] .hint,html[data-theme=dark] .status{background:#193d43;color:#c8eeea}
 @media(max-width:760px){.hero{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.rail{position:static}.rail nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){.hero{padding:23px 18px}.rail nav{grid-template-columns:1fr}.panel{padding:17px}}
+
+/* Week 12 Friday palette refresh: deep plum, coral and soft amber */
+:root{color-scheme:dark;--bg:#1a101b;--panel:#2b1b2b;--ink:#fff0ed;--muted:#c4aeb8;--line:#56394b;--accent:#ff927d;--soft:#402536}
+body{background:radial-gradient(ellipse at 88% 0%,#593248 0,transparent 42%),linear-gradient(145deg,#160d17,#281722 65%,#1b101b);color:var(--ink)}
+a{color:#ffad91}.brand{color:#fff0ed}.topbar,.bottom{border-color:#56394b}
+.eyebrow,.tag,.accent-chip{color:#ffad91}
+.hero h1 span,.stat{color:#ff927d}
+.hero p,.muted,.hint{color:#d1bac3}
+button{background:#513044;border-color:#795066;color:#fff0ed;border-radius:8px}
+button:hover:not(:disabled){background:#ff927d;border-color:#ff927d;color:#28131c}
+:focus-visible{outline-color:#f6ca78}
+.demo,.tile,.effect-card,.panel,.exercise-card,.card,.box,.profile,.repo,.weather-cell,.forecast li{background:#2b1b2b;border-color:#56394b;color:#fff0ed}
+.demo{border-radius:12px}
+pre,.code{background:#170f19;border-color:#56394b;color:#f8e4e8;border-radius:9px}
+.status{background:#4a2938;color:#ffe0df;border-left-color:#ff927d}
+.error{background:#572d38;color:#ffc1c1}
+.hint{border-left-color:#ff927d}
+.row,.grid{gap:12px}
+input,select,textarea{background:#1c121e;border-color:#68485a;color:#fff0ed;border-radius:8px}
+input[type=range]{accent-color:#ff927d}
+button[aria-pressed=true]{background:#ff927d;border-color:#ff927d;color:#28131c}
+.avatar,.initials{background:#4a2938;color:#ffad91;border-color:#a65d6a}
+.weather-cell strong,.weather-cell b,.forecast strong{color:#ffe7df}
+.temperature-track{background:#513044}
+.temperature-track span{background:#ff927d}
+.accent-chip{color:#fff0ed}
+.bottom{color:#c4aeb8}
+@media(max-width:650px){.hero{gap:18px}}
+
 </style>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
