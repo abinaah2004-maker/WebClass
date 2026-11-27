@@ -30,6 +30,7 @@ This repository contains my weekly web-programming exercises, practical projects
 | 11 Friday | React components, props, lists and composition | [Week 11 Friday](week11-friday/index.html) |
 | 12 Monday | React state, useState, tech desk builder and interactive state exercises | [Week 12 Monday](week12/index.html) |
 | 12 Friday | React effects, data fetching, timers, browser events and cleanup | [Week 12 Friday](week12/friday/index.html) |
+| 13 Monday | React controlled forms, validation, checklists and multi-step registration | [Week 13 Monday](week13/index.html) |
 
 For the full set of links, use the [published coursework homepage](https://abinaah2004-maker.github.io/WebClass/).
 
