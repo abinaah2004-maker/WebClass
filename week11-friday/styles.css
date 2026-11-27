@@ -93,3 +93,49 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:flex;overflow-x:auto;gap:5px}.navbtn{width:auto;white-space:nowrap;flex:0 0 auto}.navbtn.active{box-shadow:inset 0 -3px var(--accent)}}
 @media(max-width:650px){.shell{width:calc(100% - 28px);padding-top:14px}.hero{padding:48px 0 30px}.layout{gap:12px}.sidebar{padding:8px}.navbtn{padding:10px}.panel{padding:18px}.exercise{padding:16px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* Friday palette refresh: deep plum with warm coral and amber accents */
+:root{color-scheme:dark;--ink:#fff0ed;--muted:#c4aeb8;--line:#523443;--paper:#291923;--accent:#ff927d;--soft:#402333}
+body{background:radial-gradient(ellipse at 86% 0%,#583044 0,transparent 40%),linear-gradient(145deg,#160d17,#281722 62%,#1b101b);color:var(--ink)}
+.brand,.panel h2,.exercise h3,.catalog-card h3,.student-profile h3,.user-card h3,.project-dialog h2,.project-dialog h3{color:#fff0ed}
+.toplinks a,.footer a,.links a{color:#ffad91}
+.hero>p:not(.eyebrow),.panel>p:not(.eyebrow){color:#d1bac3}
+.pill{background:#301d29;border-color:#624052;color:#f0d9df}
+.sidebar,.panel,.catalog-card,.exercise,.content-card,.student-profile{background:linear-gradient(145deg,#321e2b,#251721);border-color:#543647;box-shadow:0 18px 50px #0004}
+.sidebar{background:#291923}
+.navbtn{color:#d0b9c2}.navbtn span{color:#bd8d9d}
+.navbtn.active,.navbtn:hover{background:#ff927d1b;color:#fff0ed}.navbtn.active{box-shadow:inset 3px 0 #ff927d}
+.callout{background:#ff927d16;border-left-color:#ff927d;color:#f6d5d5}
+.catalog-card:hover,.student-profile:hover,.project-card:hover{border-color:#c77b77}
+.price,.counter-demo strong,.greeting,.verified{color:#ffad91}
+.rating{color:#f0c47b}
+.available,.required{background:#284437;color:#c5f2d5;border-color:#547a62}
+.unavailable{background:#522b35;color:#ffc1c1;border-color:#87505b}
+.elective{background:#352c49;color:#d7c8f3;border-color:#65577c}
+.filter{background:#301d29;border-color:#624052;color:#e0c7d0}
+.filter.active{background:#ff927d;border-color:#ff927d;color:#28131c}
+.exercise input:not([type=checkbox]):not([type=range]),.edit-profile input,.edit-profile select,.gallery-search input,.jsx-example input{background:#1d121c;color:#fff0ed;border-color:#624052}
+.toggle-line,.featured-toggle{color:#e0c7d0}
+.profile-card,.user-card,.jsx-example,.dashboard-preview,.composed-page,.empty-state{background:#21151f;border-color:#543647;color:#f5dfe4}
+.profile-card p,.user-card p,.profile-card a,.project-body p,.project-category{color:#c4aeb8}
+.profile-avatar,.profile-initials{border-color:#b86b72;background:#ff927d1b;color:#ffad91}
+.notifications .notice{background:#261722;border-color:#543647;color:#f5dfe4}
+.notice-action,.details-button,.dialog-close{background:#351f2d;color:#ffc0ad;border-color:#704657}
+.student-profile dl{border-color:#543647}.student-profile dt{color:#c4aeb8}.student-profile dd{color:#fff0ed}
+.project-card{background:#21151f;border-color:#543647}
+.project-visual-memory{background:linear-gradient(125deg,#593044,#35202d)}
+.project-visual-book{background:linear-gradient(125deg,#493046,#342333)}
+.project-visual-korean{background:linear-gradient(125deg,#60403a,#38252b)}
+.project-visual-react{background:linear-gradient(125deg,#3f3449,#2c2035)}
+.tags li{background:#ff927d12;border-color:#624052;color:#f2d5d9}
+.project-dialog{background:#261722;color:var(--ink);border-color:#704657}
+.project-dialog>p:not(.eyebrow),.feature-list{color:#d1bac3}
+.project-dialog::backdrop{background:#100810df;backdrop-filter:blur(5px)}
+.code-sample{background:#160e17;border:1px solid #543647;color:#f5dfe4}
+.composed-page .content-card{background:#321e2b;border-color:#624052}
+.mini-header,.mini-footer{background:#4a2a3a;color:#ffe1d8}
+.alert-error{background:#572d38;color:#ffc1c1}.alert-success{background:#244638;color:#c5f2d5}
+.dashboard-preview{background:#301d29}
+.footer{border-color:#543647;color:#c4aeb8}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline-color:#f6ca78}
